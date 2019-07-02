@@ -4,7 +4,9 @@
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
+  "homepage": "https://nipatsku.github.io/tabz/",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "gulp": "^4.0.2",
     "react": "16.8.4",
     "react-dom": "16.8.4",
@@ -20,7 +22,8 @@
     "watch": "gulp watch",
     "build": "gulp && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
