@@ -14,6 +14,7 @@ const _ = () => {
     /////////////////////////////////////////////////////////
     // @@@@@ SONG LIST @@@@@
 
+    //#region
     song('Nirvana', 'Lake of Fire')
     //#region
         .version({
@@ -21,6 +22,15 @@ const _ = () => {
             duration: 2 * 60 + 30,
             content: ``
         })
+    //#endregion
+    song('Nirvana', 'Oh, Me')
+    //#region
+        .version({
+            instrument: Guitar(guitarTunings.capo2),
+            duration: 2 * 60 + 30,
+            content: ``
+        })
+    //#endregion
     //#endregion
 
     /////////////////////////////////////////////////////////

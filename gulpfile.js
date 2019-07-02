@@ -27,6 +27,7 @@ function buildContent() {
                 
                 const fileName = name
                     .replace(/\s/g, '_')
+                    .replace(/,/g, '')
                     .toLowerCase()
                 fs.writeFileSync(
                     `${buildContentPath}${fileName}.json`,
