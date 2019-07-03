@@ -25,18 +25,19 @@ function buildContent() {
                 if (name.length == 0)
                     continue
                 
-                const fileName = name
+                const fileName = `${artist}_${name}`
                     .replace(/\s/g, '_')
-                    .replace(/,/g, '')
+                    .replace(/,|\'|\.|\(|\)|\:|\&/g, '')
                     .toLowerCase()
+                    + '.json'
                 fs.writeFileSync(
-                    `${buildContentPath}${fileName}.json`,
+                    `${buildContentPath}${fileName}`,
                     JSON.stringify(versions)
                 )
                 list.push({
                     name,
                     artist,
-                    url: `content/${fileName}.json`
+                    url: `content/${fileName}`
                 })
             }
             // Write song list.

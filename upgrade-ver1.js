@@ -1,28 +1,69 @@
-const _ = () => {
-    /////////////////////////////////////////////////////////
-    // @@@@@ TEMPLATE @@@@@
-    song('', '')
-    //#region
-        .version({
-            instrument: Guitar(guitarTunings.standard),
-            duration: 3 * 60 + 0,
-            content: `
+const fs = require('fs');
 
-`
-        })
-    //#endregion
-    /////////////////////////////////////////////////////////
-    // @@@@@ SONG LIST @@@@@
-//#region
-
-	//#region
-	song('Nirvana', 'Oh Me')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			duration: 3 * 60 + 26,
-			content: 
-`[Intro]
+const instruments = {
+    guitar: {
+        tunings: {
+            unknown: 'Unknown',
+            full_step_down: 'full_step_down',
+            half_step_down: 'half_step_down',
+            standard: 'standard',
+            capo1: 'capo1',
+            capo2: 'capo2',
+            capo3: 'capo3',
+            capo4: 'capo4',
+            capo5: 'capo5',
+            capo6: 'capo6',
+            capo7: 'capo7',
+            capo8: 'capo8',
+            capo9: 'capo9',
+            capo10: 'capo10',
+            capo11: 'capo11',
+        }
+    }
+}
+;
+((songsv1) => {
+    let fullContent = ""
+    const makeSafe = (str) => str.replace(/\'/g, '\\\'')
+    for (const song of songsv1) {
+        let content = ""
+        content += "\t//#region\n"
+        content += `\tsong('${makeSafe(song.artist)}', '${makeSafe(song.name)}')\n`
+        for (const version of song.versions) {
+            content += "\t\t//#region\n"
+            content += `\t\t.version({\n`
+            content += `\t\t\tinstrument: Guitar(guitarTunings.${version.tuning}),\n`
+            if (version.autoScroll && version.autoScroll.duration) {
+                content += `\t\t\tduration: ${Math.round(version.autoScroll.duration / 60)} * 60 + ${version.autoScroll.duration % 60},\n`
+            }
+            content += `\t\t\tcontent: \n\`${makeSafe(version.content)}\``
+            content += `\t\t})\n`
+            content += "\t\t//#endregion\n"
+        }
+        content += "\t//#endregion\n"
+        fullContent += content
+    }
+    console.log(fullContent)
+    fs.writeFile("ver2.txt", fullContent, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+    
+        console.log("The file was saved!");
+    }); 
+})([
+    {
+        artist: 'Nirvana',
+        name: 'Oh Me',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                autoScroll: {
+                    duration: 3 * 60 + 26
+                },
+                content: `[Intro]
 E D C E
 [Verse]
            E
@@ -40,7 +81,7 @@ I only have to do it
                C
 The results are always perfect
 D           E
-And that\'s old news
+And that's old news
                   E
 Would you like to hear my voice
          D
@@ -49,7 +90,7 @@ C                    E
 Invented your birth
 [Chorus]
 G            E
-Well i can\'t see
+Well i can't see
 G          E
 The end of me
 G        E
@@ -78,7 +119,7 @@ I only have to do it
                C
 The results are always perfect
 D          E
-And that\'s old news
+And that's old news
                   E
 Would you like to hear my voice
          D
@@ -87,7 +128,7 @@ C                    E
 Invented your birth
 [Chorus]
 G            E
-Well i can\'t see
+Well i can't see
 G          E
 The end of me
 G        E
@@ -98,25 +139,28 @@ I can not see
 I formulate infinite  
             E
 And store it deep inside of me
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'Lake of Fire')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			content: 
-`Intro  Em   D G|Em  A G|Em  D G|A  D Em|Em  D Em|Em  D Em||
+`
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'Lake of Fire',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                content: `Intro  Em   D G|Em  A G|Em  D G|A  D Em|Em  D Em|Em  D Em||
 Chorus
 Em                   D            G
 Where do bad folks go when they die
 Em                          A          G  
-They don\'t go to heaven where the angels fly
+They don't go to heaven where the angels fly
 Em               D        G
 Go to a lake of fire and fry
 A                        D         Em
-See them again \'till the fourth of July
+See them again 'till the fourth of July
 Int   Em    D Em|Em   D Em||
 Verse 1
 Bm                 G
@@ -131,11 +175,11 @@ Chorus
 Em                   D            G
 Where do bad folks go when they die
 Em                          A          G  
-They don\'t go to heaven where the angels fly
+They don't go to heaven where the angels fly
 Em               D        G
 Go to a lake of fire and fry
 A                        D         Em
-See them again \'till the fourth of July
+See them again 'till the fourth of July
 Int   Em    D Em|Em   D Em||
 Verse 2
 Bm              G
@@ -145,34 +189,35 @@ Look for a dry place to call their home
 Bm                         G
 Try to find some place to rest their bones
   A                            Bm
-While the angels and the devils try to make \'em their own
+While the angels and the devils try to make 'em their own
 Chorus
 Em                   D            G
 Where do bad folks go when they die
 Em                          A          G  
-They don\'t go to heaven where the angels fly
+They don't go to heaven where the angels fly
 Em               D        G
 Go to a lake of fire and fry
 A                        D         Em
-See them again \'till the fourth of July
+See them again 'till the fourth of July
 Int   Em    D Em|Em   D Em| Em    D Em|Em   D Em||
-Outro Solo  Em    D Em||x8`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Motörhead', 'I Ain\'t No Nice Guy')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.undefined),
-			content: 
-`When I was young I was the nicest guy I knew
+Outro Solo  Em    D Em||x8`
+            }
+        ]
+    },
+    {
+        artist: 'Motörhead',
+        name: 'I Ain\'t No Nice Guy',
+        versions: [
+            {
+                name: 'Lyrics',
+                content: `When I was young I was the nicest guy I knew
 I thought I was the chosen one
 But time went by and I found out a thing or two
 My shine wore off as time wore on
 I thought that I was living out the perfect life
 But in the lonely hours when the truth begins to bite
 I thought about the times when I turned my back & stalled
-I ain\'t no nice guy after all
+I ain't no nice guy after all
 When I was young I was the only game in town
 I thought I had it down for sure,
 But time went by and I was lost in what I found
@@ -180,17 +225,17 @@ The reasons blurred, the way unsure
 I thought that I was living life the only way
 But as I saw that life was more than day to day
 I turned around, I read the writing on the wall
-I ain\'t no nice guy after all
-I ain\'t no nice guy after all
+I ain't no nice guy after all
+I ain't no nice guy after all
 In all the years you spend between your birth and death
-You find there\'s lots of times you should have saved your breath
-It comes as quite a shock when that trip leads to fall`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`Intro
+You find there's lots of times you should have saved your breath
+It comes as quite a shock when that trip leads to fall`
+            },
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `Intro
 A E D.
 VERSE 1
 A          E                D
@@ -209,21 +254,21 @@ But in the lonely hours when the truth begins to surprise
 A                   E            D
 I thought about the times when I turned my back and sulked
 A           G             D
-I ain\'t no nice guy after all
+I ain't no nice guy after all
 A         G         A
-I ain\'t no nice guy after all
+I ain't no nice guy after all
 VERSE 3
 BRIDGE
 F#                            B
 In all the years you spend between your birth and death
 F#                                           B
-You know there\'s lots of times when you should have saved your breath
+You know there's lots of times when you should have saved your breath
 E                                    A
 It comes as quite a shock when that trip leads to a fall
 A            G             D
-I ain\'t no nice guy after all
+I ain't no nice guy after all
 A           G             A
-I ain\'t no nice guy after all
+I ain't no nice guy after all
 SOLO
 F# B F# B E A E D A G D
 Go back up to verse 1 then 
@@ -234,49 +279,52 @@ But in the lonely hours when the moons the only light
 A                   E            D
 I thought about the times when I turned my back and stalled
 A            G             D
-I ain\'t no nice guy after all
+I ain't no nice guy after all
 A           G             A
-I ain\'t no nice guy after all
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Bob Dylan', 'A Hard Rain\'s A Gonna Fall')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.undefined),
-			duration: 7 * 60 + 50,
-			content: 
+I ain't no nice guy after all
 `
+            }
+        ]
+    },
+    {
+        artist: 'Bob Dylan',
+        name: 'A Hard Rain\'s A Gonna Fall',
+        versions: [
+            {
+                name: 'Lyrics',
+                autoScroll: {
+                    duration: 6 * 60 + 50
+                },
+                content: `
 Oh, where have you been, my blue-eyed son?
 Oh, where have you been, my darling young one?
-I\'ve stumbled on the side of twelve misty mountains
-I\'ve walked and I\'ve crawled on six crooked highways
-I\'ve stepped in the middle of seven sad forests
-I\'ve been out in front of a dozen dead oceans
-I\'ve been ten thousand miles in the mouth of a graveyard
-And it\'s a hard, and it\'s a hard, it\'s a hard, and it\'s a hard
-And it\'s a hard rain\'s a-gonna fall
+I've stumbled on the side of twelve misty mountains
+I've walked and I've crawled on six crooked highways
+I've stepped in the middle of seven sad forests
+I've been out in front of a dozen dead oceans
+I've been ten thousand miles in the mouth of a graveyard
+And it's a hard, and it's a hard, it's a hard, and it's a hard
+And it's a hard rain's a-gonna fall
 Oh, what did you see, my blue-eyed son?
 Oh, what did you see, my darling young one?
 I saw a newborn baby with wild wolves all around it
 I saw a highway of diamonds with nobody on it
-I saw a black branch with blood that kept drippin\'
-I saw a room full of men with their hammers a-bleedin\'
+I saw a black branch with blood that kept drippin'
+I saw a room full of men with their hammers a-bleedin'
 I saw a white ladder all covered with water
 I saw ten thousand talkers whose tongues were all broken
 I saw guns and sharp swords in the hands of young children
-And it\'s a hard, and it\'s a hard, it\'s a hard, it\'s a hard
-And it\'s a hard rain\'s a-gonna fall
+And it's a hard, and it's a hard, it's a hard, it's a hard
+And it's a hard rain's a-gonna fall
 And what did you hear, my blue-eyed son?
 And what did you hear, my darling young one?
-I heard the sound of a thunder, it roared out a warnin\'
+I heard the sound of a thunder, it roared out a warnin'
 Heard the roar of a wave that could drown the whole world
-Heard one person starve, I heard many people laughin\'
+Heard one person starve, I heard many people laughin'
 Heard the song of a poet who died in the gutter
 Heard the sound of a clown who cried in the alley
-And it\'s a hard, and it\'s a hard, it\'s a hard, it\'s a hard
-And it\'s a hard rain\'s a-gonna fall
+And it's a hard, and it's a hard, it's a hard, it's a hard
+And it's a hard rain's a-gonna fall
 Oh, who did you meet, my blue-eyed son?
 Who did you meet, my darling young one?
 I met a young child beside a dead pony
@@ -285,31 +333,33 @@ I met a young woman whose body was burning
 I met a young girl, she gave me a rainbow
 I met one man who was wounded in love
 I met another man who was wounded with hatred
-And it\'s a hard, it\'s a hard, it\'s a hard, it\'s a hard
-It\'s a hard rain\'s a-gonna fall
-Oh, what\'ll you do now, my blue-eyed son?
-Oh, what\'ll you do now, my darling young one?
-I\'m a-goin\' back out \'fore the rain starts a-fallin\'
-I\'ll walk to the depths of the deepest black forest
+And it's a hard, it's a hard, it's a hard, it's a hard
+It's a hard rain's a-gonna fall
+Oh, what'll you do now, my blue-eyed son?
+Oh, what'll you do now, my darling young one?
+I'm a-goin' back out 'fore the rain starts a-fallin'
+I'll walk to the depths of the deepest black forest
 Where the people are many and their hands are all empty
 Where the pellets of poison are flooding their waters
 Where the home in the valley meets the damp dirty prison
-Where the executioner\'s face is always well-hidden
+Where the executioner's face is always well-hidden
 Where hunger is ugly, where souls are forgotten
 Where black is the color, where none is the number
-And I\'ll tell it and think it and speak it and breathe it
+And I'll tell it and think it and speak it and breathe it
 And reflect it from the mountain so all souls can see it
-Then I\'ll stand on the ocean until I start sinkin\'
-But I\'ll know my song well before I start singin\'
-And it\'s a hard, it\'s a hard, it\'s a hard, it\'s a hard
-It\'s a hard rain\'s a-gonna fall`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			duration: 7 * 60 + 50,
-			content: 
-`[Intro]
+Then I'll stand on the ocean until I start sinkin'
+But I'll know my song well before I start singin'
+And it's a hard, it's a hard, it's a hard, it's a hard
+It's a hard rain's a-gonna fall`
+            },
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                autoScroll: {
+                    duration: 6 * 60 + 50
+                },
+                content: `[Intro]
 | D | % | G/D | D |
 | D | % | % |
 [Verse] 1
@@ -438,56 +488,59 @@ But I’ll know my song well before I start singin’
    D            A            D                G
 And it’s a hard, it’s a hard, it’s a hard, and it’s a hard
    D        A             [ D ]
-It’s a hard rai---n’s a-gonna fall`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Bob Dylan', 'Mr. Tambourine Man')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.undefined),
-			duration: 5 * 60 + 0,
-			content: 
-`Hey, Mr Tambourine Man, play a song for me
-I\'m not sleepy and there is no place I\'m going to
+It’s a hard rai---n’s a-gonna fall`
+            }
+        ]
+    },
+    {
+        artist: 'Bob Dylan',
+        name: 'Mr. Tambourine Man',
+        versions: [
+            {
+                name: 'Lyrics',
+                autoScroll: {
+                    duration: 5 * 60 + 0
+                },
+                content: `Hey, Mr Tambourine Man, play a song for me
+I'm not sleepy and there is no place I'm going to
 Hey, Mr Tambourine Man, play a song for me
-In the jingle jangle morning, I\'ll come following you
-Though I know that evening\'s empire
+In the jingle jangle morning, I'll come following you
+Though I know that evening's empire
 Has returned into sand
 Vanished from my hand
 Left me blindly here to stand but still not sleeping
 My weariness amazes me
-I\'m branded on my feet
+I'm branded on my feet
 I have no one to meet
-And the ancient empty street\'s too dead for dreaming
+And the ancient empty street's too dead for dreaming
 Hey, Mr Tambourine Man, play a song for me
-I\'m not sleepy and there is no place I\'m going to
+I'm not sleepy and there is no place I'm going to
 Hey, Mr Tambourine Man, play a song for me
-In the jingle jangle morning, I\'ll come following you
+In the jingle jangle morning, I'll come following you
 Take me on a trip upon your magic swirling ship
-My senses have been stripped, my hands can\'t feel to grip
+My senses have been stripped, my hands can't feel to grip
 My toes too numb to step, wait only for my boot heels
 To be wandering
-I\'m ready to go anywhere, I\'m ready for to fade
+I'm ready to go anywhere, I'm ready for to fade
 Into my own parade
 Cast your dancing spell my way
 I promise to go under it
 Hey, Mr Tambourine Man, play a song for me
-I\'m not sleepy and there is no place I\'m going to
+I'm not sleepy and there is no place I'm going to
 Hey, Mr Tambourine Man, play a song for me
-In the jingle jangle morning, I\'ll come following you
+In the jingle jangle morning, I'll come following you
 Though you might hear laughing, spinning
 Swinging madly across the sun
-It\'s not aimed at anyone, it\'s just escaping on the run
+It's not aimed at anyone, it's just escaping on the run
 And but for the sky, there are no fences facing
 And if you hear vague traces of skipping reels of rhyme
-To your tambourine in time, it\'s just a ragged clown behind
-I wouldn\'t pay it any mind, it\'s just a shadow
-You\'re seeing that he\'s chasing
+To your tambourine in time, it's just a ragged clown behind
+I wouldn't pay it any mind, it's just a shadow
+You're seeing that he's chasing
 Hey, Mr Tambourine Man, play a song for me
-I\'m not sleepy and there is no place I\'m going to
+I'm not sleepy and there is no place I'm going to
 Hey, Mr Tambourine Man, play a song for me
-In the jingle jangle morning, I\'ll come following you
+In the jingle jangle morning, I'll come following you
 Then take me disappearing through the smoke rings of my mind
 Down the foggy ruins of time, far past the frozen leaves
 The haunted, frightened trees, out to the windy beach
@@ -497,26 +550,28 @@ Silhouetted by the sea, circled by the circus sands
 With all memory and fate driven deep beneath the waves
 Let me forget about today until tomorrow
 Hey, Mr Tambourine Man, play a song for me
-I\'m not sleepy and there is no place I\'m going to
+I'm not sleepy and there is no place I'm going to
 Hey, Mr Tambourine Man, play a song for me
-In the jingle jangle morning, I\'ll come following you`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo3),
-			duration: 6 * 60 + 50,
-			content: 
-`[Intro]
+In the jingle jangle morning, I'll come following you`
+            },
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo3,
+                autoScroll: {
+                    duration: 5 * 60 + 50
+                },
+                content: `[Intro]
 D D  Dsus2 Dsus2 D 
 [Chorus]
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
-I\'m not sleepy and there is no place I\'m going to.
+I'm not sleepy and there is no place I'm going to.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
-In the jingle jangle morning I\'ll come following you.  
+In the jingle jangle morning I'll come following you.  
 [Verse]
 G                           A          D             G
 Though I know that evenings empire has returned into sand,
@@ -525,31 +580,31 @@ Vanished from my hand,
 D               G                   A
 Left me blindly here to stand but still not sleeping.
 G          A             D             G
-My weariness amazes me, I\'m branded on my feet,
+My weariness amazes me, I'm branded on my feet,
 D              G
 I have no one to meet
 D             G                     A
-And the ancient empty street\'s too dead for dreaming.
+And the ancient empty street's too dead for dreaming.
 [Chorus]
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
-I\'m not sleepy and there is no place I\'m going to.
+I'm not sleepy and there is no place I'm going to.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
-In the jingle jangle morning I\'ll come following you.
+In the jingle jangle morning I'll come following you.
 [Verse]
 G            A              D              G
 Take me on a trip upon your magic swirling ship,
 D                G            D                   G
-My senses have been stripped, my hands can\'t feel to grip,
+My senses have been stripped, my hands can't feel to grip,
 D                G          D           G
 My toes too numb to step, wait only for my boot heels
 A
 To be wandering.
 G           A             D            G
-I\'m ready to go anywhere, I\'m ready for to fade
+I'm ready to go anywhere, I'm ready for to fade
 D           G               D                G
 Into my own parade, cast your dancing spell my way,
         A
@@ -558,35 +613,35 @@ I promise to go under it.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
-I\'m not sleepy and there is no place I\'m going to.
+I'm not sleepy and there is no place I'm going to.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
-In the jingle jangle morning I\'ll come following you.
+In the jingle jangle morning I'll come following you.
 [Verse]
 G                               A                  D                G
 Though you might hear laughing, spinning, swinging madly across the sun,
  D           G                D             G
-It\'s not aimed at anyone, it\'s just escaping on the run
+It's not aimed at anyone, it's just escaping on the run
 D                 G             A
 And but for the sky there are no fences facing.
 G                 A         D                 G
 And if you hear vague traces of skipping reels of rhyme
 D             G                 D              G
-To your tambourine in time, it\'s just a ragged clown behind,
+To your tambourine in time, it's just a ragged clown behind,
    D          G                 D
-I wouldn\'t pay it any mind, it\'s just a shadow you\'re
+I wouldn't pay it any mind, it's just a shadow you're
 G                A
-Seeing that he\'s chasing.
+Seeing that he's chasing.
 [Chorus]
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
-I\'m not sleepy and there is no place I\'m going to.
+I'm not sleepy and there is no place I'm going to.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
-In the jingle jangle morning I\'ll come following you.
+In the jingle jangle morning I'll come following you.
 [Bridge]
 G            A                   D                 G
 Then take me disappearing through the smoke rings of my mind,
@@ -608,21 +663,26 @@ Let me forget about today until tomorrow.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
-I\'m not sleepy and there is no place I\'m going to.
+I'm not sleepy and there is no place I'm going to.
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
-In the jingle jangle morning I\'ll come following you.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Bob Dylan', 'Knock Knock Knockin\' On Heavens Door')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 3 * 60 + 10,
-			content: 
-`[Intro]
+In the jingle jangle morning I'll come following you.`
+            }
+        ]
+    },
+    {
+        artist: 'Bob Dylan',
+        name: 'Knock Knock Knockin\' On Heavens Door',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 3 * 60 + 10
+                },
+                content: `[Intro]
 G D Am
 G D C
 
@@ -630,109 +690,114 @@ G D C
 G              D            Am
 Mama take this badge off of me
 G       D          C
-I can\'t use it any-more
+I can't use it any-more
 G            D                        Am
-It\'s getting dark, too dark to see
+It's getting dark, too dark to see
 G          D                   C   
-I feel I\'m knockin on heaven\'s door
+I feel I'm knockin on heaven's door
 
 [Chorus]
 G             D                    Am
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 G             D                    C   
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 G             D                    Am
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 G             D                    C   
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 [Verse] 
 G           D           Am
 Mama put my guns in the ground
 G       D              C
-I can\'t shoot them any-more
+I can't shoot them any-more
 G               D               Am
-That long black cloud is comin\' down
+That long black cloud is comin' down
 G          D                    C   
-I feel I\'m knockin\' on heaven\'s door
+I feel I'm knockin' on heaven's door
 
 [Chorus]
 G             D                    Am
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 G             D                    C   
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 G             D                    Am
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 G             D                    C   
-Knock, knock, knockin\' on heaven\'s door
+Knock, knock, knockin' on heaven's door
 
 [Outro] 
 G    D    Am          
 Oo - oo - oo - oo
 [End]
-G `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Bob Dylan', 'The Times They Are A Changin\'')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 4 * 60 + 30,
-			content: 
-`D7  030232
+G `
+            }
+        ]
+    },
+    {
+        artist: 'Bob Dylan',
+        name: 'The Times They Are A Changin\'',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 3 * 60 + 30
+                },
+                content: `D7  030232
 D6  020032
 [Verse 1]
 G             Em         C        G
-Come gather \'round people wherever you roam
+Come gather 'round people wherever you roam
 G            Am      C              D
 And admit that the waters around you have grown
 G            Em             C               G
-And accept it that soon you\'ll be drenched to the bone
+And accept it that soon you'll be drenched to the bone
 G       Am           D
-If your time to you is worth savin\'
+If your time to you is worth savin'
  D            D7                 D6          D
-Then you better start swimmin\' or you\'ll sink like a stone,
+Then you better start swimmin' or you'll sink like a stone,
 G           C     D   G
-For the times, they are a-changin\'
+For the times, they are a-changin'
 [Verse 2]
 G           Em                C              G
 Come writers and critics who prophesize with your pen
 G              Am              C           D
-And keep your eyes wide the chance won\'t come again
+And keep your eyes wide the chance won't come again
 G               Em           C                G
-And don\'t speak too soon for the wheel\'s still in spin
+And don't speak too soon for the wheel's still in spin
     G          Am            D
-And there\'s no tellin\' who that it\'s namin\'
+And there's no tellin' who that it's namin'
  D       D7       D6       D
 For the loser now will be later to win
 G          C     D   G
-For the times they are a-changin\'
+For the times they are a-changin'
 [Verse 3]
 G         Em          C               G
 Come senators, congressmen please heed the call
 G            Am             C            D
-Don\'t stand in the doorway, don\'t block up the hall
+Don't stand in the doorway, don't block up the hall
 G            Em           C          G
 For he that gets hurt will be he who has stalled
   G         Am            D
-There\'s a battle outside and it\'s ragin\'
+There's a battle outside and it's ragin'
  D             D7         D6          D
-It\'ll soon shake your windows and rattle your walls
+It'll soon shake your windows and rattle your walls
 G          C     D   G
-For the times they are a-changin\'
+For the times they are a-changin'
 [Verse 4]
 G           Em      C              G
 Come mothers and fathers throughout the land
 G          Am            C          D
-And don\'t criticize what you can\'t understand
+And don't criticize what you can't understand
 G             Em              C            G
 Your sons and your daughters are beyond your command
 G           Am      D
-Your old road is rapidly agin\'
+Your old road is rapidly agin'
  D             D7            D6           D
-Please get out of the new one if you can\'t lend a hand
+Please get out of the new one if you can't lend a hand
 G          C     D   G
-For the times they are a-changin\'
+For the times they are a-changin'
 [Verse 5]
 G          Em        C           G
 The line it is drawn the curse it is cast
@@ -741,20 +806,23 @@ The slow one now will later be fast
 G       Em       C        G
 As the present now will later be past
 G        Am      D
-The order is rapidly fadin\'
+The order is rapidly fadin'
  D         D7      D6       D
 And the first one now will later be last
 G          C     D   G
-For the times they are a-changin\'`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Men At Work', 'Down Under')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+For the times they are a-changin'`
+            }
+        ]
+    },
+    {
+        artist: 'Men At Work',
+        name: 'Down Under',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 | Bm | A | Bm | G A |   (x2)
 [Verse 1]
 Bm                 A               Bm   G A
@@ -771,7 +839,7 @@ Do you come from a land down under
 D             A                 Bm    G A 
 Where women glow, and men plunder?
 D                           A                 Bm   G A
-Can\'t you hear, can\'t you hear the thunder?
+Can't you hear, can't you hear the thunder?
 D               A             Bm   G A
 You better run, you better take cover
 | Bm | A | Bm | G A |   (x2)
@@ -790,7 +858,7 @@ I come from a land down under
 D                 A                Bm    G A
 Where beer does flow and men chunder
 D                           A                 Bm   G A
-Can\'t you hear, can\'t you hear the thunder?
+Can't you hear, can't you hear the thunder?
 D               A             Bm    G A
 You better run, you better take cover
 | Bm | A | Bm | G A |   (x4)
@@ -810,19 +878,24 @@ Do you come from a land down under
 D             A                 Bm     G A
 Where women glow, and men plunder?
 D                           A                Bm   G A
-Can\'t you hear, can\'t you hear the thunder?
+Can't you hear, can't you hear the thunder?
 D               A             Bm    G A
-You better run, you better take cover`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('David Bowie', 'The Man Who Sold The World')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 4 * 60 + 0,
-			content: 
-`[Intro]
+You better run, you better take cover`
+            }
+        ]
+    },
+    {
+        artist: 'David Bowie',
+        name: 'The Man Who Sold The World',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 4 * 60 + 0
+                },
+                content: `[Intro]
 | A7 | % | Dm | % | F | % | 
 | Dm -
 [Verse 1]
@@ -831,7 +904,7 @@ We passed upon the stair
                 Dm
 We spoke of was and when
           A7
-Although I wasn\'t there
+Although I wasn't there
                 F
 He said I was his friend
               C
@@ -848,7 +921,7 @@ Oh no, not me
 Bbm            F
 I never lost control
 C       F
-You\'re face to face
+You're face to face
  Bbm              A
 With the man who sold the world
 [Break]
@@ -877,7 +950,7 @@ Who knows, Not me
 Bbm            F
 We never lost control
 C       F
-You\'re face to face
+You're face to face
  Bbm              A
 With the man who sold the world
 [Break]
@@ -889,7 +962,7 @@ Who knows, Not me
 Bbm            F
 We never lost control
 C       F
-You\'re face to face
+You're face to face
  Bbm              A
 With the man who sold the world
 [Outro]
@@ -898,17 +971,22 @@ With the man who sold the world
 | A7 |  Dm | F |  Dm |
 | A7 |  Dm | F |  Dm |
 | A7 |  Dm | F |  Dm |
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('David Bowie', 'Space Oddity')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 5 * 60 + 10,
-			content: 
-`[Intro]    
+`
+            }
+        ]
+    },
+    {
+        artist: 'David Bowie',
+        name: 'Space Oddity',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 5 * 60 + 10
+                },
+                content: `[Intro]    
 Fmaj7  Em  Fmaj7  Em
 Fmaj7  Em  Fmaj7  Em
 [Pre-Verse]
@@ -923,22 +1001,22 @@ Ground control to Major Tom
 C                              Em       
 Commencing countdown engines on
 Am        Am/G           D/F# 
-Check ignition and may God\'s love be with you
+Check ignition and may God's love be with you
 [Verse 1]
 C                                E
 This is ground control to Major Tom      
                  F
-You\'ve really made the grade
+You've really made the grade
 Fm              C                    F
 And the papers want to know whose shirt you wear     
  Fm                 C              F
-Now it\'s time to leave the capsule if you dare
+Now it's time to leave the capsule if you dare
 C                              E
 This is Major Tom to ground control      
                   F
-I\'m stepping through the door
+I'm stepping through the door
  Fm            C             F
-And I\'m floating in a most peculiar way
+And I'm floating in a most peculiar way
  Fm              C           F
 And the stars look very different today
 [Chorus]
@@ -947,23 +1025,23 @@ For here am I sitting in a tin can
 Fmaj7         Em
 Far above the world
 Bb              Am               G             F
-Planet Earth is blue and there\'s nothing I can do   
+Planet Earth is blue and there's nothing I can do   
 [Instrumental]
 C F G A A         
 C F G A A 
 Fmaj7 Em  A  C  D  E
 [Verse 2]
 C                                      E 
-Though I\'m past one hundred thousand miles    
+Though I'm past one hundred thousand miles    
            F
-I\'m feeling very still
+I'm feeling very still
 Fm                 C                  F
 And I think my spaceship knows which way to go
  Fm              C             F
 Tell my wife I love her very much she knows
 [Bridge]
 G                 E7              Am                      C/G
-Ground control to Major Tom, your circuit\'s dead, there\'s something wrong
+Ground control to Major Tom, your circuit's dead, there's something wrong
 D/F#
 Can you hear me Major Tom?  
 C 
@@ -972,38 +1050,43 @@ G
 Can you hear me Major Tom? Can you...
 [Chorus]
 Fmaj7     Em                    
-Here am I floating \'round my tin can   
+Here am I floating 'round my tin can   
 Fmaj7         Em
 Far above the Moon
 Bb              Am               G             F
-Planet Earth is blue and there\'s nothing I can do   
+Planet Earth is blue and there's nothing I can do   
 [Outro]
 C F G A A         
 C F G A A 
-Fmaj7 Em  A  C  D  E`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Creedence Clearwater Revival', 'Have You Ever Seen The Rain')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 3 * 60 + 50,
-			content: 
-`[Intro]
+Fmaj7 Em  A  C  D  E`
+            }
+        ]
+    },
+    {
+        artist: 'Creedence Clearwater Revival',
+        name: 'Have You Ever Seen The Rain',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 2 * 60 + 50
+                },
+                content: `[Intro]
 Am    F/C    C    G    C      
             
 [Verse]
 C
 Someone told me long ago
 C                                   G
-There\'s a calm before the storm, I know
+There's a calm before the storm, I know
              C  
-And it\'s been coming for some time
+And it's been coming for some time
 C
-When it\'s over, so they say
+When it's over, so they say
 C                          G
-It\'ll rain a sunny day, I know
+It'll rain a sunny day, I know
            C  
 Shining down like water
 [Chorus]
@@ -1025,11 +1108,11 @@ Sun is cold and rain is hard, I know
             C 
 Been that way for all my time
 C
-\'Til forever on it goes
+'Til forever on it goes
 C                                 G
 Thru the circle fast and slow, I know
                C 
-And it can\'t stop, I wonder
+And it can't stop, I wonder
 [Chorus]
 F         G
 I wanna know
@@ -1051,17 +1134,22 @@ I wanna know
  C    C/B      Am    Am/G
 Have you ever seen the rain
 F        G                C     G    C 
-Coming down on a sunny day `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Creedence Clearwater Revival', 'Bad Moon Rising')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 2 * 60 + 20,
-			content: 
-`[Intro]
+Coming down on a sunny day `
+            }
+        ]
+    },
+    {
+        artist: 'Creedence Clearwater Revival',
+        name: 'Bad Moon Rising',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 2 * 60 + 20
+                },
+                content: `[Intro]
 | D   | A G | D   | D   |
 [Verse 1]
 D       A   G    D
@@ -1074,11 +1162,11 @@ D     A   G       D
 I see bad times today
 [Chorus]
 G
-Don\'t go around tonight
+Don't go around tonight
    D
-Well, it\'s bound to take your life
+Well, it's bound to take your life
 A         G               D
-There\'s a bad moon on the rise
+There's a bad moon on the rise
 [Verse 2]
 D      A    G       D
 I hear hurricanes a blowing
@@ -1090,11 +1178,11 @@ D          A        G        D
 I hear the voice of rage and ruin
 [Chorus]
 G
-Don\'t go around tonight
+Don't go around tonight
    D
-Well, it\'s bound to take your life
+Well, it's bound to take your life
 A         G               D
-There\'s a bad moon on the rise
+There's a bad moon on the rise
 [Solo]
 | D   | A G | D   | D   |
 | D   | A G | D   | D   |
@@ -1106,31 +1194,34 @@ Hope you got your things together
 D            A     G           D
 Hope you are quite prepared to die
 D                A      G     D
-Looks like we\'re in for nasty weather
+Looks like we're in for nasty weather
 D          A     G      D
 One eye is taken for an eye
 [Chorus]
 G       
-Don\'t go around tonight
+Don't go around tonight
    D
-Well, it\'s bound to take your life
+Well, it's bound to take your life
 A         G               D
-There\'s a bad moon on the rise
+There's a bad moon on the rise
 G
-Don\'t go around tonight
+Don't go around tonight
    D
-Well, it\'s bound to take your life
+Well, it's bound to take your life
 A         G               D
-There\'s a bad moon on the rise`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('John Denver', 'Country Roads')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+There's a bad moon on the rise`
+            }
+        ]
+    },
+    {
+        artist: 'John Denver',
+        name: 'Country Roads',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 A    A    A    A
 [Verse 1]
 A       F#m
@@ -1140,7 +1231,7 @@ Blue Ridge Mountains, Shenandoah River.
 A                  F#m
 Life is old there, older than the trees,
 E                           D                A
-Younger than the mountains, blowin\' like a breeze
+Younger than the mountains, blowin' like a breeze
 [Chorus]
 A              E
 Country Roads, take me home
@@ -1152,9 +1243,9 @@ D             A
 Take me home, Country Roads.
 [Verse 2]
 A              F#m
-All my mem\'ries gather \'round her,
+All my mem'ries gather 'round her,
 E             D                A
-Miner\'s lady, stranger to blue water.
+Miner's lady, stranger to blue water.
 A               F#m
 Dark and dusty, painted on the sky,
 E                           D            A
@@ -1170,13 +1261,13 @@ D             A
 Take me home, Country Roads.
 [Riff]
 F#m        E             A
-I hear her voice, in the mornin\' hours she calls me,
+I hear her voice, in the mornin' hours she calls me,
 D       A              E
 The radio reminds me of my home far away,
 F#m              G
-And drivin\' down the road
+And drivin' down the road
 D              A                     E                E7
-I get a feelin\' that I should have been home yesterday, yesterday.
+I get a feelin' that I should have been home yesterday, yesterday.
 [Chorus]
 A              E
 Country Roads, take me home
@@ -1199,16 +1290,19 @@ E                  A
 Take me home, down Country Roads,
 E                  A
 Take me home, down Country Roads.
-E A`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Eagles', 'Hotel California')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			content: 
-`[Verse]
+E A`
+            }
+        ]
+    },
+    {
+        artist: 'Eagles',
+        name: 'Hotel California',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                content: `[Verse]
 Am                         E7
 On a dark desert highway, cool wind in my hair
 G                      D
@@ -1252,7 +1346,7 @@ Some dance to remember, some dance to forget
 Am                           E7
 So I called up the captain; Please bring me my wine (he said)
 G                                     D
-We haven\'t had that spirit here since 1969
+We haven't had that spirit here since 1969
 F                                         C
 and still those voices are calling from far away
 Dm
@@ -1265,7 +1359,7 @@ Welcome to the Hotel California.
 E7                                          Am
 Such a lovely place, (such a lovely place), such a lovely face
 F                             C
-They\'re livin\' it up at the Hotel California
+They're livin' it up at the Hotel California
 Dm                                               E
 What a nice surprise, (what a nice surprise) Bring your alibis
 [Verse]
@@ -1274,11 +1368,11 @@ Mirrors on the ceiling; the pink champagne on ice (and she said)
 G                                D
 We are all just prisoners here, of our own device
 F                              C
-and in the master\'s chambers, they gathered for the feast
+and in the master's chambers, they gathered for the feast
 Dm
 They stab it with their steely knives but they
 E
-just can\'t kill the beast
+just can't kill the beast
 Am                             E7
 Last thing I remember, I was running for the door
 G                                       D
@@ -1289,33 +1383,36 @@ Dm
 You can check out any time you like
 E
 But you can never leave...
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Kenny Rogers', 'The Gambler')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`    E                            A/E             E
-On a warm summer\'s evenin\' on a train bound for nowhere,
+`
+            }
+        ]
+    },
+    {
+        artist: 'Kenny Rogers',
+        name: 'The Gambler',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `    E                            A/E             E
+On a warm summer's evenin' on a train bound for nowhere,
 E                                                    B7
 I met up with the gambler; we were both too tired to sleep.
 E                                A/E           E
-So we took turns a starin\' out the window at the darkness
+So we took turns a starin' out the window at the darkness
                   B7              E
-\'til boredom overtook us, and he began to speak.
+'til boredom overtook us, and he began to speak.
 [Verse 2]
 (Bass in)
  E                             A/E              E
-He said, "Son, I\'ve made a life out of readin\' people\'s faces,
+He said, "Son, I've made a life out of readin' people's faces,
                                                      B7
-and knowin\' what their cards were by the way they held their eyes.
+and knowin' what their cards were by the way they held their eyes.
 E                               A/E               E
-And if you don\'t mind my sayin\', I can see you\'re out of aces.
+And if you don't mind my sayin', I can see you're out of aces.
 A/E           E            B7            E
-For a taste of your whiskey I\'ll give you some advice."
+For a taste of your whiskey I'll give you some advice."
 Verse 3: (strumming starts)
 E                           A                  E
 So I handed him my bottle and he drank down my last swallow.
@@ -1324,29 +1421,29 @@ Then he bummed a cigarette and asked me for a light.
 E                                A                 E
 And the night got deathly quiet, and his face lost all expression.
          A               E                  B7               E
-Said, "If you\'re gonna play the game, boy, ya gotta learn to play it right.
+Said, "If you're gonna play the game, boy, ya gotta learn to play it right.
 [Chorus]
    E                     A             E
-You got to know when to hold \'em, know when to fold \'em,
+You got to know when to hold 'em, know when to fold 'em,
 A            E                          B7
 know when to walk away and know when to run.
   E     A    E                 A              E
-You never count your money when you\'re sittin\' at the table.
+You never count your money when you're sittin' at the table.
     E    A          E        B7                E
-There\'ll be time enough for countin\' when the dealin\'s done.
+There'll be time enough for countin' when the dealin's done.
 [Verse 4]
 (Key change)
 F                            Bb             F
-Ev\'ry gambler knows that the secret to survivin\'
+Ev'ry gambler knows that the secret to survivin'
                                           C
-is knowin\' what to throw away and knowing what to keep.
+is knowin' what to throw away and knowing what to keep.
 F                         Bb              F
-\'Cause ev\'ry hand\'s a winner and ev\'ry hand\'s a loser,
+'Cause ev'ry hand's a winner and ev'ry hand's a loser,
 Bb                 F              C           F
 and the best that you can hope for is to die in your sleep."
 [Verse 5]
 F                               Bb                       F
-And when he\'d finished speakin\', he turned back towards the window,
+And when he'd finished speakin', he turned back towards the window,
                                    C7
 crushed out his cigarette and faded off to sleep.
 F                             Bb                 F
@@ -1355,35 +1452,38 @@ Bb            F                C7               F
 But in his final words I found an ace that I could keep.
 [Chorus]
    F                     Bb             F
-You got to know when to hold \'em, know when to fold \'em,
+You got to know when to hold 'em, know when to fold 'em,
 Bb            F                          C7
 know when to walk away and know when to run.
   F     Bb   F                 Bb              F
-You never count your money when you\'re sittin\' at the table.
+You never count your money when you're sittin' at the table.
      F    Bb          F        C7                F
-There\'ll be time enough for countin\' when the dealin\'s done.
+There'll be time enough for countin' when the dealin's done.
 N.C.
-You got to know when to hold \'em, know when to fold \'em,
+You got to know when to hold 'em, know when to fold 'em,
 know when to walk away and know when to run.
-You never count your money when you\'re sittin\' at the table.
-There\'ll be time enough for countin\' when the dealin\'s done.
+You never count your money when you're sittin' at the table.
+There'll be time enough for countin' when the dealin's done.
    F                     Bb             F
-You got to know when to hold \'em, know when to fold \'em,
+You got to know when to hold 'em, know when to fold 'em,
 Bb            F                          C7
 know when to walk away and know when to run.
   F     Bb   F                 Bb              F
-You never count your money when you\'re sittin\' at the table.
+You never count your money when you're sittin' at the table.
      F    Bb          F        C7                F
-There\'ll be time enough for countin\' when the dealin\'s done.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Neil Young', 'Heart Of Gold')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+There'll be time enough for countin' when the dealin's done.`
+            }
+        ]
+    },
+    {
+        artist: 'Neil Young',
+        name: 'Heart Of Gold',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
   Em7 Em7 Em7 Em7 Em7 Em7 D       D   Em7
 e|--------0---0---0---0---0---0-|-2-------2---0-----------------|
 B|--------3---3---3---3---3---3-|-3-------3---3-----------------|
@@ -1407,17 +1507,17 @@ E|-----0--0---0---0---0---0---0-|-------------0-----------------|
 Em          C     D            G
 I want to live,    I want to give
 Em            C           D        G
-I\'ve been a miner for a heart of gold
+I've been a miner for a heart of gold
 Em           C          D        G
-It\'s these expressions I never give
+It's these expressions I never give
 Em                             G           
 That keep me searching for a heart of gold
 C                       G
-And I\'m getting old
+And I'm getting old
 Em                        G        
 Keep me searching for a heart of gold
 C                       G
-And I\'m getting old
+And I'm getting old
 [Riff]
 e|-----------3------------------|
 B|-----------0------------------|
@@ -1432,19 +1532,19 @@ Em C D G
 Em D Em
 [Verse 2]
 Em             C          D              G
-I\'ve been to Hollywood,   I\'ve been to Redwood
+I've been to Hollywood,   I've been to Redwood
 Em                 C           D        G
-I\'ve crossed the ocean for a heart of gold
+I've crossed the ocean for a heart of gold
 Em             C        D             G
-I\'ve been in my mind,   it\'s such a fine line
+I've been in my mind,   it's such a fine line
 Em                              G        
 That keeps me searching for a heart of gold
 C                      G
-And I\'m getting old
+And I'm getting old
 Em                              G               
 That keeps me searching for a heart of gold
 C                      G
-And I\'m getting old
+And I'm getting old
 [Harmonica solo]
 Em C D G 
 Em C D G
@@ -1453,20 +1553,23 @@ Em C D G
 Em                        D        Em
 Keep me searching for a heart of gold
 Em                              D       Em
-You keep me searching and I\'m growin\' old
+You keep me searching and I'm growin' old
 Em                        D        Em
 Keep me searching for a heart of gold
 Em                        G                  C       G
-I\'ve been a miner for a heart of gold      ahhhhhh`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Willie Nelson', 'Highwayman')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+I've been a miner for a heart of gold      ahhhhhh`
+            }
+        ]
+    },
+    {
+        artist: 'Willie Nelson',
+        name: 'Highwayman',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Bm 
 [Verse 1] 
 (Willie Nelson)
@@ -1513,16 +1616,16 @@ But I am still around
 [Bridge]
 (All)
          D           D/C#        Bm          A           G      D/F#
-I\'ll always be around, and around, and around, and around, and around...
+I'll always be around, and around, and around, and around, and around...
 Em G A D
 [Verse 4]
 (Johnny Cash)
 Bm           A                 G          Bm 
-I\'ll fly a starship across the universe divide
+I'll fly a starship across the universe divide
 A           G        D      A
 And when I reach the other side
 Em           Bm                A          G
-I\'ll find a place to rest my spirit if I can
+I'll find a place to rest my spirit if I can
 Em         Bm           A           G
 Perhaps I may become a highwayman again
 Bm        A           G       A      D
@@ -1532,17 +1635,20 @@ But I will remain
 [Outro]
 (All)
            D         D/C#        Bm         A          G     D/F#
-And I\'ll be back again, and again, and again, and again, and again...
-Em G A D `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Lynyrd Skynyrd', 'Simple Man')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Verse 1]
+And I'll be back again, and again, and again, and again, and again...
+Em G A D `
+            }
+        ]
+    },
+    {
+        artist: 'Lynyrd Skynyrd',
+        name: 'Simple Man',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Verse 1]
 C            G            Am
 Well, Mama told me,  when I was young.
 C                 G         Am
@@ -1550,17 +1656,17 @@ Come sit down beside me,  my only son.
 C            G           Am
 And listen closely,   to what I say.
 C                 G             Am
-And if you do this, it\'ll help you, some sunny day.
+And if you do this, it'll help you, some sunny day.
 Oh yeah!
 [Verse 2]
       C    G            Am
-Oh, take your time,  don\'t live too fast.
+Oh, take your time,  don't live too fast.
       C    G              Am
 Troubles will come,  and they will pass.
   C         G           Am
-Go find a woman, and you\'ll find love.
+Go find a woman, and you'll find love.
      C                 G          Am
-And don\'t forget son, there is someone up above.
+And don't forget son, there is someone up above.
 [Chorus]
  C     G        Am
 And be a simple  kind of man.
@@ -1569,10 +1675,10 @@ Oh, be something,  you love and understand.
    C     G        Am
 Baby, be a simple  kind of man.
       C              G            Am
-Oh, won\'t you do this for me son, if you can?
+Oh, won't you do this for me son, if you can?
 [Verse 3]
 C          G                Am
-Forget your lust,  for rich man\'s gold,
+Forget your lust,  for rich man's gold,
 C            G             Am
 All that you need,  is in your soul.
 C               G               Am
@@ -1587,11 +1693,11 @@ Oh, be something,  you love and understand.
    C     G        Am
 Baby, be a simple  kind of man.
       C              G            Am
-Oh, won\'t you do this for me son, if you can?
+Oh, won't you do this for me son, if you can?
 Oh yes, I will.
 [Verse 4]
   C           G                 Am
-Boy, don\'t you worry,  you\'ll find yourself.
+Boy, don't you worry,  you'll find yourself.
 C           G             Am
 Follow your heart,  and nothing else.
 C               G           Am
@@ -1606,23 +1712,26 @@ Oh, be something,  you love and understand.
    C     G        Am
 Baby, be a simple  kind of man.
       C              G            Am
-Oh, won\'t you do this for me son, if you can?
-Baby, be a simple, be a simple man`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Johnny Cash', 'Hurt')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Oh, won't you do this for me son, if you can?
+Baby, be a simple, be a simple man`
+            }
+        ]
+    },
+    {
+        artist: 'Johnny Cash',
+        name: 'Hurt',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Am    C  D  Am    C  D
 [Verse 1]
 Am   C       D     Am       C      D       Am
 I hurt myself today   to see if I still feel
 C    D        Am        C      D          Am
-I focus on the pain   the only thing that\'s real
+I focus on the pain   the only thing that's real
 C      D       Am         C      D       Am
 The needle tears a hole   the old familiar sting
 C      D      Am           C      D      G          
@@ -1640,7 +1749,7 @@ I will let you down    I will make you hurt
 (Am)   C  D  Am    C  D
 [Verse 2]
 Am   C         D        Am        C      D       Am
-I wear this crown of thorns   upon my liar\'s chair
+I wear this crown of thorns   upon my liar's chair
 C       D        Am       C     D    Am
 Full of broken thoughts   I cannot repair
 C          D        Am         C       D       Am
@@ -1660,16 +1769,19 @@ Am               F     G              G
 If I could start again  a million miles away
 Am              F    G
 I would keep myself  I would find a way
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Moody Blues', 'Melancholy Man')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[INTRO]
+`
+            }
+        ]
+    },
+    {
+        artist: 'The Moody Blues',
+        name: 'Melancholy Man',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[INTRO]
 (play 2x)Start w/3rd string 6th fret, while chords below are played:
 C# C# B B A G# 
 F# F# E E D# C# 
@@ -1678,11 +1790,11 @@ REPEAT
 [C#m] [F#m7] [G#]  [C#m]
 [C#m] [F#m7] [G#]  [C#m]
 [Chorus]
-N.C. I\'m a [C#m]melancholy man, [F#m7]that\'s what I am,
+N.C. I'm a [C#m]melancholy man, [F#m7]that's what I am,
 All [G#]the world surrounds me and my [C#m]feet, are on the ground.
-N.C.I\'m a [C#m]very lonely man, [F#m7]doing what I can,
+N.C.I'm a [C#m]very lonely man, [F#m7]doing what I can,
 [G#]All the world astounds me and I [C#m]think, I understand
-That we\'re [G#7]going, to keep growing, wait and [C#m]see.[C#m]
+That we're [G#7]going, to keep growing, wait and [C#m]see.[C#m]
 #
 [Verse 1]
 [C#m]When all the stars are falling down,
@@ -1691,17 +1803,17 @@ That we\'re [G#7]going, to keep growing, wait and [C#m]see.[C#m]
 #
 [Verse 2]
 [C#m]A beam of light will fill your head,
-[F#m7]And you\'ll remember what\'s been said
-[G#]By all the good men this world\'s ever [C#m]known.
+[F#m7]And you'll remember what's been said
+[G#]By all the good men this world's ever [C#m]known.
 #
 [Verse 3]
-[C#m]Another man is what you\'ll see,
+[C#m]Another man is what you'll see,
 [F#m7]Who looks like you, and looks like me,
 [G#]And yet somehow, he will not feel the [C#m]same.
 #
 [Verse 4]
-[C#m]His life caught up in misery, [F#m7]he doesn\'t think like you and me,
-[G#]\'Cause he can\'t see, what you and I can [C#m]see.
+[C#m]His life caught up in misery, [F#m7]he doesn't think like you and me,
+[G#]'Cause he can't see, what you and I can [C#m]see.
 #
 [Solo]
 C#m F#m7 G# C#m  repeat 4 times
@@ -1714,37 +1826,40 @@ REPEAT ALL  VERSES AND THEN CHORUS
 #
 [Verse 2]
 [C#m]A beam of light will fill your head,
-[F#m7]And you\'ll remember what\'s been said
-[G#]By all the good men this world\'s ever [C#m]known.
+[F#m7]And you'll remember what's been said
+[G#]By all the good men this world's ever [C#m]known.
 #
 [Verse 3]
-[C#m]Another man is what you\'ll see,
+[C#m]Another man is what you'll see,
 [F#m7]Who looks like you, and looks like me,
 [G#]And yet somehow, he will not feel the [C#m]same.
 #
 [Verse 4]
-[C#m]His life caught up in misery, [F#m7]he doesn\'t think like you and me,
-[G#]\'Cause he can\'t see what you and I can [C#m]see.
+[C#m]His life caught up in misery, [F#m7]he doesn't think like you and me,
+[G#]'Cause he can't see what you and I can [C#m]see.
 #
 [Chorus]
 (with verse 1 &amp; 2 sung underneath)
-N.C. I\'m a [C#m]melancholy man, [F#m7]that\'s what I am,
+N.C. I'm a [C#m]melancholy man, [F#m7]that's what I am,
 All [G#]the world surrounds me and my [C#m]feet, are on the ground.
-N.C.I\'m a [C#m]very lonely man, [F#m7]doing what I can,
+N.C.I'm a [C#m]very lonely man, [F#m7]doing what I can,
 [G#]All the world astounds me and I [C#m]think, I understand
-That we\'re [G#7]going, to keep growing, wait and [C#m]see.
+That we're [G#7]going, to keep growing, wait and [C#m]see.
 #
 (Repeat all verses with the chorus sung underneath.)
-END`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Gary Jules', 'Mad World')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo1),
-			content: 
-`[Intro]
+END`
+            }
+        ]
+    },
+    {
+        artist: 'Gary Jules',
+        name: 'Mad World',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo1,
+                content: `[Intro]
 Em A
 Em A
 [Verse 1]
@@ -1768,11 +1883,11 @@ No tomorrow, no tomorrow
 Em                     A                      Em
 And I find it kinda funny, I find it kinda sad
                 A                            Em
-The dreams in which I\'m dying are the best I\'ve ever had
+The dreams in which I'm dying are the best I've ever had
           A                           Em
 I find it hard to tell you, I find it hard to take
            A
-When people run in circles, it\'s a very, very
+When people run in circles, it's a very, very
 Em     A
 Mad world
 Em     A
@@ -1791,18 +1906,18 @@ Went to school, and I was very nervous
 D               A
 No one knew me, no one knew me
 Em                         G
-Hello, teacher, tell me what\'s my lesson
+Hello, teacher, tell me what's my lesson
 D                      A
 Look right through me, look right through me
 [Chorus]
 Em                     A                      Em
 And I find it kinda funny, I find it kinda sad
                 A                            Em
-The dreams in which I\'m dying are the best I\'ve ever had
+The dreams in which I'm dying are the best I've ever had
           A                           Em
 I find it hard to tell you, I find it hard to take
            A
-When people run in circles, it\'s a very, very
+When people run in circles, it's a very, very
 Em     A
 Mad world
 Em     A
@@ -1810,16 +1925,19 @@ Mad world
 Em              A
 Enlarge your world
 Em     A
-Mad world`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Animals', 'The House Of The Rising Sun')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Mad world`
+            }
+        ]
+    },
+    {
+        artist: 'The Animals',
+        name: 'The House Of The Rising Sun',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 | Am | C | D | F |
 | Am | E | Am | E |
 [Verse 1] 
@@ -1828,9 +1946,9 @@ There is a house in New Orleans,
 Am       C      E
 They call the "Rising Sun",
 Am       C       D           F
-It\'s been the ruin of many a poor boy,
+It's been the ruin of many a poor boy,
 Am     E         | Am | C | D | F | Am | E | Am | E | 
-And God, I know, I\'m one                (organ plays E7)
+And God, I know, I'm one                (organ plays E7)
 [Verse 2]
 Am     C     D        F
 My mother was a tailor (organ: F7) 
@@ -1846,9 +1964,9 @@ Now the only thing a gambler needs (organ: F7)
 Am       C     E
 Is a suitcase and a trunk (organ: E7) 
 Am   C     D         F
-And the only time, he\'s satisfied, 
+And the only time, he's satisfied, 
 Am        E    | Am | C | D | F | Am | E | Am | E | 
-Is when he\'s on a drunk              (organ plays E7)
+Is when he's on a drunk              (organ plays E7)
 [Solo]
 | Am | C | D | F |
 | Am | C | E | % |
@@ -1867,11 +1985,11 @@ Am       E     | Am | C | D | F | Am | E | Am | E |
 In the House of Rising Sun              (organ plays E7)
 [Verse 5]
         Am       C      D            F
-Well, I\'ve  got one foot on the platform (organ plays F7)
+Well, I've  got one foot on the platform (organ plays F7)
 Am         C      E
 The other foot on the train (organ: E7) 
 Am    C       D     F
-I\'m going back to New Orleans (organ: F7) 
+I'm going back to New Orleans (organ: F7) 
 Am        E         | Am | C | D | F | Am | E | Am | E | 
 To wear that ball and chain              (organ plays E7#9)
 [Verse 6]
@@ -1880,18 +1998,21 @@ Well, there is a house in New Orleans (organ: F7)
 Am        C      E
 They call the "Rising Sun"  (organ: E7) 
  Am       C       D           F
-And it\'s been the ruin of many a poor boy
+And it's been the ruin of many a poor boy
 Am     E7      | Am | C | D | F7 | Am | E7 |
-And God, I know, I\'m one`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Who', 'Behind Blue Eyes')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Chords]
+And God, I know, I'm one`
+            }
+        ]
+    },
+    {
+        artist: 'The Who',
+        name: 'Behind Blue Eyes',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Chords]
 Em  022000      Dsus4  x00233     Cadd9  x32030     E  022100
 G   320033      Asus2  002200     Bm     x24432     C  x32010
 D   x00232      A      002220     Bsus2  x24422
@@ -1899,7 +2020,7 @@ D   x00232      A      002220     Bsus2  x24422
 Em / G / D / Dsus / Cadd9 / Aadd9 /
 [Verse]
 Em                       G
-No one knows what it\'s like
+No one knows what it's like
     D  Dsus4
 to be the bad man
      Cadd9
@@ -1907,7 +2028,7 @@ to be the sad man
 Asus2 
 behind blue eyes
 Em                       G
-No one knows what it\'s like
+No one knows what it's like
     D  Dsus4
 to be hated
      Cadd9
@@ -1918,7 +2039,7 @@ to telling only lies
    C     D
 But my dreams
       G
-they aren\'t as empty
+they aren't as empty
 C         D         E
 as my conscience seems to be
   Bsus2          C
@@ -1929,7 +2050,7 @@ my love is vengeance
 thats never free
 [Verse]
 Em                       G
-No one knows what it\'s like
+No one knows what it's like
     D  Dsus4
 to feel these feelings
      Cadd9
@@ -1948,7 +2069,7 @@ can show through
    C     D
 But my dreams
       G
-they aren\'t as empty
+they aren't as empty
 C         D         E
 as my conscience seems to be
   Bsus2          C
@@ -1956,7 +2077,7 @@ I have hours, only lonely
         D
 my love is vengeance
        Asus2
-that\'s never free
+that's never free
 [Bridge]
 E   Bsus2   A
 E           Bsus2     A           E
@@ -1982,57 +2103,62 @@ Bsus2   Bsus2   A   D
 Bsus2
 [Verse]
 Em                       G
-No one knows what it\'s like
+No one knows what it's like
     D  Dsus4
 to be the bad man
      Cadd9
 to be the sad man
 Asus2
-behind blue eyes`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Donovan', 'Universal Soldier')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			duration: 3 * 60 + 30,
-			content: 
-`
+behind blue eyes`
+            }
+        ]
+    },
+    {
+        artist: 'Donovan',
+        name: 'Universal Soldier',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                autoScroll: {
+                    duration: 2 * 60 + 30
+                },
+                content: `
 [Verse 1]
 C           D             G        Em
-He is five feet two, and he\'s six feet four,
+He is five feet two, and he's six feet four,
 C          D                G     
 he fights with missiles and with spears. 
 C            D              G       Em
-He is all of thirty-one, and he\'s only seventeen.
+He is all of thirty-one, and he's only seventeen.
    C                    Am       D
-\'s been a soldier for thousand years.
+'s been a soldier for thousand years.
 [Verse 2]
 C           D         G         Em
-He\'s a Catholic, a Hindu, an atheist,a Chein, 
+He's a Catholic, a Hindu, an atheist,a Chein, 
 C               D             G
 a Buddhist and a Baptist and a Jew. 
 C                  D            G                Em
-And he knows,he shouldn\'t kill, and he knows he always will,
+And he knows,he shouldn't kill, and he knows he always will,
      C                    Am        D
 kill you for me my friend and and me for you.
 [Verse 3]
   C            D            G             Em
-And he\'s fighting for Canada, he\'s fighting for France.
+And he's fighting for Canada, he's fighting for France.
 C               D   G
-He\'s fighting for the U.S.A., 
+He's fighting for the U.S.A., 
  C                D                   G            Em
-and he\'s fighting for the Russians, and he\'s fighting for Japan,
+and he's fighting for the Russians, and he's fighting for Japan,
 C               Am               D
 and he thinks we put an end to war this way.
 [Verse 4]
  C               D            G                Em
-And he\'s fighting for democracy, he\'s fighting for the Reds.
+And he's fighting for democracy, he's fighting for the Reds.
 C                  D         G
-He says it\'s for the peace of all.
+He says it's for the peace of all.
  C               D             G                  Em 
-He\'s the one who must decide, who\'s to live and who\'s to die,
+He's the one who must decide, who's to live and who's to die,
 C             Am              D
 and he never sees the writing on the wall.
 [Verse 5]
@@ -2041,37 +2167,40 @@ But without him, how would Hitler have condemned him at Dachau,
 C           D                 G
 without him Caesar would have stood alone.
   C                D         G              Em
-He\'s the one who gives his body as a weapon of the war,
+He's the one who gives his body as a weapon of the war,
 C                Am                D        
-and without him all this killing can\'t go on. 
+and without him all this killing can't go on. 
 [Verse 6]   
   C             D            G            Em
-He\'s the universal soldier and he really is to blame,
+He's the universal soldier and he really is to blame,
 C              D            G
 his orders come from far away, no more.
          C                  D             
 They come from here and there, and you and me, 
 G                  Em
-and brothers, can\'t you see, 
+and brothers, can't you see, 
  C            Am               D
-this is not the way we put an end to war.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Townes Van Zandt', 'Our Mother The Mountain')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+this is not the way we put an end to war.`
+            }
+        ]
+    },
+    {
+        artist: 'Townes Van Zandt',
+        name: 'Our Mother The Mountain',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Dm
 [Verse 1]
 Dm
 My lover comes to me with a rose on her bosom
 F              C/E        Am                Dm
-The moon\'s dancin\' purple all through her black hair
+The moon's dancin' purple all through her black hair
 Dm
-And a lady\'s in waiting she\'ll stand \'neath my window
+And a lady's in waiting she'll stand 'neath my window
 F             C/E         Am            Dm
 And the sun will rise soon on the false and the fair
 C     Am         Dm
@@ -2091,11 +2220,11 @@ Sing a-too a-loor-a-lie-o
 Dm
 I watch her, I love her, I long for to touch her
 F           C/E        Am         Dm
-The satin she\'s wearin\' is shimmering blue
+The satin she's wearin' is shimmering blue
 Dm
 Outside my window her ladies are sleeping
 F            C/E          Am         Dm
-My dog\'s a-gone hunting, the howling is through
+My dog's a-gone hunting, the howling is through
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
 [Verse 4]
@@ -2104,7 +2233,7 @@ So I reach for her hand and her eyes turn to poison
 F             C/E               Am             Dm
 And her hair turns to splinters and her flesh turns to brine
 Dm
-She leaps \'cross the room, she stands in the window
+She leaps 'cross the room, she stands in the window
 F               C/E             Am        Dm
 And screams that my first-born will surely be blind
 C     Am         Dm
@@ -2113,7 +2242,7 @@ Sing a-too a-loor-a-lie-o
  Dm
 Then she throws herself out to the black of the nightfall
 F          C/E           Am          Dm
-She\'s parted her lips, but she makes not a sound
+She's parted her lips, but she makes not a sound
 Dm
 I fly down the stairway and I run to the garden
 F           C/E          Am          Dm
@@ -2122,9 +2251,9 @@ C     Am         Dm
 Sing a-too a-loor-a-lie-o
 [Verse 6]
 Dm
-So walk these hills lightly and watch who you\'re lovin\'
+So walk these hills lightly and watch who you're lovin'
 F          C/E         Am              Dm
-By mother the mountain, I swear that it\'s true
+By mother the mountain, I swear that it's true
 Dm
 And love not a woman with hair black as midnight
 F             C/E       Am         Dm
@@ -2135,28 +2264,31 @@ Sing a-too a-loor-a-lie-o
 Dm
 Oh my lover comes to me with a rose on her bosom
 F              C/E        Am                Dm
-The moon\'s dancing purple all through her black hair
+The moon's dancing purple all through her black hair
 Dm
-And a lady\'s in waiting, she\'ll stand \'neath my window
+And a lady's in waiting, she'll stand 'neath my window
 F             C/E         Am            Dm
-And the sun will rise soon on the false and the fair`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('System Of A Down', 'Lonely Day')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Verse 1]
+And the sun will rise soon on the false and the fair`
+            }
+        ]
+    },
+    {
+        artist: 'System Of A Down',
+        name: 'Lonely Day',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Verse 1]
 Am        F          C         E7
-Such a lonely day, and it\'s mine
+Such a lonely day, and it's mine
 Am          F                   C    E7
 The most loneliest day of my life
 Am        F          C          E7
 Such a lonely day, should be banned
 Am        F                C     E7
-It\'s a day that I can\'t stand
+It's a day that I can't stand
 [Chorus]
 Am          F                   C   E7
 The most loneliest day of my life
@@ -2164,11 +2296,11 @@ Am          F                   C   E7
 The most loneliest day of my life
 [Verse 2]
 Am        F          C           E7
-Such a lonely day, shouldn\'t exist
+Such a lonely day, shouldn't exist
 Am        F                   C   E7
-It\'s a day that I\'ll never miss
+It's a day that I'll never miss
 Am        F          C         E7
-Such a lonely day, and it\'s mine
+Such a lonely day, and it's mine
 Am          F                   C    E7
 The most loneliest day of my life 
 [Bridge]
@@ -2189,28 +2321,33 @@ Am          F                   C   E7
 The most loneliest day of my life
 [Outro]
 Am        F          C         E7
-Such a lonely day, and it\'s mine
+Such a lonely day, and it's mine
 Am        F                      C  E7
-It\'s a day that I\'m glad I survived`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Ben E. King', 'Stand By Me')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 3 * 60 + 0,
-			content: 
-`[Intro]
+It's a day that I'm glad I survived`
+            }
+        ]
+    },
+    {
+        artist: 'Ben E. King',
+        name: 'Stand By Me',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 3 * 60
+                },
+                content: `[Intro]
 [Verse 1]
          G               G             Em                            Em
 When the night        has come                         and the land is da-   rk
        C               D                G                            G
-And the mo-    on is the on-   ly light we\'ll   see                         
+And the mo-    on is the on-   ly light we'll   see                         
        G                G               Em              Em
-No I wo-       n\'t be af-       raid, no I      won\'t be af-    raid           
+No I wo-       n't be af-       raid, no I      won't be af-    raid           
        C                 D               G               G
-Just as        long as you st-   and, stand by   me       .      So darlin\', darlin\'
+Just as        long as you st-   and, stand by   me       .      So darlin', darlin'
 [Chorus 1]
 G             G             Em         Em                              
 stand by me,       oh now   stand by   me,      
@@ -2222,7 +2359,7 @@ If the sky       that we look up-   on                      should tumble and   
          C                  D                 G                         G
 And the mount-   ain      should    crumble to the    sea                      
          G                  G                 Em             Em  
-I won\'t cry,         I won\'t cry,       no I          won\'t shed a   tear
+I won't cry,         I won't cry,       no I          won't shed a   tear
          C                  D                 G        G
 Just as long        as you stand,       stand by me   me. So   darling, darling
 [Chorus 2]
@@ -2240,44 +2377,47 @@ G             G             Em          Em
 stand by me,       oh now   stand by    me,      
 C             D             G           G
 stand by me,     stand by        me.             
-`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.undefined),
-			content: 
-`When the night has come
+`
+            },
+            {
+                name: 'Lyrics',
+                content: `When the night has come
 And the land is dark
-And the moon is the only light we\'ll see
-No I won\'t be afraid, no I won\'t be afraid
+And the moon is the only light we'll see
+No I won't be afraid, no I won't be afraid
 Just as long as you stand, stand by me
-So darlin\', darlin\', stand by me, oh stand by me
+So darlin', darlin', stand by me, oh stand by me
 Oh stand by me, stand by me
 If the sky that we look upon
 Should tumble and fall
 Or the mountains should crumble to the sea
-I won\'t cry, I won\'t cry, no I won\'t shed a tear
+I won't cry, I won't cry, no I won't shed a tear
 Just as long as you stand, stand by me
-And darlin\', darlin\', stand by me, oh stand by me
+And darlin', darlin', stand by me, oh stand by me
 Oh stand now, stand by me, stand by me
-And darlin\', darlin\', stand by me, oh stand by me
+And darlin', darlin', stand by me, oh stand by me
 Oh, stand now by me, stand by me, stand by me
-Whenever you\'re in trouble won\'t you stand by me
-Oh stand by me, won\'t you stand by`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Dire Straits', 'Sultans Of Swing')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 6 * 60 + 50,
-			content: 
-`[Intro]
+Whenever you're in trouble won't you stand by me
+Oh stand by me, won't you stand by`
+            }
+        ]
+    },
+    {
+        artist: 'Dire Straits',
+        name: 'Sultans Of Swing',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 5 * 60 + 50
+                },
+                content: `[Intro]
 | Dm     | Dm  C  | x4
 [Verse 1]
   Dm                       C              Bb       A
-You get a shiver in the dark, it\'s raining in the park but meantime
+You get a shiver in the dark, it's raining in the park but meantime
 Dm                        C            Bb         A
 South of the river you stop and you hold everything
 F                                 C
@@ -2286,13 +2426,13 @@ Bb                                            Dm    Bb - C
 You feel alright when you hear that music ring
 [Verse 2]
       Dm                  C         Bb        A
-Well now, you step inside but you don\'t see too many faces
+Well now, you step inside but you don't see too many faces
 Dm                      C                Bb      A
 Coming in out of the rain to hear the jazz go down
 F                       C
 Competition in other places
 Bb                                     Dm
-Uh, but the horns they blowin\' that sound
+Uh, but the horns they blowin' that sound
 Bb - C
 way on down south
 Bb - C
@@ -2306,16 +2446,16 @@ Dm - C - Bb - C
      Dm             C  Bb        A
 You check out Guitar George,     he knows all the chords
 Dm                             C               Bb          A
-Mind he\'s strictly rhythm he doesn\'t want to make it cry or sing
+Mind he's strictly rhythm he doesn't want to make it cry or sing
 F                           C
 They say an old guitar is all he can afford
 Bb                                                 Dm    Bb - C
 When he gets up under the lights to play his thing
 [Verse 4]
 Dm                   C    Bb           A
-And Harry doesn\'t mind if he doesn\'t make the scene
+And Harry doesn't mind if he doesn't make the scene
 Dm                   C         Bb      A
-He\'s got a daytime job, he\'s doin\' alright
+He's got a daytime job, he's doin' alright
 F                                  C
 He can play the honky tonk like anything
 Bb                               Dm    Bb - C
@@ -2329,13 +2469,13 @@ Dm - C - Bb - C
 Dm - C - Bb - C
 [Verse 5]
 Dm                           C        Bb           A
-Then a crowd of young boys, they\'re foolin\' around in the corner
+Then a crowd of young boys, they're foolin' around in the corner
 Dm                                C              Bb            A
 Drunk and dressed in their best brown baggies and their platform soles
 F                                        C
-They don\'t give a damn about about any trumpet playin\' band
+They don't give a damn about about any trumpet playin' band
 Bb                                   Dm     Bb - C
-It ain\'t what they call rock and roll
+It ain't what they call rock and roll
         Bb - C
 and the Sultans
                      Dm
@@ -2359,7 +2499,7 @@ And then the man he steps right up to the microphone
 Dm              C               Bb        A    (A7)
 And says at last just as the time bell ring
 F                      C
-Goodnight, now it\'s time to go home
+Goodnight, now it's time to go home
 Bb                                       Dm     Bb - C
 Then he makes it fast with one more thing
            Bb - C
@@ -2371,16 +2511,19 @@ Dm - C - Bb - C
 Dm - C - Bb - C
 [Outro Solo]
 Dm - C - Bb - C
-(repeat and fade, approx x7`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Rainbow', 'Temple Of The King')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro] 
+(repeat and fade, approx x7`
+            }
+        ]
+    },
+    {
+        artist: 'Rainbow',
+        name: 'Temple Of The King',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro] 
 Am / F / G / Am
 Am / [ch]G[/ch] /[ch]Dm[/ch]-[ch]F[/ch]/ [ch]Am[/ch]
 e|------------------------------|----------------------|
@@ -2435,7 +2578,7 @@ With just one touch of his trembling hand
 [ch]Am[/ch] 
 The answer will be found
 [ch]Dm[/ch]
-Daylight waits for the oldman\'s screams
+Daylight waits for the oldman's screams
 [ch]Am[/ch]      
 Heaven, help me,
 [ch]G[/ch]                   [ch]Dm[/ch]
@@ -2474,7 +2617,7 @@ Seeing, feeling
   [ch]G[/ch]
 Just a wave of the strong right hand
 [ch]E[/ch]
-He\'s gone, to the 
+He's gone, to the 
 [ch]F[/ch]      [ch]G[/ch]      [ch]Am[/ch]
 Temple of the King
 [Instrumental] 
@@ -2509,11 +2652,11 @@ E|-----------------------------------------------------------------------------|
 [ch]Dm[/ch]                                                                
 Far from the circle of the edge of the world
 [ch]Am[/ch]        
-He\'s smoking, wandering
+He's smoking, wandering
 [ch]G[/ch]                       
-Thinking back of the stories he\'s heard
+Thinking back of the stories he's heard
 [ch]Am[/ch]
-what he\'s going to see
+what he's going to see
 [ch]Dm[/ch]
 There in the middle of the circle he lies
 [ch]Am[/ch]
@@ -2529,16 +2672,19 @@ Giving, feeling
 [ch]G[/ch]                      [ch]Dm[/ch]                     [ch]E[/ch]    
 With just one touch of the strong right hand they know
 [ch]F[/ch]      [ch]G[/ch]      [ch]Am[/ch]                        
-Of the Temple and the King `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Lynyrd Skynyrd', 'Sweet Home Alabama')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Of the Temple and the King `
+            }
+        ]
+    },
+    {
+        artist: 'Lynyrd Skynyrd',
+        name: 'Sweet Home Alabama',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 e|-------------------------3-|
 B|-----3---------3---------3-|
 G|-------2----------0------0-|  x4
@@ -2553,7 +2699,7 @@ Carry me home to see my kin
 D       Cadd9           G
 Singing songs about the south land
 D        Cadd9          G                            
-I miss \'ole\' \'bamy once again and I think it\'s a sin
+I miss 'ole' 'bamy once again and I think it's a sin
 D Cadd9 G 
 D Cadd9 G 
 D                Cadd9            G
@@ -2575,11 +2721,11 @@ D Cadd9 G
 D Cadd9 G 
 [Verse]
 D         Cadd9             G        F   C   D
-In Birmingham they love the Gov\'nor, boo-hoo-hoo
+In Birmingham they love the Gov'nor, boo-hoo-hoo
 D          Cadd9             G
 Now we all did what we could do
 D         Cadd9       G
-Now watergate doesn\'t bother me
+Now watergate doesn't bother me
 D         Cadd9            G
 Does you conscience bother you, (now tell the truth!)
 [Chorus]
@@ -2594,11 +2740,11 @@ D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G  D Cadd9 G
 D   Cadd9                     G
 Now Muscle Shoals has got the Swappers
 D                Cadd9                   G
-And they\'ve been known to pick a song or two (yes we do)
+And they've been known to pick a song or two (yes we do)
 D         Cadd9         G
 Lord they get me off so much
 D            Cadd9              G    
-They pick me up when I\'m feeling blue, Now how about you?
+They pick me up when I'm feeling blue, Now how about you?
 [Chorus]
 D     Cadd9   G     D         Cadd9        G         
 Sweet home Alabama, where the skies are so blue
@@ -2608,51 +2754,54 @@ Sweet home Alabama, lord I’m coming home to you
 D     Cadd9   G      
 Sweet home Alabama (Oh sweet home baby)
 D         Cadd9        G    
-Where the skies are so blue (And the governor\'s true)
+Where the skies are so blue (And the governor's true)
 D     Cadd9   G
 Sweet Home Alabama, (Lord, yeah)
 D         Cadd9          G
-Lord, I\'m coming home to you
+Lord, I'm coming home to you
 [Outro]
-D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Guns N\' Roses', 'Don\' Cry')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Verse 1]
+D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G`
+            }
+        ]
+    },
+    {
+        artist: 'Guns N\' Roses',
+        name: 'Don\' Cry',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Verse 1]
 Am           Dm
 Talk to me softly 
 G                  C
-There\'s something in your eyes 
+There's something in your eyes 
 Am                Dm
-Don\'t hang your head in sorrow
+Don't hang your head in sorrow
 G                C 
-And please don\'t cry 
+And please don't cry 
 Am              Dm
 I know how you feel inside 
 G                       C
-I\'ve I\'ve been there before
+I've I've been there before
 Am            Dm
-Somethin\'s changin\' inside you
+Somethin's changin' inside you
 G              C 
-And Don\'t you know
+And Don't you know
 [Chorus]
 F         G    Am
-Don\'t you cry tonight.
+Don't you cry tonight.
 
 I still love you baby.
 F         G     Am 
-Don\'t you cry tonight. 
+Don't you cry tonight. 
 F         G     C
-Don\'t you cry tonight. 
+Don't you cry tonight. 
           Am
-There\'s a heaven above you baby. 
+There's a heaven above you baby. 
 F             G     Am
-And don\'t you cry tonight.
+And don't you cry tonight.
 [Verse 2]
 Am           Dm
 Give me a whisper.
@@ -2663,25 +2812,25 @@ Give me a kiss
 G                C 
 before you tell me goodbye.
 Am              Dm
-Don\'t you take it so hard now.
+Don't you take it so hard now.
 G                       C 
-And please don\'t take it so bad. 
+And please don't take it so bad. 
 Am            Dm
-I\'ll still be thinkin\' of you.
+I'll still be thinkin' of you.
 G              C 
 And the times we had...baby.
 [Chorus]
 F         G    Am
-Don\'t you cry tonight.
+Don't you cry tonight.
 
 F         G     Am 
-Don\'t you cry tonight. 
+Don't you cry tonight. 
 F         G     C
-Don\'t you cry tonight. 
+Don't you cry tonight. 
           Am
-There\'s a heaven above you baby. 
+There's a heaven above you baby. 
 F             G     Am
-And don\'t you cry tonight.
+And don't you cry tonight.
 [Verse 3]
 Am           Dm
 And please remember 
@@ -2694,48 +2843,53 @@ how I felt inside now honey.
 Am              Dm 
 You gotta make it your own way.
 G                       C 
-But you\'ll be alright now sugar. 
+But you'll be alright now sugar. 
 Am            Dm
-You\'ll feel better tomorrow. 
+You'll feel better tomorrow. 
 G              C 
 Come the morning light now baby.
 [Chorus]
 F         G    Am
-Don\'t you cry tonight.
+Don't you cry tonight.
 
 F         G     Am 
-Don\'t you cry tonight. 
+Don't you cry tonight. 
 F         G     C
-Don\'t you cry tonight. 
+Don't you cry tonight. 
           Am
-There\'s a heaven above you baby. 
+There's a heaven above you baby. 
 F             G     Am
-And don\'t you cry tonight.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Chris Isaak', 'Wicked Game')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 5 * 60 + 50,
-			content: 
-`[Intro]
+And don't you cry tonight.`
+            }
+        ]
+    },
+    {
+        artist: 'Chris Isaak',
+        name: 'Wicked Game',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 4 * 60 + 50
+                },
+                content: `[Intro]
 Bm  A  E
 [Verse 1]
 Bm                         A                       E
 The world was on fire and no one could save me but you.
 Bm                            A                    E
-It\'s strange what desire will make foolish people do.
+It's strange what desire will make foolish people do.
 Bm                     A                     E
-I never dreamed that I\'d meet somebody like you.
+I never dreamed that I'd meet somebody like you.
 Bm                     A                     E
-I never dreamed that I\'d love somebody like you.
+I never dreamed that I'd love somebody like you.
 [Chorus]
 Bm A                   E
-I don\'t want to fall in love. (This world is only gonna break your heart)
+I don't want to fall in love. (This world is only gonna break your heart)
 Bm A                   E
-I don\'t want to fall in love. (This world is only gonna break your heart)
+I don't want to fall in love. (This world is only gonna break your heart)
 With you.         With you.        (This world is only gonna break your heart)
 [Verse 2]
 Bm             A           E
@@ -2748,37 +2902,40 @@ Bm              A         E
 What a wicked thing to do, to make me dream of you, and
 [Chorus]
 Bm A                   E
-I don\'t want to fall in love. (This world is only gonna break your heart)
+I don't want to fall in love. (This world is only gonna break your heart)
 Bm A                   E
-I don\'t want to fall in love. (This world is only gonna break your heart)
+I don't want to fall in love. (This world is only gonna break your heart)
 With you.
 [Verse 3]
 Bm                         A                       E
 The world was on fire and no one could save me but you.
 Bm                            A                    E
-It\'s strange what desire will make foolish people do.
+It's strange what desire will make foolish people do.
 Bm                     A                     E
-I never dreamed that I\'d love somebody like you.
+I never dreamed that I'd love somebody like you.
 Bm                     A                     E
-I never dreamed that I\'d lose somebody like you, no
+I never dreamed that I'd lose somebody like you, no
 [Chorus]
 Bm A                   E
-I don\'t want to fall in love. (This world is only gonna break your heart)
+I don't want to fall in love. (This world is only gonna break your heart)
 Bm A                   E
-I don\'t want to fall in love. (This world is only gonna break your heart)
+I don't want to fall in love. (This world is only gonna break your heart)
 With you.         With you.        (This world is only gonna break your heart)
 Bm       A       E
 Nobody loves no one.
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Motörhead', 'God Was Never On Your Side')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.Unknown),
-			content: 
-`[Verse 1]
+`
+            }
+        ]
+    },
+    {
+        artist: 'Motörhead',
+        name: 'God Was Never On Your Side',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.unknown,
+                content: `[Verse 1]
 Em                 D
 If the stars, fall down on me,
 Am             Em
@@ -2801,9 +2958,9 @@ Let the voice of reason shine,
 Am                   Em
 Let the pious vanish, for all time,
 C                     G
-God\'s face is hidden, all unseen,
+God's face is hidden, all unseen,
 Am                    Em
-You can\'t ask him what it all means
+You can't ask him what it all means
 [Chorus]
 C                G
 He was never on your side,
@@ -2836,7 +2993,7 @@ Let the sword of reason shine,
 Am                Em
 Let us be free of prayer and shrine
 C                     G
-God\'s face is hidden, turned away,
+God's face is hidden, turned away,
 Am             Em
 He never has a word to say
 [Chorus]
@@ -2863,56 +3020,60 @@ Never on your side! Never on your side!
 C                G
 God was never on your side,
 Am            Em
-Never on your side… `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Megadeth', 'Time: The Beginning')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.undefined),
-			content: 
-`Father time, I\'m running late
-I\'m winding down, I\'m growing tired
+Never on your side… `
+            }
+        ]
+    },
+    {
+        artist: 'Megadeth',
+        name: 'Time: The Beginning',
+        versions: [
+            {
+                name: 'Lyrics',
+                content: `Father time, I'm running late
+I'm winding down, I'm growing tired
 Seconds drift into the night
-The clock just ticks \'til my time expires
+The clock just ticks 'til my time expires
 You were once my friend
-Now I know I can\'t tie your hands
-The days I saved I couldn\'t spend
+Now I know I can't tie your hands
+The days I saved I couldn't spend
 They fell like sand through the hourglass
 No time to lose, no time to choose
-Time taking time, it\'s taken mine
+Time taking time, it's taken mine
 Scenes of my life seem so unkind
 Time chasing time creeps up behind
-I can\'t run forever and time waits for no one
+I can't run forever and time waits for no one
 Not even me
-An enemy I can\'t defend
+An enemy I can't defend
 My final place, a deadly end
 Life is just a speck in space
 Dreams of an eternal resting place
-I can\'t get any younger
+I can't get any younger
 Time has brutal hunger
-Time taking time, it\'s taken mine
+Time taking time, it's taken mine
 Scenes of my life seem so unkind
 Time chasing time creeps up behind
-I can\'t run forever and time waits for no one, waits for no one
-Not even me...`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Tenacious D', 'Tribute')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+I can't run forever and time waits for no one, waits for no one
+Not even me...`
+            }
+        ]
+    },
+    {
+        artist: 'Tenacious D',
+        name: 'Tribute',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Am
 This is the greatest and best song in the world...   Tribute.
 [Verse]
 Am
 Long time ago me and my brother Kyle here,
 Am
-We was hitchhikin\' down a long and lonesome road.
+We was hitchhikin' down a long and lonesome road.
 Am
 All of a sudden, there shined a shiny demon...
 Am
@@ -2920,7 +3081,7 @@ In the middle of the road.
 Am
 And he said:
 Play the A string but palm mute it.
-"Play the best song in the world, or I\'ll eat your souls."
+"Play the best song in the world, or I'll eat your souls."
 Am
 Well me and Kyle, we looked at each other,
 Am
@@ -2933,7 +3094,7 @@ Am                   G             F
 The Best Song in the World, it was The Best Song in the World.
 [Chorus]
 D                          F
-Look into my eyes and it\'s easy to see
+Look into my eyes and it's easy to see
 C                     G
 One and one make two, two and one make three,
 F
@@ -2943,7 +3104,7 @@ Once every hundred-thousand years or so,
  C                      G
 When the sun doth shine and the moon doth glow
  F
-And the grass don\'t grow...
+And the grass don't grow...
 [Verse]
 Am
 Needless to say, the beast was stunned.
@@ -2966,7 +3127,7 @@ This is not The Greatest Song in the World.
 Am                 G        F
 No, this is just a tribute.
 Am                    G                    F
-Couldn\'t remember The Greatest Song in the World.
+Couldn't remember The Greatest Song in the World.
 Am            G        F
 No, this is a tribute, oh.
 Am G               D           F
@@ -2974,7 +3135,7 @@ To The Greatest Song in the World, All right!
 Am G                   D           F
 It was The Greatest Song in the World, All right!
 Am         G
-It was the best muthafuckin\' song
+It was the best muthafuckin' song
 D                        F
 The greatest song in the world.
 [Solo:] Am - G - D - F   (x2)
@@ -2983,30 +3144,33 @@ And the peculiar thing is this my friends:
 D                        F
 The song we sang on that fateful night,
 Am                       G                  D      F
-It didn\'t actually sound anything like this song.
+It didn't actually sound anything like this song.
 [Verse]
        Am           G           D      F
-This is just a tribute! You gotta\' believe me!
+This is just a tribute! You gotta' believe me!
             Am      G                 D      F
 And I wish you were there! Just a matter of opinion.
   Am        G
-Ah, fuck! Good God, God lovin\',
+Ah, fuck! Good God, God lovin',
 D                    F
-So surprised to find you can\'t stop it.
+So surprised to find you can't stop it.
 Am   G   D   F
 [Outro]
 E     F     G         E     F             
 F
-    All right!          All right!`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Kris Kristofferson', 'Caseys\' Last Ride')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse 1]
+    All right!          All right!`
+            }
+        ]
+    },
+    {
+        artist: 'Kris Kristofferson',
+        name: 'Caseys\' Last Ride',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse 1]
    Am                             G
 Casey joins the hollow sound of silent people walking down
       F                              E
@@ -3017,27 +3181,27 @@ Following their footsteps through the neon darkened corridors
 Of silent desperation,never speaking to a soul
 [Verse 2]
      F                                C
-The poison air he\'s breathing has a dirty smell of dying
+The poison air he's breathing has a dirty smell of dying
             Dm                                E
-Cause it\'s never seen the sunshine and it\'s never felt the rain
+Cause it's never seen the sunshine and it's never felt the rain
      Am                         G
 But Casey minds the arrows and ignores the fatal echoes
          F                                 E              Am
 Of the clicking of the turnstile and the rattle of his chains
 [Bridge 1]
   C                                                    G
-"Oh",she said "Casey it\'s been so long since i\'ve seen you"
+"Oh",she said "Casey it's been so long since i've seen you"
                                               C
 "Here",she said "Just a kiss to make a body smile"
                                                           G
-"See",she said "I\'ve put on new stockings just to please you"
+"See",she said "I've put on new stockings just to please you"
                                            C
 "Lord" she said "Casey can you only stay awhile"
 [Verse 3]
   Am                              G
 Casey leaves the underground and stops inside the golden crown
       F                              E
-For something wet to wipe away the chill that\'s on his bones
+For something wet to wipe away the chill that's on his bones
   Am                           G
 Seeing his reflection in the lives of all the lonely men
       F                             E
@@ -3048,28 +3212,33 @@ Standing in the corner,Casey drinks his pint of bitter
        Dm                             E
 Never glancing in the mirror at the people passing by
           Am                             G
-Then he stumbles as he\'s leaving and he wonders if the reason
+Then he stumbles as he's leaving and he wonders if the reason
         F                               E                 Am
-Is the beer that\'s in his belly or the tear that\'s in his eye
+Is the beer that's in his belly or the tear that's in his eye
 [Bridge 2]
   C                                                  G
 "Oh",she said "I suppose that you seldom think about me"
                                                   C
-"Now",she said "Now that you\'ve a family of your own"
+"Now",she said "Now that you've a family of your own"
                                                          G
-"Still",she said "It\'s so blessed and good to feel your body"
+"Still",she said "It's so blessed and good to feel your body"
                                              C   Dm  G  C
-"Lord",she said "Casey it\'s a shame to be alone"`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Uriah Heep', 'Lady In Black')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 5 * 60 + 0,
-			content: 
-`[Intro]
+"Lord",she said "Casey it's a shame to be alone"`
+            }
+        ]
+    },
+    {
+        artist: 'Uriah Heep',
+        name: 'Lady In Black',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 5 * 60
+                },
+                content: `[Intro]
 | Am | % |
 [Verse 1]
 Am                          Am
@@ -3106,7 +3275,7 @@ But she would not think of battle that reduces men to animals
 G                       Am
 So easy to begin and yet impossible to end
 Am                              Am
-For she\'s the mother of our men who counselled me so wisely then
+For she's the mother of our men who counselled me so wisely then
 G                                Am
 I feared to walk alone again and asked if she would stay
 [Chorus]
@@ -3122,7 +3291,7 @@ Have faith and trust in peace she said and filled my heart with life
 Am                              Am
 There is no strength in numbers, have no such misconception
 G                             Am
-But when you need me be assured I won\'t be far away
+But when you need me be assured I won't be far away
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
@@ -3134,7 +3303,7 @@ Thus having spoke she turned away and though I found no words to say
 G                                Am
 I stood and watched until I saw her black coat disappear
 Am                      Am
-My labour is no easier but now I know I\'m not alone
+My labour is no easier but now I know I'm not alone
 G                                 Am
 I find new heart each time I think upon that windy day
 Am                                Am
@@ -3171,17 +3340,22 @@ Ah...  ahahah...  ahahah
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-(fade out)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Del Shannon', 'Runaway')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo1),
-			duration: 2 * 60 + 20,
-			content: 
-`[Verse]
+(fade out)`
+            }
+        ]
+    },
+    {
+        artist: 'Del Shannon',
+        name: 'Runaway',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo1,
+                autoScroll: {
+                    duration: 2 * 60 + 20
+                },
+                content: `[Verse]
 Am                 G
 As I walk along, I wonder  what went wrong 
 F
@@ -3237,16 +3411,19 @@ My little runaway  run, run, run, run, runaway.
 D                   A
 Run, run, run, run, runaway 
 D                   A
-Run, run, run, run, runaway `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Wish You Were Here')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Run, run, run, run, runaway `
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Wish You Were Here',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G       x2
 [Verse 1]
 C                         D/F#
@@ -3270,22 +3447,25 @@ Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G
 C                               D/F#
 How I wish, how I wish you were here.
    Am/E                                    G                D/F#
-We\'re just two lost souls swimming in a fish bowl, year after year,
+We're just two lost souls swimming in a fish bowl, year after year,
                           C
 Running over the same old ground. What have we found?
      Am                         G
 The same old fears. Wish you were here!
 [Instrumental]
-Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G       x2`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Eric Clapton', 'Layla')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro and chorus]
+Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G       x2`
+            }
+        ]
+    },
+    {
+        artist: 'Eric Clapton',
+        name: 'Layla',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro and chorus]
 Dm     Bb      C   Dm 
 e|-----1-1-----------------1----|
 B|-----3-3---3-3-3--5-5-5--3----|
@@ -3315,22 +3495,22 @@ What will you do when you get lonely
 C#m7            C       D       E    E7
 With nobody waiting by your side
 F#m             B           E               A
-You\'ve been running and hiding much too long,
+You've been running and hiding much too long,
 F#m               B                 E      
-You know it\'s just your foolish pride.
+You know it's just your foolish pride.
 [Chorus]
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
-Lay-la,      I\'m begging darling please.
+Lay-la,      I'm begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C
-Lay-la,     darling won\'t you ease my worried mind
+Lay-la,     darling won't you ease my worried mind
 
 [Verse 2]
 C#m7                        G#7       
 Tried to give you consolation,
 C#m7             C     D       E    E7              
-Your old man won\'t let you down
+Your old man won't let you down
 F#m        B               E         A               
 Like a fool, I fell in love with you,
 F#m            B                  E   
@@ -3339,31 +3519,31 @@ Turned the whole world upside down
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
-Lay-la,      I\'m begging darling please.
+Lay-la,      I'm begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C
-Lay-la,     darling won\'t you ease my worried mind
+Lay-la,     darling won't you ease my worried mind
 [Verse 3]
 C#m7                               G#7    
-Let\'s make the best of the situation
+Let's make the best of the situation
 C#m7         C       D    E    E7             
-Before I fin\'lly go insane.
+Before I fin'lly go insane.
 F#m        B               E            A              
-Please don\'t say we\'ll never find a way
+Please don't say we'll never find a way
 F#m             B               E                
 And tell me all my loves in vain
 [Chorus]
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
-Lay-la,      I\'m begging darling please.
+Lay-la,      I'm begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C        Dm
-Lay-la,     darling won\'t you ease my worried mind
+Lay-la,     darling won't you ease my worried mind
 Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
-Lay-la,      I\'m begging darling please.
+Lay-la,      I'm begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C         Dm
-Lay-la,     darling won\'t you ease my worried mind
+Lay-la,     darling won't you ease my worried mind
 [Break]
 Dm  Bb      C            Dm  
 Dm  Bb      C            Dm
@@ -3377,25 +3557,28 @@ Dm  Bb      C            Dm
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
-Lay-la,      I\'m begging darling please.
+Lay-la,      I'm begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C        Dm
-Lay-la,     darling won\'t you ease my worried mind
+Lay-la,     darling won't you ease my worried mind
 Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
-Lay-la,      I\'m begging darling please.
+Lay-la,      I'm begging darling please.
 Dm  Bb    C              Dm              Dm  
-Lay-la,     darling won\'t you ease my worried mind
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Kansas', 'Dust In The Wind')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`  C     G/B  Am    G         Dm            Am
+Lay-la,     darling won't you ease my worried mind
+`
+            }
+        ]
+    },
+    {
+        artist: 'Kansas',
+        name: 'Dust In The Wind',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `  C     G/B  Am    G         Dm            Am
 I close my eyes only for a moment and a moment´s gone.
 C   G/B   Am     G             Dm          Am
 All my dreams pass before my eyes a curiosity.
@@ -3408,23 +3591,28 @@ All we do, crumbles to the ground though we refuse to see.
 D   G        Am    D            G           Am
 Dust in the wind, all we are is dust in the wind.
 C      G/B   Am   G                Dm             Am
-Don\'t hang on, nothing last´s forever but the earth and sky.
+Don't hang on, nothing last´s forever but the earth and sky.
 C  G5      Am  G                  Dm         Am
 It slips away all your money won´t another minute buy.
 D   G        Am    D            G           Am
 Dust in the wind, all we are is dust in the wind
 D   G        Am    D            G           Am
-Dust in the wind, everything is dust in the wind.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Deep Purple', 'Soldier Of Fortune')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 3 * 60 + 10,
-			content: 
-`[Intro]
+Dust in the wind, everything is dust in the wind.`
+            }
+        ]
+    },
+    {
+        artist: 'Deep Purple',
+        name: 'Soldier Of Fortune',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 3 * 60 + 10
+                },
+                content: `[Intro]
 Gm   Dm   C  Gm
 [Verse]
 Gm
@@ -3436,7 +3624,7 @@ I lived the life of a drifter
 Dm
 waiting for the day
   Gm
-When I\'d take your hand and sing you songs
+When I'd take your hand and sing you songs
 F
 Then maybe you would say
 Gm
@@ -3445,7 +3633,7 @@ Dm
 And I would surely stay
 [Chorus]
 Bb       C                Gm   
-But I feel I\'m growing older
+But I feel I'm growing older
 Eb          F                Bb
 And the songs that I have sung
 D            Gm
@@ -3455,7 +3643,7 @@ Like the sound
 Bb              Eb  
 Of a windmill going round
 Cm                Dm
-Guess I\'ll always be
+Guess I'll always be
       Gm
 A soldier of fortune.
 
@@ -3464,7 +3652,7 @@ Gm   C   Gm   C
 Gm   Bb   C   Gm
 [Verse]
 Gm 
-Many times I\'ve been a traveller
+Many times I've been a traveller
 F
 I looked for something new
     Gm   
@@ -3478,10 +3666,10 @@ Had seen you standing near
 Gm
 Though blindness is confusing
 Dm  
-It shows that you\'re not here.
+It shows that you're not here.
 [Chorus]
 Bb       C                Gm   
-But I feel I\'m growing older
+But I feel I'm growing older
 Eb          F                Bb
 And the songs that I have sung
 D            Gm
@@ -3491,7 +3679,7 @@ Like the sound
 Bb              Eb  
 Of a windmill going round
 Cm                Dm
-Guess I\'ll always be
+Guess I'll always be
       Gm
 A soldier of fortune.
 Gm             F
@@ -3499,31 +3687,34 @@ Yes, I can hear the sound
 Bb           Eb  
 of a windmill going round
 Cm               Dm
-I guess I\'ll always be
+I guess I'll always be
       Gm
 a soldier of fortune.
 Eb               Dm7
-I guess I\'ll always be
+I guess I'll always be
       G   
-a soldier of fortune.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Metallica', 'The Unforgiven II')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Intro]
+a soldier of fortune.`
+            }
+        ]
+    },
+    {
+        artist: 'Metallica',
+        name: 'The Unforgiven II',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Intro]
 A5 C5 G5 E5 A5 C5 G5 E5
 Am C G Em Am C G Em
 [Verse 1]
 Am           C  G  Em                      Am
-Lay beside me, tell me what they\'ve done
+Lay beside me, tell me what they've done
       C               G     Em               Am
 Speak the words I want to hear, to make my demons run
          C    G         Em
-The door is locked now but it\'s opened if you\'re true
+The door is locked now but it's opened if you're true
 Am              C              G            Em                Am
 If you can understand the me, then I can understand the you
 Cadd9 G Em Am Cadd9 G Em
@@ -3532,54 +3723,54 @@ Lay beside me, under wicked skies
 Am                     C            G        E                Am
 Through black of day, dark of night, we share this paralyze
         C   G             E                 Am
-The door cracks open but there\'s no sun shining through
+The door cracks open but there's no sun shining through
       C                  G              E                    Dm
-Black heart scarring darker still, but there\'s no sun shining through
+Black heart scarring darker still, but there's no sun shining through
     F                     G
-No, there\'s no sun shining through
+No, there's no sun shining through
     F             Asus2
-No, there\'s no sun shining
+No, there's no sun shining
 [Chorus]
 Asus2 Am             Asus2   G/B
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C Csus2          C5         G/B
 Turn the pages, turn the stone
 Asus2 Am                 Asus2   G        G/C Csus2
 Behind the door, should I open it for you?
 Asus2 Am             Asus2     G/B
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C Csus2             C5
 Sick and tired, I stand alone
 G/B   Asus2 Am                     Asus2        G       G/C Csus2
-Could you be there, \'cause I\'m the one who waits for you
+Could you be there, 'cause I'm the one who waits for you
 Or are you unforgiven, too?
 A5 C5 G5 E5 A5 C5 G5 E5
 [Verse 2]
 Am           C  G   E
-Come beside me, this won\'t hurt, I swear
+Come beside me, this won't hurt, I swear
 Am                 C                   G             E
-She loves me not, she loves me still, but she\'ll never love again
+She loves me not, she loves me still, but she'll never love again
 Am               C         E                          Am
-She lay beside me but she\'ll be there when I\'m gone
+She lay beside me but she'll be there when I'm gone
        C                 G              E                    Dm
-Black heart scarring darker still, yes, she\'ll be there when I\'m gone
+Black heart scarring darker still, yes, she'll be there when I'm gone
     F
-Yes, she\'ll be there when I\'m gone
+Yes, she'll be there when I'm gone
 G        F                 Asus2
-Dead sure she\'ll be there
+Dead sure she'll be there
 [Chorus]
 Asus2 Am             Asus2   G/B
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C  Csus2             C5    G/B
 Turn the pages, turn to stone
 Asus2 Am                Asus2   G        G/C Csus2
 Behind the door, should I open it for you?
 Asus2 Am             Asus2     G/B
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C Csus2             C5
 Sick and tired, I stand alone
 G/B   Asus2 Am                     Asus2        G       G/C Csus2
-Could you be there, \'cause I\'m the one who waits for you
+Could you be there, 'cause I'm the one who waits for you
 Or are you unforgiven, too?
 G5 E A C G E Asus2 Am Asus2 Am G/B
 G/C Csus2 C5 G/B Asus2 Am Asus2 G/B
@@ -3588,7 +3779,7 @@ G5 E5 A5 C5 G5 E5
 Am C G Em
 [Verse 3]
 Am           C  G Em
-Lay beside me, tell me what I\'ve done
+Lay beside me, tell me what I've done
 Am                C                    G
 The door is closed, so are your eyes
 Em               Dm F               G
@@ -3597,46 +3788,49 @@ F
 Yes, now I see it
 [Chorus]
 Asus2     Am              Asus2    G
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C  Csus2          C5        G/B
 Turn the pages, turn the stone
 Asus2 Am                 Asus2 G/B
 Behind the door, should I open it for you?
 Asus2 Am             Asus2     G/B
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C Csus2             C5
 Sick and tired, I stand alone
 G/B   Asus2 Am                     Asus2        G       G/C Csus2
-Could you be there, \'cause I\'m the one who waits for you
+Could you be there, 'cause I'm the one who waits for you
 [Outro]
 Asus2     Am              Asus2    G
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/C  Csus2          C5        G/B
 Turn the pages, turn the stone
 Asus2 Am                 Asus2 G/B
 Behind the door, should I open it for you?
 Asus2     Am              Asus2    G
-What I\'ve felt, what I\'ve known
+What I've felt, what I've known
 G/B  Asus2 Am
 I take this key
 Asus2 G
 And I bury it in you
 G/C Csus2                 C5      G
- Because you\'re unforgiven, too
+ Because you're unforgiven, too
 Am G/B
 Never free
 Never me
 Asus2 Am               D5          A  Am   G
- \'Cause you\'re unforgiven, too`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Time')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse 1]
+ 'Cause you're unforgiven, too`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Time',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse 1]
 F#m                                       A
 Ticking away the moments that make up a dull day
 E                                          F#m
@@ -3659,11 +3853,11 @@ F#m    A    E    F#m    x4
 Dmaj7  Amaj7  Dmaj7  Amaj7  Dmaj7  C#m7  Bm7  E
 [Verse 2]
  F#m                                                A
-And you run and you run to catch up with the Sun, but it\'s sinking;
+And you run and you run to catch up with the Sun, but it's sinking;
 E                                     F#m
 Racing around to come up behind you again.
 F#m                                            A
-The Sun is the same in a relative way, but you\'re older,
+The Sun is the same in a relative way, but you're older,
 E                                         F#m
 shorter of breath, and one day closer to death.
 Dmaj7                          Amaj7
@@ -3673,45 +3867,48 @@ Plans that either come to naught, or half a page of scribbled lines.
 Dmaj7                     C#m7
 Hanging on in quiet desperation is the English way.
 Bm7                             Bm7                   F/B
-The time is gone, the song is over. Thought I\'d something more to say.
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Rainbow', 'Catch The Rainbow')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+The time is gone, the song is over. Thought I'd something more to say.
+`
+            }
+        ]
+    },
+    {
+        artist: 'Rainbow',
+        name: 'Catch The Rainbow',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Em7    G    Am7  C  Em  G  C    Am7    Em7  D  C
 [Verse]
 
 C            Em
 When evening falls
        G
-She\'ll run to me
+She'll run to me
          Am
 Like whispered dreams
 C               Em  D  C  D
-Your eyes can\'t see
+Your eyes can't see
   Em
 Soft and warm
          G
-She\'ll touch my face
+She'll touch my face
     Am
 A bed of straw
 C           Em  D  Em         
 Against the lace
 [Chorus]
 Am                    Em
-We believed we\'d catch the rainbow
+We believed we'd catch the rainbow
   D  A        Em
 Ride the wind to the sun
 Am               Em
 Sail away on ships of wonder
 C             B7
-But life\'s not a wheel
+But life's not a wheel
 C              D
 With chains made of steel
 D    Em      Am
@@ -3722,28 +3919,31 @@ Come the dawn come the dawn come the dawn
 Em    G    Am  C  Em  D  Em    G    Am  C  Em    C    Am  Em  D  Em
 [Chorus]
 Am                    Em
-We believed we\'d catch the rainbow
+We believed we'd catch the rainbow
   D  A        Em
 Ride the wind to the sun
 Am               Em
 Sail away on ships of wonder
 C             B7
-But life\'s not a wheel
+But life's not a wheel
 C              D
 With chains made of steel
 D    Em     G   Am   D    Em          Am
 So bless me oo bless me bless me come the dawn
 Em        C            Em           Am    Em   C   Em   Am   Em   C   Em   Am   Em   Am...
-Come the dawn come the dawn come the dawn`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Breathe')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`D7#9  x-5-4-5-6-x
+Come the dawn come the dawn come the dawn`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Breathe',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `D7#9  x-5-4-5-6-x
 D7b9  x-5-4-5-4-x
 ------------------------------------------------------------------------------------------
 [Intro]
@@ -3764,16 +3964,16 @@ G  D7#9 D7b9
 Em                      A7
 Breathe, breathe in the air
 Em                 A7
-Don\'t be afraid to care
+Don't be afraid to care
 Em                 A7
-Leave, don\'t leave me
+Leave, don't leave me
 Em                          A7
 Look around and choose your own ground
 [Chorus]
 Cmaj7
 Long you live and high you fly
 Bm7
-Smiles you\'ll give and tears you\'ll cry
+Smiles you'll give and tears you'll cry
 Fmaj7
 all you touch and all you see
 G                     D7#9 D7b9
@@ -3786,7 +3986,7 @@ Dig that hole, forget the sun
 Em                           A7
 And when at last the work is done
 Em                               A7
-Don\'t sit down it\'s time to dig another one.
+Don't sit down it's time to dig another one.
 [Chorus]
 Cmaj7
 For long you live and high you fly
@@ -3795,16 +3995,19 @@ But only if you ride the tide
 Fmaj7
 And balanced on the biggest wave
 G                   D7#9  D7b9
-You race towards an early grave`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Johnny Nash', 'I Can See Clearly Now')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse]
+You race towards an early grave`
+            }
+        ]
+    },
+    {
+        artist: 'Johnny Nash',
+        name: 'I Can See Clearly Now',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse]
 D          G               D
 I can see clearly now the rain is gone
 D          G            A
@@ -3813,23 +4016,23 @@ D             G                D
 Gone are the dark clouds that had me blind
 [CHorus]
          C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
+It's gonna be a bright, (bright) bright, (bright) sun shiny day
          C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
+It's gonna be a bright, (bright) bright, (bright) sun shiny day
 [Verse 2]
 D          G               D
 Yes I can make it now the pain is gone,
 D          G            A
 All of the bad feelings have disappeared.
 D             G              D
-Here is the rainbow I\'ve been praying for.
+Here is the rainbow I've been praying for.
 D                C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
+It's gonna be a bright, (bright) bright, (bright) sun shiny day
 [Bridge] 
 F                                    C         
-Look all around, there\'s nothing but blue skies
+Look all around, there's nothing but blue skies
 F                                         A7         C#m  G  C#m G  C Bm A
-Look straight ahead, there\'s nothing but blue skies
+Look straight ahead, there's nothing but blue skies
 [Verse 3]
 D          G               D
 I can see clearly now the rain is gone
@@ -3839,22 +4042,25 @@ D             G                D
 Gone are the dark clouds that had me blind
 [Outro]
          C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
+It's gonna be a bright, (bright) bright, (bright) sun shiny day
          C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
+It's gonna be a bright, (bright) bright, (bright) sun shiny day
          C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
+It's gonna be a bright, (bright) bright, (bright) sun shiny day
          C                 G                         D
-It\'s gonna be a bright, (bright) bright, (bright) sun shiny day`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Comfortably Numb')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`Bm
+It's gonna be a bright, (bright) bright, (bright) sun shiny day`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Comfortably Numb',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `Bm
 Bm
 Hello,
          A
@@ -3865,7 +4071,7 @@ Just nod if you can hear me;
 is there anyone home? 
 Come on, now,
       A
-I hear you\'re feeling down.
+I hear you're feeling down.
 G               Em
 Well, I can ease your pain;
 Bm
@@ -3884,7 +4090,7 @@ A distant ships smoke on the horizon.
 C                              G
 You are only coming through in waves.
 C                                      G
-Your lips move but I can\'t hear what you re saying.
+Your lips move but I can't hear what you re saying.
 D                     A
 When I was a child I had a fever.
 D                           A
@@ -3892,7 +4098,7 @@ My hands felt just like two balloons.
 C                            G
 Now I got that feeling once again;
              C
-I can\'t explain, you would not understand.
+I can't explain, you would not understand.
           G
 This is not how I am.
 A C       G                 D
@@ -3905,24 +4111,24 @@ Ok, (ok)
       A
 just a little pinprick. 
               G      Em
-There\'ll be no more --aaaaaahhhhh!
+There'll be no more --aaaaaahhhhh!
     Bm
 But you may feel a little sick.
 Can you stand up? 
           A
-I do believe it\'s working good.
+I do believe it's working good.
          G              Em
-That\'ll keep you going for the show.
+That'll keep you going for the show.
      Bm
-Come on it\'s time to go.
+Come on it's time to go.
 D                           A
 There is no pain, you are receding.
 D                               A
-A distant ship\'s smoke on the horizon.
+A distant ship's smoke on the horizon.
 C                              G
 You are only coming through in waves.
 C                                      G
-Your lips move but I can\'t hear what you\'re saying.
+Your lips move but I can't hear what you're saying.
 D                        A
 When I was a child I caught a fleeting glimpse,
 D                       A
@@ -3934,22 +4140,25 @@ I cannot put my finger on it now.
                 G
 The child is grown, the dream is gone.
 A C       G                 D
-I  have become, comfortably numb.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Guns N\' Roses', 'Sweet Child O\' Mine')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Intro]
+I  have become, comfortably numb.`
+            }
+        ]
+    },
+    {
+        artist: 'Guns N\' Roses',
+        name: 'Sweet Child O\' Mine',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Intro]
 D C G D
 D C G D
 D C G D
 [Verse]
 D
-She\'s got a smile that it seems to me
+She's got a smile that it seems to me
 C
 Reminds me of childhood memories
 G
@@ -3963,17 +4172,17 @@ She takes me away to that special place
  G
 And if I stared to long
                       D
-I\'d probably break down and cry
+I'd probably break down and cry
 [Chorus]
 A               C              D
-Whoa Oh, Sweet child o\' mine
+Whoa Oh, Sweet child o' mine
 A               C              D
-Whoa, Oh, Oh, Oh Sweet love o\' mine
+Whoa, Oh, Oh, Oh Sweet love o' mine
 [Instrumental]
 D C G D
 [Verse]
 D
-She\'s got eyes of the bluest skies
+She's got eyes of the bluest skies
 C
 As if they thought of rain
 G
@@ -3983,28 +4192,28 @@ And see an ounce of pain
 D
 Her hair reminds me of a warm safe place
 C
-Where as a child I\'d hide
+Where as a child I'd hide
 G
 And pray for the thunder and rain
 D
 To quietly pass me by
 [Chorus]
 A        C              D
-Whoa Oh, oh, Sweet child o\' mine
+Whoa Oh, oh, Sweet child o' mine
 A              C                D
-Whoa, Oh, Oh, Oh Sweet love o\' mine
+Whoa, Oh, Oh, Oh Sweet love o' mine
 [Instrumental]
 D C G D
 D C G D
 [Chorus]
 A               C              D
-Whoa Oh, Sweet child o\' mine
+Whoa Oh, Sweet child o' mine
 A               C              D
-Whoa, Oh, Oh, Oh Sweet love o\' mine
+Whoa, Oh, Oh, Oh Sweet love o' mine
 A               C              D
-Whoa Oh, Oh, Oh Sweet child o\' mine
+Whoa Oh, Oh, Oh Sweet child o' mine
 A               C         D
-Ooooooooh Sweet love o\' mine
+Ooooooooh Sweet love o' mine
 [Instrumental]
 Em C B A
 Em C B A 
@@ -4031,64 +4240,67 @@ Where do we gooooooo, where do we go now----
 Em             G     A                  C           D
 Where do we go-----, where do we go now Now-now-now-now-now-now-now
 Em     G             A C D      Em  
-Sweet child, sweet chi-. . ld of mine`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Simon And Garfunkel', 'Homeward Bound')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo1),
-			content: 
-`[Verse]
+Sweet child, sweet chi-. . ld of mine`
+            }
+        ]
+    },
+    {
+        artist: 'Simon And Garfunkel',
+        name: 'Homeward Bound',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo1,
+                content: `[Verse]
 A
-I\'m sitting in the railway station.
+I'm sitting in the railway station.
 Amaj7                  A7    F#
 Got a ticket for my destination, mmmm
 Bm                               G
 On a tour of one-night stands my suitcase and guitar in hand.
 A                                  E7               A
-And ev\'ry stop is neatly planned for a poet and one-man band.
+And ev'ry stop is neatly planned for a poet and one-man band.
 [Chorus]
  D            A
 Homeward bound,  wish I was,
  D
 Homeward bound,
 A             Asus4
-Home where my thought\'s escaping
+Home where my thought's escaping
 A             Asus4
-Home where my music\'s playing,
+Home where my music's playing,
 A             Asus4
 Home where my love lays waiting
 E           A
 Silently for me.
 [Verse]
 A
-Ev\'ry day\'s an endless stream
+Ev'ry day's an endless stream
 Amaj7               A7      F#
 Of cigarettes and magazines, mmmm
 Bm                                  G
 And each town looks the same to me, the movies and the factories
 A                             E7                       A
-And ev\'ry stranger\'s face I see reminds me that I long to be,
+And ev'ry stranger's face I see reminds me that I long to be,
 [Chorus]
  D            A
 Homeward bound,  wish I was,
  D
 Homeward bound,
 A             Asus4
-Home where my thought\'s escaping
+Home where my thought's escaping
 A             Asus4
-Home where my music\'s playing,
+Home where my music's playing,
 A             Asus4
 Home where my love lays waiting
 E           A
 Silently for me.
 [Verse]
 A
-Tonight I\'ll sing my songs again,
+Tonight I'll sing my songs again,
 Amaj7                 A7     F#
-I\'ll play the game and pretend, mmmm
+I'll play the game and pretend, mmmm
 Bm                              G
 But all my words come back to me in shades of mediocrity
 A                      E7                      A
@@ -4099,25 +4311,28 @@ Homeward bound,  wish I was,
  D
 Homeward bound,
 A             Asus4
-Home where my thought\'s escaping
+Home where my thought's escaping
 A             Asus4
-Home where my music\'s playing,
+Home where my music's playing,
 A             Asus4
 Home where my love lays waiting
 E           A
 Silently for me.
 [Outro]
 Amaj7       A7       A
-Silently for me.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Guns N\' Roses', 'Civil War')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Verse 1]
+Silently for me.`
+            }
+        ]
+    },
+    {
+        artist: 'Guns N\' Roses',
+        name: 'Civil War',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Verse 1]
 Em
 Look at your young men fighting
 G
@@ -4125,15 +4340,15 @@ Look at your women crying
 Em
 Look at your young men dying
 G                                 D/F#
-The way they\'ve always done before 
+The way they've always done before 
 Em
-Look at the hate we\'re breeding
+Look at the hate we're breeding
 G
-Look at the fear we\'re feeding
+Look at the fear we're feeding
 Em
-Look at the lives we\'re leading
+Look at the lives we're leading
 G                               D/F#
-The way we\'ve always done before
+The way we've always done before
 A5  A#4  A7
             E5
 My hands are tied
@@ -4146,14 +4361,14 @@ For the love of God and our human rights
 Em
 And all these things are swept aside
 G                                   D/F#
-By bloody hands time can\'t deny
+By bloody hands time can't deny
     E5
 And are washed away by your genocide
 G                       D                   A
 And history hides the lies of our civil wars
 B/A  C/A  D/A
      G                      Bm
-D\'you wear a black armband when they shot the man
+D'you wear a black armband when they shot the man
      Em
 Who said     "Peace could last forever"
   G                   Bm
@@ -4161,47 +4376,47 @@ And in my first memories they shot Kennedy
 Em                 C        D         G               Bm
 I went numb when I learned to see so I never fell for Vietnam
    Em                                     G
-We got the wall of D.C. to remind us all that you can\'t trust freedom
+We got the wall of D.C. to remind us all that you can't trust freedom
   Bm                      Em
-When it\'s not in your hands when everybody\'s fightin\'
+When it's not in your hands when everybody's fightin'
   C        D
 For their promised land And
 [Chorus]
 G            Bm             Em
-I don\'t need your civil war
+I don't need your civil war
 G                Bm                       Em   C  D
 It feeds the rich while it buries the poor
 G                 Bm                        Em
-You\'re power hungry sellin\' soldier In a      human grocery store Ain\'t that fresh
+You're power hungry sellin' soldier In a      human grocery store Ain't that fresh
 G            Bm             Em    C  D
-I don\'t need your civil war
+I don't need your civil war
 [Solo]
 [Verse]
 Em
-Look at the shoes you\'re filling
+Look at the shoes you're filling
 G
-Look at the blood we\'re spilling
+Look at the blood we're spilling
 Em
-Look at the world we\'re killing
+Look at the world we're killing
 G                               D/F#
-The way we\'ve always done before
+The way we've always done before
 Em
-Look in the doubt we\'ve wallowed
+Look in the doubt we've wallowed
 G
-Look at the leaders we\'ve followed
+Look at the leaders we've followed
 Em
-Look at the lies we\'ve swallowed
+Look at the lies we've swallowed
 G                           D/F# 
-And I don\'t want to hear no more
+And I don't want to hear no more
 A5  A#4  A7
             E5
 My hands are tied
 G                                        D/F#
-For all I\'ve seen has changed my mind
+For all I've seen has changed my mind
          E5
 But still the wars go on and the years go by
     G                   D                            Em
-With no love of God or human rights \'cause all these dreams are swept aside
+With no love of God or human rights 'cause all these dreams are swept aside
 G                                    D/F#
 By bloody hands of the hypnotized
 E5
@@ -4211,37 +4426,40 @@ And history bears the scars of our civil wars
 
 [Chorus]
 G            Bm                 Em
-I don\'t need your civil war
+I don't need your civil war
 G                   Bm                               Em
 It feeds the rich while it buries the poor
 G                      Bm                                Em
-You\'re power hungry sellin\' soldier In a      human grocery store Ain\'t that fresh
+You're power hungry sellin' soldier In a      human grocery store Ain't that fresh
 G            Bm                 Em          C  D
-I don\'t need your civil war
+I don't need your civil war
 G            Bm                 Em
-I don\'t need your civil war
+I don't need your civil war
 G                   Bm                               Em
 It feeds the rich while it buries the poor
 G                      Bm                                Em
-You\'re power hungry sellin\' soldier In a      human grocery store Ain\'t that fresh
+You're power hungry sellin' soldier In a      human grocery store Ain't that fresh
 G            Bm                 Em          C  D
-I don\'t need your civil war
+I don't need your civil war
 G            Bm                  A
-I don\'t need one more war
+I don't need one more war
 G            Bm                  A
-I don\'t need one more war
-Whaz so civil \'bout war anyway?
+I don't need one more war
+Whaz so civil 'bout war anyway?
 [Outro]
-B/A  C/A  D/A  (fade out)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Simon And Garfunkel', 'Mrs. Robinson')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			content: 
-`[Intro]
+B/A  C/A  D/A  (fade out)`
+            }
+        ]
+    },
+    {
+        artist: 'Simon And Garfunkel',
+        name: 'Mrs. Robinson',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                content: `[Intro]
 E
 Di di-di-di di di di-di di di di-di di
 A       
@@ -4250,7 +4468,7 @@ D               G          C     G/B   Am    E    D
 Di-di-di-di di di di-di-di di di-di di
 [Chorus]
 D             G        Em
-And here\'s to you Mrs. Robinson
+And here's to you Mrs. Robinson
 G               Em                  C   C/B Am7 Am7/G        D
 Jesus loves you more than you will know,               wo wo wo
 D             G           Em
@@ -4261,16 +4479,16 @@ E
 Hey hey hey
 [Verse 1]
 E                                                E7
-We\'d like to know a little bit about you for our files
+We'd like to know a little bit about you for our files
 A                                    A7
-We\'d like to help you learn to help yourself
+We'd like to help you learn to help yourself
 D               G               C     G/B   Am
 Look around you all you see are sympathetic eyes
 E                           D
 Stroll around the grounds until you feel at home
 [Chorus]
 D             G        Em
-And here\'s to you Mrs. Robinson
+And here's to you Mrs. Robinson
 G               Em                  C   C/B Am7 Am7/G        D
 Jesus loves you more than you will know,               wo wo wo
 D             G           Em
@@ -4285,9 +4503,9 @@ Hide it in a hiding place where no one ever goes
 A                                A7
 Put it in your pantry with your cupcakes
 D             G               C    G/B     Am
-It\'s a little secret just the Robinsons\' affair
+It's a little secret just the Robinsons' affair
 E                         D
-Most of all you\'ve got to hide it from the kids  
+Most of all you've got to hide it from the kids  
 [Chorus]
 D            G        Em
 Koo-koo-ka-choo, Mrs. Robinson
@@ -4305,7 +4523,7 @@ Sitting on a sofa on a Sunday afternoon
 A                               A7
 Going to the candidates debate
 D              G              C           G/B     Am
-Laugh about it shout about it when you\'ve got to choose
+Laugh about it shout about it when you've got to choose
 E                          D
 Any way you look at it you lose
 [Chorus]
@@ -4314,18 +4532,21 @@ Where have you gone Joe DiMaggio
 G                  Em             C    C/B Am7 Am7/G            D         
 A nation turns its lonely eyes to you,                woo woo woo
 D               G        Em
-What\'s that you say Mrs. Robinson
+What's that you say Mrs. Robinson
 G               Em            C     Am                   E
-Joltin\' Joe has left and gone away, hey hey hey, hey hey hey`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Brain Damage')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Joltin' Joe has left and gone away, hey hey hey, hey hey hey`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Brain Damage',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 D
 [Verse]
 D                           G7/D
@@ -4352,7 +4573,7 @@ And if there is no room upon the hill
 G                                    A7
 And if your head explodes with dark forebodings too
 C                                   G     Bm7  Em7  A  A7
-I\'ll see you on the dark side of the moon.
+I'll see you on the dark side of the moon.
 [Verse]
 D                          G7/D
 The lunatic is in my head.    (laughter)
@@ -4361,45 +4582,48 @@ The lunatic is in my head
 D                     E/D
 You raise the blade, you make the change
 A7                                D     Dsus2
-You re-arrange me \'till I\'m sane.
+You re-arrange me 'till I'm sane.
 D
 You lock the door
 E/D
 And throw away the key
 A7                              D   Dsus2   D7  D9
-There\'s someone in my head but it\'s not me.
+There's someone in my head but it's not me.
 [Chorus]
 G                          A
 And if the cloud bursts, thunder in your ear
 C                                   G
 You shout and no one seems to hear.
                          A           A7        A
-And if the band you\'re in starts playing different tunes
+And if the band you're in starts playing different tunes
 C                                   G  Bm7  Em  A7
-I\'ll see you on the dark side of the moon.
+I'll see you on the dark side of the moon.
 [Outro]
-D  G7/D  D  G7/D  D  E/D  A7  D  Dsus2  D  E/D  A7  D  Dsus2`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Pigs (Three Different Ones)')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`Em                C                 G     Em
+D  G7/D  D  G7/D  D  E/D  A7  D  Dsus2  D  E/D  A7  D  Dsus2`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Pigs (Three Different Ones)',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `Em                C                 G     Em
 Big man, pig man, ha ha charade you are
                   C                 G    Em
 You well heeled big wheel, ha ha charade you are
 C                         G
 And when your hand is on your heart
 A7
-You\'re nearly a good laugh, almost a joker
+You're nearly a good laugh, almost a joker
 With your head down the pigbin saying keep on digging
 Am7
 Pig stain on your fat chin
 What do you hope to find down in the pig mine
-You\'re nearly a laugh, you\'re nearly a laugh
+You're nearly a laugh, you're nearly a laugh
         Em    C         Em  D  Em  D  Em  D  Em  D
 But you really a cry______
 Em                C                 G      Em
@@ -4409,13 +4633,13 @@ You fucked up old hag, ha ha charade you are
 C                                 G
 You radiate cold shafts of broken glass
 A7
-You\'re nearly a good laugh, almost worth a quick grin
-You like the feel of steel, you\'re hot stuff with a hat pin
+You're nearly a good laugh, almost worth a quick grin
+You like the feel of steel, you're hot stuff with a hat pin
 Am7
 And good fun with a hand gun
-You\'re nearly a laugh, you\'re nearly a laugh
+You're nearly a laugh, you're nearly a laugh
            Em    C     Em  D  Em  D  Em  D  Em  D
-But you\'re really a cry______
+But you're really a cry______
 Em  D  Em  D  Em  D  Em  D  Em  D  Em  D  Em  D  Em  D
 C  Bb  C  Bb  C  Bb  C  Bb  C  Bb  C  Bb  Em  ....
 Em  C  Em  C  Em  C  Em  C  Em  C  Em  C  Em  C
@@ -4424,27 +4648,30 @@ Hey you, Whitehouse, ha ha charade you are
                    C                 G    Em
 You house proud town mouse, ha ha charade you are
 C                                  G
-You\'re trying to keep our feeling off the street
+You're trying to keep our feeling off the street
 Am
-You\'re nearly a real treat, all tight lips and cold feet
+You're nearly a real treat, all tight lips and cold feet
 And do you feel abused
 .......!  .......!  .......!  .......!
 You gotta stem the evil tide and keep it all on the inside
-Mary, you\'re nearly a treat, Mary, you\'re nearly a treat
+Mary, you're nearly a treat, Mary, you're nearly a treat
            Em   C      Em  D  Em  D  Em  D  Em  D
-But you\'re really a cry_____
+But you're really a cry_____
 Em  D  C  D
 [Repeat and fade]
-[Solo]  ~~~~~~~~~~`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Beatles', 'While My Guitar Gently Weeps')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Chords]
+[Solo]  ~~~~~~~~~~`
+            }
+        ]
+    },
+    {
+        artist: 'The Beatles',
+        name: 'While My Guitar Gently Weeps',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Chords]
 Am  x02210      G   320003       A  x02220
 Am/G  3x2210      D   xx0232      C#m x46654
 F#m7b5 2x2210      E   022100      F#m 244222
@@ -4456,7 +4683,7 @@ Am Am/G F#m7b5 Fmaj7
 Am G D E
 [Verse 1]
 Am          Am/G         F#m7b5            Fmaj7
-I look at you all, see the love there that\'s sleeping
+I look at you all, see the love there that's sleeping
 Am            G          D Dsus4 D Dsus2 D Esus4 E
 While my guitar gently weeps
 Am          Am/G         F#m7b5       Fmaj7
@@ -4465,16 +4692,16 @@ Am            G          C     E
 Still my guitar gently weeps
 [Chorus 1]
 A              C#m  F#m        C#m
-I don\'t know why      nobody told you
+I don't know why      nobody told you
 Bm                   E Esus4 E
 How to unfold your love
 A              C#m  F#m            C#m
-I don\'t know how      someone controlled you
+I don't know how      someone controlled you
 Bm                     E Esus4 E
 They bought and sold you
 [Verse 2]
 Am          Am/G         F#m7b5      Fmaj7
-I look at the world, and I notice it\'s turning
+I look at the world, and I notice it's turning
 Am            G          D Dsus4 D Dsus2 D Esus4 E
 While my guitar gently weeps
 Am       Am/G         F#m7b5    Fmaj7
@@ -4488,16 +4715,16 @@ Am Am/G F#m7b5 Fmaj7
 Am G C E
 [Chorus 2]
 A              C#m  F#m            C#m
-I don\'t know how      you were diverted
+I don't know how      you were diverted
 Bm                   E Esus4 E
 You were perverted too
 A              C#m  F#m            C#m
-I don\'t know how      you were inverted
+I don't know how      you were inverted
 Bm               E Esus4 E
 No one alerted you
 [Verse 3]
 Am          Am/G         F#m7b5            Fmaj7
-I look at you all, see the love there that\'s sleeping
+I look at you all, see the love there that's sleeping
 Am            G          D Dsus4 D Dsus2 D Esus4 E
 While my guitar gently weeps
 Am          Am/G       F#m7b5       Fmaj7
@@ -4508,16 +4735,19 @@ Still my guitar gently weeps
 Am Am/G F#m7b5 Fmaj7
 Am G D E
 Am Am/G F#m7b5 Fmaj7
-Am G C E`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Neil Young', 'My My, Hey Hey')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.full_step_down),
-			content: 
-`[Intro riff]
+Am G C E`
+            }
+        ]
+    },
+    {
+        artist: 'Neil Young',
+        name: 'My My, Hey Hey',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.full_step_down,
+                content: `[Intro riff]
 Am         G           Fmaj7                 Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -4532,7 +4762,7 @@ My  My, hey hey
 Am7       G              Fmaj7
 Rock and roll is here to stay
 C               Em       Em7
-It\'s better to burn out
+It's better to burn out
 Am             F
 Than to fade away
 Am7 G       Fmaj7
@@ -4546,13 +4776,13 @@ G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0----
 D|--------------3---------3-----------------|--------------3------------------------------|
 [Verse]
 Am7              G                Fmaj7
-It\'s out of the blue and into the black
+It's out of the blue and into the black
 Am7            G                   Fmaj7
 They give you this but you pay for that
 C                Em Em7       Am         F
-And once you\'re gone you can never come back
+And once you're gone you can never come back
 Am7                     G
-When you\'re out of the blue
+When you're out of the blue
      Fmaj7
 And into the black
 Am          G            Fmaj7              Am       G              Fmaj7
@@ -4564,13 +4794,13 @@ G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0----
 D|--------------3---------3-----------------|--------------3------------------------------|
 [Verse]
 Am7          G                 Fmaj7
-The king is gone but he\'s not forgotten
+The king is gone but he's not forgotten
 Am7           G                Fmaj7
 This is the story of a Johnny Rotten
 C               Em Em7   Am            F
-It\'s better to burn out than it is to rust
+It's better to burn out than it is to rust
 Am7          G                 Fmaj7
-The king is gone but he\'s not forgotten
+The king is gone but he's not forgotten
 Am         G           Fmaj7               Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -4584,7 +4814,7 @@ Hey Hey, my my
 Am7       G             Fmaj7
 Rock and roll can never die
 C                    Em     Em7
-There\'s more to the picture
+There's more to the picture
 Am              F
 Than meets the eye
 Am7  G      Fmaj7
@@ -4595,16 +4825,19 @@ A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1
 F|----2---------0-------------2-2-2--2-2-2--|----2---------0-----------------2-2-2--2-2-2-|
 C|----2-------0-0-------------3-3-3--3-3-3--|----2-------0-0-----0-2-0---0---3-3-3--3-3-3-|
 G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0--------------|
-D|--------------3---------3-----------------|--------------3------------------------------|`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Lost For Words')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`             F            C                 F            C
+D|--------------3---------3-----------------|--------------3------------------------------|`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Lost For Words',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `             F            C                 F            C
 e-----------------------------|------------------------------|
 B-------------h---------------|--------------h---------------|
 G-----h---0--0-2--2-2--0---h--|------h---0--0-2--2-2--0---h--|
@@ -4654,7 +4887,7 @@ To martyr yourself to caution
 F                    C
 Is not going to help at all
          F                       Am
-Because there\'ll be no safety in numbers
+Because there'll be no safety in numbers
  G                          F
 When the right one walks out of the door
 C F
@@ -4685,17 +4918,20 @@ And I ask could we wipe the slate clean
  C                 Em
 But they tell me please go fuck myself
 D                         C
-You know you just can\'t win
-D C`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Darren Korb', 'Build That Wall')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`Riff 1
+You know you just can't win
+D C`
+            }
+        ]
+    },
+    {
+        artist: 'Darren Korb',
+        name: 'Build That Wall',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `Riff 1
 e|----------------------|
 B|----------------------|
 G|----------------------|
@@ -4733,7 +4969,7 @@ Someday those tears are gonna spill
 [ch]D#[/ch]                  [ch]D[/ch]
 So build that wall and build it strong
 [ch]D#[/ch]               [ch]D[/ch]
-\'Cause we\'ll be there before too long
+'Cause we'll be there before too long
 [Verse]
 Riff 1                           [ch]Cm[/ch]
 Gonna build that wall up to the sky
@@ -4742,25 +4978,28 @@ Gonna build that wall up to the sky
 [ch]Cm[/ch]              [ch]Gm[/ch]               [ch]Cm[/ch]
 Someday your bird is gonna fly
                            [ch]Cm[/ch]
-Gonna build that wall until it\'s done
+Gonna build that wall until it's done
                            [ch]Fm[/ch]
-Gonna build that wall until it\'s done
+Gonna build that wall until it's done
 [ch]Cm[/ch]                [ch]Gm[/ch]               [ch]Cm[/ch]
-But now you\'ve got nowhere to run
+But now you've got nowhere to run
 [Chorus]
 [ch]D#[/ch]                  [ch]D[/ch]
 So build that wall and build it strong
 [ch]D#[/ch]               [ch]D[/ch]
-\'Cause we\'ll be there before too long`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Darren Korb', 'Mother, I\'m Here')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo3),
-			content: 
-`[Verse 1]
+'Cause we'll be there before too long`
+            }
+        ]
+    },
+    {
+        artist: 'Darren Korb',
+        name: 'Mother, I\'m Here',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo3,
+                content: `[Verse 1]
 Am
 I set my sail
 Dm
@@ -4772,39 +5011,42 @@ Lie on my back
 Dm
 Clouds are making way for me
 C           B
-I\'m coming home, sweet home
+I'm coming home, sweet home
 [Chorus]
 C          B
 I see your star, you left burning for me
 C           B
-Mother, I\'m here
+Mother, I'm here
 [Chorus]
 Am
 Eyes open wide
 Dm
 Feel your heart and its glowing
 C           B
-I\'m welcome home, sweet home
+I'm welcome home, sweet home
 Am
 I take your hand
 Dm
-Now you\'ll never be lonely
+Now you'll never be lonely
 C            B
-Not when I\'m home, sweet home
+Not when I'm home, sweet home
 [Chorus]
 C          B
 I see your star, you left burning for me
 C           B
-Mother, I\'m here`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Scorpions', 'Wind Of Change')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro] 
+Mother, I'm here`
+            }
+        ]
+    },
+    {
+        artist: 'Scorpions',
+        name: 'Wind Of Change',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro] 
 F  Dm  F  Dm  Am   Dm*  Am*  G*  C
 [Verse]
 C                Dm
@@ -4829,7 +5071,7 @@ Did you ever think
              Dm*          Am*    G*  C!
 That we could be so close, like brothers
 C                    Dm
-The future\'s in the air
+The future's in the air
             C
 I can feel it everywhere
           Dm*          Am*    G*
@@ -4907,99 +5149,105 @@ Where the children of tomorrow dream away
 F!      G!
 In the wind of change
 [Outro] 
-F  Dm  F  Dm  Am  Dm`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('White Buffalo', 'Oh Darlin What Have I Done')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+F  Dm  F  Dm  Am  Dm`
+            }
+        ]
+    },
+    {
+        artist: 'White Buffalo',
+        name: 'Oh Darlin What Have I Done',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Bm
 [Verse]
 Bm                              Em
-Oh darlin\', darlin\' what have I done
+Oh darlin', darlin' what have I done
 F#                          Bm
-I\'ve been away from you too long
+I've been away from you too long
 Bm                             Em
 And all my days have turned to darkness 
 F#                              Bm
 And I believe my heart has turned to stone
 Bm                           Em
-Oh darlin\', darlin\' what have I done 
+Oh darlin', darlin' what have I done 
 F#                          Bm
-Now I don\'t say anything at all 
+Now I don't say anything at all 
 Bm                       Em
-Well God don\'t listen to me no ways
+Well God don't listen to me no ways
 F#                       Bm
-And now I\'m left here all alone
+And now I'm left here all alone
 [Break]
 D                               F#
 Oh oh I hear what the neighbors say
 Bm                    G
-That poor boy he\'s lost his way 
+That poor boy he's lost his way 
   F#
 I let the others pray
 [Verse]
 Bm                           Em
-Oh darlin\', darlin\' what have I done 
+Oh darlin', darlin' what have I done 
 F#                         Bm
-Now I do my talkin\' with a gun
+Now I do my talkin' with a gun
 Bm                            Em
 And blood will spill into the gutters
 F#                            Bm
 And it will stain the morning sun
 [Break]
 D                            F#      Bm
-Oh oh tell me what the hell I\'ve done
+Oh oh tell me what the hell I've done
       G              F#              G
 Can I stop at one, or have I just begun
 [Interlude]
 F#                       G             F#           G
 Take out the bodies that live, lord it gets me high
 F#               G       F#
-I think I\'m gonna get my fill of takin\' lives
+I think I'm gonna get my fill of takin' lives
 Bm                             G
-Lord I don\'t wanna let my baby down
+Lord I don't wanna let my baby down
 Bm                              G        F#
 Well I just wanna give her something one of a kind
 [Verse]
 Bm                           Em
-Oh darlin\', darlin\' what have I done
+Oh darlin', darlin' what have I done
 F#                            Bm
-I\'ve been astray from you too long 
+I've been astray from you too long 
 Bm                             Em
 And all my days have turned to darkness
 F#                        Bm
 Hell is leaving the light on
 [Break]
 D                             F#
-Oh well they\'ll hang me way up high
+Oh well they'll hang me way up high
 Bm                            G               F#
 God himself will drop me from the sky, and let me swing awhile
 [Outro]
 Bm                         Em
-Oh darlin\', darlin\' what have I done   (x7)
+Oh darlin', darlin' what have I done   (x7)
     Bm
-What have I done`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'Pigs On The Wing')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`
+What have I done`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'Pigs On The Wing',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `
 Pink Floyd - Pigs On The Wing (Part One) (Waters)
 G  C  G
 [Verse 1]
 G              C   Csus4  C                   G  Gsus4  G
-If you didn\'t care           what happened to me
+If you didn't care           what happened to me
      C    Csus4  C        G   Gsus4  G
-And I didn\'t care           for you
+And I didn't care           for you
  A                           A7
 We would zig-zag our way through the boredom and pain
 G          C        D              G
@@ -5017,31 +5265,34 @@ You know that I care             what happens to you
             C    Csus4  C           G     Gsus4  G
 And I know that you care           for me too
 A                        A7
-So I don\'t feel alone or the weight of the stone
+So I don't feel alone or the weight of the stone
 G                   C                 D      G
-Now that I\'ve found somewhere safe to bury my bone
+Now that I've found somewhere safe to bury my bone
 Am       F       Am              F      C C/B Am
 And any fool knows     a dog needs a home
 D       Dsus4  D                       G
-A shelter               from pigs on the wing`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Darren Korb', 'The Pantheon')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`------------------------------------|
+A shelter               from pigs on the wing`
+            }
+        ]
+    },
+    {
+        artist: 'Darren Korb',
+        name: 'The Pantheon',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `------------------------------------|
 ----0--0-0----0--0-0--------0-------|
 ----1--1-1----1--1-1--------1-------|
 ----2--2-2----2--2-2--------2-------|
 ----2--2-2----2--2-2--------2-------|
 -0--0-------0-0-------3b4-0-0-------|
 E
-Gods ain\'t gonna help you son
+Gods ain't gonna help you son
   G     A            E
-you\'ll be sorry for what you done
+you'll be sorry for what you done
 E
 them gods gonna hurt you son
  G         A        E
@@ -5049,17 +5300,17 @@ when you play with a loaded gun
  G         A        E
 when you play with a loaded gun
 C                E
-They ain\'t gonna catch you when you fall
+They ain't gonna catch you when you fall
 C                  B
-you\'ll be pleading while you\'re bleeding
+you'll be pleading while you're bleeding
 E
-They ain\'t gonna hear ya son
+They ain't gonna hear ya son
 G          A        E
-don\'t care about what you done
+don't care about what you done
 E
-they ain\'t gonna help you son
+they ain't gonna help you son
   G     A            E
-you\'ll be sorry for what you done
+you'll be sorry for what you done
 G     A            E
 be sorry for what you done
 This section is played like this:
@@ -5084,38 +5335,41 @@ tear your heart out for what you done
   G         A            E
 tear your heart out for what you done
 C                E
-They ain\'t gonna catch you when you fall
+They ain't gonna catch you when you fall
 C                  B
-you\'ll be pleading while you\'re bleeding
+you'll be pleading while you're bleeding
 E
-God ain\'t gonna help you son
+God ain't gonna help you son
   G     A            E
-You\'ll be sorry for what you\'ve done
+You'll be sorry for what you've done
 E
 Them gods gonna hurt you son
   G     A            E
-you\'ll be sorry for what you done
+you'll be sorry for what you done
   G     A            E
-you\'ll be sorry for what you done`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pink Floyd', 'On The Turning Away')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`On the turning away
+you'll be sorry for what you done`
+            }
+        ]
+    },
+    {
+        artist: 'Pink Floyd',
+        name: 'On The Turning Away',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `On the turning away
 From the pale and downtrodden
 And the words they say
-Which we won\'t understand
-"Don\'t accept that what\'s happening
-Is just a case of others\' suffering
-Or you\'ll find that you\'re joining in
+Which we won't understand
+"Don't accept that what's happening
+Is just a case of others' suffering
+Or you'll find that you're joining in
 The turning away"                               Now the chords.
 [Verse 1]
 (Em)   (D)     G
-It\'s a sin that somehow
+It's a sin that somehow
     C         Em
 Light is changing to shadow
   D    G
@@ -5127,7 +5381,7 @@ Unaware how the ranks have grown
 Em             G        C
 Driven on by a heart of stone
 G                        C   Em
-We could find that we\'re all alone
+We could find that we're all alone
 D            G
 In the dream of the proud
 [Verse 2]
@@ -5159,20 +5413,23 @@ From the coldness inside
 G                    C        Em
 Just a world that we all must share
 G                       Em        C
-It\'s not enough just to stand and stare
+It's not enough just to stand and stare
 G             C                 Em       
-Is it only a dream that there\'ll be
+Is it only a dream that there'll be
 D       G
-No more turning away?`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Guns N\' Roses', 'November Rain')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Intro]
+No more turning away?`
+            }
+        ]
+    },
+    {
+        artist: 'Guns N\' Roses',
+        name: 'November Rain',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Intro]
 | F | Am | Dm | C
 | F | Dm | C
 | F | Am | Dm | C
@@ -5186,36 +5443,36 @@ I can see a love restrained
 F                  Dm
 But darling when I hold you
                   C
-Don\'t you know I feel the same
+Don't you know I feel the same
 Dm                   G
-Cause nothin\' lasts forever
+Cause nothin' lasts forever
                     C
 And we both know hearts can change
 Dm                      G
-And it\'s hard to hold a candle
+And it's hard to hold a candle
              C
 In the cold November rain
 [Verse 2]
 F                               Dm
-We\'ve been through this such a long, long time
+We've been through this such a long, long time
                 C
-Just tryin\' to kill the pain, oh yeah
+Just tryin' to kill the pain, oh yeah
 F
 But lovers always come and lovers always go
 Dm                                    C
-And no one\'s really sure who\'s lettin\' go today, walkin\' away
+And no one's really sure who's lettin' go today, walkin' away
 F
 If we could take the time to lay it on the line
 Dm
 I could rest my head
                    C
-Just knowin\' that you were mine, all mine
+Just knowin' that you were mine, all mine
 Dm                G
 So if you want to love me
            C
-Then darlin\' don\'t refrain
+Then darlin' don't refrain
 Dm                  G
-Or I\'ll just end up walkin\'
+Or I'll just end up walkin'
              C
 In the cold November rain
 [Chorus]
@@ -5226,16 +5483,16 @@ Do you need some time all alone?
   F                        G
 Everybody needs some time on their own
            F                  G
-Don\'t you know you need some time all alone
+Don't you know you need some time all alone
 [Bridge]
 Em          F               C
-I know it\'s hard to keep an open heart
+I know it's hard to keep an open heart
 Em        F                   Dm
 When even friends seem out to harm you
 Em         F            C
 But if you could heal a broken heart
 Em       F              G
-Wouldn\'t time be out to charm you
+Wouldn't time be out to charm you
 [Chorus]
 F                                G
 Sometimes I need some time on my own
@@ -5244,7 +5501,7 @@ Sometimes I need some time all alone
   F                        G
 Everybody needs some time on their own
            F                  G
-Don\'t you know you need some time all alone
+Don't you know you need some time all alone
 [Verse 3]
 F
 And when your fears subside
@@ -5253,25 +5510,30 @@ And shadows still remain, oh yeah
 F                   Dm
 I know that you can love me
                     C
-When there\'s no one left to blame
+When there's no one left to blame
 Dm                G
 So never mind the darkness
             C
 We still can find a way
 Dm                  G
-Cause nothin\' lasts forever
+Cause nothin' lasts forever
            C
-Even cold November rain`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Simon And Garfunkel', 'Scarborough Fair')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo7),
-			duration: 3 * 60 + 50,
-			content: 
-`[Verse 1]
+Even cold November rain`
+            }
+        ]
+    },
+    {
+        artist: 'Simon And Garfunkel',
+        name: 'Scarborough Fair',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo7,
+                autoScroll: {
+                    duration: 2 * 60 + 50
+                },
+                content: `[Verse 1]
 Am               G           Am
 Are you going to Scarborough Fair
 C          Am        C D      Am
@@ -5291,7 +5553,7 @@ Parsley, sage, rosemary and thyme
 Without no seams nor nee-ee-dle work
                     (Blankets and bedclothes the child of the mountain)
 Am          G               Am
-Then she\'ll be a true love of mine
+Then she'll be a true love of mine
 [Verse 3]
 Am                     G       Am
 Tell her to find me an acre of land
@@ -5303,7 +5565,7 @@ Parsley, sage, rosemary and thyme
 Between the salt water and the sea strands
                       (A soldier cleans - and polishes a gun)
 Am          G                 Am
-Then she\'ll be a true love of mine
+Then she'll be a true love of mine
 [Verse 4]
 Am                         G         Am
 Tell her to reap it with a sickle of leather
@@ -5313,9 +5575,9 @@ Parsley, sage, rosemary and thyme
                          (Generals order their soldiers to kill)
     Am        C        C G/B Am G
 And gather it all in a bunch of heather
-               (And to fight for a cause - they\'ve long-ago forgotten)
+               (And to fight for a cause - they've long-ago forgotten)
 Am          G                 Am
-Then she\'ll be a true love of mine
+Then she'll be a true love of mine
 [Verse 5]
 Am               G           Am
 Are you going to Scarborough Fair
@@ -5324,17 +5586,22 @@ Parsley, sage, rosemary and thyme
   Am     C     C   G/B Am    G
 Remember me to one who lives there
 Am       G                  Am
-She once was a true love of mine`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('America', 'A Horse With No Name')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 4 * 60 + 16,
-			content: 
-`[Verse 1]
+She once was a true love of mine`
+            }
+        ]
+    },
+    {
+        artist: 'America',
+        name: 'A Horse With No Name',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 4 * 60 + 16
+                },
+                content: `[Verse 1]
 Em                D6/9
 On the first part of the journey
 Em                D6/9
@@ -5353,13 +5620,13 @@ the heat was hot and the ground was dry
 but the air was full of sound
 [Chorus]
 Em9                         Dmaj9
-I\'ve been through the desert on a horse with no name
+I've been through the desert on a horse with no name
 Em9                   Dmaj9
 it felt good to be out of the rain
 Em9           Dmaj9
 in the desert you can remember your name
       Em9                Dmaj9
-\'cause there ain\'t no one for to give you no pain
+'cause there ain't no one for to give you no pain
 Em9    Dmaj9         
 La la   la la lala la lala   
 Em9    Dmaj9         
@@ -5379,13 +5646,13 @@ Em                 D6/9
 made me sad to think it was dead
 [Chorus]
 Em9                         Dmaj9
-I\'ve been through the desert on a horse with no name
+I've been through the desert on a horse with no name
 Em9                   Dmaj9
 it felt good to be out of the rain
 Em9           Dmaj9
 in the desert you can remember your name
       Em9                Dmaj9
-\'cause there ain\'t no one for to give you no pain
+'cause there ain't no one for to give you no pain
 Em9    Dmaj9         
 la la   la la lala la lala   
 Em9    Dmaj9         
@@ -5394,13 +5661,13 @@ la la la
 Em                D6/9
 After nine days I let the horse run free
     Em                D6/9
-\'cause the desert had turned to sea
+'cause the desert had turned to sea
     Em                  D6/9 
 there were plants and birds and rocks and things
      Em                D6/9
 there were sand and hills and rings
 Em                        D6/9
-The ocean is a desert with it\'s life underground
+The ocean is a desert with it's life underground
   Em              D6/9
 and the perfect disguise above
     Em           D6/9
@@ -5409,26 +5676,29 @@ Under the cities lies a heart made of ground
 but the humans will give no love
 [Chorus]
 Em9                         Dmaj9
-I\'ve been through the desert on a horse with no name
+I've been through the desert on a horse with no name
 Em9                   Dmaj9
 it felt good to be out of the rain
 Em9           Dmaj9
 in the desert you can remember your name
       Em9                Dmaj9
-\'cause there ain\'t no one for to give you no pain
+'cause there ain't no one for to give you no pain
 Em9    Dmaj9         
 la la   la la lala la lala   
 Em9    Dmaj9         
-la la la `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Mamas & The Papas', 'California Dreamin')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo4),
-			content: 
-`Esus4:
+la la la `
+            }
+        ]
+    },
+    {
+        artist: 'The Mamas & The Papas',
+        name: 'California Dreamin',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo4,
+                content: `Esus4:
 E|--0-|
 B|--0-|
 G|--2-|
@@ -5446,11 +5716,11 @@ E|------------------------------------------------0-------|
            Am  G  F          G     Esus4 E
 All the leaves are brown   and the sky is gray
 F               C  E  Am         F     Esus4  E
-I\'ve been for a walk       on a winter\'s day
+I've been for a walk       on a winter's day
           Am  G  F     G     Esus4   E
-I\'d be safe and warm    if I was in L.A.
+I'd be safe and warm    if I was in L.A.
 Am   G     F          G              Esus4  E
-California dreamin\' on such a winter\'s day
+California dreamin' on such a winter's day
 [Verse 2]
            Am  G  F          G        Esus4  E
 Stopped in to a church     I passed along the way
@@ -5459,9 +5729,9 @@ Well I got down on my knees   and I pretend to pray
 E                               Am  G  F 
 You know the preacher liked the cold
       G      Esus4  E
-He knows I\'m gonna stay
+He knows I'm gonna stay
 Am    G   F            G               Esus4  E
-California dreamin\' on such a winter\'s day
+California dreamin' on such a winter's day
 [Instrumental]
 play this while the flute plays:
 Am
@@ -5478,77 +5748,82 @@ Am   G    F     G     E7sus4
            Am  G  F          G     Esus4 E
 All the leaves are brown and the sky is gray
 F               C  E  Am         F     Esus4  E
-I\'ve been for a walk on a winter\'s day
+I've been for a walk on a winter's day
           Am  G  F     G     Esus4   E
-If I didn\'t tell her I could leave today
+If I didn't tell her I could leave today
 [Outro]
 Am   G    F           G               Am
-California dreamin\' on such a winter\'s day
+California dreamin' on such a winter's day
 Am   G    F           G               Am
-California dreamin\' on such a winter\'s day
+California dreamin' on such a winter's day
 Am   G    F           G               Am
-California dreamin\' on such a winter\'s day`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('John Denver', 'Leavin, On A Jet Plane')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 4 * 60 + 0,
-			content: 
-`[Intro]
+California dreamin' on such a winter's day`
+            }
+        ]
+    },
+    {
+        artist: 'John Denver',
+        name: 'Leavin, On A Jet Plane',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                                        autoScroll: {
+                                                duration: 4* 60
+                                        },
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 C G G C Am D7 D7  x2
 [Verse 1]
 G                   C
-All my bags are packed I\'m ready to go.
+All my bags are packed I'm ready to go.
 G                 C
-I\'m standing here out side your door.
+I'm standing here out side your door.
 G                Am               D7
 I hate to wake you up to  say good bye.
 G                   C
 But the dawn is breaking it early morn.
 G                  C
-The taxi\'s waitin he\'s blownin his horn.
+The taxi's waitin he's blownin his horn.
 G              Am               D7
-Already I\'m so lonesome I could die.
+Already I'm so lonesome I could die.
 [Chorus]
 G           C
 So kiss me and smile for me.
 G                  C
-Tell me that you\'ll wait for me.
+Tell me that you'll wait for me.
 G                   Am            D7
-Hold me like you\'ll never let me go.
+Hold me like you'll never let me go.
   G      C                G
-Cause I\'m leavin on a jet plane.
+Cause I'm leavin on a jet plane.
         C                   G
-Don\'t know when I\'ll be back again.
+Don't know when I'll be back again.
 Am              D7
 Oh, babe  I hate to go.
 [Verse 2]
    G               C
-There\'s is many times I\'ve let you down.
+There's is many times I've let you down.
 G              C
-So many time I\'ve played around.
+So many time I've played around.
 G            C                 D7
-I tell you now they don\'t mean a thing.
+I tell you now they don't mean a thing.
 G               C
-Every place I go I\'ll think of you.
+Every place I go I'll think of you.
 G                C
-Ev\'ry song I sing I\'ll sing for you.
+Ev'ry song I sing I'll sing for you.
 G                C                  D7
-When I come back I\'ll bring your wedding ring.
+When I come back I'll bring your wedding ring.
 [Chorus]
 G           C
 So kiss me and smile for me.
 G                  C
-Tell me that you\'ll wait for me.
+Tell me that you'll wait for me.
 G                   Am            D7
-Hold me like you\'ll never let me go.
+Hold me like you'll never let me go.
   G      C                G
-Cause I\'m leavin on a jet plane.
+Cause I'm leavin on a jet plane.
         C                   G
-Don\'t know when I\'ll be back again.
+Don't know when I'll be back again.
 Am              D7
 Oh, babe  I hate to go.
 [Verse 3]
@@ -5557,53 +5832,56 @@ Now the time come to leave you.
 G             C    
 One more time let me kiss you.
 G               C             D7
-Then close your eyes I\'ll be on my way.
+Then close your eyes I'll be on my way.
 G               C
 Dream about the days to come.
 G               C
-When I won\'t have to leave alone.
+When I won't have to leave alone.
 G              C               D7
-About the times I won\'t have to say...
+About the times I won't have to say...
 [Chorus]
 G      C               G
-I\'m leavin on a jet plane.
+I'm leavin on a jet plane.
         C                   G
-Don\'t know when I\'ll be back again.
+Don't know when I'll be back again.
 C               D7    G
-Oh, babe,  I hate to go. `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Queen', 'I Want To Break Free')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse 1]
+Oh, babe,  I hate to go. `
+            }
+        ]
+    },
+    {
+        artist: 'Queen',
+        name: 'I Want To Break Free',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse 1]
 N.C.            E
 I want to break free 
 I want to break free
 I want to break free from your lies 
                          A
-You\'re so self satisfied I don\'t need you 
+You're so self satisfied I don't need you 
           E
-I\'ve got to break free 
+I've got to break free 
 B         A                     E
 God knows God knows I want to break free 
 [Verse 2]
 N.C.           E
-I\'ve fallen in love 
-I\'ve fallen in love for the first time 
+I've fallen in love 
+I've fallen in love for the first time 
                       A
-And this time I know it\'s for real 
+And this time I know it's for real 
        E
-I\'ve fallen in love yeah 
+I've fallen in love yeah 
 B         A                    E     A E A E
-God knows God knows I\'ve fallen in love 
+God knows God knows I've fallen in love 
 B                A
-It\'s strange but it\'s true 
+It's strange but it's true 
 B                          A              
-I can\'t get over the way you love me like you do 
+I can't get over the way you love me like you do 
 C#m
 But I have to be sure 
 F#sus4        F#
@@ -5622,34 +5900,39 @@ E  E  A  E  B  A  E  E  B  A  E
             E
 But life still goes on
 
-I can\'t get used to living without living without 
+I can't get used to living without living without 
                  A
 Living without you by my side 
               E
-I don\'t want to live alone hey 
+I don't want to live alone hey 
 B     A                      E
 God knows   got to make it on my own 
           B
-So baby can\'t you see 
+So baby can't you see 
 A                 E
-I\'ve got to break free 
+I've got to break free 
 N.C.               E
-I\'ve got to break free 
+I've got to break free 
            E
 I want to break free yeah 
 E
 I want I want I want I want to break free...
-(fade out)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Metallica', 'Tuesday\'s Gone')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			duration: 6 * 60 + 0,
-			content: 
-`[Intro]
+(fade out)`
+            }
+        ]
+    },
+    {
+        artist: 'Metallica',
+        name: 'Tuesday\'s Gone',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                                        autoScroll: {
+                                                duration: 6 * 60
+                                        },
+                content: `[Intro]
 |A    |E    |F#m   |D    |
 |A    |E    |D     |     |
 |A    |E    |F#m   |D    |
@@ -5658,41 +5941,41 @@ I want I want I want I want to break free...
 A             E   F#m          D
 Train roll on, on down the line
       A                 E        D
-Won\'t you,   please take me far, far away
+Won't you,   please take me far, far away
 A                        E    F#m             D
 Now, I feel the wind blow,     outside my door
 A              E       D
-I\'m   leaving my woman at home
+I'm   leaving my woman at home
 [Chorus]
 D          A
-My baby\'s gone
+My baby's gone
       G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             E             D
-My baby\'s gone with the wind
+My baby's gone with the wind
 [Instrumental]
 |A    |E    |F#m   |D    |
 |A    |E    |D     |     |
 [Verse 2]
 A               E   F#m             D
-And I don\'t know      where I\'m going
+And I don't know      where I'm going
 A                 E         D
 I just want to be left alone
 A                   E    F#m            D
-When this train ends,     I\'ll try again
+When this train ends,     I'll try again
 A                   E       D
-I\'m leaving my woman at home
+I'm leaving my woman at home
 [Chorus]
 D          A
-My baby\'s gone
+My baby's gone
       G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A              G             D               A
-And My baby\'s gone with the wind. Train roll on,
+And My baby's gone with the wind. Train roll on,
 [Instrumental]
 |(A)  |E    |F#m   |D    |
 |A    |E    |F#m   |G    |
@@ -5700,33 +5983,33 @@ And My baby\'s gone with the wind. Train roll on,
 |A    |E    |F#m   |G    |
 [Chorus]
 A             G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             G                        D
-Tuesday\'s gone, long gone with the wind
+Tuesday's gone, long gone with the wind
 A             E             D               A
-My baby\'s gone with the wind. Train roll on,
+My baby's gone with the wind. Train roll on,
 [Verse 3]
       E  F#m                     D
 Train roll on,    many miles from my home
   A            E                 D
-See, I\'m riding my blues babe. Blues away
+See, I'm riding my blues babe. Blues away
 A                E   F#m               D
 Tuesday, you see,    she had to be free
 A                     E               D
-But somehow, I\'ve got you to carry on
+But somehow, I've got you to carry on
 [Chorus]
 D          A
-My baby\'s gone
+My baby's gone
       G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             G             D
-Tuesday\'s gone with the wind
+Tuesday's gone with the wind
 A             E             D
-Tuesday\'s gone with the wind.
+Tuesday's gone with the wind.
 [Outro]
       A           E
 Train roll on
@@ -5749,37 +6032,40 @@ Train roll on.
      A
 Train roll on
 E             D
-Lord, I can\'t change
+Lord, I can't change
 A    E             D
-Lord, I can\'t change
+Lord, I can't change
 A    E             D
-Lord, I can\'t change
+Lord, I can't change
 A    E             D
-Lord, I can\'t change
+Lord, I can't change
 A    E           D
 Ride on train
 A    E             D
- I can\'t change
+ I can't change
       A
 Train roll on
 E           D
 Ride on Train
           A     E
-Lord I can\'t change. No
+Lord I can't change. No
      D
-I can\'t change
+I can't change
     A
 Roll on train
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Police', 'Every Breath You Take')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo1),
-			content: 
-`[Intro]
+`
+            }
+        ]
+    },
+    {
+        artist: 'The Police',
+        name: 'Every Breath You Take',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo1,
+                content: `[Intro]
 G Em C D G
 [Verse]
 G                
@@ -5791,7 +6077,7 @@ Every bond you break
        D
 Every step you take
          G
-I\'ll be watching you
+I'll be watching you
                 
      G
 Every single day
@@ -5802,10 +6088,10 @@ Every game you play
         D
 Every night you stay
          G
-I\'ll be watching you
+I'll be watching you
 [Chorus]
      C                  G 
-Oh can\'t you see, you belong to me
+Oh can't you see, you belong to me
           A7                         D
 How my poor heart aches, with every step you take
            G
@@ -5817,14 +6103,14 @@ Every smile you fake
         D
 Every claim you stake
          G
-I\'ll be watching you          
+I'll be watching you          
 [Bridge]
 Eb                                         F
-Since you\'ve gone I\'ve been lost without a trace
+Since you've gone I've been lost without a trace
                               Eb
 I dream at night, I can only see your face
                              F
-I look around but it\'s you I can\'t replace
+I look around but it's you I can't replace
                              Eb
 I feel so cold and I long for your embrace
                   G
@@ -5833,7 +6119,7 @@ I keep crying baby, baby, please
 Em  C  D  Em
 [Chorus]
      C                  G 
-Oh can\'t you see, you belong to me
+Oh can't you see, you belong to me
           A7                         D
 How my poor heart aches, with every step you take
          G                
@@ -5845,30 +6131,33 @@ Every bond you break
        D
 Every step you take
          G
-I\'ll be watching you
+I'll be watching you
 G       Em       C
-I\'ll be watching you  
+I'll be watching you  
 G       Em       C
-I\'ll be watching you  
+I'll be watching you  
 G       Em       C
-I\'ll be watching you  
+I'll be watching you  
 G       Em       C
-I\'ll be watching you  
+I'll be watching you  
 G       Em       C
-I\'ll be watching you  
+I'll be watching you  
 G       Em       C
-I\'ll be watching you  
+I'll be watching you  
 G       Em       C
-I\'ll be watching you  `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Fools Garden', 'Lemon Tree')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo4),
-			content: 
-`Am(x02210)
+I'll be watching you  `
+            }
+        ]
+    },
+    {
+        artist: 'Fools Garden',
+        name: 'Lemon Tree',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo4,
+                content: `Am(x02210)
 C(x32010)
 Dm(xx0231)
 E(022100)
@@ -5881,24 +6170,24 @@ G7(320001)
 Am Em Am Em Dm Em Am  [ Em ]  ( Am )
 [Verse]
 Am             Em
-I\'m sitting here in a boring room,
+I'm sitting here in a boring room,
 Am                        Em
-It\'s just another rainy sunday afternoon.
+It's just another rainy sunday afternoon.
 Am              Em
-I\'m wasting my time, I got nothing to do.
+I'm wasting my time, I got nothing to do.
 Am                 Em
-I\'m hanging around, I\'m waiting for you,
+I'm hanging around, I'm waiting for you,
 Dm             Em           Am       [ Em ] ( Am )
 But nothing ever happens - and I wonder.
 
 Am             Em 
-I\'m driving around in my car,
+I'm driving around in my car,
 Am                        Em
-I\'m driving too fast, I\'m driving too far.
+I'm driving too fast, I'm driving too far.
 Am              Em
-I\'d like to change my point of view
+I'd like to change my point of view
 Am                 Em
-I feel so lonely, I\'m waiting for you
+I feel so lonely, I'm waiting for you
 Dm             Em           Am       [ Em ] ( Am )
 But nothing ever happens - and I wonder.
 [Chorus]
@@ -5906,13 +6195,13 @@ But nothing ever happens - and I wonder.
 C             G
 I wonder how, I wonder why
 Am                              Em
-Yesterday you told me \'bout the blue blue sky
+Yesterday you told me 'bout the blue blue sky
 F              G                    C           G7
 And all that I can see is just a yellow lemon tree.
 C               G
-I\'m turning my head up and down,
+I'm turning my head up and down,
 Am                                  Em
-I\'m turning turning turning turning turning around
+I'm turning turning turning turning turning around
 F              F#dim                     G       G7
 And all that I can see is just a yellow lemon tree.
 
@@ -5923,11 +6212,11 @@ Dam     dadoudi....
 
 [Verse]
 Am             Em  
-I\'m sitting here, I miss the power.
+I'm sitting here, I miss the power.
 Am              Em
-I\'d like to go out, taking a shower,
+I'd like to go out, taking a shower,
 Am                    Em
-But there\'s a heavy cloud inside my head.
+But there's a heavy cloud inside my head.
 Am                 Em
 I feel so tired, put myself to bed,
 Dm             Em           Am       [ Em ] ( Am )
@@ -5937,12 +6226,12 @@ Where nothing ever happens - and I wonder.
 E           Am
 Isolation - Is not good for me,
 G           C                       E
-Isolation - I don\'t want to sit on a lemon tree.
+Isolation - I don't want to sit on a lemon tree.
 [Verse]
 Am                   Em
-I\'m stepping around in a desert of joy
+I'm stepping around in a desert of joy
 Am                     Em
-Baby anyhow I\'ll get another toy
+Baby anyhow I'll get another toy
 Dm             Em           Am       [ Em ] ( Am )
 And everything will happen - and I will wonder.
 
@@ -5952,34 +6241,39 @@ And everything will happen - and I will wonder.
 C             G
 I wonder how, I wonder why
 Am                              Em
-Yesterday you told me \'bout the blue blue sky
+Yesterday you told me 'bout the blue blue sky
 F              G                    C           G7
 And all that I can see is just a yellow lemon tree.
 C               G
-I\'m turning my head up and down,
+I'm turning my head up and down,
 Am                                  Em
-I\'m turning turning turning turning turning around
+I'm turning turning turning turning turning around
 F              F#dim                     G       G7
 And all that I can see is just a yellow lemon tree.     (And I wonder..., I wonder...)
 
 C             G
 I wonder how, I wonder why
 Am                              Em
-Yesterday you told me \'bout the blue blue sky
+Yesterday you told me 'bout the blue blue sky
 F              G        F              G    
 And all that I can see, And all that I can see, 
 F              G     G 7            C
-And all that I can see is just a yellow lemon tree.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Don McLean', 'American Pie')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 9 * 60 + 40,
-			content: 
-`[Verse 1]
+And all that I can see is just a yellow lemon tree.`
+            }
+        ]
+    },
+    {
+        artist: 'Don McLean',
+        name: 'American Pie',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 8 * 60 + 40
+                },
+                content: `[Verse 1]
 G     D/F#    Em7
 A long, long time ago,
 Am            C                  Em                  D
@@ -5987,13 +6281,13 @@ I can still remember how that music used to make me smile
 G      D/F#   Em7
 And I knew if I had my chance,
 Am                 C                Em              C            D
-That I could make those people dance and maybe they\'d be happy for a while
+That I could make those people dance and maybe they'd be happy for a while
 Em       Am              Em                 Am
-But February made me shiver, with every paper I\'d deliver
+But February made me shiver, with every paper I'd deliver
 C        G      Am             C                     D
-Bad news on the doorstep, I couldn\'t take one more step
+Bad news on the doorstep, I couldn't take one more step
 G          D/F#     Em           Am7            D
-I can\'t remember if I cried when I read about his widowed bride
+I can't remember if I cried when I read about his widowed bride
 G         D          Em
 Something touched me deep inside
 C      D7      G
@@ -6004,9 +6298,9 @@ So bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 Em*                         A7*   Em*                         D7
-Singin\' this will be the day that I die, this will be the day that I die
+Singin' this will be the day that I die, this will be the day that I die
 [Verse 2]
 G                 Am
 Did you write the book of love
@@ -6017,27 +6311,27 @@ Do you believe in rock and roll
 Am7            C              Em                 A7           D
 Can music save your mortal soul and can you teach me how to dance real slow?
 Em*                  D*                   Em*             D*
-Well I know that you\'re in love with him \'cuz I saw you dancin\' in the gym
+Well I know that you're in love with him 'cuz I saw you dancin' in the gym
 C           G        A7           C                    D7
 You both kicked off your shoes, man I dig those rhythm and blues
 G      D/F#     Em                   Am                   C
-I was a lonely teenage broncin\' buck with a pink carnation and a pickup truck
+I was a lonely teenage broncin' buck with a pink carnation and a pickup truck
 G     D/F#    Em              C       D7    G  C  G
-But I knew I was out of luck the day the music died, I started singin\'
+But I knew I was out of luck the day the music died, I started singin'
 [Chorus]
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 Em*                         A7*   Em*                         D7
-Singin\' this will be the day that I die, this will be the day that I die
+Singin' this will be the day that I die, this will be the day that I die
 [Verse 3]
  G                   Am
-Now for ten years we\'ve been on our own,
+Now for ten years we've been on our own,
 C                   Am          Em                     D
-and moss grows fat on a rolling stone but that\'s not how it used to be
+and moss grows fat on a rolling stone but that's not how it used to be
   G     D/F#            Em
 When the jester sang for the king and queen 
 Am7                C                   Em             A7          D
@@ -6049,21 +6343,21 @@ The courtroom was adjourned, no verdict was returned
   G         D/F#  Em             Am           C
 And while Lennon read a book on Marx, the quartet practiced in the park
 G        D/F#   Em             C         D7     G  C  G
-And we sang dirges in the dark the day the music died, we were singin\'
+And we sang dirges in the dark the day the music died, we were singin'
 [Chorus]
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 Em*                         A7*   Em*                         D7
-Singin\' this will be the day that I die, this will be the day that I die
+Singin' this will be the day that I die, this will be the day that I die
 [Verse 4]
 G                   Am
 Helter skelter in a summer swelter
 C                      Am                 Em                     D
-the birds flew off with a fallout shelter, eight miles high and fallin\' fast
+the birds flew off with a fallout shelter, eight miles high and fallin' fast
 G   D/F#  Em
 It landed foul on the grass
 Am7                C            Em                             A7     D
@@ -6073,18 +6367,18 @@ Now the half-time air was sweet perfume, while sergeants played a marching tune
 C          G        A7      C                  D7
 We all got up to dance, but we never got the chance
   G      D/F#      Em                 Am              C
-\'Cuz the players tried to take the field, the marching band refused to yield
+'Cuz the players tried to take the field, the marching band refused to yield
 G    D/F#       Em              C        D7       G  C  G
-Do you recall what was revealed the day the music died,    we started singin\'
+Do you recall what was revealed the day the music died,    we started singin'
 [Chorus]
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 Em*                         A7*   Em*                         D7
-Singin\' this will be the day that I die, this will be the day that I die
+Singin' this will be the day that I die, this will be the day that I die
 [Verse 5]
 G                Am
 And there we were all in one place,
@@ -6093,24 +6387,24 @@ a generation lost in space, with no time left to start again
     G      D/F#   Em               Am7                 C
 So come on Jack be nimble, Jack be quick, Jack Flash sat on a candle 
 Em                   A7             D
-stick, \'cuz fire is the devil\'s only friend
+stick, 'cuz fire is the devil's only friend
 Em*              D*               Em*                    D*
 And as I watched him on the stage, my hands were clenched in fists of rage
 C      G       A7         C                  D7
-No angel born in Hell could break that Satan\'s spell
+No angel born in Hell could break that Satan's spell
    G            D/F#      Em             Am              C
 And as the flames climbed high into the night to light the sacrificial rite
 G   D/F#           Em           C      D7      G  C  G
-I saw Satan laughing with delight the day the music died,     he was singin\'
+I saw Satan laughing with delight the day the music died,     he was singin'
 [Chorus]
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 Em*                         A7*   Em*                         D7
-Singin\' this will be the day that I die, this will be the day that I die
+Singin' this will be the day that I die, this will be the day that I die
 [Verse 6]
 G    D/F#       Em
 I met a girl who sang the blues
@@ -6119,9 +6413,9 @@ And I asked her for some happy news, but she just smiled and turned away
 G       D/F#      Em
 I went down to the sacred store
 Am              C                     Em                 C
-Where I\'d heard the music years before, but the man there said the music
+Where I'd heard the music years before, but the man there said the music
  D
-wouldn\'t play
+wouldn't play
 Em*                Am*                    Em*                  Am*
 But in the streets the children screamed, the lovers cried and the poets dreamed
 C     G        Am          C                     D
@@ -6131,36 +6425,41 @@ And the three men I admire most, the Father, Son, and the Holy Ghost
 G             D/F#          Em               Am7     D7    G
 They caught the last train for the coast the day the music died,
 N.C.
-And they were singin\'
+And they were singin'
 [Chorus]
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 Em*                         A7*   Em*                         D7
-Singin\' this will be the day that I die, this will be the day that I die
+Singin' this will be the day that I die, this will be the day that I die
           G    C        G        D
-They were singin\' bye, bye Miss American Pie
+They were singin' bye, bye Miss American Pie
  G            C            G        D
 Drove my Chevy to the levy but the levy was dry
  G        C                  G           D
-And them good old boys were drinkin\' whiskey and rye
+And them good old boys were drinkin' whiskey and rye
 C                D7         G   C   G
-Singin\' this will be the day that I die.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Creedence Clearwater Revival', 'I Heard It Through The Grapevine')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 4 * 60 + 50,
-			content: 
-`Dm 2x
+Singin' this will be the day that I die.`
+            }
+        ]
+    },
+    {
+        artist: 'Creedence Clearwater Revival',
+        name: 'I Heard It Through The Grapevine',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 3 * 60 + 50
+                },
+                content: `Dm 2x
 Dm                                            A7               G
-Ooo, bet you\'re wondering how I knew, about you\'re plans to make me blue.
+Ooo, bet you're wondering how I knew, about you're plans to make me blue.
         Dm                                              A7
 With some other guy that you knew before? Between the two of us guys you
 G                               Bm           G           Dm
@@ -6170,12 +6469,12 @@ yesterday.
 Dm                                       G
 Ooo, I heard it through the grapevine, not much longer would
             Dm                                      G
-you be mine. Ooo, I heard it through the grapevine, and I\'m just about to
+you be mine. Ooo, I heard it through the grapevine, and I'm just about to
                    Dm
 lose my mind, honey, honey yeah.
 Dm  4x
         Dm                                   A7
-You know that a man ain\'t supposed to cry, but these tears I can\'t hold
+You know that a man ain't supposed to cry, but these tears I can't hold
 G            Dm                                       A7        G
 inside. Losing you would end my life you see, cause you mean that much to me.
        Bm          G              Dm            G
@@ -6183,20 +6482,20 @@ You could have told me yourself, that you found someone else.
    Dm                                       G
 Instead, I heard it through the grapevine, not much longer would
             Dm                                      G
-you be mine. Ooo, I heard it through the grapevine, and I\'m just about to
+you be mine. Ooo, I heard it through the grapevine, and I'm just about to
                    Dm
 lose my mind, honey, honey yeah.
 Dm  4x
      Dm                                  A7                G
 People say believe half of what you see, nah nah nah from what you hear.
 Dm                           A7                G
-I can\'t help being confused, if it\'s true wouldn t you tell me, hear?
+I can't help being confused, if it's true wouldn t you tell me, hear?
 Bm             G                 Dm                  G
 Do you plan to let me go, for the other guy that you knew before?
 Dm                                       G
 Ooo, I heard it through the grapevine, not much longer would
            Dm                                      G    
-you be mine. Ooo I heard it through the grapevine, and I\'m just about to
+you be mine. Ooo I heard it through the grapevine, and I'm just about to
                    Dm
 lose my mind, honey, honey yeah.
 Dm  4x
@@ -6208,34 +6507,37 @@ Dm A7 G Dm A7 G Bm G Dm G
 Dm                                       G
 Ooo, I heard it through the grapevine, not much longer would
            Dm                                      G    
-you be mine. Ooo I heard it through the grapevine, and I\'m just about to
+you be mine. Ooo I heard it through the grapevine, and I'm just about to
                    Dm
 lose my mind, honey, honey yeah. 2x
 Solo
 Dm G 38x
 Dm  8x
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Metallica', 'Turn The Page')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.Unknown),
-			content: 
-`[Verse]
+`
+            }
+        ]
+    },
+    {
+        artist: 'Metallica',
+        name: 'Turn The Page',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.unknown,
+                content: `[Verse]
 Em
 On a long and lonesome highway, east of Omaha
 Dsus2
-You can listen to the engine moanin\' out his one long song
+You can listen to the engine moanin' out his one long song
 Asus4                                                             Em
 You can think about the woman or the girl you knew the night before
 Em
 But your thoughts will soon be wandering, the way they always do
 Dsus2
-When you\'re ridin\' sixteen hours and there\'s nothin\' much to do
+When you're ridin' sixteen hours and there's nothin' much to do
 Asus4                                                               Em
-And you don\'t feel much like ridin\', you just wish the trip was through
+And you don't feel much like ridin', you just wish the trip was through
 [Chorus]
 Dsus2
 Here I am
@@ -6248,7 +6550,7 @@ Up on the stage
 Dsus2
 Here I go
 Asus4
-Playin\' star again
+Playin' star again
 C             Dsus2
 There I go
 Em
@@ -6257,15 +6559,15 @@ Turn the page
 Em
 So you walk into this restaurant, strung out from the road
 Dsus2
-And you feel the eyes upon you, as you\'re shakin\' off the cold
+And you feel the eyes upon you, as you're shakin' off the cold
 Asus4                                                        Em
-You pretend it doesn\'t bother you, but you just want to explode
+You pretend it doesn't bother you, but you just want to explode
 Em
-Most times you can\'t hear them talk, other times you can
+Most times you can't hear them talk, other times you can
 Dsus2
 All the same old clich?s, Is it woman? is it man?
 Asus4                                                    Em
-And you always seem outnumbered, you don\'t dare make a stand
+And you always seem outnumbered, you don't dare make a stand
 Em
 Make your stand.
 [Chorus]
@@ -6280,14 +6582,14 @@ Up on the stage
 Dsus2
 Here I go
 Asus4
-Playin\' star again
+Playin' star again
 C        Dsus2
 There I go
 Em
 Turn the page
 [Verse]
 Em
-Out there in the spotlight, you\'re a million miles away
+Out there in the spotlight, you're a million miles away
 Dsus2
 Every ounce of energy, you try to give away
 Asus4                                                      Em
@@ -6295,9 +6597,9 @@ As the sweat pours out your body, like the music that you play
 Em
 Later in the evening, as you lie awake in bed
 Dsus 2
-With the echoes of the amplifiers ringin\' in your head
+With the echoes of the amplifiers ringin' in your head
 Asus4                                                    Em
-You smoke the day\'s last cigarette, rememberin\' what she said
+You smoke the day's last cigarette, rememberin' what she said
 [Interlude]
 Dsus2 Em  Dsus2 Em Dsus2 Em C Dsus2 Em
 [Chorus]
@@ -6312,7 +6614,7 @@ Up on the stage
 Dsus2
 Here I go
 Asus4
-Playin\' star again
+Playin' star again
 C       Dsus2
 There I go
 Em
@@ -6328,7 +6630,7 @@ Up on the stage
 Dsus2
 Here I go
 Asus4
-Playin\' star again
+Playin' star again
 C       Dsus2
 There I go
 Em
@@ -6350,21 +6652,24 @@ Here I go
 C      Dsus2
 There I go
 Em
-There I go`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Tremoloes', 'Suddenly You Love Me')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`INTRO:
+There I go`
+            }
+        ]
+    },
+    {
+        artist: 'The Tremoloes',
+        name: 'Suddenly You Love Me',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `INTRO:
 Em   D        Em       D        Em
 Whoa-oh..whoa-oh..whoa-oh..whoa-oh.
 #1.
     Em    
-Oh, there\'s never been a woman who could 
+Oh, there's never been a woman who could 
 D
 treat me like you do.
   Am                           Em
@@ -6381,11 +6686,11 @@ CHORUS:
 G                             D
 Suddenly you love me and your arms are open wide.
 Am               D                  G
-Suddenly there\'s nothing that could tear you from my side.
+Suddenly there's nothing that could tear you from my side.
 G                         D
 Everytime it happens as I turn to walk away.
 Am           D             G
-Suddenly you love me and I know I\'ve gotta stay.
+Suddenly you love me and I know I've gotta stay.
        B7                  Em                  B7
 Zai, zai, zai, zai..Zai, zai, zai, zai..Zai, zai, zai, zai..
        Em
@@ -6398,18 +6703,18 @@ You must know my reputation comes to nothing in their eyes.
                          D
 Well, you take off in a hurry anytime it pleases you.
 Am                         Em
-And you only start to worry when I say I\'m leaving you,
+And you only start to worry when I say I'm leaving you,
 B7
 leaving you.
 CHORUS:
 G                             D
 Suddenly you love me and your arms are open wide.
 Am               D                  G
-Suddenly there\'s nothing that could tear you from my side.
+Suddenly there's nothing that could tear you from my side.
 G                         D
 Everytime it happens as I turn to walk away.
 Am           D             G
-Suddenly you love me and I know I\'ve gotta stay.
+Suddenly you love me and I know I've gotta stay.
        B7                  Em                  B7
 Zai, zai, zai, zai..Zai, zai, zai, zai..Zai, zai, zai, zai..
        Em
@@ -6420,11 +6725,11 @@ CHORUS:
 G                             D
 Suddenly you love me and your arms are open wide.
 Am               D                  G
-Suddenly there\'s nothing that could tear you from my side.
+Suddenly there's nothing that could tear you from my side.
 G                         D
 Everytime it happens as I turn to walk away.
 Am           D             G
-Suddenly you love me and I know I\'ve gotta stay.
+Suddenly you love me and I know I've gotta stay.
        B7                  Em                  B7
 Zai, zai, zai, zai..Zai, zai, zai, zai..Zai, zai, zai, zai..
        Em
@@ -6433,16 +6738,19 @@ Em   D        Em       D        Em
 Whoa-oh..whoa-oh..whoa-oh..whoa-oh.
 OUTRO:
 Em   D        Em       D        Em
-Whoa-oh..whoa-oh..whoa-oh..whoa-oh.(Fade.)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Hermans Hermits', 'No Milk Today')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`{sot}
+Whoa-oh..whoa-oh..whoa-oh..whoa-oh.(Fade.)`
+            }
+        ]
+    },
+    {
+        artist: 'Hermans Hermits',
+        name: 'No Milk Today',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `{sot}
 E|----------------0-0---3-5-5----|
 B|------0-1-1---3-1-1---0-5-5----|
 G|2-2---1-2-2---0-2-2---0-5-5----|
@@ -6460,7 +6768,7 @@ The bottle stands forlorn, a symbol of the dawn.
             C
 No milk today, it seems a common sight,
 E              Am       E               Am
-But people passing by don\'t know the reason why.
+But people passing by don't know the reason why.
 
 A                        G
 How could they know just what this message means,
@@ -6471,12 +6779,12 @@ How could they know, a palace there had been,
 D                             E          A
 behind the door where my love reigned as queen.
 Am                C   
-No milk today, it wasn\'t always so,
+No milk today, it wasn't always so,
 E           Am      E                 Am
-The company was gay, we turn\'d night into day.
+The company was gay, we turn'd night into day.
 [Chorus]
 A                E         D              E 
-But all that\'s left is a place dark and lonely
+But all that's left is a place dark and lonely
 A            E          D
 A terraced house in a mean street back of town
 A           E             D            E
@@ -6484,8 +6792,8 @@ Becomes a shrine when I think of you only
 D               E
 Just two up two down.
 [Verse]
-No milk today, it wasn\'t always so,
-The company was gay, we turn\'d night into day.
+No milk today, it wasn't always so,
+The company was gay, we turn'd night into day.
 As music played the faster did we dance
 We felt it both at once, the start of our romance.
 How could they know just what this message means,
@@ -6496,22 +6804,25 @@ No milk today, my love is gone away.
 The bottle stands forlorn, a symbol of the dawn.
 [Chorus]
 A                E         D              E 
-But all that\'s left is a place dark and lonely
+But all that's left is a place dark and lonely
 A            E          D
 A terraced house in a mean street back of town
 A           E             D            E
 Becomes a shrine when I think of you only
 D               E
-Just two up two down.  `		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'Where Did You Sleep Last Night')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Intro]
+Just two up two down.  `
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'Where Did You Sleep Last Night',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Intro]
 eb|---0-0---------------3--3-3--------------0-0-0--|
 Bb|---0-0-----------2-2-3--3-3-4--4-4-4-4---0-0-0--|
 Gb|-----x-----------2-2-0--0-0-4--4-4-4-4---x-x-x--| continue strumming E5,
@@ -6520,24 +6831,24 @@ Ab|-2---2--------0--0-0-2--2-2-2--2-2-2-x---2-2-2--|
 Eb|-0---0--0-2-3--------3--3-3----------3b--0-0-0--|
 [Verse]
 E                      A       G
-My girl, my girl, don\'t lie to me
+My girl, my girl, don't lie to me
 B                        E
 Tell me where did you sleep last night
 E
 In the pines, in the pines
   A              G
-Where the sun don\'t ever shine
+Where the sun don't ever shine
 B                  E
 I would shiver the whole night through
 [Chorus]
 E                       A        G
 My girl, my girl, where will you go
 B                         E
-I\'m going where the cold wind blows
+I'm going where the cold wind blows
 E
 In the pines, in the pines
   A              G
-Where the sun don\'t ever shine
+Where the sun don't ever shine
 B                E
 I would shiver the whole night through
 [Verse]
@@ -6551,13 +6862,13 @@ B                      E
 But his body never was found
 [Verse]
 E                      A       G
-My girl, my girl, don\'t lie to me
+My girl, my girl, don't lie to me
 B                        E
 Tell me where did you sleep last night
 E
 In the pines, in the pines
   A              G
-Where the sun don\'t ever shine
+Where the sun don't ever shine
 B                  E
 I would shiver the whole night through
 [Interlude]
@@ -6566,43 +6877,46 @@ E  A G B E
 E                       A        G
 My girl, my girl, where will you go
 B                         E
-I\'m going where the cold wind blows
+I'm going where the cold wind blows
 E
 In the pines, in the pines
   A              G
-Where the sun don\'t ever shine
+Where the sun don't ever shine
 B                E
 I would shiver the whole night through
 [Verse]
 E                      A       G
-My girl, my girl, don\'t lie to me
+My girl, my girl, don't lie to me
 B                        E
 Tell me where did you sleep last night
 E 
 In the pines, in the pines
   A              G
-Where the sun don\'t ever shine
+Where the sun don't ever shine
 B                  E
 I would shiver the whole night through
 E                       A       G
 My girl, my girl, where will ya go
 B                         E
-I\'m going where the cold wind blows
+I'm going where the cold wind blows
 E
 In the pines, the pines
 A        G
 The sun, the shine
 B                      E
-I\'ll shiver the whole night through`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'About A Girl')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+I'll shiver the whole night through`
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'About A Girl',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Em    G        Em     G      Em    G       Em     G
 Em    G        Em     G      Em    G       Em     G
 [Verse]
@@ -6620,14 +6934,14 @@ Take   advantage   while
 C#      G#                        F#
 You   hang   me   out   to   dry
 Em          E           A5      C
-But   I   can\'t   see   you   every   night
+But   I   can't   see   you   every   night
 Em    G        Em    G
 Free
 Em    G        Em    G
 I   do
 [Verse]
 Em   G              Em          G
-I\'m  standin\'   in   your   lane
+I'm  standin'   in   your   lane
 Em      G                 Em            G
 I   do   hope   you   have   the   time
 Em      G           Em          G
@@ -6640,7 +6954,7 @@ Take   advantage   while
 C#      G#                     F#
 You   hang   me   out   to   dry
 Em          E           A5      C
-But   I   can\'t   see   you   every   night
+But   I   can't   see   you   every   night
 Em    G        Em    G
 Free
 Em    G        Em    G
@@ -6666,9 +6980,9 @@ Take   advantage   while
 C#      G#                        F#
 You   hang   me   out   to   dry
 Em          E           A5      C
-But   I   can\'t   see   you   every   night
+But   I   can't   see   you   every   night
 Em          E           A5      C
-But   I   can\'t   see   you   every   night
+But   I   can't   see   you   every   night
 Em    G        Em    G
 Free
 [Outro]
@@ -6680,31 +6994,34 @@ Em    G        Em    G
 I   do
 Em    G
 I   do
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'Pennyroyal Tea')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Intro]
+`
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'Pennyroyal Tea',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Intro]
 Am  G    Am  G
 [Verse]
 Am                    G
-I\'m on, my time, with everyone,
+I'm on, my time, with everyone,
 Am                G
 I have, very, bad posture,
 [Chorus]
 C5                  D5           Bb
 Sit and drink pennyroyal tea
 C5                     D5                Bb
-Distill the life that\'s inside of me
+Distill the life that's inside of me
 C5                  D5            Bb
 Sit and drink pennyroyal tea
 C5            D5        Bb5
-I\'m anemic royalty
+I'm anemic royalty
 [Verse]
 Am                    G
 Give me Leonard Cohen afterward
@@ -6712,13 +7029,13 @@ Am             G
 So I, can sigh eternally
 [Chorus]
 C5                 D5          Bb
-I\'m so tired I can\'t sleep
+I'm so tired I can't sleep
 C5            D5        Bb
-I\'m anemic royalty
+I'm anemic royalty
 C5               D5        Bb
-I\'m a liar and a thief
+I'm a liar and a thief
 C5            D5        Bb
-I\'m anemic royalty
+I'm anemic royalty
 [Verse]
 Am                   G
 Lemon, warm milk and laxatives
@@ -6728,24 +7045,27 @@ Cherry-flavored antacids
 C5                  D5           Bb
 Sit and drink pennyroyal tea
 C5                     D5                Bb
-Distill the life that\'s inside of me
+Distill the life that's inside of me
 C5                  D5            Bb
 Sit and drink pennyroyal tea
 C5            D5        Bb
-I\'m anemic royalty
+I'm anemic royalty
 [Outro]
-Asus2  Am`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'Dumb')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Verse 1]
+Asus2  Am`
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'Dumb',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Verse 1]
 E    A         G
-I\'m not like them
+I'm not like them
 C              E
 But I can pretend
 A           G
@@ -6755,14 +7075,14 @@ But I have a light
 A            G
 The day is done
 C          E
-But I\'m having fun
+But I'm having fun
 A             G
-I think I\'m dumb
+I think I'm dumb
 C                E
 Or maybe just happy
 [Chorus]
 G               E
-Think I\'m just happy (x3)
+Think I'm just happy (x3)
 [Verse 2]
 E A            G
 My heart is broke
@@ -6773,11 +7093,11 @@ Help me inhale
 C                 E
 And mend it with you
 A               G
-We\'ll float around
+We'll float around
 C                  E
 And hang out on clouds
 A              G
-Then we\'ll come down
+Then we'll come down
 C               E
 And have a hangover
 [Chorus]
@@ -6801,7 +7121,7 @@ C
 Wake me up
 [Verse 3]
 E    A         G
-I\'m not like them
+I'm not like them
 C              E
 But I can pretend
 A           G
@@ -6811,25 +7131,28 @@ But I have a light
 A            G
 The day is done
 C          E
-But I\'m having fun
+But I'm having fun
 A             G
-I think I\'m dumb
+I think I'm dumb
 C                E
 Or maybe just happy
 [Chorus]
 G              E
-Think I\'m just happy (x3)
+Think I'm just happy (x3)
 G              E
-I think I\'m dumb (x12)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'Polly')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+I think I'm dumb (x12)`
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'Polly',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Em  G  D  C 
 Em  G  D  C 
 (mild distortion)
@@ -6844,7 +7167,7 @@ Em G           D      C
 To put out the blow torch
 [Chorus]
 D    C
-Isn\'t me
+Isn't me
 G    Bb
 Have a seed
 D    C
@@ -6889,7 +7212,7 @@ Em G              D       C
 A chase would be nice for a few
 [Chorus]
 D    C
-Isn\'t me
+Isn't me
 G    Bb
 Have a seed
 D    C
@@ -6928,14 +7251,14 @@ Polly said
 Em G           D        C
 Polly says her back hurts
 Em G          D        C
-She\'s just as bored as me
+She's just as bored as me
 Em G          D      C
 She caught me off my guard
 Em G      D              C
 Amazes me, the will  of instinct
 [Chorus]
 D    C
-Isn\'t me
+Isn't me
 G    Bb
 Have a seed
 D    C
@@ -6967,16 +7290,19 @@ Want some my help
 G    Bb
 Please myself
 [Outro]
-E`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Nirvana', 'Something In The Way')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo1),
-			content: 
-`[Intro]
+E`
+            }
+        ]
+    },
+    {
+        artist: 'Nirvana',
+        name: 'Something In The Way',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo1,
+                content: `[Intro]
 Em C/G (4x)
 [Verse 1]
 Em              C/G
@@ -6984,17 +7310,17 @@ Underneath the bridge
 Em                C/G
 The tarp has sprung a leak 
 Em          C/G
-And the animals I\'ve trapped 
+And the animals I've trapped 
 Em            C/G
 Have all become my pets
 Em            C/G 
-And I\'m living off of grass
+And I'm living off of grass
 Em                 C/G 
 And the drippings from the ceiling
 Em               C/G
-It\'s okay to eat fish 
+It's okay to eat fish 
     Em             C/G
-\'Cause they don\'t have any feelings 
+'Cause they don't have any feelings 
 [Chorus]
 Em                C/G    Em        C/G
 Something in the way, mmm 
@@ -7007,33 +7333,38 @@ Underneath the bridge
 Em                C/G
 The tarp has sprung a leak 
 Em          C/G
-And the animals I\'ve trapped 
+And the animals I've trapped 
 Em            C/G
 Have all become my pets
 Em            C/G
-And I\'m living off of grass
+And I'm living off of grass
 Em                 C/G
 And the drippings from the ceiling
 Em               C/G
-It\'s okay to eat fish 
+It's okay to eat fish 
     Em             C/G
-\'Cause they don\'t have any feelings 
+'Cause they don't have any feelings 
 [Chorus]
 Em                C/G    Em        C/G
 Something in the way, mmm 
 Em               C/G          Em       C/G
 Something in the way, yeah, mmm 
-(4x)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Dire Straits', 'Walk Of Life')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 4 * 60 + 10,
-			content: 
-`[Intro]
+(4x)`
+            }
+        ]
+    },
+    {
+        artist: 'Dire Straits',
+        name: 'Walk Of Life',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 4 * 60 + 10
+                },
+                content: `[Intro]
 E A B A B
 [Verse 1]
 E
@@ -7046,17 +7377,17 @@ A                      E
 Dedication, devotion   Turning all the night time into the day
 [Chorus]
 E                                     B
-He do the song about the sweet lovin\' woman
+He do the song about the sweet lovin' woman
   E                     A
 He do the song about the knife
   E7   B                  A         B                   E    A  B  A B
 He do the walk, he do the walk of life. Yeah, he do the walk of life
 [Verse 2]
 E
-Here comes Johnny and he\'ll tell you the story
-Hand me down my walkin\' shoes
+Here comes Johnny and he'll tell you the story
+Hand me down my walkin' shoes
 Here come Johnny with the power and the glory
-Backbeat the talkin\' blues
+Backbeat the talkin' blues
 A
 He got the action, He got the motion
 E
@@ -7067,7 +7398,7 @@ E
 Turning all the night time into the day
 [Chorus]
 E                                     B
-He do the song about the sweet lovin\' woman
+He do the song about the sweet lovin' woman
   E
 He do the song about the knife
   E7  B                   A      B                       E  A B A B
@@ -7089,18 +7420,21 @@ Turning all the night time into the day
 E                              B
 And after all the violence and double talk
        E                               A
-There\'s just a song in all the trouble and the strife
+There's just a song in all the trouble and the strife
    E7  B                    A        B                     E  A B A B
-You do the walk, you do the walk of life. Yeah, you do the walk of life`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Hector', 'Mandoliinimies')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo4),
-			content: 
-`[Verse 1]
+You do the walk, you do the walk of life. Yeah, you do the walk of life`
+            }
+        ]
+    },
+    {
+        artist: 'Hector',
+        name: 'Mandoliinimies',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo4,
+                content: `[Verse 1]
 C            G          Am
 Hei ystävä, pyyhi kyyneleet,
 E             F
@@ -7179,42 +7513,45 @@ Kyllä muistan sinutkin,
 F          G           C    C/B    Am
 mä osoitteesi siihen raaputin, hmm-mm-mm
 F          G           C
-Mä osoitteesi siihen raaputin`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Guns N\' Roses', 'Patience')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.half_step_down),
-			content: 
-`[Intro]
+Mä osoitteesi siihen raaputin`
+            }
+        ]
+    },
+    {
+        artist: 'Guns N\' Roses',
+        name: 'Patience',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.half_step_down,
+                content: `[Intro]
 C G A D    C G A D
 C G C Em   C G D D
 [Verse]
 C
-Shed a tear cause I\'m missing you
+Shed a tear cause I'm missing you
 G
-I\'m still alright to smile
+I'm still alright to smile
 A                              D      Dsus2 D  Dsus4 D  Dsus2 D
 Girl I think about you every day now
 C
-Was a time when I wasn\'t sure
+Was a time when I wasn't sure
 G
 But you set my mind at ease
 A                                  D       Dsus2 D  Dsus4 D  Dsus2 D
-There is no doubt, you\'re in my heart now
+There is no doubt, you're in my heart now
 [Chorus]
 C             G
 Said woman, take it slow
 C                Em
-It\'ll work itself out fine
+It'll work itself out fine
 C              G              D     Dsus2 D  Dsus4  D  Dsus2  D
 All we need is just a little patience
 C             G
 Said sugar, make it slow and
 C              Em
-It\'ll come together fine
+It'll come together fine
 C              G              D     Dsus2 D  Dsus4  D  Dsus2  D
 All we need is just a little patience
 D  Dsus2 D  Dsus4  D  Dsus2  D
@@ -7227,17 +7564,17 @@ yeaaaaaaaaaaaaaaaaah
 C
 I sit here on the stairs
  G
-Cause I\'d rather be alone
+Cause I'd rather be alone
 A
-If I can\'t have you right now
+If I can't have you right now
 D        Dsus2 D  Dsus4 D  Dsus2 D
-I\'ll wait, dear
+I'll wait, dear
 C
 Sometimes I get so tense
 G
-But I can\'t speed up the time
+But I can't speed up the time
 A
-But you know love, there\'s one more thing
+But you know love, there's one more thing
 D   Dsus2 D  Dsus4  D  Dsus2  D
 To consider
 [Chorus]
@@ -7252,13 +7589,13 @@ Said sugar, take the time
   C                    Em
 Cause the lights are shining bright
 C                G                 D     Dsus2 D  Dsus4  D  Dsus2
-You and I\'ve got what it takes to make it
+You and I've got what it takes to make it
 D            Dsus2 D  Dsus4  D
-We won\'t fake it
+We won't fake it
 Dsus2 D                  Dsus2 D  Dsus4  D
-Ahh,   I\'ll never break it
+Ahh,   I'll never break it
 Dsus2    D            Dsus2 D  Dsus4  D  Dsus2  D
-Cause I can\'t take it
+Cause I can't take it
 [Solo]
 C   G   C   Em   C   G   D  Dsus2 D  Dsus4  D  Dsus2  D
 C   G   C   Em   C   G   D  Dsus2 D  Dsus4  D  Dsus2  D
@@ -7282,17 +7619,17 @@ G
 yeaaaaah
 [Verse]
 D
-I\'ve been walking the streets tonight
+I've been walking the streets tonight
 G
 Just trying to get it right
 D
-It\'s hard to see with so many around
+It's hard to see with so many around
 G
 You know I don’t like being stuck in the crowd
 D
-And the streets don\'t change but baby the names
+And the streets don't change but baby the names
 G
-I ain\'t got time for the game
+I ain't got time for the game
  D
 Cause I need you
           G
@@ -7302,20 +7639,23 @@ Ooooh, I need you
 G
 Woh, I need you
     D     G    D
-Ooooh, this time`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Red Hot Chili Peppers', 'Can\'t Stop')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse]
+Ooooh, this time`
+            }
+        ]
+    },
+    {
+        artist: 'Red Hot Chili Peppers',
+        name: 'Can\'t Stop',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse]
 Em
-Can\'t stop addicted to the shindig 
+Can't stop addicted to the shindig 
 D
-Chop top he says I\'m gonna win big 
+Chop top he says I'm gonna win big 
 Bm
 Choose not a life of imitation 
 C
@@ -7331,7 +7671,7 @@ Eastside love is living on the westend
 Em
 Knocked out but boy you better come to 
 D
-Don\'t die you know the truth as some do 
+Don't die you know the truth as some do 
 Bm
 Go write your message on the pavement 
 C
@@ -7348,13 +7688,13 @@ Come back strong with 50 belly dancers
 G
 The world I love 
 D
-The tears I\'ve dropped 
+The tears I've dropped 
 Bm
 To be part of 
 C
-the wave can\'t stop 
+the wave can't stop 
 G           D        Bm      C
-Ever wonder if it\'s all for you
+Ever wonder if it's all for you
 G
 The world I love 
 D
@@ -7362,20 +7702,20 @@ The trains I hop
 Bm
 To be part of 
 C
-The wave can\'t stop 
+The wave can't stop 
 G                 D         Bm C
-Come and tell me when it\'s time to 
+Come and tell me when it's time to 
 [Verse]
 Em
 Sweetheart is bleeding in the snowcone 
 D
-So smart she\'s leading me to ozone 
+So smart she's leading me to ozone 
 Bm
 Music the great communicator 
 C
 Use two sticks to make it in the nature 
 Em
-I\'ll get you into penetration 
+I'll get you into penetration 
 D
 The gender of a generation 
 Bm
@@ -7383,15 +7723,15 @@ The birth of every other nation
 C
 Worth your weight the gold of meditation 
 Em
-This chapter\'s going to be a close one 
+This chapter's going to be a close one 
 D
-Smoke rings I know you\'re going to blow one 
+Smoke rings I know you're going to blow one 
 Bm
 All on a spaceship persevering 
 C
 Use my hands for everything but steering 
 Em
-Can\'t stop the spirits when they need you 
+Can't stop the spirits when they need you 
 D
 Mop tops are happy when they feed you 
 Bm
@@ -7402,13 +7742,13 @@ Birds that blow the meaning into bebop
 G
 The world I love 
 D
-The tears I\'ve dropped 
+The tears I've dropped 
 Bm
 To be part of 
 C
-the wave can\'t stop 
+the wave can't stop 
 G           D        Bm      C
-Ever wonder if it\'s all for you
+Ever wonder if it's all for you
 G
 The world I love 
 D
@@ -7416,23 +7756,23 @@ The trains I hop
 Bm
 To be part of 
 C
-The wave can\'t stop 
+The wave can't stop 
 G                 D         Bm C
-Come and tell me when it\'s time to
+Come and tell me when it's time to
 [Interlude]
 Em                 D                   Bm              C
-Wait a minute I\'m passing out, win or lose, just like you 
+Wait a minute I'm passing out, win or lose, just like you 
 Em                       D              Bm             C
-Far more shockin\' than anything I ever knew, how \'bout you 
+Far more shockin' than anything I ever knew, how 'bout you 
 Em                D                  Bm             C
 Ten more reasons why I need somebody new, just like you 
 Em                       D              Bm             C
-Far more shockin\' than anything I ever knew, right on cue 
+Far more shockin' than anything I ever knew, right on cue 
 [Verse]
 Em
-Can\'t stop addicted to the shindig 
+Can't stop addicted to the shindig 
 D
-Chop top he says I\'m gonna win big 
+Chop top he says I'm gonna win big 
 Bm
 Choose not a life of imitation 
 C
@@ -7448,7 +7788,7 @@ Eastside love is living on the westend
 Em
 Knocked out but boy you better come to 
 D
-Don\'t die you know the truth as some do 
+Don't die you know the truth as some do 
 Bm
 Go write your message on the pavement 
 C
@@ -7456,9 +7796,9 @@ Burn so bright I wonder what the wave meant
 Em
 Kick start the golden generator 
 D
-Sweet talk but don\'t intimidate her 
+Sweet talk but don't intimidate her 
 Bm
-Can\'t stop the Gods from engineering 
+Can't stop the Gods from engineering 
 C
 Feel no need for any interfering 
 Em
@@ -7468,17 +7808,17 @@ This life is more than ordinary
 Bm
 Can I get 2 maybe even 3 of these 
 C
-Comin\' from space to teach you of the Pliedes 
+Comin' from space to teach you of the Pliedes 
 Em
-Can\'t stop the spirits when they need you 
+Can't stop the spirits when they need you 
 N.C.
-This life is more than just a read-thru `		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`e|------------------------------|    |--------------------------------|
+This life is more than just a read-thru `
+            },
+            {
+                name: 'Tab',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `e|------------------------------|    |--------------------------------|
 B|------------------------------|    |--------------------------------|
 G|------------------------------|    |--------------------------------|
 D|------------------------------| x4 |--------------------------------| x1
@@ -7584,97 +7924,100 @@ G|--------------------------------------12---12-------------------------------|
 D|----------------------------------------------------------------------------|
 A|----------------------------------------------------------------------------|
 E|----------------------------------------------------------------------------|
-Little variations in the repeats, just solo in E minor or G major`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse 1]
-Can\'t stop, addicted to the shindig
-Chop Top, he says I\'m gonna win big
+Little variations in the repeats, just solo in E minor or G major`
+            },
+            {
+                name: 'Lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse 1]
+Can't stop, addicted to the shindig
+Chop Top, he says I'm gonna win big
 Choose not a life of imitation
 Distant cousin to the reservation
 Defunkt, the pistol that you pay for
-This punk, the feelin\' that you stay for
+This punk, the feelin' that you stay for
 In time I want to be your best friend
 East side love is living on the West End
 Knocked out, but, boy, you better come to
-Don\'t die, you know, the truth as some do
+Don't die, you know, the truth as some do
 Go write your message on the pavement
 Burn so bright, I wonder what the wave meant
-White heat is screamin\' in the jungle
+White heat is screamin' in the jungle
 Complete the motion if you stumble
 Go ask the dust for any answers
 Come back strong with fifty belly dancers
 [Chorus]
 The world I love, the tears I drop
-To be part of the wave, can\'t stop
-Ever wonder if it\'s all for you?
+To be part of the wave, can't stop
+Ever wonder if it's all for you?
 The world I love, the trains I hop
-To be part of the wave, can\'t stop
-Come and tell me when it\'s time to
+To be part of the wave, can't stop
+Come and tell me when it's time to
 [Verse 2]
 Sweetheart is bleeding in the snow cone
-So smart, she\'s leadin\' me to ozone
+So smart, she's leadin' me to ozone
 Music, the great communicator
 Use two sticks to make it in the nature
-I\'ll get you into penetration
+I'll get you into penetration
 The gender of a generation
 The birth of every other nation
 Worth your weight, the gold of meditation
-This chapter\'s gonna be a close one
-Smoke rings, I know you\'re gonna blow one
+This chapter's gonna be a close one
+Smoke rings, I know you're gonna blow one
 All on a spaceship, persevering
 Use my hands for everything but steering
-Can\'t stop the spirits when they need you
+Can't stop the spirits when they need you
 Mop tops are happy when they feed you
 J. Butterfly is in the treetop
 Birds that blow the meaning into bebop
 [Chorus]
 The world I love, the tears I drop
-To be part of the wave, can\'t stop
-Ever wonder if it\'s all for you?
+To be part of the wave, can't stop
+Ever wonder if it's all for you?
 The world I love, the trains I hop
-To be part of the wave, can\'t stop
-Come and tell me when it\'s time to
+To be part of the wave, can't stop
+Come and tell me when it's time to
 [Bridge]
-Wait a minute, I\'m passin\' out win or lose, just like you
-Far more shockin\' than anything I ever knew, how about you?
+Wait a minute, I'm passin' out win or lose, just like you
+Far more shockin' than anything I ever knew, how about you?
 Ten more reasons why I need somebody new, just like you
-Far more shockin\' than anything I ever knew, right on cue
+Far more shockin' than anything I ever knew, right on cue
 [Verse 3]
-Can\'t stop, addicted to the shindig
-Chop Top, he says I\'m gonna win big
+Can't stop, addicted to the shindig
+Chop Top, he says I'm gonna win big
 Choose not a life of imitation
 Distant cousin to the reservation
 Defunct, the pistol that you pay for
-This punk, the feelin\' that you stay for
+This punk, the feelin' that you stay for
 In time I want to be your best friend
 East side love is living on the West End
 Knocked out, but boy, you better come to
-Don\'t die, you know, the truth is some do
+Don't die, you know, the truth is some do
 Go write your message on the pavement
 Burn so bright, I wonder what the wave meant
 Kick start the golden generator
-Sweet talk but don\'t intimidate her
-Can\'t stop the gods from engineering
+Sweet talk but don't intimidate her
+Can't stop the gods from engineering
 Feel no need for any interfering
 Your image in the dictionary
 This life is more than ordinary
 Can I get two, maybe even three of these?
-Comin\' from the space to teach you of the Pleiades
-Can\'t stop the spirits when they need you
-This life is more than just a read-through`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Kool & The Gang', 'Get Down On It')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Comin' from the space to teach you of the Pleiades
+Can't stop the spirits when they need you
+This life is more than just a read-through`
+            }
+        ]
+    },
+    {
+        artist: 'Kool & The Gang',
+        name: 'Get Down On It',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 (Bass notes only)
              E
 Uh-What you gonna do?
@@ -7692,7 +8035,7 @@ Get down on it!
 Em7             Bm7 Bm7 D
 Get down on it!
 D               D   D
-Get down on it! C\'mon and
+Get down on it! C'mon and
 Em7             Bm7 Bm7 Am7
 Get down on it!
 Am7             Am7 Bm7
@@ -7703,7 +8046,7 @@ D               D   D
 Get down on it!
 [Verse 1]
 Em7                        Bm7      Bm7  Am7
-Uh, how you gonna do it if you really don\'t wanna dance
+Uh, how you gonna do it if you really don't wanna dance
 Am7      Bm7    Em7
 By standing on the wall?!
  Bm7      Bm7   D
@@ -7711,13 +8054,13 @@ Get your back up off the wall!
 D D
 Tell me
 Em7                        Bm7      Bm7  Am7
-Uh, how you gonna do it if you really don\'t wanna dance
+Uh, how you gonna do it if you really don't wanna dance
 Am7      Bm7    Em7
 By standing on the wall?!
  Bm7      Bm7   D
 Get your back up off the wall!
 D               D        D
-Cause I heard all the people sayin\'
+Cause I heard all the people sayin'
 [Chorus]
 Em7             Bm7 Bm7 Am7
 Get down on it!  Come on and,
@@ -7747,7 +8090,7 @@ If you want your body to move
 Bm7 Bm7     D          D D
 Tell me, baby
 Em7                        Bm7      Bm7  Am7
-Uh, how you gonna do it if you really don\'t wanna dance
+Uh, how you gonna do it if you really don't wanna dance
 Am7      Bm7    Em7
 By standing on the wall?!
  Bm7      Bm7   D
@@ -7755,13 +8098,13 @@ Get your back up off the wall!
 D D
 Tell me
 Em7                        Bm7      Bm7  Am7
-Uh, how you gonna do it if you really don\'t wanna dance
+Uh, how you gonna do it if you really don't wanna dance
 Am7      Bm7    Em7
 By standing on the wall?!
  Bm7      Bm7   D
 Get your back up off the wall!
 D               D        D
-Cause I heard all the people sayin\'
+Cause I heard all the people sayin'
 [Chorus]
 Em7             Bm7 Bm7 Am7
 Get down on it!
@@ -7770,7 +8113,7 @@ Get down on it!
 Em7             Bm7 Bm7 D
 Get down on it!
 D               D         D
-Get down on it! When we\'re dancin\'
+Get down on it! When we're dancin'
 Em7             Bm7 Bm7 Am7
 Get down on it!
 Am7             Am7 Bm7
@@ -7819,34 +8162,39 @@ Get down on it!  Baby baby
 Em7             Bm7 Bm7 D
 Get down on it!  Get on it
 D               D   D
-Get down on it!`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Arctic Monkeys', 'Do I Wanna Know')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo3),
-			duration: 5 * 60 + 30,
-			content: 
-`[Intro]
+Get down on it!`
+            }
+        ]
+    },
+    {
+        artist: 'Arctic Monkeys',
+        name: 'Do I Wanna Know',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo3,
+                autoScroll: {
+                    duration: 4 * 60 + 30
+                },
+                content: `[Intro]
 [Verse]
 Em                            C     Am
 Have you got colour in your cheeks?
 Am                                        Em  
-Do you ever get the fear that you can\'t shift the type
+Do you ever get the fear that you can't shift the type
                  Em 
 that sticks around like summat in your teeth?
         C             Am
 Are there some aces up your sleeve?
                          Em
-Have you no idea that you\'re in deep?
+Have you no idea that you're in deep?
                    Em
 I dreamt about you nearly every night this week
   C             Am
 How many secrets can you keep?
                             Em
-Cause there\'s this tune I found that makes me think of you somehow
+Cause there's this tune I found that makes me think of you somehow
 Em 
 And I play it on repeat
 C         Am
@@ -7861,26 +8209,26 @@ if this feeling flows both ways?
 Em
 Sad to see you go
   Em
-Was sorta hoping that you\'d stay
+Was sorta hoping that you'd stay
 C 
 Baby we both know
   Am
 That the nights were mainly made
      Em                               Em
-for saying things that you can\'t say tomorrow day
+for saying things that you can't say tomorrow day
 [Chorus]
           Em
-Crawlin\' back to you
+Crawlin' back to you
         C       Am
-Ever thought of calling when you\'ve had a few
+Ever thought of calling when you've had a few
      Em
 Cos I always do
   Em             C         Am
-Maybe I\'m too busy being yours to fall for somebody new
+Maybe I'm too busy being yours to fall for somebody new
              Em
-Now I\'ve thought it through
+Now I've thought it through
           Em
-Crawlin\' back to you
+Crawlin' back to you
 [Verse]
             C    Am
 So have you got the guts?
@@ -7890,13 +8238,13 @@ Been wondering if your hearts still open
 And if so I wanna know what time it shuts
 C              Am
 Simmer down and pucker up
-I\'m sorry to interrupt
+I'm sorry to interrupt
 Em
-It\'s just I\'m constantly on the cusp
+It's just I'm constantly on the cusp
      C        Am
 Of trying to kiss you
                       Em
-I don\'t know if you feel the same as I do
+I don't know if you feel the same as I do
        C        Am               
 But we could be together
       B
@@ -7909,26 +8257,26 @@ if this feeling flows both ways?
 Em
 Sad to see you go
   Em
-Was sorta hoping that you\'d stay
+Was sorta hoping that you'd stay
 C 
 Baby we both know
   Am
 That the nights were mainly made
      Em                               Em
-for saying things that you can\'t say tomorrow day
+for saying things that you can't say tomorrow day
 [Chorus]
           Em
-Crawlin\' back to you
+Crawlin' back to you
         C       Am
-Ever thought of calling when you\'ve had a few
+Ever thought of calling when you've had a few
      Em
 Cos I always do
   Em             C         Am
-Maybe I\'m too busy being yours to fall for somebody new
+Maybe I'm too busy being yours to fall for somebody new
              Em
-Now I\'ve thought it through
+Now I've thought it through
           Em
-Crawlin\' back to you
+Crawlin' back to you
 [Pre-Chorus]
 C
 Do I wanna know
@@ -7937,13 +8285,13 @@ if this feeling flows both ways?
 Em
 Sad to see you go
   Em
-Was sorta hoping that you\'d stay
+Was sorta hoping that you'd stay
 C 
 Baby we both know
   Am
 That the nights were mainly made
      Em                               Em
-for saying things that you can\'t say tomorrow day
+for saying things that you can't say tomorrow day
 C
 Do I wanna know
         Am      
@@ -7955,16 +8303,19 @@ Ever thought of calling darling?
 C
 Do I wanna know
         Am             Em
-Do you want me crawling back to you?`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The White Stripes', 'Seven Nation Army')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse Riff]
+Do you want me crawling back to you?`
+            }
+        ]
+    },
+    {
+        artist: 'The White Stripes',
+        name: 'Seven Nation Army',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse Riff]
 G|----------------------------------------------------------------------|
 D|------5-----------------5-----------------5-----------------5---------|(x10)
 A|-7--7---7-5-3-2--/-7--7---7-5-3-2--/-7--7---7-5-3-2--/-7--7---7-5-3-2-|
@@ -8008,17 +8359,17 @@ A|-7--7---7-5-3-5-3-2-|
 E|-0------------------|
 [Verse 1]
   Em            G C B          
-I\'m gonna fight \'em off
+I'm gonna fight 'em off
        Em            G       C    B
-A seven nation army couldn\'t hold me back
+A seven nation army couldn't hold me back
       Em         G C B
-They\'re gonna rip it off
+They're gonna rip it off
      Em           G       C    B
 Taking their time right behind my back
 Em           G       C     
-And I\'m talking to myself at night
+And I'm talking to myself at night
   B        Em  G C B
-Because I can\'t forget
+Because I can't forget
 Em             G          C    
 Back and forth through my mind
  B   Em    G C B
@@ -8030,9 +8381,9 @@ Em G C B 4x
 Am B E
 [Verse 2]
   Em            G C B      
-Don\'t want to hear about it
+Don't want to hear about it
        Em            G       C    B
-Every single one\'s got a story to tell
+Every single one's got a story to tell
   Em            G C B          
 Everyone knows about it
        Em            G       C    B
@@ -8040,24 +8391,24 @@ From the Queen of England to the hounds of Hell
   Em            G C B          
 And if I catch it coming back my way
        Em            G       C    B
-I\'m gonna serve it to you
+I'm gonna serve it to you
   Em            G C B          
-And that ain\'t what you want to hear
+And that ain't what you want to hear
        Em            G       C    B
-But that\'s what I\'ll do
+But that's what I'll do
 Am (actually G)        B (actually A)
 And a feeling coming from my bones says find a home 
 [Verse 3]
   Em            G C B      
-I\'m going to Wichita
+I'm going to Wichita
        Em            G       C    B
 Far from this opera, forever more
   Em            G C B      
-I\'m going to work the straw
+I'm going to work the straw
        Em            G       C    B
 Make the sweat drip out of every pore
   Em            G C B      
-And I\'m bleeding and I\'m bleeding and I\'m bleeding
+And I'm bleeding and I'm bleeding and I'm bleeding
        Em            G       C    B
 Right before the Lord
   Em            G C B      
@@ -8065,16 +8416,19 @@ All the words are going to bleed from me
        Em            G       C    B
 And I will think no more
 Am (actually G)        B (actually A)   
-And the stains coming from my blood tell me go back home`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Led Zeppelin', 'Immigrant Song')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`
+And the stains coming from my blood tell me go back home`
+            }
+        ]
+    },
+    {
+        artist: 'Led Zeppelin',
+        name: 'Immigrant Song',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `
 [Intro]
 F#m
 e|----------------------------------|---------------------------------|
@@ -8136,16 +8490,19 @@ Our only goal will be the western shore
 F#m
 S-so now you better stop and rebuild all your ruins
 F#m                                                      C7    F#m
-for peace and trust can winthe day despite of all you\'re losing`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Oasis', 'Wonderwall')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			content: 
-`[Intro]
+for peace and trust can winthe day despite of all you're losing`
+            }
+        ]
+    },
+    {
+        artist: 'Oasis',
+        name: 'Wonderwall',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                content: `[Intro]
 Em   G   D   A7sus4
 Em   G   D   A7sus4
 Em   G   D   A7sus4
@@ -8154,13 +8511,13 @@ Em   G   D   A7sus4
 Em       G 
 Today is gonna be the day 
       D                  A7sus4
-That they\'re gonna throw it back to you
+That they're gonna throw it back to you
 Em          G
-By now you should\'ve somehow   
+By now you should've somehow   
 D                A7sus4
 Realised what you gotta do
 Em                   G
-I don\'t believe that anybody
+I don't believe that anybody
 D           A7sus4            C  D  A7sus4
 Feels the way I do about you now
 [Verse 2]
@@ -8169,11 +8526,11 @@ Backbeat the word is on the street
   D                 A7sus4
 That the fire in your heart is out
 Em              G
-I\'m sure you\'ve heard it all before
+I'm sure you've heard it all before
   D             A7sus4
 But you never really had a doubt
 Em                   G       D
-I don\'t believe that anybody feels
+I don't believe that anybody feels
    A7sus4            Em  G  D  A7sus4
 The way I do about you now
 [Bridge]
@@ -8186,27 +8543,27 @@ There are many things that I would
 Em      D  G
 Like to say to you
 D      A7sus4
-But I don\'t know how
+But I don't know how
 [Chorus]
  C    Em  G
 Because maybe
 Em                   C        Em  G
-You\'re gonna be the one that saves me?
+You're gonna be the one that saves me?
 Em   C  Em  G  Em
 And after all
          C  Em  G  Em      G
-You\'re my wonderwall
+You're my wonderwall
 [Verse 3] 
 Em        G 
 Today was gonna be the day
      D                  A7sus4
-But they\'ll never throw it back to you
+But they'll never throw it back to you
 Em         G
-By now you should\'ve somehow
+By now you should've somehow
 D                    A7sus4
-Realised what you\'re not to do
+Realised what you're not to do
 Em                   G
-I don\'t believe that anybody
+I don't believe that anybody
 D            A7sus4
 Feels the way I do
    Em  G  D  A7sus4
@@ -8219,45 +8576,45 @@ And all the lights that light the way are blinding
 C              D               Em     D  G
 There are many things that I would like to say to you
 D      A7sus4
-But I don\'t know how
+But I don't know how
 [Chorus]
 C    Em  G
 I said maybe
 Em                   C        Em  G
-You\'re gonna be the one that saves me?
+You're gonna be the one that saves me?
 Em   C  Em  G
 And after all
    Em   C   Em  G  Em
-You\'re my wonderwall
+You're my wonderwall
 C             Em   G
 I said maybe (I said maybe)
 Em                   C        Em  G
-You\'re gonna be the one that saves me?
+You're gonna be the one that saves me?
 Em   C  Em  G
 And after all
    Em   C   Em  G  Em
-You\'re my wonderwall
+You're my wonderwall
 C             Em   G
 I said maybe (I said maybe)
 Em                   C               Em      G
-You\'re gonna be the one that saves me? (that saves me)
+You're gonna be the one that saves me? (that saves me)
 Em                   C               Em      G
-You\'re gonna be the one that saves me? (that saves me)
+You're gonna be the one that saves me? (that saves me)
 Em                   C               Em      G  Em
-You\'re gonna be the one that saves me? (that saves me)
+You're gonna be the one that saves me? (that saves me)
 [Solo]
 e|---------------|
 B|---------------|
 G|---------0-----|
 D|------------2--|   x8 
 A|--3-2-3--------|
-E|---------------|`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+E|---------------|`
+            },
+            {
+                name: 'Chords (no capo) + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 F#m7 A  Esus4  B7sus4
 F#m7 A  Esus4  B7sus4
 F#m7 A  Esus4  B7sus4
@@ -8266,13 +8623,13 @@ F#m7 A  Esus4  B7sus4
 F#m7          A 
 Today is gonna be the day 
       Esus4                  B7sus4
-That they\'re gonna throw it back to you
+That they're gonna throw it back to you
 F#m7             A
-By now you should\'ve somehow   
+By now you should've somehow   
 Esus4                B7sus4
 Realised what you gotta do
 F#m7                  A
-I don\'t believe that anybody
+I don't believe that anybody
 Esus4           B7sus4       D   Esus4   B7sus4
 Feels the way I do about you now
 [Verse 2]
@@ -8281,11 +8638,11 @@ Backbeat the word is on the street
   Esus4                 B7sus4
 That the fire in your heart is out
 F#m7                 A
-I\'m sure you\'ve heard it all before
+I'm sure you've heard it all before
   Esus4             B7sus4
 But you never really had a doubt
 F#m7                      A       Esus4
-I don\'t believe that anybody feels
+I don't believe that anybody feels
    B7sus4       F#m7 A  Esus4  B7sus4
 The way I do about you now
 [Bridge]
@@ -8298,27 +8655,27 @@ There are many things that I would
 F#m7     Esus4  A
 Like to say to you
 Esus4      B7sus4
-But I don\'t know how
+But I don't know how
 [Chorus]
  D    F#m7 A
 Because maybe
 F#m7                  D        F#m7 A
-You\'re gonna be the one that saves me?
+You're gonna be the one that saves me?
 F#m7  D  F#m7 A
 And after all
    F#m7   D  F#m7 A  F#m7     A
-You\'re my wonderwall
+You're my wonderwall
 [Verse 3] 
 F#m7           A 
 Today was gonna be the day
      Esus4                  B7sus4
-But they\'ll never throw it back to you
+But they'll never throw it back to you
 F#m7            A
-By now you should\'ve somehow
+By now you should've somehow
 Esus4                    B7sus4
-Realised what you\'re not to do
+Realised what you're not to do
 F#m7                  A
-I don\'t believe that anybody
+I don't believe that anybody
 Esus4            B7sus4
 Feels the way I do
    F#m7 A  Esus4  B7sus4
@@ -8331,32 +8688,32 @@ And all the lights that light the way are blinding
 D              Esus4               F#m7    Esus4  A
 There are many things that I would like to say to you
 Esus4      B7sus4
-But I don\'t know how
+But I don't know how
 [Chorus]
 D    F#m7 A
 I said maybe
 F#m7                 D        F#m7 A
-You\'re gonna be the one who saves me?
+You're gonna be the one who saves me?
 F#m7  D  F#m7 A
 And after all
    F#m7  D   F#m7 A  F#m
-You\'re my wonderwall
+You're my wonderwall
 D             F#m7  A
 I said maybe (I said maybe)
 F#m7                 D        F#m7 A
-You\'re gonna be the that who saves me?
+You're gonna be the that who saves me?
 F#m7  D  F#m7 A
 And after all
    F#m7  D   F#m7 A  F#m
-You\'re my wonderwall
+You're my wonderwall
 D             F#m7  A
 I said maybe (I said maybe)
 F#m7                  D               F#m7     A
-You\'re gonna be the one that saves me? (that saves me)
+You're gonna be the one that saves me? (that saves me)
 F#m7                  D               F#m7     A
-You\'re gonna be the one that saves me? (that saves me)
+You're gonna be the one that saves me? (that saves me)
 F#m7                  D               F#m7     A  F#m
-You\'re gonna be the one that saves me? (that saves me)
+You're gonna be the one that saves me? (that saves me)
 [Outro]
 e|---|-----5-2-|-----|
 B|-3-|-2-3-----|-----|
@@ -8367,16 +8724,19 @@ E|---|---------|-----|
 D  F#m7 A  F#m7
 D  F#m7 A  F#m7
 D  F#m7 A  F#m7
-D  F#m7 A  F#m7`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Police', 'So Lonely')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Verse]
+D  F#m7 A  F#m7`
+            }
+        ]
+    },
+    {
+        artist: 'The Police',
+        name: 'So Lonely',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Verse]
 C     G               Am    F
 Well, someone told me yesterday
 C    G                   Am    F
@@ -8419,46 +8779,49 @@ I always play the starring role. So lonely!
 C          G          Am         F C          G          Am         F
 So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!
 C          G          Am         F C          G          Am         F
-So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Police', 'Roxanne')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!`
+            }
+        ]
+    },
+    {
+        artist: 'The Police',
+        name: 'Roxanne',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Em Em D C
 Bm A D Em
 [Verse 1]
 Em 
 Roxanne 
 D                C                 Bm
-You don\'t have to put on the red light 
+You don't have to put on the red light 
 A
 Those days are over 
 D                  Em
-You don\'t have to sell your body to the night 
+You don't have to sell your body to the night 
 [Verse 2]
 Em
 Roxanne 
 D                  C                 Bm   
-You don\'t have to wear that dress tonight 
+You don't have to wear that dress tonight 
 A                       D
 Walk the streets for money 
    Em
-You don\'t care if it\'s wrong or if it\'s right 
+You don't care if it's wrong or if it's right 
 [Verse 3]
 Am
 Roxanne 
 D                  Em
-You don\'t have to put on
+You don't have to put on
 the red light 
 A
 Roxanne 
 D                  Em
-You don\'t have to put on the red light 
+You don't have to put on the red light 
 [Chorus]
 G       D       Em      G       D       Em
 Roxanne Roxanne Roxanne Roxanne Roxanne Roxanne   
@@ -8469,44 +8832,47 @@ Em D C B A D Em
 Em                        D
 I loved you since I knew you 
 C                        B
-I wouldn\'t talk down to you 
+I wouldn't talk down to you 
 D
 I have to tell you just how I feel 
  Em
-I won\'t share you with another boy 
+I won't share you with another boy 
 Em                     D
 I know my mind is made up 
 C                 B
 So put away your makeup 
 A                      D
-Told you once I won\'t tell you again 
+Told you once I won't tell you again 
 Em
-It\'s a bad way 
+It's a bad way 
 [Verse 4]
 Am
 Roxanne 
 D                  Em
-You don\'t have to put on the red light 
+You don't have to put on the red light 
 A
 Roxanne 
 D                  Em
-You don\'t have to put on the red light 
+You don't have to put on the red light 
 [Chorus]
 G       D       Em      G       D       Em
 Roxanne Roxanne Roxanne Roxanne Roxanne Roxanne   
 [Instrumental]
 Em D C B A D
 Em
-Put on the red light x12`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Pixies', 'Where Is My Mind')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+Put on the red light x12`
+            }
+        ]
+    },
+    {
+        artist: 'Pixies',
+        name: 'Where Is My Mind',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 Ooh - Stop
 E   C#m   G#   A   x2
 E                 C#m               G#                A
@@ -8524,9 +8890,9 @@ Try this trick and spin it, yeah
 E                  C#m
 Your head will collapse
     G#
-But there\'s nothing in it
+But there's nothing in it
    A
-And you\'ll ask yourself
+And you'll ask yourself
 [Chorus]
 E            C#m
 Where is my mind?
@@ -8538,7 +8904,7 @@ E   G#         A             Am        C#m   B
 Way out in the water, see it swimming.
 [Verse]
 E                        C#m    G#  A
-I was swimmin\' in the Carribean
+I was swimmin' in the Carribean
 E             C#m                  G#  A
 Animals were hiding behind the rock
 E                    C#m
@@ -8546,7 +8912,7 @@ Except the little fish
   G#
 But they told me, he swears
    A
-Tryin\' to talk to me, to me, to me
+Tryin' to talk to me, to me, to me
 [Chorus]
 E            C#m
 Where is my mind?
@@ -8571,9 +8937,9 @@ Try this trick and spin it, yeah
 E                  C#m
 Your head will collapse
     G#
-But there\'s nothing in it
+But there's nothing in it
    A
-And you\'ll ask yourself
+And you'll ask yourself
 [Chorus]
 E            C#m
 Where is my mind?
@@ -8585,16 +8951,19 @@ E   G#         A             Am        C#m   B
 Way out in the water, see it swimming.
 [Outro]
 E  C#m  G#  A
-E  C#m  G#  A`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Cranberries', 'Zombie')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro] 
+E  C#m  G#  A`
+            }
+        ]
+    },
+    {
+        artist: 'The Cranberries',
+        name: 'Zombie',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro] 
 Em C G D/F#  4x
 [Verse 1]
 Em       C                G                D/F# 
@@ -8602,7 +8971,7 @@ Another head hangs lowly, child is slowly taken
 Em               C                    G               D/F# 
 And the violence caused such silence, who are we mistaken 
 Em                        C 
-But you see it\'s not me, it\'s not my family
+But you see it's not me, it's not my family
 G                               D/F# 
 In your head, in your head, they are fighting 
    Em                              C                                                         
@@ -8613,52 +8982,57 @@ in your head, in your head, they are crying
 Em            C            G             D/F# 
 In your head, in your head, zombie, zombie, zombie 
        Em            C            G             D/F# 
-What\'s in your head, in your head, zombie, zombie, zombie 
+What's in your head, in your head, zombie, zombie, zombie 
 Em C G D/F# x2
 [Verse 2]
 Em        C                  G              D/F# 
-Another mother\'s breaking heart is taking over
+Another mother's breaking heart is taking over
 Em                C               G            D/F# 
 When the violence causes silence, we must be mistaken
  Em                   C  
-It\'s the same old theme since 1916
+It's the same old theme since 1916
 G                                  D/F# 
-In your head, in your head, they\'re still fighting
+In your head, in your head, they're still fighting
    Em                              C  
 With their tanks and their bombs and their bombs and their guns
 G                            D/F# 
-In your head, in your head, they\'re dying
+In your head, in your head, they're dying
 [Chorus 2]
 Em            C            G             D/F# 
 In your head, in your head, zombie, zombie, zombie 
        Em            C            G             D/F# 
-What\'s in your head, in your head, zombie, zombie, zombie 
+What's in your head, in your head, zombie, zombie, zombie 
 [Outro]
 Em C G D/F# 
-(repeat to fade)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Bob Marley', 'I Shot The Sheriff')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 5 * 60 + 40,
-			content: 
-`[Chorus 1]
+(repeat to fade)`
+            }
+        ]
+    },
+    {
+        artist: 'Bob Marley',
+        name: 'I Shot The Sheriff',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 4 * 60 + 40
+                },
+                content: `[Chorus 1]
 Gm
 I shot the sheriff,
 Cm                     Gm
-But I didn\'t shoot no deputy, oh no! Oh!
+But I didn't shoot no deputy, oh no! Oh!
 Gm
 I shot the sheriff,
 Cm                     Gm
-But I didn\'t shoot no deputy. Ooh, ooh, oo-ooh.
+But I didn't shoot no deputy. Ooh, ooh, oo-ooh.
 [Verse 1]
 Eb     Dm7      Gm
 All a-round in my home town,
 Eb        Dm7      Gm
-They\'re tryin\' to track me down;
+They're tryin' to track me down;
 Eb             Dm7                 Gm
 They say they want to bring me in guilty,
 Eb           Dm7  Gm
@@ -8685,7 +9059,7 @@ And they say it is a capital offence. Yeah!
 Eb       Dm7               Gm
 Sheriff John Brown always hated me,
 Eb     Dm7      Gm
-For what... I don\'t know.
+For what... I don't know.
 Eb     Dm7     Gm
 Every time I plant a seed,
 Eb         Dm7     Gm
@@ -8732,11 +9106,11 @@ E|------------6-------6-3--|
 Gm
 I shot the sheriff,
 Cm                     Gm
-But I didn\'t shoot no deputy, oh no! Oh!
+But I didn't shoot no deputy, oh no! Oh!
 Gm
 I shot the sheriff,
 Cm                     Gm
-But I didn\'t shoot no deputy. Ooh, ooh, oo-ooh.
+But I didn't shoot no deputy. Ooh, ooh, oo-ooh.
 [Verse 4]
 Eb             Dm7       Gm
 Re-flexes had the better of me,
@@ -8760,24 +9134,27 @@ E|------------6-------6-3--|
 Gm
 I-I-I, I shot the sheriff,
 Cm                            Gm
-Lord, I didn\'t shot the depu-ty. No!
+Lord, I didn't shot the depu-ty. No!
 Gm
 I-I...(shot the sheriff),
 Cm                     Gm
-But I didn\'t shoot no deputy. Yeah! So, yeah!
+But I didn't shoot no deputy. Yeah! So, yeah!
 [Coda]
 Gm  Cm
 Gm
-(Repeat to Fade)`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Milky Chance', 'Stolen Dance')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[INTRO]
+(Repeat to Fade)`
+            }
+        ]
+    },
+    {
+        artist: 'Milky Chance',
+        name: 'Stolen Dance',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[INTRO]
 G#m    F#  E       B       D#7
 e|-------------------------------------|
 B|------4-2-2-0-0-0-0-7-7-7-7-4-4-4-4--|
@@ -8791,11 +9168,11 @@ I want you by my side
 B                    D#7
 So that I never feel alone again
 G#m            F#      E
-They\'ve always been so kind
+They've always been so kind
 B                           D#7
-But now they\'ve brought you away from here
+But now they've brought you away from here
 G#m          F#             E
-I hope they didn\'t get your mind
+I hope they didn't get your mind
 B                        D#7
 Your heart is too strong anyway
 G#m        F#             E
@@ -8808,29 +9185,29 @@ And I want you
 B
 We can bring it on the floor
      D#7              G#m
-You\'ve never danced like this before
+You've never danced like this before
  F#
-We don\'t talk about it
+We don't talk about it
 E                  B
-Dancin\' on, do the boogie all night long
+Dancin' on, do the boogie all night long
 D#7          G#m
 Stoned in paradise
 F#
-Shouldn\'t talk about it
+Shouldn't talk about it
 E 
 And I want you
 B
 We can bring it on the floor
      D#7              G#m
-You\'ve never danced like this before
+You've never danced like this before
  F#
-We don\'t talk about it
+We don't talk about it
 E                  B
-Dancin\' on, do the boogie all night long
+Dancin' on, do the boogie all night long
 D#7          G#m
 Stoned in paradise
-Shouldn\'t talk about it
-Shouldn\'t talk about it
+Shouldn't talk about it
+Shouldn't talk about it
 [BRIDGE]
 G#m F#
 G#m F# E B D#7
@@ -8858,29 +9235,29 @@ And I want you
 B
 We can bring it on the floor
      D#7              G#m
-You\'ve never danced like this before
+You've never danced like this before
      F#
-But we don\'t talk about it
+But we don't talk about it
 E                  B
 Dancin on doin the boogie all night long
 D#7          G#m
 Stoned in paradise
 F#
-Shouldn\'t talk about it
+Shouldn't talk about it
 E
 And I want you
 B
 We can bring it on the floor
      D#7              G#m
-You\'ve never danced like this before
+You've never danced like this before
      F#
-But we don\'t talk about it
+But we don't talk about it
 E                  B
 Dancin on doin the boogie all night long
 D#7          G#m
 Stoned in paradise
-Shouldn\'t talk about it
-Shouldn\'t talk about it
+Shouldn't talk about it
+Shouldn't talk about it
 [BRIDGE]
 G#m F#
 G#m F# E B D#7
@@ -8891,28 +9268,28 @@ And I want you
 B
 We can bring it on the floor
      D#7              G#m
-You\'ve never danced like this before
+You've never danced like this before
      F#
-But we don\'t talk about it
+But we don't talk about it
 E                  B
 Dancin on doin the boogie all night long
 D#7          G#m
 Stoned in paradise
 F#
-Shouldn\'t talk about it
+Shouldn't talk about it
 E
 And I want you
 B
 We can bring it on the floor
      D#7              G#m
-You\'ve never danced like this before
+You've never danced like this before
      F#
-But we don\'t talk about it
+But we don't talk about it
 E                  B
 Dancin on doin the boogie all night long
 D#7          G#m
 Stoned in paradise
-Shouldn\'t talk about it
+Shouldn't talk about it
 [OUTRO]
 G#m F#
 G#m F# E B D#7
@@ -8921,17 +9298,22 @@ G#m F# E B D#7
 G#m F# E B D#7
 G#m F# E B D#7
 G#m F# E B D#7
-G#m F# E B D#7`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Led Zeppelin', 'Stairway To Heaven')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 6 * 60 + 0,
-			content: 
-`Am E+* C D F G Am
+G#m F# E B D#7`
+            }
+        ]
+    },
+    {
+        artist: 'Led Zeppelin',
+        name: 'Stairway To Heaven',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 6 * 60
+                },
+                content: `Am E+* C D F G Am
   Am         E+ *
 There’s a lady who’s sure
  C           D
@@ -9025,36 +9407,41 @@ And did you know
 C             G           Am              C G Am
 Your stairway lies on the whispering wind.
 D Dsus2 D Dsus4 D Dsus2 D Dsus4  C Cadd9 C Cadd9 C  2x
-Am        G                F   GAm
+Am        G                F   G\Am
 And as we wind on down the road
-    G               F   GAm
+    G               F   G\Am
 Our shadows taller than our soul.
-      G           F   GAm
+      G           F   G\Am
 There walks a lady we all know
-   G                        F   GAm
+   G                        F   G\Am
 Who shines white light and wants to show
- G                    F   GAm
+ G                    F   G\Am
 How everything still turns to gold.
-   G           F   GAm
+   G           F   G\Am
 And if you listen very hard
-      G              F   GAm
+      G              F   G\Am
 The tune will come to you at last.
-     G              F  GAm
+     G              F  G\Am
 When all are one and one is all
 G               F
 To be a rock and not to roll.
   F        G              Am
-And she’s buying a stairway to heaven.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Bob Marley', 'Don\'t Worry, Be Happy')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 3 * 60 + 10,
-			content: 
-`
+And she’s buying a stairway to heaven.`
+            }
+        ]
+    },
+    {
+        artist: 'Bob Marley',
+        name: 'Don\'t Worry, Be Happy',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 3 * 60 + 10
+                },
+                content: `
 [Intro]
 C
 1:Here is a little song I wrote
@@ -9097,21 +9484,24 @@ C        F      F C F
 Dont worry be happy.
 C Dm F C F C F
 Ref.:Uh,...(dont worry),uh,...(be happy),uh...
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Ed Sheeran', 'Shape Of You')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro]
+`
+            }
+        ]
+    },
+    {
+        artist: 'Ed Sheeran',
+        name: 'Shape Of You',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro]
 | Em | Am | C | D |
 | Em | Am | C | D |
 [Verse 1]
 Em             Am
-The club isn\'t the best place to find a lover
+The club isn't the best place to find a lover
 C             D
 So the bar is where I go
 Em                       Am
@@ -9121,11 +9511,11 @@ Drinking faster and then we talk slow
      Em                 Am
 And you come over and start up a conversation with just me
 C                       D
-And trust me I\'ll give it a chance now
+And trust me I'll give it a chance now
 Em                 Am
 Take my hand, stop, put Van the Man on the jukebox
 C                D
-And then we start to dance, and now I\'m singing like
+And then we start to dance, and now I'm singing like
 [Pre-Chorus]
 Em                Am
 Girl, you know I want your love
@@ -9134,9 +9524,9 @@ Your love was handmade for somebody like me
       Am     
 Come on now, follow my lead
 C               D    
-I may be crazy, don\'t mind me, say
+I may be crazy, don't mind me, say
 Em                 Am
-Boy, let\'s not talk too much
+Boy, let's not talk too much
 C                   D                Em
 Grab on my waist and put that body on me
      Am
@@ -9145,13 +9535,13 @@ C                           D
 Come—come on now, follow my lead
 [Chorus]
 Em         Am                   C
-I\'m in love with the shape of you
+I'm in love with the shape of you
     D                  Em
 We push and pull like a magnet do
      Am              C
 Although my heart is falling too
 D 
-I\'m in love with your body
+I'm in love with your body
 Em          Am               C
 And last night you were in my room
    D                    Em
@@ -9159,22 +9549,22 @@ And now my bedsheets smell like you
          Am                  C
 Every day discovering something brand new
     D
-Well I\'m in love with your body
+Well I'm in love with your body
 Em         Am         C  D
-Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
+Oh, Oh I, Oh I, Oh I,   I'm in love with your body
 Em         Am         C  D
-Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
+Oh, Oh I, Oh I, Oh I,   I'm in love with your body
 Em         Am         C  D
-Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
+Oh, Oh I, Oh I, Oh I,   I'm in love with your body
 Em            Am                 C  
 Every day discovering something brand new
 D
-I\'m in love with the shape of you
+I'm in love with the shape of you
 [Verse 2]
 Em                       Am
 One week in we let the story begin
     C                D
-We\'re going out on our first date
+We're going out on our first date
     Em                     Am
 But you and me are thrifty so go all you can eat
      C                   D
@@ -9182,11 +9572,11 @@ Fill up your bag and I fill up a plate
     Em                          Am
 We talk for hours and hours about the sweet and the sour
      C                D
-And how your family is doin\' okay
+And how your family is doin' okay
       Em                 Am
 And leave and get in a taxi, we kiss in the backseat
  C                     D
-Tell the driver make the radio play, and I\'m singing like
+Tell the driver make the radio play, and I'm singing like
 [Pre-Chorus]
 Em                Am
 Girl, you know I want your love
@@ -9195,9 +9585,9 @@ Your love was handmade for somebody like me
       Am
 Come on now, follow my lead
 C               D    
-I may be crazy, don\'t mind me, say
+I may be crazy, don't mind me, say
 Em                 Am
-Boy, let\'s not talk too much
+Boy, let's not talk too much
 C                    D                Em
 Grab on my waist and put that body on me
       Am
@@ -9206,13 +9596,13 @@ C                           D
 Come—come on now, follow my lead
 [Chorus]
 Em        Am                   C
-I\'m in love with the shape of you
+I'm in love with the shape of you
     D                  Em
 We push and pull like a magnet do
     Am              C
 Although my heart is falling too
 D 
-I\'m in love with your body
+I'm in love with your body
 Em           Am                 C
 And last night you were in my room
    D                    Em
@@ -9220,17 +9610,17 @@ And now my bedsheets smell like you
           Am                  C
 Every day discovering something brand new
     D
-Well I\'m in love with your body
+Well I'm in love with your body
 Em         Am         C   D
-Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
+Oh, Oh I, Oh I, Oh I,   I'm in love with your body
 Em         Am         C   D
-Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
+Oh, Oh I, Oh I, Oh I,   I'm in love with your body
 Em         Am         C   D
-Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
+Oh, Oh I, Oh I, Oh I,   I'm in love with your body
 Em             Am                     C  
 Every day discovering something brand new
 D
-I\'m in love with the shape of you
+I'm in love with the shape of you
 [Bridge]
 Em               Am
 Come on, be my baby, come on
@@ -9250,13 +9640,13 @@ C               D
 Come on, be my baby, come on
 [Chorus]
 Em         Am                   C
-I\'m in love with the shape of you
+I'm in love with the shape of you
   D                     Em
 We push and pull like a magnet do
     Am                C
 Although my heart is falling too
 D 
-I\'m in love with your body
+I'm in love with your body
 Em          Am                  C
 And last night you were in my room
    D                    Em
@@ -9264,32 +9654,35 @@ And now my bedsheets smell like you
            Am                 C
 Every day discovering something brand new
     D
-Well I\'m in love with your body
+Well I'm in love with your body
 Em              Am
 Come on, be my baby, come on
 C                D               Em
-Come on, I\'m in love with your body
+Come on, I'm in love with your body
 Am     C            D               Em
-Ooh, now, well I\'m in love with your body
+Ooh, now, well I'm in love with your body
 Am       C                 D
 Ooh, oh yeah, yeah, yeah, yeah, yeah
     Em         Am     C
 With your body
     D                        Em
-Well I\'m in love with the shape of you`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Simon And Garfunkel', 'The Sound of Silence')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo6),
-			content: 
-`[Verse 1]
+Well I'm in love with the shape of you`
+            }
+        ]
+    },
+    {
+        artist: 'Simon And Garfunkel',
+        name: 'The Sound of Silence',
+        versions: [
+            {
+                name: 'Chords + Lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo6,
+                content: `[Verse 1]
 Am                        G
 Hello darkness, my old friend,
                    Am
-I\'ve come to talk with you again,
+I've come to talk with you again,
              F       C
 Because a vision softly creeping,
                F       C
@@ -9306,7 +9699,7 @@ In restless dreams I walked alone
                 Am
 Narrow streets of cobblestone,
            F        C
-\'neath the halo of a street lamp,
+'neath the halo of a street lamp,
                   F        C
 I turned my collar to the cold and damp
 F                                        C
@@ -9361,17 +9754,22 @@ Are written on the subway walls
      C         Am
 And tenement halls.
  C           G         Am
-And whisper\'d in the sounds of silence.`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Jethro Tull', 'Aqualung')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo3),
-			duration: 3 * 60 + 0,
-			content: 
-`
+And whisper'd in the sounds of silence.`
+            }
+        ]
+    },
+    {
+        artist: 'Jethro Tull',
+        name: 'Aqualung',
+        versions: [
+            {
+                name: 'Chords + Lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo3,
+                autoScroll: {
+                    duration: 3 * 60
+                },
+                content: `
 e|--------------|
 B|--------------|
 G|--------------|
@@ -9431,9 +9829,9 @@ Feeling alone, the armies up the road
 Am              Em               D  Dsus2 D
 Salvation al-a-mode and a cup of tea
 Em          D                              A
-Aqualung my friend, don\'t you start away uneasy
+Aqualung my friend, don't you start away uneasy
 Am               Em            D  Dsus2 D
-You poor old sod you see it\'s only me
+You poor old sod you see it's only me
 Em             D                       Em   
 Do you still remember, Decembers foggy freeze?
 Em                          D                               Em 
@@ -9455,9 +9853,9 @@ Feeling alone, the armies up the road
 Am             Em                D  Dsus2 D
 Salvation al-a-mode and a cup of tea
 Em          D                              A
-Aqualung my friend, don\'t you start away uneasy
+Aqualung my friend, don't you start away uneasy
 Am               Em            D
-You poor old sod you see it\'s only me
+You poor old sod you see it's only me
 e|--------------|
 B|--------------|
 G|--------------|
@@ -9497,21 +9895,26 @@ B|--------------|
 G|--------------|
 D|--------------|
 A|-2-----0-1-0--|
-E|---0-3--------| 4x from capo`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Animals', 'Dont Let Me Be Misunderstood')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 2 * 60 + 0,
-			content: 
-`#----------------------------------PLEASE NOTE--------------------------------#
-#This file is the author\'s own work and represents their interpretation of the#
+E|---0-3--------| 4x from capo`
+            }
+        ]
+    },
+    {
+        artist: 'The Animals',
+        name: 'Dont Let Me Be Misunderstood',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                autoScroll: {
+                    duration: 2 * 60
+                },
+                content: `#----------------------------------PLEASE NOTE--------------------------------#
+#This file is the author's own work and represents their interpretation of the#
 #song. You may only use this file for private study, scholarship, or research.#
 #-----------------------------------------------------------------------------#
-            "Don\'t Let Me Be Misunderstood"
+            "Don't Let Me Be Misunderstood"
              (Benjamin / Marcus / Caldwell)
 [Intro]
 organ doubled w/guitar, 2X:
@@ -9528,29 +9931,29 @@ Baby, do you understand me now
 G                           F#
   Sometimes I feel a little mad
       Bm                                   A 
-Well don\'t you know that no-one alive can always be an angel
+Well don't you know that no-one alive can always be an angel
 G                                   F#
   When things go wrong I seem to be bad
 [Chorus]
 D                      Bm                  A
-I\'m just a soul who\'s intentions are good
+I'm just a soul who's intentions are good
 G           [N.C.]                     Bm
-Oh Lord   please don\'t let me be misunderstood
+Oh Lord   please don't let me be misunderstood
 Bm                     Em
 [Verse 2]
  Bm                 A
-Baby, sometimes I\'m so carefree
+Baby, sometimes I'm so carefree
 G                           F#
-With a joy that\'s hard to hide
+With a joy that's hard to hide
       Bm                                   A 
 And sometimes it seems that all I have to do is worry
 G                                   F#
-And then you\'re bound to see my other side
+And then you're bound to see my other side
 [Chorus]
 D                      Bm                  A
-I\'m just a soul who\'s intentions are good
+I'm just a soul who's intentions are good
 G           [N.C.]                     Bm
-Oh Lord   please don\'t let me be misunderstood
+Oh Lord   please don't let me be misunderstood
 Bm                     Em
 [Bridge]
 Bm    A  [first 3 beats as per intro]
@@ -9560,46 +9963,51 @@ G            A       G           A
  G            A               D     Bm/F#
 That I never mean to take it out on you
 G                 A             G       A
-  Life has it\'s problems and I get my share
+  Life has it's problems and I get my share
      G                        F#
-And that\'s one thing I never mean to do, \'cause I love you
+And that's one thing I never mean to do, 'cause I love you
 Verse 3:
  Bm                 A
-Oh, oh, oh, baby, don\'t you know I\'m human
+Oh, oh, oh, baby, don't you know I'm human
 G                           F#
 Have thoughts like any other one
 Bm                                   A 
 Sometimes I find myself long regretting
 G                                   F#
-Some foolish thing, some little simple thing I\'ve done
+Some foolish thing, some little simple thing I've done
 [Chorus]
 D                      Bm                  A
-I\'m just a soul who\'s intentions are good
+I'm just a soul who's intentions are good
 G           [N.C.]                     Bm
-Oh Lord   please don\'t let me be misunderstood
+Oh Lord   please don't let me be misunderstood
 Bm                     Em            (fade)
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Jefferson Airplane', 'Somebody To Love')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			duration: 2 * 60 + 0,
-			content: 
-`[Verse 1]
+`
+            }
+        ]
+    },
+    {
+        artist: 'Jefferson Airplane',
+        name: 'Somebody To Love',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo2,
+                autoScroll: {
+                    duration: 2 * 60
+                },
+                content: `[Verse 1]
   Em            A   D      Em      Em7 Em Em7 
 When the truth is found  ...to be---- lies,
 Em                   A         D      Em
 And all the joy  ...with - in you----  dies...
 [Chorus]
    G           D       Em
-Don\'t you want some - body to love?
+Don't you want some - body to love?
 A        G           D       Em
-Don\'t you need some - body to love?
+Don't you need some - body to love?
 A           G           D       Em
-Wouldn\'t you love some - body to love?
+Wouldn't you love some - body to love?
 A          G          Asus2    Em   Dsus4
 You better find some - body to love,     ...love!
 Em          Dsus4         Em Em7 Em Em7   Em
@@ -9611,11 +10019,11 @@ When the garden flowers,     baby, are---- dead,
 Yes, and your mind, your mind ...is so full of dread...
 [Chorus]
    G           D       Em
-Don\'t you want some - body to love?
+Don't you want some - body to love?
 A        G           D       Em
-Don\'t you need some - body to love?
+Don't you need some - body to love?
 A           G           D       Em
-Wouldn\'t you love some - body to love?
+Wouldn't you love some - body to love?
 A          G         Asus2    Em
 You better find some - body to love!
 [Verse 3]
@@ -9626,14 +10034,14 @@ Your eyes may look like his,
   Em 
 Yeah, but in your head, baby,
 A                  A7         Em           A
-I\'m afraid you don\'t know where it is!
+I'm afraid you don't know where it is!
 [Chorus]
 A7        G           D       Em
-Don\'t you want some - body to love?
+Don't you want some - body to love?
 A        G           D       Em
-Don\'t you need some - body to love?
+Don't you need some - body to love?
 A           G           D       Em
-Wouldn\'t you love some - body to love?
+Wouldn't you love some - body to love?
 A          G          Asus2    Em    Dsus4
 You better find some - body to love----------!
 Em          Dsus4         Em Em7 Em Em7   Em
@@ -9642,16 +10050,16 @@ Em          Dsus4         Em Em7 Em Em7   Em
 Em               A        D 
 Tears are running---  all down,
     Em               Em7 Em Em7
-\'Round and down your breast,
+'Round and down your breast,
 Em                 A          D        Em
 And your friends, baby,  ...they treat you like a guest!
 [Chorus]
 A        G           D       Em
-Don\'t you want some - body to love?
+Don't you want some - body to love?
 A        G           D       Em
-Don\'t you need some - body to love?
+Don't you need some - body to love?
 A           G           D       Em
-Wouldn\'t you love some - body to love?
+Wouldn't you love some - body to love?
 A          G          Asus2
 You better find some - body to...
 Em  Dsus4  Em  Dsus4   Em  Em7 Em Em7 
@@ -9663,16 +10071,19 @@ G     D       Em    A      G     D       Em     A
 | /  /  /  / |  /  /  /  / | /  /  /  /  |  /  /  /  /  |
 G     D       Em    A       G    Asus2
 | /  /  /  / |  /  /  /  / |  /  /__/  /  /  ||
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Darren Korb', 'We All Become One')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo4),
-			content: 
 `
+            }
+        ]
+    },
+    {
+        artist: 'Darren Korb',
+        name: 'We All Become One',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo4,
+                content: `
 Dm                     C
 When you speak, I hear silence
 Dm            F   C
@@ -9680,7 +10091,7 @@ every word a defiance
 A
 I can hear, oh, I can hear
 Dm                     F      C
-Think I\'ll go where it suits me
+Think I'll go where it suits me
 Dm                F     C
 moving out to the country
 A      
@@ -9698,7 +10109,7 @@ Stabbing pain for the feeling
 Dm                    F    C
 Now your wound?s never healing
 A      
-\'Til you\'re numb, oh, it\'s begun.
+'Til you're numb, oh, it's begun.
              Dm                
 Before we all become one
 Dm    A      F       C   A
@@ -9716,22 +10127,25 @@ before we all become one
 Dm   A   F   C   A
 Run!
 Dm F C
-Oh yeah, we all become`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Darren Korb', 'Paper Boats')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`[Intro/Main progression:]
+Oh yeah, we all become`
+            }
+        ]
+    },
+    {
+        artist: 'Darren Korb',
+        name: 'Paper Boats',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `[Intro/Main progression:]
 Dm | F(5) | C | A |
 [Verse] (same progression)-
 Dm               F(5)
 Seconds march into the past
 C              A
-Moments pass, just like that, they\'re gone
+Moments pass, just like that, they're gone
 Dm                F(5)
 The river always finds the sea
 C          A
@@ -9740,23 +10154,23 @@ So helplessly, like you find me... (we are)
 (A)     Dm                     F(5)
 (We are) Paper boats floating on a stream
 C                    A
-and it would seem, we\'ll never be apart...
+and it would seem, we'll never be apart...
 [Chorus]
 Bb         A           F
 I will al-ways find you.... like its written in the stars...
 Bb          E                Am        A(major)
-You can run but you can\'t hide... try....
+You can run but you can't hide... try....
 [Verse] (main progression)
 Like the moon that makes the tides
-That silent guide, it\'s calling from inside
+That silent guide, it's calling from inside
 Pull me here and push me there
-It\'s everywhere, hanging in the air...
+It's everywhere, hanging in the air...
 [Pre-chorus] (main progression)
 (We are) Magnets pulling from different poles
-With no control, we\'ll never be apart...
+With no control, we'll never be apart...
 [Chorus] (Chorus progression)
 I will al-ways find you.... like its written in the stars...
-You can run but you can\'t hide... try....
+You can run but you can't hide... try....
 [Bridge]
 (By my ear this is mostly just inversions on a DM7, but I found playing these chords 
 replicated the effect
@@ -9766,20 +10180,23 @@ D     DM7        DM7add9
 I will always.... always find you
 [Chorus] (Chorus Progression)
 I will al-ways find you.... like its written in the stars...
-We can run but we can\'t hide... try....`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Neil Young', 'Down By The River')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`Em Em7* A  Em Em7* A 
+We can run but we can't hide... try....`
+            }
+        ]
+    },
+    {
+        artist: 'Neil Young',
+        name: 'Down By The River',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `Em Em7* A  Em Em7* A 
 Em    Em7*          A                      Em          Em7*       A
-Be on my side, I\'ll be on your side, baby, there is no reason for you to hide    
+Be on my side, I'll be on your side, baby, there is no reason for you to hide    
 Em      Em7*     A                          Em                Em7*   A        Cmaj7 Bm
-It\'s so hard for me stay\'in here all alone, when you could be takin\' me for a ride 
+It's so hard for me stay'in here all alone, when you could be takin' me for a ride 
 Cmaj7             Bm                C            Bm   D
 She could drag me over the rainbow, and send me away 
 G      D         A   G   D         A
@@ -9787,9 +10204,9 @@ Down by the river,   I shot my baby
 G      D         A   Em Em7*    A        Em Em7* A
 Down by the river, dead, ooh, shot her dead
 Em       Em7      A                    Em       Em7         A
-You take my hand, I\'ll take your hand, together we may get away  
+You take my hand, I'll take your hand, together we may get away  
 Em        Em7        A                Em   Em7           A         Cmaj7 Bm
-This much madness is too much sorrow, it\'s impossible to make it today 
+This much madness is too much sorrow, it's impossible to make it today 
 Cmaj7             Bm                C            Bm  D
 She could drag me over the rainbow, and send me away   
 G       D         A   G   D         A
@@ -9797,9 +10214,9 @@ Down by the river,   I shot my baby
 G      D         A   Em Em7     A        Em Em7 A
 Down by the river, dead, ooh, shot her dead
 Em    Em7           A                      Em          Em7        A
-Be on my side, I\'ll be on your side, baby, there is no reason for you to hide    
+Be on my side, I'll be on your side, baby, there is no reason for you to hide    
 Em      Em7      A                          Em                Em7    A        Cmaj7 Bm
-It\'s so hard for me stay\'in here all alone, when you could be takin\' me for a ride 
+It's so hard for me stay'in here all alone, when you could be takin' me for a ride 
 Cmaj7             Bm                C            Bm   D
 She could drag me over the rainbow, and send me away 
 G      D         A   G   D         A
@@ -9816,27 +10233,30 @@ G      D         A
 Down by the river 
 G      D         A   G    D        A
 Down by the river,   I shot my baby . . . .
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('The Violet Road', 'Jericho')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo4),
-			content: 
-`Intro 
+`
+            }
+        ]
+    },
+    {
+        artist: 'The Violet Road',
+        name: 'Jericho',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.capo4,
+                content: `Intro 
 Em
 [humming]
 Verse
 Em
-Let\'s go back to the roadshow,
+Let's go back to the roadshow,
         C                    G    H7
 drink with the old crow who cut us down.
 Em
 Blind him, force-feed and remind him,
         C
-there\'s nothing quite strong as
+there's nothing quite strong as
 H7                   Em     E
 the suns of the railroad light.
 Ref
@@ -9860,7 +10280,7 @@ I grant you, lonesome new stories,
         C                      G   H7
 all these new songs from around the world.
 Em
-I don\'t care, blinded by dollars,
+I don't care, blinded by dollars,
 C
 I chase the white collars.
 H7                 Em  E
@@ -9916,16 +10336,20 @@ deep in the mines of Jericho,
 Hm                                G - Em
 where no diamond can show you where to go?
 G -Em   G -Em  G -Em
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Miljoonasade', 'Mayday Mayday')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			content: 
-`Am                   Em
+`
+            }
+        ]
+    }
+    ,
+    {
+        artist: 'Miljoonasade',
+        name: 'Mayday Mayday',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: `Am                   Em
 Kay ruusut ikkunalla kohti kuolemaa
 Am                    Em
 mina ja mun veli juovuksissa lauletaan
@@ -9967,23 +10391,29 @@ lintulapset huutaa emoaan
 G          Em            Am          F               Am
 Chorus: Miksei mun viestiani sun radio kuule ei? Mayday, Mayday
 Intro
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Creedence Clearwater Revival', 'Hello Mary Lou')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			duration: 2 * 60 + 0,
-			content: 
 `
+            }
+        ]
+    }
+    ,
+    {
+        artist: 'Creedence Clearwater Revival',
+        name: 'Hello Mary Lou',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                                        autoScroll: {
+                                                duration: 2 * 60
+                                        },
+                tuning: instruments.guitar.tunings.capo2,
+                content: `
 G               C
 I said, Hello Mary Lou, goodbye heart.
 G                            D  D7  
-Sweet Mary Lou I\'m so in love with you.
+Sweet Mary Lou I'm so in love with you.
 G              B7         Em
-I knew Mary Lou..we\'d never part,
+I knew Mary Lou..we'd never part,
   A      D            G    C G
 So, Hell..o Mary Lou, goodbye heart.
 [Verse 1]
@@ -9994,7 +10424,7 @@ flashed those big brown eyes my way,
 G                         D
 And ooo, I wanted you forever more.
 G
-Now, I\'m not one that gets around,
+Now, I'm not one that gets around,
 C
 I swear my feet stuck to the ground,
 G              D              G  C G
@@ -10003,9 +10433,9 @@ and though I never did meet you before.
 G               C
 I said, Hello Mary Lou, goodbye heart.
 G                            D  D7  
-Sweet Mary Lou I\'m so in love with you.
+Sweet Mary Lou I'm so in love with you.
 G              B7         Em
-I knew Mary Lou..we\'d never part,
+I knew Mary Lou..we'd never part,
   A      D            G    C G
 So, Hell..o Mary Lou, goodbye heart.
 [Verse 2]
@@ -10014,35 +10444,39 @@ I saw your lips I heard your voice,
 C
 believe me, I just had no choice.
 G                             D
-Wild horses couldn\'t make me stay away.
+Wild horses couldn't make me stay away.
 G
 I thought about a moonlit night,
 C
 my arms around you good and tight,
 G            D              G  C G
-that\'s all I had to see, for me to say...
+that's all I had to see, for me to say...
 [Chorus] 
 G               C
 I said, Hello Mary Lou, goodbye heart.
 G                            D  D7  
-Sweet Mary Lou I\'m so in love with you.
+Sweet Mary Lou I'm so in love with you.
 G              B7         Em
-I knew Mary Lou..we\'d never part,
+I knew Mary Lou..we'd never part,
   A      D            G    C G
 So, Hell..o Mary Lou, goodbye heart.
 A           D            G   C G
 So, hello, Mary Lou, goodbye heart.
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Cass McCombs', 'The Same Things')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.undefined),
-			duration: 5 * 60 + 0,
-			content: 
 `
+            }
+        ]
+    }
+    ,
+    {
+        artist: 'Cass McCombs',
+        name: 'The Same Things',
+        versions: [
+            {
+                name: 'Lyrics',
+                                        autoScroll: {
+                                                duration: 5 * 60
+                                        },
+                content: `
 Like a ring gone down the drain
 Our love in sunlight, at evening, pain
 Like vermin Roman sewers bring
@@ -10050,12 +10484,12 @@ Pain and love, oh yeah, are The Same Thing
 Are The Same Thing ...
 In my opinion, we are the red birth mark
 From the old storybook, "Equal Light, Equal Dark"
-Now lets flip a coin to see now who\'s yin and who is yang
-It defies opinion whether they\'re The Same Thing
+Now lets flip a coin to see now who's yin and who is yang
+It defies opinion whether they're The Same Thing
 Nothing in common; our blood, thicker than broth
-We\'re cut from different sides of the same cloth
+We're cut from different sides of the same cloth
 Our love in sunlight, our pain at evening
-Have nothing in common, yet they\'re both The Same Thing
+Have nothing in common, yet they're both The Same Thing
 The same street, the same address
 The same white hair, the same black dress
 The sameness from opposites cling
@@ -10066,17 +10500,19 @@ Until now, I was my inner feelings were always lost
 Through spirit or season, does the human voice does sing?
 Death and opinion they are The Same Thing
 Nothing in common; our blood, thicker than broth
-We\'re cut from different sides of the same cloth
+We're cut from different sides of the same cloth
 Our love in sunlight, our pain at evening
-Have nothing in common, yet they\'re both The Same Thing
-lalalalalalala`		})
-		//#endregion
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.capo2),
-			duration: 5 * 60 + 0,
-			content: 
-`Intro:
+Have nothing in common, yet they're both The Same Thing
+lalalalalalala`
+            },
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                                        autoScroll: {
+                                                duration: 5 * 60
+                                        },
+                tuning: instruments.guitar.tunings.capo2,
+                content: `Intro:
 A Aadd9 C G6
 Verse 1:
 G6        A   Aadd9 C
@@ -10092,7 +10528,7 @@ Like the man
 G6             A    Aadd9 C
 Romances will bring
 G6        A    Aadd9 C
-Pain and love, we\'re
+Pain and love, we're
 G6            A     Aadd9 C
 All the same thing.
 G6             A
@@ -10119,7 +10555,7 @@ Chorus:
 Em                                Bm
 Nothing in common, ("not blood, thicker than broth"?)
 F                                 C
-We\'re cut from different sides of the same cloth
+We're cut from different sides of the same cloth
 Em                   Bm
 I love the sunlight up in the evening*
 F                               C
@@ -10133,7 +10569,7 @@ The same white hand
 The same black dress
 The same singers
 From my (Unintelligible) cling
-Pain and love, we\'re
+Pain and love, we're
 All the same things
 All the same things
 In my opinion a line is never crossed
@@ -10145,29 +10581,35 @@ Through spirit or season, does the human (Unintelligible)
 Different opinion, they are the same thing
 Chorus:
 Nothing in common (same as before)
-We\'re cut from different sides of the same cloth
+We're cut from different sides of the same cloth
 I love the sunlight up in the evening
 Nothing in common, yet they’re both the same thing
 La, la, la, la, la, la, la, la
 (Chorus progression to fade)
-`		})
-		//#endregion
-	//#endregion
-	//#region
-	song('Cass McCombs', 'County Line')
-		//#region
-		.version({
-			instrument: Guitar(guitarTunings.standard),
-			duration: 5 * 60 + 30,
-			content: 
 `
+            }
+        ]
+    }
+    ,
+    {
+        artist: 'Cass McCombs',
+        name: 'County Line',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                                        autoScroll: {
+                                                duration: 4 * 60 + 30
+                                        },
+                tuning: instruments.guitar.tunings.standard,
+                content: `
                                         No intro
                                         
                                         [[Verse i]]
 Bm               A
 On my way to you old county
 D                  F#
-Hoping nothing\'s changed
+Hoping nothing's changed
  Em              A
 That your pain is never ending
 Em                   A
@@ -10190,7 +10632,7 @@ what did I have to do to make you want me
       G
 Whoa oh oh oh oh
 D                 G                               D
-I feel so blind I can\'t make out the passing road signs
+I feel so blind I can't make out the passing road signs
       G
 Whoa oh oh oh oh
 D                    G                             D
@@ -10204,7 +10646,7 @@ Bm,  A,  D,  F#
 Em,  A,  Em, A
 [[Verse ii]]
 Bm                      A
-Now you know I\'m comin\' old county
+Now you know I'm comin' old county
 D                  F#
 To see construction signs
  Em              A
@@ -10229,7 +10671,7 @@ what did I have to do to make you want me
       G
 Whoa oh oh oh oh
 D                 G                               D
-I feel so blind I can\'t make out the passing road signs
+I feel so blind I can't make out the passing road signs
       G
 Whoa oh oh oh oh
 D                    G                             D
@@ -10241,59 +10683,24 @@ County Line
 Whoa oh oh oh oh
 County Line
 Whoa oh oh oh oh
-`		})
-		//#endregion
-	//#endregion
-
-
-//#endregion
-    /////////////////////////////////////////////////////////
-}
-const songs = []
-const song = (artist, name) => {
-    // Push entry to song list.
-    const versions = []
-    songs.push({
-        name,
-        artist,
-        versions
-    })
-	// Return interface for adding versions.
-	let entry = {}
-    entry.version = (data) => {
-		const { instrument, duration, content } = data
-		versions.push({
-			...instrument,
-			duration,
-			content
-		})
-		return entry
-	}
-	return entry
-}
-const instruments = {
-    guitar: 'guitar'
-}
-const guitarTunings = {
-    unknown: 'Unknown',
-    full_step_down: 'Full-Step Down',
-    half_step_down: 'Half-Step Down',
-    standard: 'Standard',
-    capo1: 'Capo 1st',
-    capo2: 'Capo 2st',
-    capo3: 'Capo 3st',
-    capo4: 'Capo 4st',
-    capo5: 'Capo 5st',
-    capo6: 'Capo 6st',
-    capo7: 'Capo 7st',
-    capo8: 'Capo 8st',
-    capo9: 'Capo 9st',
-    capo10: 'Capo 10st',
-    capo11: 'Capo 11st',
-}
-const Guitar = (tuning = guitarTunings.standard) => ({
-    instrument: instruments.guitar,
-    tuning
-})
-_()
-module.exports = { songs, instruments }
+`
+            }
+        ]
+    }
+    
+    /**
+    ,
+    {
+        artist: '',
+        name: '',
+        versions: [
+            {
+                name: 'Chords + lyrics',
+                instrument: instruments.guitar,
+                tuning: instruments.guitar.tunings.standard,
+                content: ``
+            }
+        ]
+    }
+    **/
+]);
