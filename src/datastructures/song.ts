@@ -32,12 +32,16 @@ export interface GuitarSong {
 /**
  * 
  */
+export type PossibleSongVersions = GuitarSong
+/**
+ * 
+ */
 export type SongVersion = {
     /**
      * 
      */
     readonly content: string
-} & (GuitarSong)
+} & (PossibleSongVersions)
 /**
  * 
  */
