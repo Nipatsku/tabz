@@ -11,7 +11,33 @@ export interface SongInfo {
      * 
      */
     readonly artist: string
+    /**
+     *
+     */
+    readonly url: string
 }
+/**
+ * 
+ */
+export interface GuitarSong {
+    /**
+     * 
+     */
+    readonly instrument: 'guitar'
+    /**
+     * 
+     */
+    readonly tuning: string
+}
+/**
+ * 
+ */
+export type SongVersion = {
+    /**
+     * 
+     */
+    readonly content: string
+} & (GuitarSong)
 /**
  * 
  */
@@ -19,5 +45,5 @@ export interface Song extends SongInfo {
     /**
      * 
      */
-    readonly content: string
+    readonly versions: SongVersion[]
 }

@@ -21,7 +21,7 @@ function buildContent() {
             // Write out song contents to individual files.
             var list = []
             for (var song of songs) {
-                const { name, artist, versions } = song
+                const { name, artist } = song
                 if (name.length == 0)
                     continue
                 
@@ -32,7 +32,7 @@ function buildContent() {
                     + '.json'
                 fs.writeFileSync(
                     `${buildContentPath}${fileName}`,
-                    JSON.stringify(versions)
+                    JSON.stringify(song)
                 )
                 list.push({
                     name,
