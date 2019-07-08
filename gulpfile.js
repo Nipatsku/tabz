@@ -73,6 +73,5 @@ const testsRun = () =>
             require: ['ts-node/register']
         }))
         .pipe(tsProject())
-        .pipe(gulp.dest('./tmp/'))
         .pipe(mocha())
 gulp.task('tests-run', testsRun)
