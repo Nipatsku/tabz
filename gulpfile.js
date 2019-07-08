@@ -7,18 +7,23 @@ const ts = require('gulp-typescript')
 
 // ********** Build **********
 const content = require('./content/content.js')
-const buildContentPath = './public/content/'
+const buildPath = './public/'
+const buildContentPath = `${buildPath}/content`
 const buildClean = () => new Promise(function(resolve, reject) {
-    fs.readdir(buildContentPath, (err, files) => {
+    fs.readdir(buildPath, (err, files) => {
         if (err) throw err
         for (const file of files) {
-            fs.unlinkSync(`${buildContentPath}${file}`)
+            fs.unlinkSync(`${buildPath}${file}`)
         }
     })
     resolve()
 })
 gulp.task('build-clean', buildClean)
 const buildContent = () => new Promise(function(resolve, reject) {
+    // Copy content/index.html to public/index.html
+    gulp.src('content/index.html')
+        .pipe(gulp.dest(buildPath))
+
     var songs = content.songs
     // Write out song contents to individual files.
     var list = []
@@ -33,7 +38,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
             .toLowerCase()
             + '.json'
         fs.writeFileSync(
-            `${buildContentPath}${fileName}`,
+            `${buildContentPath}/${fileName}`,
             JSON.stringify(song)
         )
         list.push({
@@ -44,7 +49,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
     }
     // Write song list.
     fs.writeFileSync(
-        `${buildContentPath}list.json`,
+        `${buildContentPath}/list.json`,
         JSON.stringify(list)
     )
     resolve()
