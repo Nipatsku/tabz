@@ -1,11 +1,10 @@
-var gulp = require('gulp');
-var fs = require('fs')
-var mocha = require('gulp-mocha')
+const gulp = require('gulp');
+const fs = require('fs')
 
 
 
 // ********** Build **********
-var content = require('./content/content.js')
+const content = require('./content/content.js')
 const buildContentPath = './public/content/'
 const buildClean = () => new Promise(function(resolve, reject) {
     fs.readdir(buildContentPath, (err, files) => {
@@ -59,22 +58,4 @@ const buildWatch = () => new Promise(function(resolve, reject) {
     })
 })
 gulp.task('build-watch', gulp.series('build-content', buildWatch))
-
-
-
-// ********** Tests **********
-
-
-
-const testsRun = () =>
-    gulp.src('tests/**/*.test.ts')
-        .pipe(mocha({
-            reporter: 'nyan',
-            require: ['ts-node/register']
-        }))
-gulp.task('tests-run', testsRun)
-
-
-
-
 gulp.task('default', buildContent)

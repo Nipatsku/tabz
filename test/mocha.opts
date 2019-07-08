@@ -1,0 +1,2 @@
+--require test/conf.js
+test/**/*.test.ts
