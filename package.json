@@ -22,6 +22,8 @@
     "@types/string-similarity": "^3.0.0",
     "chai": "^4.2.0",
     "gulp": "^4.0.2",
+    "gulp-mocha": "^6.0.0",
+    "gulp-typescript": "^5.0.1",
     "mocha": "^6.1.4",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.2"
@@ -30,7 +32,7 @@
     "start": "gulp && react-scripts start",
     "watch": "gulp build-watch",
     "build": "gulp && react-scripts build",
-    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "test": "gulp tests-run",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build"
   },

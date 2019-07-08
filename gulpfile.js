@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const fs = require('fs')
+const mocha = require('gulp-mocha')
+const ts = require('gulp-typescript')
 
 
 
@@ -59,3 +61,18 @@ const buildWatch = () => new Promise(function(resolve, reject) {
 })
 gulp.task('build-watch', gulp.series('build-content', buildWatch))
 gulp.task('default', buildContent)
+
+
+
+// ********** Tests **********
+const tsProject = ts.createProject("./test/tsconfig-tests.json");
+const testsRun = () =>
+    gulp.src('test/**/*.test.ts')
+        .pipe(mocha({
+            reporter: 'nyan',
+            require: ['ts-node/register']
+        }))
+        .pipe(tsProject())
+        .pipe(gulp.dest('./tmp/'))
+        .pipe(mocha())
+gulp.task('tests-run', testsRun)
