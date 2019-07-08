@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "gulp && react-scripts start",
-    "watch": "gulp watch",
+    "watch": "gulp build-watch",
     "build": "gulp && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
