@@ -1,8 +1,6 @@
 import * as React from "react";
 import { SongInfo } from "../../datastructures/song"
-import { SongEntry } from "./SongEntry"
 import { Tree, Icon, List } from "antd/lib"
-import { compareTwoStrings } from "string-similarity"
 const { TreeNode } = Tree
 
 interface Props {
@@ -13,14 +11,15 @@ interface Props {
 interface State {}
 type SongSorter = (a: SongInfo, b: SongInfo) => 1 | -1 | 0
 export class SongList extends React.Component<Props, State> {
-    onSelectSong = (selectedKeys: string[]) => {
+
+    onSelectTreeNode = (selectedKeys: string[]) => {
         const { songList, onSelectSong } = this.props
-        const selectedSongKey = selectedKeys[0]
-        // Find Song with same key.
+        const selectedTreeNodeKey = selectedKeys[0]
+
+        // Check if selected Node was a song.
         const selectedSong = songList.find((songInfo) =>
-            this.getSongAsTreeKey(songInfo) === selectedSongKey
+            this.getSongAsTreeKey(songInfo) === selectedTreeNodeKey
         )
-        // Must check for undefined, as onSelectSong gets also called for artist clicks !
         if (selectedSong)
             onSelectSong(selectedSong)
     }
@@ -33,11 +32,12 @@ export class SongList extends React.Component<Props, State> {
             return <Tree
                 showIcon
                 switcherIcon={<Icon type="down" />}
-                onSelect={this.onSelectSong}
+                onSelect={this.onSelectTreeNode}
             >
-                {songsByArtist.map((artistSongs, iArtist) =>
-                    <TreeNode
-                        key={`${iArtist}`}
+                {songsByArtist.map((artistSongs, iArtist) => {
+                    const key = `${iArtist}`
+                    return <TreeNode
+                        key={key}
                         title={artistSongs[0].artist}
                         // icon= TODO
                     >
@@ -48,7 +48,7 @@ export class SongList extends React.Component<Props, State> {
                             />
                         )}
                     </TreeNode>
-                )}
+                })}
             </Tree>
         } else {
             const songsSortedBySearchString = songList
@@ -69,7 +69,6 @@ export class SongList extends React.Component<Props, State> {
         }
     }
 }
-const _getSongAsString = (songInfo: SongInfo) => `${songInfo.name} ${songInfo.artist}`.toLowerCase()
 const _songSimilarity = (songInfo: SongInfo, searchString: string): number => {
     const name = songInfo.name.toLowerCase()
     const artist = songInfo.artist.toLowerCase()
@@ -83,18 +82,8 @@ const _songSimilarity = (songInfo: SongInfo, searchString: string): number => {
 const SearchStringSorter = (_searchString: string): SongSorter => {
     const searchString = _searchString.toLowerCase()
     return (a, b) => {
-        const aString = _getSongAsString(a)
-        const bString = _getSongAsString(b)
-        let aScore, bScore
-        // Separate functionality based on whether searchString is shorter than 3 characters.
-        // string-similarity doesn't seem to work without at least 3 characters.
-        if (searchString.length >= 3) {
-            aScore = compareTwoStrings(aString, searchString)
-            bScore = compareTwoStrings(bString, searchString)
-        } else {
-            aScore = _songSimilarity(a, searchString)
-            bScore = _songSimilarity(b, searchString)
-        }
+        const aScore = _songSimilarity(a, searchString)
+        const bScore = _songSimilarity(b, searchString)
         return (aScore < bScore) ? 1 : (aScore > bScore) ? -1 : 0
     }
 }
