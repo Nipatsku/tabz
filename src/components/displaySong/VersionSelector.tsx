@@ -7,6 +7,7 @@ interface Props {
     song: Song
     defaultSelectedVersion: SongVersion
     onSelectVersion: (version: SongVersion) => void
+    style?: React.CSSProperties
 }
 interface State {}
 export class VersionSelector extends React.Component<Props, State> {
@@ -15,9 +16,11 @@ export class VersionSelector extends React.Component<Props, State> {
         this.state = {}
     }
     render() {
-        const { song, defaultSelectedVersion, onSelectVersion } = this.props
+        const { song, defaultSelectedVersion, onSelectVersion, style } = this.props
         const { versions } = song
-        return <div>
+        return <div
+            style={style}
+        >
             {versions.length > 1 &&
                 <div>
                     {versions.map((version, i) =>
