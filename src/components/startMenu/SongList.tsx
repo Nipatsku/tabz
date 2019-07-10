@@ -1,8 +1,8 @@
 import * as React from "react";
-import { SongInfo } from '../../datastructures/song'
-import { SongEntry } from './SongEntry'
-import { Tree, Icon, List } from 'antd/lib'
-import { compareTwoStrings } from 'string-similarity'
+import { SongInfo } from "../../datastructures/song"
+import { SongEntry } from "./SongEntry"
+import { Tree, Icon, List } from "antd/lib"
+import { compareTwoStrings } from "string-similarity"
 const { TreeNode } = Tree
 
 interface Props {
@@ -17,8 +17,8 @@ export class SongList extends React.Component<Props, State> {
         const { songList, onSelectSong } = this.props
         const selectedSongKey = selectedKeys[0]
         // Find Song with same key.
-        const selectedSong = songList.find(songInfo =>
-            this.getSongAsTreeKey(songInfo) == selectedSongKey
+        const selectedSong = songList.find((songInfo) =>
+            this.getSongAsTreeKey(songInfo) === selectedSongKey
         )
         // Must check for undefined, as onSelectSong gets also called for artist clicks !
         if (selectedSong)
@@ -29,7 +29,7 @@ export class SongList extends React.Component<Props, State> {
         const { songList, searchString } = this.props
         if (! searchString) {
             const songsByArtist = mapSongsByArtist(songList)
-                .map(artistSongs => artistSongs.sort(sortSongsByName))
+                .map((artistSongs) => artistSongs.sort(sortSongsByName))
             return <Tree
                 showIcon
                 switcherIcon={<Icon type="down" />}
@@ -39,9 +39,9 @@ export class SongList extends React.Component<Props, State> {
                     <TreeNode
                         key={`${iArtist}`}
                         title={artistSongs[0].artist}
-                        //icon= TODO
+                        // icon= TODO
                     >
-                        {artistSongs.map(song =>
+                        {artistSongs.map((song) =>
                             <TreeNode
                                 key={this.getSongAsTreeKey(song)}
                                 title={song.name}
@@ -53,12 +53,12 @@ export class SongList extends React.Component<Props, State> {
         } else {
             const songsSortedBySearchString = songList
                 // Copy Array.
-                .map(item => item)
+                .map((item) => item)
                 .sort(SearchStringSorter(searchString))
             return <List
                 itemLayout="horizontal"
                 dataSource={songsSortedBySearchString}
-                renderItem={songInfo => (
+                renderItem={(songInfo) => (
                     <List.Item>
                         <List.Item.Meta
                             title={`${songInfo.artist} - ${songInfo.name}`}

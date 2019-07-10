@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const fs = require('fs')
 const mocha = require('gulp-mocha')
 const ts = require('gulp-typescript')
+const tslint = require('gulp-tslint')
 
 
 
@@ -77,7 +78,7 @@ gulp.task('default', buildContent)
 
 // ********** Tests **********
 const tsProject = ts.createProject("./test/tsconfig-tests.json");
-const testsRun = () =>
+const testsRunUnit = () =>
     gulp.src('test/**/*.test.ts')
         .pipe(mocha({
             reporter: 'nyan',
@@ -85,4 +86,15 @@ const testsRun = () =>
         }))
         .pipe(tsProject())
         .pipe(mocha())
-gulp.task('tests-run', testsRun)
+gulp.task('tests-run-unit', testsRunUnit)
+
+const testsRunLint = () =>
+    gulp.src('src/**/*.tsx')
+        .pipe(tslint({
+            formatter: 'prose'
+        }))
+        .pipe(tslint.report({
+            emitError: false
+        }))
+gulp.task('tests-run-lint', testsRunLint)
+gulp.task('tests-run', gulp.series('tests-run-unit', 'tests-run-lint'))

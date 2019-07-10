@@ -1,11 +1,11 @@
 
 import * as React from "react";
-import { SongInfo } from '../../datastructures/song'
-import { SongList } from './SongList'
-import { Button, Layout, Typography, Icon, Input } from 'antd/lib'
+import { SongInfo } from "../../datastructures/song"
+import { SongList } from "./SongList"
+import { Button, Layout, Typography, Icon, Input } from "antd/lib"
 
 interface Props {
-    songList: Array<SongInfo>
+    songList: SongInfo[]
     onSelectSong: (songInfo: SongInfo) => void
 }
 interface State {

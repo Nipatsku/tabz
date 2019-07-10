@@ -1,0 +1,23 @@
+{
+    "rulesDirectory": [
+        "node_modules/tslint-microsoft-contrib"
+    ],
+    "extends": [
+        "tslint:recommended"
+    ],
+    "rules": {
+        "no-duplicate-imports": true,
+        "no-relative-imports": true,
+        "ordered-imports": false,
+        "semicolon": [
+            false
+        ],
+        "no-empty-interface": false,
+        "interface-name": false,
+        "trailing-comma": false,
+        "member-access": false,
+        "curly": false,
+        "variable-name": false,
+        "one-variable-per-declaration": false
+    }
+}

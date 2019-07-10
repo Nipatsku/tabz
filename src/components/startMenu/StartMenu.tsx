@@ -1,84 +1,84 @@
 import * as React from "react";
-import { SongInfo, Song } from '../../datastructures/song'
-import { SongSelector } from './SongSelector'
-import { DisplaySong } from '../displaySong/DisplaySong'
-import { Button, Layout, Typography, Icon } from 'antd/lib'
+import { SongInfo, Song } from "../../datastructures/song";
+import { SongSelector } from "./SongSelector";
+import { DisplaySong } from "../displaySong/DisplaySong";
+import { Button, Layout, Typography, Icon } from "antd/lib";
 
 /**
- * 
+ *
  */
 interface Props {}
 /**
- * 
+ *
  */
 interface State {
     /**
-     * 
+     *
      */
-    songList?: Array<SongInfo>
+    songList?: SongInfo[];
     /**
      *
      */
     subState:
         {
-            id: 'none'
+            id: "none"
         } |
         {
-            id: 'select-song'
+            id: "select-song"
         } |
         {
-            id: 'display-song',
+            id: "display-song",
             partialSongInfo: SongInfo,
-            song?: Song
-        }
+            song?: Song,
+        };
 }
 /**
  *
  */
 export class StartMenu extends React.Component<Props, State> {
     constructor(props: Props) {
-        super(props)
+        super(props);
         // Read song list.
-        fetch('content/list.json')
+        fetch("content/list.json")
             .then((r) => r.json())
-            .then((songList) => this.setState({ songList }))
+            .then((songList) => this.setState({ songList }));
         this.state = {
-            subState: {id: 'none'}
-        }
+            subState: {id: "none"},
+        };
     }
-    getFullSongInfo(partialSongInfo: SongInfo): Promise<Song> {
+    public getFullSongInfo(partialSongInfo: SongInfo): Promise<Song> {
         return fetch(partialSongInfo.url)
-            .then((r) => r.json())
+            .then((r) => r.json());
     }
-    onClickSelectSong = () => {
+    public onClickSelectSong = () => {
         this.setState({
-            subState: { id: 'select-song' }
-        })
+            subState: { id: "select-song" },
+        });
     }
-    onSelectSong = (songInfo: SongInfo) => {
+    public onSelectSong = (songInfo: SongInfo) => {
         this.getFullSongInfo(songInfo)
             .then((song) => {
-                console.log(song)
-                const { subState } = this.state
-                if (subState.id === 'display-song')
+                const { subState } = this.state;
+                if (subState.id === "display-song") {
                     this.setState({
                         subState: {
                             ...subState,
                             song
                         }
-                    })
-            })
+                    });
+                }
+            });
         this.setState({
             subState: {
-                id: 'display-song',
-                partialSongInfo: songInfo
-            }
-        })
+                id: "display-song",
+                partialSongInfo: songInfo,
+            },
+        });
     }
-    render() {
-        const { songList, subState } = this.state
+    public render() {
+        const { songList, subState } = this.state;
         switch (subState.id) {
-            case 'none':
+            case "none":
                 return <div>
                     <Typography.Title>
                         Tabz for days - React version
@@ -86,20 +86,20 @@ export class StartMenu extends React.Component<Props, State> {
                     <Button
                         onClick={this.onClickSelectSong}
                     >Select song</Button>
-                </div>
-            case 'select-song':
+                </div>;
+            case "select-song":
                 return songList ? <SongSelector
                         songList={songList}
                         onSelectSong={this.onSelectSong}
                     ></SongSelector>
                     :
-                    <Icon type="loading" />
-            case 'display-song':
+                    <Icon type="loading" />;
+            case "display-song":
                 return subState.song ? <DisplaySong
                     song={subState.song}
                 />
                 :
-                <Icon type="loading"/>
+                <Icon type="loading"/>;
         }
     }
 }

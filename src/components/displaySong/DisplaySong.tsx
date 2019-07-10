@@ -1,6 +1,6 @@
 import * as React from "react";
-import { SongInfo, Song } from '../../datastructures/song'
-import { Button, Layout, Typography, Icon, Input } from 'antd/lib'
+import { SongInfo, Song } from "../../datastructures/song"
+import { Button, Layout, Typography, Icon, Input } from "antd/lib"
 const { Title, Text } = Typography
 
 interface Props {
