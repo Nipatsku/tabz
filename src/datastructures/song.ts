@@ -38,6 +38,10 @@ export type PossibleSongVersions = GuitarSong
  */
 export type SongVersion = {
     /**
+     * 
+     */
+    readonly name: string
+    /**
      *
      */
     readonly content: string

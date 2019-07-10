@@ -73,6 +73,9 @@ describe('build', function() {
                 for (let i = 0; i < songsLen; i ++) {
                     const song = songs[i]
                     for (const version of song.versions) {
+                        expect(version).to.have.property('name')
+                        expect(version.name).to.be.a('string')
+
                         expect(version).to.have.property('content')
                         expect(version.content).to.be.a('string')
                     }

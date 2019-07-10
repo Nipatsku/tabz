@@ -41,21 +41,35 @@ export class StartMenu extends React.Component<Props, State> {
         // Read song list.
         fetch("content/list.json")
             .then((r) => r.json())
-            .then((songList) => this.setState({ songList }));
+            .then((songList) => this.setState({ songList }))
+            .then(() => {
+                const songList = this.state.songList as SongInfo[]
+                const partialSongInfo = songList.find((songInfo) => songInfo.name.includes('Nice Guy')) as SongInfo
+                this.getFullSongInfo(partialSongInfo)
+                    .then((song) => {
+                        this.setState({
+                            subState: {
+                                id: 'display-song',
+                                partialSongInfo,
+                                song
+                            }
+                        })
+                    })
+            })
         this.state = {
             subState: {id: "none"},
         };
     }
-    public getFullSongInfo(partialSongInfo: SongInfo): Promise<Song> {
+    getFullSongInfo(partialSongInfo: SongInfo): Promise<Song> {
         return fetch(partialSongInfo.url)
             .then((r) => r.json());
     }
-    public onClickSelectSong = () => {
+    onClickSelectSong = () => {
         this.setState({
             subState: { id: "select-song" },
         });
     }
-    public onSelectSong = (songInfo: SongInfo) => {
+    onSelectSong = (songInfo: SongInfo) => {
         this.getFullSongInfo(songInfo)
             .then((song) => {
                 const { subState } = this.state;
@@ -75,7 +89,7 @@ export class StartMenu extends React.Component<Props, State> {
             },
         });
     }
-    public render() {
+    render() {
         const { songList, subState } = this.state;
         switch (subState.id) {
             case "none":
@@ -97,6 +111,11 @@ export class StartMenu extends React.Component<Props, State> {
             case "display-song":
                 return subState.song ? <DisplaySong
                     song={subState.song}
+                    returnToPrevious={() => {
+                        this.setState({
+                            subState: { id: "select-song" }
+                        })
+                    }}
                 />
                 :
                 <Icon type="loading"/>;
