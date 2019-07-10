@@ -11,7 +11,6 @@ interface Props {
 interface State {}
 type SongSorter = (a: SongInfo, b: SongInfo) => 1 | -1 | 0
 export class SongList extends React.Component<Props, State> {
-
     onSelectTreeNode = (selectedKeys: string[]) => {
         const { songList, onSelectSong } = this.props
         const selectedTreeNodeKey = selectedKeys[0]
@@ -25,7 +24,7 @@ export class SongList extends React.Component<Props, State> {
     }
     getSongAsTreeKey = (songInfo: SongInfo) => `${songInfo.artist} - ${songInfo.name}`
     render() {
-        const { songList, searchString } = this.props
+        const { songList, searchString, onSelectSong } = this.props
         if (! searchString) {
             const songsByArtist = mapSongsByArtist(songList)
                 .map((artistSongs) => artistSongs.sort(sortSongsByName))
@@ -59,7 +58,9 @@ export class SongList extends React.Component<Props, State> {
                 itemLayout="horizontal"
                 dataSource={songsSortedBySearchString}
                 renderItem={(songInfo) => (
-                    <List.Item>
+                    <List.Item
+                        onClick={() => onSelectSong(songInfo)}
+                    >
                         <List.Item.Meta
                             title={`${songInfo.artist} - ${songInfo.name}`}
                         />
