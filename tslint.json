@@ -7,7 +7,7 @@
     ],
     "rules": {
         "no-duplicate-imports": true,
-        "no-relative-imports": true,
+        "no-relative-imports": false,
         "ordered-imports": false,
         "semicolon": [
             false
