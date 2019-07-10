@@ -1,8 +1,8 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { StartMenu } from "./components/startMenu/StartMenu"
+import { StartMenu } from "components/startMenu/StartMenu"
 
-import "./styles.css";
+import "styles.css";
 
 class App extends React.Component {
   render() {

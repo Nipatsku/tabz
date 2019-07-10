@@ -1,7 +1,7 @@
 
 import * as React from "react";
-import { SongInfo } from "../../datastructures/song"
-import { SongList } from "./SongList"
+import { SongInfo } from "datastructures/song"
+import { SongList } from "components/startMenu/SongList"
 import { Button, Layout, Typography, Icon, Input } from "antd/lib"
 
 interface Props {

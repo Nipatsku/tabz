@@ -1,6 +1,5 @@
 import * as React from "react";
-import { SongInfo } from "../../datastructures/song"
-import { SongEntry } from "./SongEntry"
+import { SongInfo } from "datastructures/song"
 import { Tree, Icon, List } from "antd/lib"
 import { compareTwoStrings } from "string-similarity"
 const { TreeNode } = Tree
