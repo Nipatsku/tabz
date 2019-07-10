@@ -1,7 +1,7 @@
 import * as React from "react";
-import { SongInfo, Song } from "datastructures/song";
-import { SongSelector } from "components/startMenu/SongSelector";
-import { DisplaySong } from "components/displaySong/DisplaySong";
+import { SongInfo, Song } from "../../datastructures/song";
+import { SongSelector } from "./SongSelector";
+import { DisplaySong } from "../displaySong/DisplaySong";
 import { Button, Layout, Typography, Icon } from "antd/lib";
 
 /**
