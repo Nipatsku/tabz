@@ -89,7 +89,7 @@ const testsRunUnit = () =>
 gulp.task('tests-run-unit', testsRunUnit)
 
 const testsRunLint = () =>
-    gulp.src('src/**/*.tsx')
+    gulp.src(['src/**/*.tsx', 'src/**/*.ts'])
         .pipe(tslint({
             formatter: 'prose'
         }))
