@@ -9,9 +9,14 @@ interface Props {
     onClick: () => void
 }
 interface State {}
+interface Point {
+    x: number
+    y: number
+}
 export class SongContent extends React.Component<Props, State> {
 
     touchStartTime?: number
+    touchStartLocation?: Point
 
     constructor(props: Props) {
         super(props)
@@ -20,12 +25,23 @@ export class SongContent extends React.Component<Props, State> {
     onDoubleClick = () => {
         this.props.onClick()
     }
-    onTouchStart = () => {
+    onTouchStart = (e: React.TouchEvent) => {
         this.touchStartTime = window.performance.now()
+        this.touchStartLocation = {
+            x: e.changedTouches[0].clientX,
+            y: e.changedTouches[0].clientY
+        }
     }
-    onTouchEnd = () => {
+    onTouchEnd = (e: React.TouchEvent) => {
+        // Differentiate between pokes and sweeps.
         const tDelta = window.performance.now() - (this.touchStartTime as number)
-        if (tDelta <= 150) {
+        const pDelta = {
+            x: e.changedTouches[0].clientX - (this.touchStartLocation as Point ).x,
+            y: e.changedTouches[0].clientY - (this.touchStartLocation as Point ).y
+        }
+        const pDeltaDist = Math.sqrt(Math.pow(pDelta.x, 2) + Math.pow(pDelta.y, 2))
+        if (tDelta <= 150 && pDeltaDist <= 20) {
+            // Poke.
             this.props.onClick()
         }
     }
