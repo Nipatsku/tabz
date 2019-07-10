@@ -2,6 +2,7 @@ import * as React from "react";
 import { SongInfo, Song } from "../../datastructures/song";
 import { SongSelector } from "./SongSelector";
 import { DisplaySong } from "../displaySong/DisplaySong";
+import { LoadingIndicator } from '../common/LoadingIndicator'
 import { Button, Layout, Typography, Icon } from "antd/lib";
 
 /**
@@ -107,7 +108,7 @@ export class StartMenu extends React.Component<Props, State> {
                         onSelectSong={this.onSelectSong}
                     ></SongSelector>
                     :
-                    <Icon type="loading" />;
+                    <LoadingIndicator/>;
             case "display-song":
                 return subState.song ? <DisplaySong
                     song={subState.song}
@@ -118,7 +119,7 @@ export class StartMenu extends React.Component<Props, State> {
                     }}
                 />
                 :
-                <Icon type="loading"/>;
+                <LoadingIndicator/>;
         }
     }
 }

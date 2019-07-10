@@ -41,12 +41,13 @@ export class DisplaySong extends React.Component<Props, State> {
                 defaultSelectedVersion={selectedVersion}
                 onSelectVersion={this.onSelectVersion}
             />
+            <br/>
             <SongContent
                 ref={(ref) => this.songContentRef = ref}
                 song={song}
                 version={selectedVersion}
             />
-            {new Array(10).fill(<br></br>)}
+            <br/>
             <div>
                 <Button
                     onClick={this.goToBeginning}
