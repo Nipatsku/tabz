@@ -8,10 +8,10 @@
   margin-right: 4px;
   margin-bottom: 4px;
 }
-.songContent {
+.songParagraph {
   white-space: pre-wrap;
   margin: 0px 0px 0px 0px;
-  min-height: 1.25em !important; /* min-height value is hard-coded in Auto-scroll logic for correct text-height calculation! */
+  min-height: 1.25em !important;
 }
 .absoluteCenter {
   top: 50%;

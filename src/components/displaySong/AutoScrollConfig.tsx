@@ -48,7 +48,10 @@ export class AutoScrollConfig extends React.Component<Props, State> {
                 vertical
                 min={0}
                 max={100}
-                defaultValue={_autoScrollSpeedToSliderValue(autoScrollSpeed)}
+                value={_autoScrollSpeedToSliderValue(autoScrollSpeed)}
+                marks={{
+                    [_autoScrollSpeedToSliderValue(AutoScrollValues.default)]: ''
+                }}
                 onChange={this.onSliderChange}
                 onAfterChange={this.afterSliderChange}
             />
@@ -56,12 +59,12 @@ export class AutoScrollConfig extends React.Component<Props, State> {
     }
 }
 const _autoScrollSpeedToSliderValue = (autoScrollSpeed: AutoScrollSpeed): number => lerp(
-    (autoScrollSpeed - AutoScrollValues.max) / (AutoScrollValues.min - AutoScrollValues.max),
+    (autoScrollSpeed - AutoScrollValues.min) / (AutoScrollValues.max - AutoScrollValues.min),
     0,
     100
 )
 const _sliderValueToAutoScrollSpeed = (sliderValue: number): AutoScrollSpeed => lerp(
-    (100 - (sliderValue as number)) / 100,
+    (sliderValue as number) / 100,
     AutoScrollValues.min,
     AutoScrollValues.max
 )
