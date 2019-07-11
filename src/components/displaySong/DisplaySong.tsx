@@ -73,8 +73,10 @@ export class DisplaySong extends React.Component<Props, State> {
             const div = this.songContentRef.getDIV() as HTMLDivElement
             const divBounds = div.getBoundingClientRect()
             const divHeight = divBounds.bottom - divBounds.top
+            const viewPortHeight = window.innerHeight
             const tDelta = (tNow - this.lastAutoScrollUpdate)
-            const scrollAmount = divHeight * tDelta / (autoScrollSpeed * 1000) + this.scrollingFractions
+            const scrollAmount = (divHeight - viewPortHeight * 0.20) * tDelta / (autoScrollSpeed * 1000)
+                + this.scrollingFractions
 
             const scrollAmountInteger = Math.floor(scrollAmount)
             const scrollAmountFraction = scrollAmount - scrollAmountInteger
