@@ -1,15 +1,15 @@
 {
-  "main.css": "/tabz/static/css/main.92e5fb10.chunk.css",
-  "main.js": "/tabz/static/js/main.dbd30df0.chunk.js",
-  "main.js.map": "/tabz/static/js/main.dbd30df0.chunk.js.map",
+  "main.css": "/tabz/static/css/main.664a2252.chunk.css",
+  "main.js": "/tabz/static/js/main.4a6058e6.chunk.js",
+  "main.js.map": "/tabz/static/js/main.4a6058e6.chunk.js.map",
   "static/css/1.9cea3f0a.chunk.css": "/tabz/static/css/1.9cea3f0a.chunk.css",
   "static/js/1.85451801.chunk.js": "/tabz/static/js/1.85451801.chunk.js",
   "static/js/1.85451801.chunk.js.map": "/tabz/static/js/1.85451801.chunk.js.map",
   "runtime~main.js": "/tabz/static/js/runtime~main.72ca2b90.js",
   "runtime~main.js.map": "/tabz/static/js/runtime~main.72ca2b90.js.map",
-  "static/css/main.92e5fb10.chunk.css.map": "/tabz/static/css/main.92e5fb10.chunk.css.map",
   "static/css/1.9cea3f0a.chunk.css.map": "/tabz/static/css/1.9cea3f0a.chunk.css.map",
+  "static/css/main.664a2252.chunk.css.map": "/tabz/static/css/main.664a2252.chunk.css.map",
   "index.html": "/tabz/index.html",
-  "precache-manifest.32db1d08d558ed56236885678145f4f4.js": "/tabz/precache-manifest.32db1d08d558ed56236885678145f4f4.js",
+  "precache-manifest.73ba2d49d906f7c1b77cda8a7ee98b4a.js": "/tabz/precache-manifest.73ba2d49d906f7c1b77cda8a7ee98b4a.js",
   "service-worker.js": "/tabz/service-worker.js"
 }
