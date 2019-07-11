@@ -29,7 +29,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
     // Write out song contents to individual files.
     var list = []
     for (var song of songs) {
-        const { name, artist, versions } = song
+        const { id, name, artist, versions } = song
         if (name.length == 0)
             continue
         
@@ -40,6 +40,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
             + '.json'
         const url = `content/${fileName}`
         list.push({
+            id,
             name,
             artist,
             url
@@ -47,6 +48,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
         fs.writeFileSync(
             `${buildContentPath}/${fileName}`,
             JSON.stringify({
+                id,
                 name,
                 artist,
                 url,

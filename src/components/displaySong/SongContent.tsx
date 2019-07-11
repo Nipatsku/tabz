@@ -56,7 +56,7 @@ export class SongContent extends React.Component<Props, State> {
             {contentRows.map((row, i) => 
                 <pre
                     key={i}
-                    className='song-content'
+                    className='songContent'
                 >
                     {row}
                 </pre>

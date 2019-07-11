@@ -1,8 +1,13 @@
+import { AutoScrollSpeed } from "./autoScroll";
 
 /**
  *
  */
 export interface SongInfo {
+    /**
+     * Unique identifier between all songs.
+     */
+    readonly id: string
     /**
      *
      */
@@ -38,6 +43,10 @@ export type PossibleSongVersions = GuitarSong
  */
 export type SongVersion = {
     /**
+     * Unique identifier between all versions **and** all songs.
+     */
+    readonly id: string
+    /**
      * 
      */
     readonly name: string
@@ -45,6 +54,10 @@ export type SongVersion = {
      *
      */
     readonly content: string
+    /**
+     * 
+     */
+    readonly duration?: AutoScrollSpeed
 } & (PossibleSongVersions)
 /**
  *

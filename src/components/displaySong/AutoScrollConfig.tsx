@@ -1,11 +1,17 @@
 import * as React from "react";
 import { SongInfo, Song, SongVersion } from "../../datastructures/song"
-import { Button, Layout, Typography, Icon, Input, Tooltip } from "antd/lib"
+import { Button, Layout, Typography, Icon, Input, Tooltip, Slider } from "antd/lib"
+import { AutoScrollValues, AutoScrollSpeed, saveSongAutoScrollSpeed } from '../../datastructures/autoScroll'
+import { SliderValue } from "antd/lib/slider";
+import { lerp } from '../common/utils'
 const { Title, Text } = Typography
 
 interface Props {
+    songVersion: SongVersion
     enabled: boolean
+    autoScrollSpeed: AutoScrollSpeed
     onToggle: () => void
+    onSetSpeed: (autoScrollSpeed: AutoScrollSpeed) => void
 }
 interface State {}
 export class AutoScrollConfig extends React.Component<Props, State> {
@@ -13,11 +19,21 @@ export class AutoScrollConfig extends React.Component<Props, State> {
         super(props)
         this.state = {}
     }
+    onSliderChange = (value: SliderValue) => {
+        this.props.onSetSpeed(_sliderValueToAutoScrollSpeed(value as number))
+    }
+    afterSliderChange = (value: SliderValue) => {
+        // Save preference.
+        saveSongAutoScrollSpeed(
+            this.props.songVersion,
+            _sliderValueToAutoScrollSpeed(value as number)
+        )
+    }
     render() {
-        const { enabled, onToggle } = this.props
+        const { enabled, autoScrollSpeed, onToggle } = this.props
         return <div>
             <Tooltip
-                title="Also activated by poking / double-clicking !"
+                title="Also activated by poking / double-clicking anywhere!"
                 mouseEnterDelay={1}
             >
                 <Button
@@ -27,6 +43,25 @@ export class AutoScrollConfig extends React.Component<Props, State> {
                     {`Autoscroll ${ enabled ? 'ON' : 'OFF' }`}
                 </Button>
             </Tooltip>
+            <Slider
+                className='autoScrollSlider'
+                vertical
+                min={0}
+                max={100}
+                defaultValue={_autoScrollSpeedToSliderValue(autoScrollSpeed)}
+                onChange={this.onSliderChange}
+                onAfterChange={this.afterSliderChange}
+            />
         </div>
     }
 }
+const _autoScrollSpeedToSliderValue = (autoScrollSpeed: AutoScrollSpeed): number => lerp(
+    (autoScrollSpeed - AutoScrollValues.max) / (AutoScrollValues.min - AutoScrollValues.max),
+    0,
+    100
+)
+const _sliderValueToAutoScrollSpeed = (sliderValue: number): AutoScrollSpeed => lerp(
+    (100 - (sliderValue as number)) / 100,
+    AutoScrollValues.min,
+    AutoScrollValues.max
+)

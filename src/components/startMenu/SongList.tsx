@@ -17,12 +17,11 @@ export class SongList extends React.Component<Props, State> {
 
         // Check if selected Node was a song.
         const selectedSong = songList.find((songInfo) =>
-            this.getSongAsTreeKey(songInfo) === selectedTreeNodeKey
+            songInfo.id === selectedTreeNodeKey
         )
         if (selectedSong)
             onSelectSong(selectedSong)
     }
-    getSongAsTreeKey = (songInfo: SongInfo) => `${songInfo.artist} - ${songInfo.name}`
     render() {
         const { songList, searchString, onSelectSong } = this.props
         if (! searchString) {
@@ -42,7 +41,7 @@ export class SongList extends React.Component<Props, State> {
                     >
                         {artistSongs.map((song) =>
                             <TreeNode
-                                key={this.getSongAsTreeKey(song)}
+                                key={song.id}
                                 title={song.name}
                             />
                         )}

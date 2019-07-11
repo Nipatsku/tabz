@@ -7,7 +7,7 @@ export class LoadingIndicator extends React.Component<Props, State> {
     render() {
         return <Spin
             size="large"
-            className="absolute-center"
+            className="absoluteCenter"
         />
     }
 }

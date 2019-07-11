@@ -8,15 +8,26 @@
   margin-right: 4px;
   margin-bottom: 4px;
 }
-.song-content {
+.songContent {
   white-space: pre-wrap;
   margin: 0px 0px 0px 0px;
   min-height: 1.25em !important; /* min-height value is hard-coded in Auto-scroll logic for correct text-height calculation! */
 }
-.absolute-center {
+.absoluteCenter {
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   position: absolute;
+}
+.versionSelector {
+  display: inline-block;
+}
+.autoScrollConfigBox {
+  float: right;
+}
+.autoScrollSlider {
+  margin-top: 10px;
+  height: 50vh;
+  float: right;
 }

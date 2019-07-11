@@ -13120,19 +13120,21 @@ A  E  Bm  D  A  E  Bm`		})
     /////////////////////////////////////////////////////////
 }
 const songs = []
-const song = (artist, name) => {
+const song = (artist, songName) => {
     // Push entry to song list.
     const versions = []
     songs.push({
-        name,
+		id: `${artist} - ${songName}`,
+        name: songName,
         artist,
         versions
-    })
+	})
 	// Return interface for adding versions.
 	let entry = {}
     entry.version = (data) => {
 		const { name, instrument, duration, content } = data
 		versions.push({
+			id: `${artist} - ${songName} - ${name}`,
 			name,
 			...instrument,
 			duration,

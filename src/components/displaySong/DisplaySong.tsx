@@ -5,6 +5,7 @@ import { VersionSelector } from './VersionSelector'
 import { SongContent } from './SongContent'
 import { AutoScrollConfig } from './AutoScrollConfig'
 import { Link, animateScroll } from 'react-scroll'
+import { AutoScrollSpeed, AutoScrollValues, getSongAutoScrollSpeed } from "../../datastructures/autoScroll";
 const { Title, Text } = Typography
 
 interface Props {
@@ -14,25 +15,28 @@ interface Props {
 interface State {
     selectedVersion: SongVersion
     autoScrollActive: boolean
+    autoScrollSpeed: AutoScrollSpeed
 }
 export class DisplaySong extends React.Component<Props, State> {
 
     songContentRef?: SongContent | null
-    m: boolean = false
+    isCurrentlyMounted: boolean = false
 
     constructor(props: Props) {
         super(props)
+        const selectedVersion = this.props.song.versions[0]
         this.state = {
-            selectedVersion: this.props.song.versions[0],
-            autoScrollActive: false
+            selectedVersion,
+            autoScrollActive: false,
+            autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion)
         }
     }
     componentDidMount() {
-        this.m = true
+        this.isCurrentlyMounted = true
         setTimeout(this.updateAutoScroll)
     }
     componentWillUnmount() {
-        this.m = false
+        this.isCurrentlyMounted = false
     }
     onSelectVersion = (selectedVersion: SongVersion) => {
         this.setState({
@@ -47,8 +51,13 @@ export class DisplaySong extends React.Component<Props, State> {
             autoScrollActive: !this.state.autoScrollActive
         })
     }
+    onSetAutoScrollSpeed = (autoScrollSpeed: AutoScrollSpeed) => {
+        this.setState({
+            autoScrollSpeed
+        })
+    }
     updateAutoScroll = () => {
-        if (!this.m)
+        if (!this.isCurrentlyMounted)
             return
 
         if (this.state.autoScrollActive) {
@@ -59,7 +68,7 @@ export class DisplaySong extends React.Component<Props, State> {
     }
     render() {
         const { song, returnToPrevious } = this.props
-        const { selectedVersion, autoScrollActive } = this.state
+        const { selectedVersion, autoScrollActive, autoScrollSpeed } = this.state
         return <div>
             <Title>{song.artist}</Title>
             <Title level={2}>{song.name}</Title>
@@ -68,17 +77,17 @@ export class DisplaySong extends React.Component<Props, State> {
                     song={song}
                     defaultSelectedVersion={selectedVersion}
                     onSelectVersion={this.onSelectVersion}
-                    style={{ display: 'inline-block' }}
                 />
                 <Affix
+                    className='autoScrollConfigBox'
                     offsetTop={0}
-                    style={{
-                        float: 'right'
-                    }}
                 >
                     <AutoScrollConfig
+                        songVersion={selectedVersion}
                         enabled={autoScrollActive}
+                        autoScrollSpeed={autoScrollSpeed}
                         onToggle={this.onToggleAutoScroll}
+                        onSetSpeed={this.onSetAutoScrollSpeed}
                     />
                 </Affix>
             </div>

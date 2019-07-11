@@ -55,6 +55,9 @@ describe('build', function() {
             it('are Song objects', function() {
                 for (let i = 0; i < songsLen; i ++) {
                     const song = songs[i]
+
+                    expect(song).to.have.property('id')
+                    expect(song.id).to.be.a('string')
                     
                     expect(song).to.have.property('name')
                     expect(song.name).to.be.a('string')
@@ -69,10 +72,13 @@ describe('build', function() {
                     expect(song.versions).to.have.property('length')
                 }
             })
-            it('.versions only has Song members', function() {
+            it('.versions only has SongVersion members', function() {
                 for (let i = 0; i < songsLen; i ++) {
                     const song = songs[i]
                     for (const version of song.versions) {
+                        expect(version).to.have.property('id')
+                        expect(version.id).to.be.a('string')
+
                         expect(version).to.have.property('name')
                         expect(version.name).to.be.a('string')
 
@@ -82,7 +88,7 @@ describe('build', function() {
                 }
             })
             // GuitarSong implements Song.
-            // In future there might be more Song types added, then this test will have to be modified.
+            // In future there might be more SongVersion types added, then this test will have to be modified.
             it('.versions only has GuitarSong members', function() {
                 for (let i = 0; i < songsLen; i ++) {
                     const song = songs[i]
