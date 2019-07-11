@@ -2,7 +2,7 @@ import * as React from "react";
 import { SongInfo, Song } from "../../datastructures/song";
 import { SongSelector } from "./SongSelector";
 import { DisplaySong } from "../displaySong/DisplaySong";
-import { LoadingIndicator } from '../common/LoadingIndicator'
+import { LoadingIndicator } from "../common/LoadingIndicator"
 import { Button, Layout, Typography, Icon } from "antd/lib";
 
 /**
@@ -45,12 +45,12 @@ export class StartMenu extends React.Component<Props, State> {
             .then((songList) => this.setState({ songList }))
             .then(() => {
                 const songList = this.state.songList as SongInfo[]
-                const partialSongInfo = songList.find((songInfo) => songInfo.name.includes('Nice Guy')) as SongInfo
+                const partialSongInfo = songList.find((songInfo) => songInfo.name.includes("Nice Guy")) as SongInfo
                 this.getFullSongInfo(partialSongInfo)
                     .then((song) => {
                         this.setState({
                             subState: {
-                                id: 'display-song',
+                                id: "display-song",
                                 partialSongInfo,
                                 song
                             }

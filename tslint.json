@@ -18,6 +18,7 @@
         "member-access": false,
         "curly": false,
         "variable-name": false,
-        "one-variable-per-declaration": false
+        "one-variable-per-declaration": false,
+        "object-literal-sort-keys": false
     }
 }

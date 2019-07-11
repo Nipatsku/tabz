@@ -1,9 +1,9 @@
 import * as React from "react";
 import { SongInfo, Song, SongVersion } from "../../datastructures/song"
 import { Button, Layout, Typography, Icon, Input, Tooltip, Slider } from "antd/lib"
-import { AutoScrollValues, AutoScrollSpeed, saveSongAutoScrollSpeed } from '../../datastructures/autoScroll'
+import { AutoScrollValues, AutoScrollSpeed, saveSongAutoScrollSpeed } from "../../datastructures/autoScroll"
 import { SliderValue } from "antd/lib/slider";
-import { lerp } from '../common/utils'
+import { lerp } from "../common/utils"
 const { Title, Text } = Typography
 
 interface Props {
@@ -38,19 +38,19 @@ export class AutoScrollConfig extends React.Component<Props, State> {
             >
                 <Button
                     onClick={onToggle}
-                    type={enabled ? 'primary':'default'}
+                    type={enabled ? "primary" : "default"}
                 >
-                    {`Autoscroll ${ enabled ? 'ON' : 'OFF' }`}
+                    {`Autoscroll ${ enabled ? "ON" : "OFF" }`}
                 </Button>
             </Tooltip>
             <Slider
-                className='autoScrollSlider'
+                className="autoScrollSlider"
                 vertical
                 min={0}
                 max={100}
                 value={_autoScrollSpeedToSliderValue(autoScrollSpeed)}
                 marks={{
-                    [_autoScrollSpeedToSliderValue(AutoScrollValues.default)]: ''
+                    [_autoScrollSpeedToSliderValue(AutoScrollValues.default)]: ""
                 }}
                 onChange={this.onSliderChange}
                 onAfterChange={this.afterSliderChange}

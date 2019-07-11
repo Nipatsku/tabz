@@ -1,10 +1,10 @@
 import * as React from "react";
 import { SongInfo, Song, SongVersion } from "../../datastructures/song"
 import { Button, Layout, Typography, Icon, Input, Affix } from "antd/lib"
-import { VersionSelector } from './VersionSelector'
-import { SongContent } from './SongContent'
-import { AutoScrollConfig } from './AutoScrollConfig'
-import { Link, animateScroll } from 'react-scroll'
+import { VersionSelector } from "./VersionSelector"
+import { SongContent } from "./SongContent"
+import { AutoScrollConfig } from "./AutoScrollConfig"
+import { Link, animateScroll } from "react-scroll"
 import { AutoScrollSpeed, AutoScrollValues, getSongAutoScrollSpeed } from "../../datastructures/autoScroll";
 const { Title, Text } = Typography
 
@@ -79,7 +79,7 @@ export class DisplaySong extends React.Component<Props, State> {
             const scrollAmountInteger = Math.floor(scrollAmount)
             const scrollAmountFraction = scrollAmount - scrollAmountInteger
             this.scrollingFractions = scrollAmountFraction
-            
+
             window.scrollBy(0, scrollAmountInteger)
             setTimeout(this.updateAutoScroll, 50)
         } else {
@@ -102,7 +102,7 @@ export class DisplaySong extends React.Component<Props, State> {
                     onSelectVersion={this.onSelectVersion}
                 />
                 <Affix
-                    className='autoScrollConfigBox'
+                    className="autoScrollConfigBox"
                     offsetTop={0}
                 >
                     <AutoScrollConfig

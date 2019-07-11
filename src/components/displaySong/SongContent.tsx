@@ -53,17 +53,17 @@ export class SongContent extends React.Component<Props, State> {
     }
     render() {
         const { version } = this.props
-        const contentRows = version.content.split('\n')
+        const contentRows = version.content.split("\n")
         return <div
-            ref={(ref) => this.divRef=ref}
+            ref={(ref) => this.divRef = ref}
             onDoubleClick={this.onDoubleClick}
             onTouchStart={this.onTouchStart}
             onTouchEnd={this.onTouchEnd}
         >
-            {contentRows.map((row, i) => 
+            {contentRows.map((row, i) =>
                 <pre
                     key={i}
-                    className='songParagraph'
+                    className="songParagraph"
                 >
                     {row}
                 </pre>

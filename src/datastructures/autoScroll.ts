@@ -5,15 +5,15 @@ import { SongVersion } from "./song";
  */
 export const AutoScrollValues = {
     /**
-     * 
+     *
      */
     min: 10 * 60 as AutoScrollSpeed,
     /**
-     * 
+     *
      */
     max: 1 * 60 as AutoScrollSpeed,
     /**
-     * 
+     *
      */
     default: 3 * 60 as AutoScrollSpeed
 }
@@ -22,7 +22,7 @@ export const AutoScrollValues = {
  */
 export type AutoScrollSpeed = number
 /**
- * 
+ *
  */
 const _SongAutoScrollSpeedID = (song: SongVersion): string => `ass-${song.id}`
 /**
@@ -45,6 +45,6 @@ export const saveSongAutoScrollSpeed = (song: SongVersion, autoScrollSpeed: Auto
     if (localStorage === undefined)
         // localStorage is not available.
         return
-    
+
     localStorage.setItem(_SongAutoScrollSpeedID(song), String(autoScrollSpeed))
 }

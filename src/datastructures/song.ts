@@ -47,7 +47,7 @@ export type SongVersion = {
      */
     readonly id: string
     /**
-     * 
+     *
      */
     readonly name: string
     /**
@@ -55,7 +55,7 @@ export type SongVersion = {
      */
     readonly content: string
     /**
-     * 
+     *
      */
     readonly duration?: AutoScrollSpeed
 } & (PossibleSongVersions)

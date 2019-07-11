@@ -18,7 +18,7 @@ export class VersionSelector extends React.Component<Props, State> {
         const { song, defaultSelectedVersion, onSelectVersion } = this.props
         const { versions } = song
         return <div
-            className='versionSelector'
+            className="versionSelector"
         >
             {versions.length > 1 &&
                 <div>
@@ -27,7 +27,7 @@ export class VersionSelector extends React.Component<Props, State> {
                             key={`${i}`}
                             onClick={() => onSelectVersion(version)}
                             type={version === defaultSelectedVersion ?
-                                'primary' : 'default'
+                                "primary" : "default"
                             }
                         >
                             {version.name}
