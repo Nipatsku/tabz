@@ -26,7 +26,7 @@ export class SongSelector extends React.Component<Props, State> {
         const { songList, onSelectSong } = this.props
         const { searchString } = this.state
         return <div>
-            <Typography.Title>Select song</Typography.Title>
+            <Typography.Title>Select song ({songList.length})</Typography.Title>
             <Input.Search
                 placeholder="Search text"
                 enterButton="Search"
