@@ -25,4 +25,5 @@ Don't want to upgrade to version 3, because it enforces *eslint* with no way of 
 ## Conflicts with .buildnames.json
 
 Solution, run following command in local repository:
-git update-index --skip-worktree .buildnames.json
+
+`git update-index --skip-worktree .buildnames.json`
