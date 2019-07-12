@@ -45,7 +45,6 @@ export class AutoScrollConfig extends React.Component<Props, State> {
             </Tooltip>
             <Slider
                 className="autoScrollSlider"
-                vertical
                 min={0}
                 max={100}
                 value={_autoScrollSpeedToSliderValue(autoScrollSpeed)}
