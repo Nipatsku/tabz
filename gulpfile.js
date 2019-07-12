@@ -3,6 +3,7 @@ const fs = require('fs')
 const mocha = require('gulp-mocha')
 const ts = require('gulp-typescript')
 const tslint = require('gulp-tslint')
+const replace = require('gulp-replace')
 
 
 
@@ -10,6 +11,27 @@ const tslint = require('gulp-tslint')
 const content = require('./content/content.js')
 const buildPath = './public/'
 const buildContentPath = `${buildPath}/content`
+const getBuildName = () => {
+    const buildNamesJson = './.buildnames.json'
+    let buildNames = require(buildNamesJson)
+    // Pick random name from 'buildNames.names', that is not equal to 'buildNames.previous'.
+    const previous = buildNames.previous
+    buildNames = buildNames.names
+    if (buildNames.includes(previous))
+        buildNames.splice(buildNames.indexOf(previous), 1)
+    const buildName = buildNames[Math.round(Math.random() * (buildNames.length - 1))]
+    // Mark buildNames.previous.
+    if (previous.length > 0)
+        buildNames.push(previous)
+    fs.writeFileSync(
+        buildNamesJson,
+        JSON.stringify({
+            previous: buildName,
+            names: buildNames
+        })
+    )
+    return buildName
+}
 const buildClean = () => new Promise(function(resolve, reject) {
     fs.readdir(buildPath, (err, files) => {
         if (err) throw err
@@ -21,8 +43,12 @@ const buildClean = () => new Promise(function(resolve, reject) {
 })
 gulp.task('build-clean', buildClean)
 const buildContent = () => new Promise(function(resolve, reject) {
+    const buildName = getBuildName()
+    console.log('Build name: ',buildName)
+    
     // Copy content/index.html to public/index.html
     gulp.src('content/index.html')
+        .pipe(replace(/VERSION/g, buildName))
         .pipe(gulp.dest(buildPath))
 
     var songs = content.songs
