@@ -15,8 +15,10 @@ const _ = () => {
     /////////////////////////////////////////////////////////
     // @@@@@ SONG LIST @@@@@
 //#region
-		//#region
-		song('Nirvana', 'Oh Me')
+
+
+	//#region
+	song('Nirvana', 'Oh Me')
 		//#region
 		.version({
 			name: 'Chords + lyrics',
@@ -25,10 +27,7 @@ const _ = () => {
 			content: 
 `[Intro]
 E D C E
-
-
 [Verse]
-
            E
 If i had to lose a mile
           D
@@ -37,7 +36,6 @@ If i had to touch feelings
 I would lose my soul
 D     E
 The way i do
-
               E   
 Well i dont have to think
        D
@@ -46,17 +44,13 @@ I only have to do it
 The results are always perfect
 D           E
 And that\'s old news
-
                   E
 Would you like to hear my voice
          D
 Sprinkled with emotion
 C                    E
 Invented your birth
-
-
 [Chorus]
-
 G            E
 Well i can\'t see
 G          E
@@ -69,15 +63,9 @@ I can not see
 I formulate infinite  
             E
 And store it deep inside of me
-
-
 [Instrumental]
-
 E D C E
-
-
 [Verse]
-
            E
 If i had to lose a mile
           D
@@ -86,7 +74,6 @@ If i had to touch feelings
 I would lose my soul
 D     E
 The way i do
-
               E   
 Well i dont have to think
        D
@@ -95,17 +82,13 @@ I only have to do it
 The results are always perfect
 D          E
 And that\'s old news
-
                   E
 Would you like to hear my voice
          D
 Sprinkled with emotion
 C                    E
 Invented your birth
-
-
 [Chorus]
-
 G            E
 Well i can\'t see
 G          E
@@ -129,7 +112,6 @@ And store it deep inside of me
 			instrument: Guitar(guitarTunings.capo2),
 			content: 
 `Intro  Em   D G|Em  A G|Em  D G|A  D Em|Em  D Em|Em  D Em||
-
 Chorus
 Em                   D            G
 Where do bad folks go when they die
@@ -139,9 +121,7 @@ Em               D        G
 Go to a lake of fire and fry
 A                        D         Em
 See them again \'till the fourth of July
-
 Int   Em    D Em|Em   D Em||
-
 Verse 1
 Bm                 G
 I knew a lady who came from Duluth
@@ -151,7 +131,6 @@ Bm                        G
 She went to her grave just a little too soon
 A                              Bm
 Flew and lay down on the yellow moon
-
 Chorus
 Em                   D            G
 Where do bad folks go when they die
@@ -161,9 +140,7 @@ Em               D        G
 Go to a lake of fire and fry
 A                        D         Em
 See them again \'till the fourth of July
-
 Int   Em    D Em|Em   D Em||
-
 Verse 2
 Bm              G
 People cry and people moan
@@ -173,7 +150,6 @@ Bm                         G
 Try to find some place to rest their bones
   A                            Bm
 While the angels and the devils try to make \'em their own
-
 Chorus
 Em                   D            G
 Where do bad folks go when they die
@@ -183,9 +159,7 @@ Em               D        G
 Go to a lake of fire and fry
 A                        D         Em
 See them again \'till the fourth of July
-
 Int   Em    D Em|Em   D Em| Em    D Em|Em   D Em||
-
 Outro Solo  Em    D Em||x8`		})
 		//#endregion
 	//#endregion
@@ -200,23 +174,19 @@ Outro Solo  Em    D Em||x8`		})
 I thought I was the chosen one
 But time went by and I found out a thing or two
 My shine wore off as time wore on
-
 I thought that I was living out the perfect life
 But in the lonely hours when the truth begins to bite
 I thought about the times when I turned my back & stalled
 I ain\'t no nice guy after all
-
 When I was young I was the only game in town
 I thought I had it down for sure,
 But time went by and I was lost in what I found
 The reasons blurred, the way unsure
-
 I thought that I was living life the only way
 But as I saw that life was more than day to day
 I turned around, I read the writing on the wall
 I ain\'t no nice guy after all
 I ain\'t no nice guy after all
-
 In all the years you spend between your birth and death
 You find there\'s lots of times you should have saved your breath
 It comes as quite a shock when that trip leads to fall`		})
@@ -228,9 +198,7 @@ It comes as quite a shock when that trip leads to fall`		})
 			content: 
 `Intro
 A E D.
-
 VERSE 1
-
 A          E                D
 When I was young I was the nicest guy I knew
 A           G              D
@@ -239,53 +207,38 @@ A             E             D
 But time went by and I found out a thing or two
 A             G                D
 My shine wore off as time wore on
-
-
 VERSE 2
-
 A              E            D
 I thought that I was living out the perfect life
 A          G                     D
 But in the lonely hours when the truth begins to surprise
 A                   E            D
 I thought about the times when I turned my back and sulked
-
-
 A           G             D
 I ain\'t no nice guy after all
 A         G         A
 I ain\'t no nice guy after all
-
 VERSE 3
-
-
 BRIDGE
-
 F#                            B
 In all the years you spend between your birth and death
 F#                                           B
 You know there\'s lots of times when you should have saved your breath
 E                                    A
 It comes as quite a shock when that trip leads to a fall
-
-
 A            G             D
 I ain\'t no nice guy after all
 A           G             A
 I ain\'t no nice guy after all
-
-
 SOLO
 F# B F# B E A E D A G D
 Go back up to verse 1 then 
-
 A              E            D
 I thought that I was living out the perfect life
 A          G                        D
 But in the lonely hours when the moons the only light
 A                   E            D
 I thought about the times when I turned my back and stalled
-
 A            G             D
 I ain\'t no nice guy after all
 A           G             A
@@ -302,7 +255,6 @@ I ain\'t no nice guy after all
 			duration: 7 * 60 + 50,
 			content: 
 `
-
 Oh, where have you been, my blue-eyed son?
 Oh, where have you been, my darling young one?
 I\'ve stumbled on the side of twelve misty mountains
@@ -310,10 +262,8 @@ I\'ve walked and I\'ve crawled on six crooked highways
 I\'ve stepped in the middle of seven sad forests
 I\'ve been out in front of a dozen dead oceans
 I\'ve been ten thousand miles in the mouth of a graveyard
-
 And it\'s a hard, and it\'s a hard, it\'s a hard, and it\'s a hard
 And it\'s a hard rain\'s a-gonna fall
-
 Oh, what did you see, my blue-eyed son?
 Oh, what did you see, my darling young one?
 I saw a newborn baby with wild wolves all around it
@@ -323,10 +273,8 @@ I saw a room full of men with their hammers a-bleedin\'
 I saw a white ladder all covered with water
 I saw ten thousand talkers whose tongues were all broken
 I saw guns and sharp swords in the hands of young children
-
 And it\'s a hard, and it\'s a hard, it\'s a hard, it\'s a hard
 And it\'s a hard rain\'s a-gonna fall
-
 And what did you hear, my blue-eyed son?
 And what did you hear, my darling young one?
 I heard the sound of a thunder, it roared out a warnin\'
@@ -334,10 +282,8 @@ Heard the roar of a wave that could drown the whole world
 Heard one person starve, I heard many people laughin\'
 Heard the song of a poet who died in the gutter
 Heard the sound of a clown who cried in the alley
-
 And it\'s a hard, and it\'s a hard, it\'s a hard, it\'s a hard
 And it\'s a hard rain\'s a-gonna fall
-
 Oh, who did you meet, my blue-eyed son?
 Who did you meet, my darling young one?
 I met a young child beside a dead pony
@@ -346,10 +292,8 @@ I met a young woman whose body was burning
 I met a young girl, she gave me a rainbow
 I met one man who was wounded in love
 I met another man who was wounded with hatred
-
 And it\'s a hard, it\'s a hard, it\'s a hard, it\'s a hard
 It\'s a hard rain\'s a-gonna fall
-
 Oh, what\'ll you do now, my blue-eyed son?
 Oh, what\'ll you do now, my darling young one?
 I\'m a-goin\' back out \'fore the rain starts a-fallin\'
@@ -364,7 +308,6 @@ And I\'ll tell it and think it and speak it and breathe it
 And reflect it from the mountain so all souls can see it
 Then I\'ll stand on the ocean until I start sinkin\'
 But I\'ll know my song well before I start singin\'
-
 And it\'s a hard, it\'s a hard, it\'s a hard, it\'s a hard
 It\'s a hard rain\'s a-gonna fall`		})
 		//#endregion
@@ -377,8 +320,6 @@ It\'s a hard rain\'s a-gonna fall`		})
 `[Intro]
 | D | % | G/D | D |
 | D | % | % |
-
-
 [Verse] 1
 D                       G/D       D
 Oh, where have you been, my blue-eyed son?
@@ -398,12 +339,8 @@ I’ve been ten thousand miles in the mouth of a graveyard
 And it’s a hard, and it’s a hard, it’s a hard, and it’s a hard
 D        A             [ D ]
 It’s a hard rai---n’s a-gonna fall
-
-
 [Interlude]
 | D | % | G | D | % | % | % |
-
-
 [Verse] 2
 D                    G         D
 Oh, what did you see, my blue-eyed son?
@@ -427,12 +364,8 @@ I saw guns and sharp swords in the hands of young children
 And it’s a hard, and it’s a hard, it’s a hard, and it’s a hard
    D        A             [ D ]
 And it’s a hard rai---n’s a-gonna fall
-
-
 [Interlude] 
 | D | % | G | D | % | % | % |
-
-
 [Verse] 3
 D                     G         D
 And what did you hear, my blue-eyed son?
@@ -456,12 +389,8 @@ I heard the sound of a clown who cried in the alley
 And it’s a hard, it’s a hard, it’s a hard, it’s a hard
 D        A             [ D ]
 It’s a hard rai---n’s a-gonna fall
-
-
 [Interlude]
 | D | % | G | D | % | % | % |
-
-
 [Verse] 4
 D                    G         D
 Oh, who did you meet, my blue-eyed son?          [Dylan actually sings "what did you meet"]
@@ -483,12 +412,8 @@ I met another man who was wounded in hatred
 And it’s a hard, it’s a hard, it’s a hard, it’s a hard
 D        A             [ D ]
 It’s a hard rai---n’s a-gonna fall
-
-
 [Interlude]
 | D | % | G | D | % | % | % | % | % |
-
-
 [Verse] 5
 D                      G        | D | G | D | % | 
 And, what’ll you do now, my blue-eyed son?
@@ -536,53 +461,41 @@ It’s a hard rai---n’s a-gonna fall`		})
 I\'m not sleepy and there is no place I\'m going to
 Hey, Mr Tambourine Man, play a song for me
 In the jingle jangle morning, I\'ll come following you
-
 Though I know that evening\'s empire
 Has returned into sand
 Vanished from my hand
-
 Left me blindly here to stand but still not sleeping
 My weariness amazes me
 I\'m branded on my feet
-
 I have no one to meet
 And the ancient empty street\'s too dead for dreaming
 Hey, Mr Tambourine Man, play a song for me
 I\'m not sleepy and there is no place I\'m going to
-
 Hey, Mr Tambourine Man, play a song for me
 In the jingle jangle morning, I\'ll come following you
 Take me on a trip upon your magic swirling ship
-
-
 My senses have been stripped, my hands can\'t feel to grip
 My toes too numb to step, wait only for my boot heels
 To be wandering
-
 I\'m ready to go anywhere, I\'m ready for to fade
 Into my own parade
 Cast your dancing spell my way
 I promise to go under it
-
 Hey, Mr Tambourine Man, play a song for me
 I\'m not sleepy and there is no place I\'m going to
 Hey, Mr Tambourine Man, play a song for me
-
 In the jingle jangle morning, I\'ll come following you
 Though you might hear laughing, spinning
 Swinging madly across the sun
 It\'s not aimed at anyone, it\'s just escaping on the run
-
 And but for the sky, there are no fences facing
 And if you hear vague traces of skipping reels of rhyme
 To your tambourine in time, it\'s just a ragged clown behind
 I wouldn\'t pay it any mind, it\'s just a shadow
-
 You\'re seeing that he\'s chasing
 Hey, Mr Tambourine Man, play a song for me
 I\'m not sleepy and there is no place I\'m going to
 Hey, Mr Tambourine Man, play a song for me
-
 In the jingle jangle morning, I\'ll come following you
 Then take me disappearing through the smoke rings of my mind
 Down the foggy ruins of time, far past the frozen leaves
@@ -604,11 +517,8 @@ In the jingle jangle morning, I\'ll come following you`		})
 			duration: 6 * 60 + 50,
 			content: 
 `[Intro]
-
 D D  Dsus2 Dsus2 D 
-
 [Chorus]
-
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
@@ -617,9 +527,7 @@ G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
 In the jingle jangle morning I\'ll come following you.  
-
 [Verse]
-
 G                           A          D             G
 Though I know that evenings empire has returned into sand,
 D                G
@@ -632,9 +540,7 @@ D              G
 I have no one to meet
 D             G                     A
 And the ancient empty street\'s too dead for dreaming.
-
 [Chorus]
-
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
@@ -643,9 +549,7 @@ G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
 In the jingle jangle morning I\'ll come following you.
-
 [Verse]
-
 G            A              D              G
 Take me on a trip upon your magic swirling ship,
 D                G            D                   G
@@ -660,9 +564,7 @@ D           G               D                G
 Into my own parade, cast your dancing spell my way,
         A
 I promise to go under it.
-
 [Chorus]
-
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
@@ -671,9 +573,7 @@ G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
 In the jingle jangle morning I\'ll come following you.
-
 [Verse]
-
 G                               A                  D                G
 Though you might hear laughing, spinning, swinging madly across the sun,
  D           G                D             G
@@ -688,9 +588,7 @@ To your tambourine in time, it\'s just a ragged clown behind,
 I wouldn\'t pay it any mind, it\'s just a shadow you\'re
 G                A
 Seeing that he\'s chasing.
-
 [Chorus]
-
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
@@ -699,9 +597,7 @@ G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D             G                 A         D
 In the jingle jangle morning I\'ll come following you.
-
 [Bridge]
-
 G            A                   D                 G
 Then take me disappearing through the smoke rings of my mind,
  D              G         D               G
@@ -718,9 +614,7 @@ Silhouetted by the sea, circled by the circus sands,
 With all memory and fate driven deep beneath the waves,
   D         G             A
 Let me forget about today until tomorrow.
-
 [Chorus]
-
 G        A               D               G
 Hey! Mr. Tambourine Man, play a song for me,
 D                G               A
@@ -762,7 +656,6 @@ G             D                    Am
 Knock, knock, knockin\' on heaven\'s door
 G             D                    C   
 Knock, knock, knockin\' on heaven\'s door
-
 [Verse] 
 G           D           Am
 Mama put my guns in the ground
@@ -786,7 +679,6 @@ Knock, knock, knockin\' on heaven\'s door
 [Outro] 
 G    D    Am          
 Oo - oo - oo - oo
-
 [End]
 G `		})
 		//#endregion
@@ -801,9 +693,7 @@ G `		})
 			content: 
 `D7  030232
 D6  020032
-
 [Verse 1]
-
 G             Em         C        G
 Come gather \'round people wherever you roam
 G            Am      C              D
@@ -816,7 +706,6 @@ If your time to you is worth savin\'
 Then you better start swimmin\' or you\'ll sink like a stone,
 G           C     D   G
 For the times, they are a-changin\'
-
 [Verse 2]
 G           Em                C              G
 Come writers and critics who prophesize with your pen
@@ -830,7 +719,6 @@ And there\'s no tellin\' who that it\'s namin\'
 For the loser now will be later to win
 G          C     D   G
 For the times they are a-changin\'
-
 [Verse 3]
 G         Em          C               G
 Come senators, congressmen please heed the call
@@ -844,7 +732,6 @@ There\'s a battle outside and it\'s ragin\'
 It\'ll soon shake your windows and rattle your walls
 G          C     D   G
 For the times they are a-changin\'
-
 [Verse 4]
 G           Em      C              G
 Come mothers and fathers throughout the land
@@ -858,7 +745,6 @@ Your old road is rapidly agin\'
 Please get out of the new one if you can\'t lend a hand
 G          C     D   G
 For the times they are a-changin\'
-
 [Verse 5]
 G          Em        C           G
 The line it is drawn the curse it is cast
@@ -883,7 +769,6 @@ For the times they are a-changin\'`		})
 			content: 
 `[Intro]
 | Bm | A | Bm | G A |   (x2)
-
 [Verse 1]
 Bm                 A               Bm   G A
 Travelling in a fried-out kombi
@@ -893,7 +778,6 @@ Bm                 A   Bm            G       A
 I met a strange lady, she made me nervous
 Bm             A              Bm        G        A
 She took me in and gave me breakfast, and she said
-
 [Chorus]
 D                    A               Bm   G A
 Do you come from a land down under
@@ -903,9 +787,7 @@ D                           A                 Bm   G A
 Can\'t you hear, can\'t you hear the thunder?
 D               A             Bm   G A
 You better run, you better take cover
-
 | Bm | A | Bm | G A |   (x2)
-
 [Verse 2]
 Bm                     A         Bm    G   A
 Buying bread from a man in Brussels, he was
@@ -915,7 +797,6 @@ Bm                A                    Bm    G A
 I said: do you speak-a my language?
 Bm                 A                  Bm       G       A
 He just smiled and gave me a Vegemite sandwich, and he said
-
 [Chorus]
 D               A               Bm    G A
 I come from a land down under
@@ -925,10 +806,8 @@ D                           A                 Bm   G A
 Can\'t you hear, can\'t you hear the thunder?
 D               A             Bm    G A
 You better run, you better take cover
-
 | Bm | A | Bm | G A |   (x4)
 | D  | A | Bm | G A |   (x2)
-
 [Verse 3]
 Bm            A         Bm   G A
 Lying in a den in Bombay
@@ -938,7 +817,6 @@ Bm               A                      Bm        G A
 I said to the man: are you trying to tempt me?
 Bm           A                     Bm     G       A
 Because I come from the land of plenty, and he said
-
 [Chorus] (repeat while fading)
 D                    A               Bm   G A
 Do you come from a land down under
@@ -961,7 +839,6 @@ You better run, you better take cover`		})
 `[Intro]
 | A7 | % | Dm | % | F | % | 
 | Dm -
-
 [Verse 1]
            A7
 We passed upon the stair
@@ -979,7 +856,6 @@ I spoke into his eyes
 I thought you died alone
            C
 A long long time ago
-
 [Chorus 1]
 C       F
 Oh no, not me
@@ -989,11 +865,9 @@ C       F
 You\'re face to face
  Bbm              A
 With the man who sold the world
-
 [Break]
 | A |  Dm | F |  Dm |
 | A |  Dm | F |  Dm |
-
 [Verse 2]
                 A7
 I laughed and shook his hand
@@ -1011,7 +885,6 @@ At all the millions here
 We must have died alone
            C
 A long long time ago
-
 [Chorus 2]
 C          F
 Who knows, Not me
@@ -1021,11 +894,9 @@ C       F
 You\'re face to face
  Bbm              A
 With the man who sold the world
-
 [Break]
 | A |  Dm | F |  Dm |
 | A |  Dm | F |  Dm |
-
 [Chorus 3]
 C          F
 Who knows, Not me
@@ -1035,7 +906,6 @@ C       F
 You\'re face to face
  Bbm              A
 With the man who sold the world
-
 [Outro]
 | A  |  Dm | F |  Dm |
 | A7 |  Dm | F |  Dm |
@@ -1056,12 +926,6 @@ With the man who sold the world
 `[Intro]    
 Fmaj7  Em  Fmaj7  Em
 Fmaj7  Em  Fmaj7  Em
-
-
-
-
-
-
 [Pre-Verse]
 C                         Em            
 Ground control to Major Tom 
@@ -1075,7 +939,6 @@ C                              Em
 Commencing countdown engines on
 Am        Am/G           D/F# 
 Check ignition and may God\'s love be with you
-
 [Verse 1]
 C                                E
 This is ground control to Major Tom      
@@ -1093,7 +956,6 @@ I\'m stepping through the door
 And I\'m floating in a most peculiar way
  Fm              C           F
 And the stars look very different today
-
 [Chorus]
 Fmaj7     Em                     
 For here am I sitting in a tin can   
@@ -1101,12 +963,10 @@ Fmaj7         Em
 Far above the world
 Bb              Am               G             F
 Planet Earth is blue and there\'s nothing I can do   
-
 [Instrumental]
 C F G A A         
 C F G A A 
 Fmaj7 Em  A  C  D  E
-
 [Verse 2]
 C                                      E 
 Though I\'m past one hundred thousand miles    
@@ -1116,7 +976,6 @@ Fm                 C                  F
 And I think my spaceship knows which way to go
  Fm              C             F
 Tell my wife I love her very much she knows
-
 [Bridge]
 G                 E7              Am                      C/G
 Ground control to Major Tom, your circuit\'s dead, there\'s something wrong
@@ -1126,7 +985,6 @@ C
 Can you hear me Major Tom?
 G
 Can you hear me Major Tom? Can you...
-
 [Chorus]
 Fmaj7     Em                    
 Here am I floating \'round my tin can   
@@ -1134,7 +992,6 @@ Fmaj7         Em
 Far above the Moon
 Bb              Am               G             F
 Planet Earth is blue and there\'s nothing I can do   
-
 [Outro]
 C F G A A         
 C F G A A 
@@ -1150,30 +1007,22 @@ Fmaj7 Em  A  C  D  E`		})
 			duration: 3 * 60 + 50,
 			content: 
 `[Intro]
-
 Am    F/C    C    G    C      
             
-
 [Verse]
-
 C
 Someone told me long ago
 C                                   G
 There\'s a calm before the storm, I know
              C  
 And it\'s been coming for some time
-
-
 C
 When it\'s over, so they say
 C                          G
 It\'ll rain a sunny day, I know
            C  
 Shining down like water
-
-
 [Chorus]
-
 F         G
 I wanna know
  C    C/B      Am    Am/G
@@ -1184,27 +1033,20 @@ I wanna know
 Have you ever seen the rain
 F        G               C  
 Coming down on a sunny day 
-
-
 [Verse]
-
 C
 Yesterday and days before
 C                                G
 Sun is cold and rain is hard, I know
             C 
 Been that way for all my time
-
 C
 \'Til forever on it goes
 C                                 G
 Thru the circle fast and slow, I know
                C 
 And it can\'t stop, I wonder
-
-
 [Chorus]
-
 F         G
 I wanna know
  C    C/B      Am    Am/G
@@ -1215,10 +1057,7 @@ I wanna know
 Have you ever seen the rain
 F        G                C  
 Coming down on a sunny day
-
-
 [Chorus]
-
 F         G
 I wanna know
  C    C/B      Am    Am/G
@@ -1241,7 +1080,6 @@ Coming down on a sunny day `		})
 			content: 
 `[Intro]
 | D   | A G | D   | D   |
-
 [Verse 1]
 D       A   G    D
 I see a bad moon rising
@@ -1251,7 +1089,6 @@ D     A    G          D
 I see earthquakes and lightning
 D     A   G       D
 I see bad times today
-
 [Chorus]
 G
 Don\'t go around tonight
@@ -1259,7 +1096,6 @@ Don\'t go around tonight
 Well, it\'s bound to take your life
 A         G               D
 There\'s a bad moon on the rise
-
 [Verse 2]
 D      A    G       D
 I hear hurricanes a blowing
@@ -1269,7 +1105,6 @@ D      A      G   D
 I fear rivers overflowing
 D          A        G        D
 I hear the voice of rage and ruin
-
 [Chorus]
 G
 Don\'t go around tonight
@@ -1277,13 +1112,11 @@ Don\'t go around tonight
 Well, it\'s bound to take your life
 A         G               D
 There\'s a bad moon on the rise
-
 [Solo]
 | D   | A G | D   | D   |
 | D   | A G | D   | D   |
 | G   | G   | D   | D   |
 | A   | G   | D   | D   |
-
 [Verse 3]
 D        A        G       D
 Hope you got your things together
@@ -1293,7 +1126,6 @@ D                A      G     D
 Looks like we\'re in for nasty weather
 D          A     G      D
 One eye is taken for an eye
-
 [Chorus]
 G       
 Don\'t go around tonight
@@ -1301,7 +1133,6 @@ Don\'t go around tonight
 Well, it\'s bound to take your life
 A         G               D
 There\'s a bad moon on the rise
-
 G
 Don\'t go around tonight
    D
@@ -1318,12 +1149,8 @@ There\'s a bad moon on the rise`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro]
-
 A    A    A    A
-
-
 [Verse 1]
-
 A       F#m
 Almost heaven, West Virginia,
 E                     D          A
@@ -1332,10 +1159,7 @@ A                  F#m
 Life is old there, older than the trees,
 E                           D                A
 Younger than the mountains, blowin\' like a breeze
-
-
 [Chorus]
-
 A              E
 Country Roads, take me home
 F#m       D
@@ -1344,10 +1168,7 @@ A               E
 West Virginia, mountain momma,
 D             A
 Take me home, Country Roads.
-
-
 [Verse 2]
-
 A              F#m
 All my mem\'ries gather \'round her,
 E             D                A
@@ -1356,10 +1177,7 @@ A               F#m
 Dark and dusty, painted on the sky,
 E                           D            A
 Misty taste of moonshine, teardrop in my eye.
-
-
 [Chorus]
-
 A              E
 Country Roads, take me home
 F#m       D
@@ -1368,10 +1186,7 @@ A               E
 West Virginia, mountain momma,
 D             A
 Take me home, Country Roads.
-
-
 [Riff]
-
 F#m        E             A
 I hear her voice, in the mornin\' hours she calls me,
 D       A              E
@@ -1380,10 +1195,7 @@ F#m              G
 And drivin\' down the road
 D              A                     E                E7
 I get a feelin\' that I should have been home yesterday, yesterday.
-
-
 [Chorus]
-
 A              E
 Country Roads, take me home
 F#m       D
@@ -1400,15 +1212,11 @@ A               E
 West Virginia, mountain momma,
 D             A
 Take me home, Country Roads.
-
-
 [Outro]
-
 E                  A
 Take me home, down Country Roads,
 E                  A
 Take me home, down Country Roads.
-
 E A`		})
 		//#endregion
 	//#endregion
@@ -1430,7 +1238,6 @@ Dm
 My head grew heavy and my sight grew dim
 E
 I had to stop for the night
-
 Am                               E7
 There she stood in the doorway; I heard the mission bell
 G
@@ -1443,7 +1250,6 @@ Dm
 There were voices down the corridor,
 E
 I thought I heard them say...
-
 [Chorus]
 F                          C
 Welcome to the Hotel California.
@@ -1453,7 +1259,6 @@ F                               C
 Plenty of room at the Hotel California
 Dm                                       E
 Any time of year, (any time of year) You can find it here
-
 [Verse]
 Am                            E7
 Her mind is Tiffany-twisted, She got the Mercedes bends
@@ -1463,7 +1268,6 @@ F                                   C
 How they danced in the courtyard, sweet summer sweat
 Dm                       E
 Some dance to remember, some dance to forget
-
 Am                           E7
 So I called up the captain; Please bring me my wine (he said)
 G                                     D
@@ -1474,7 +1278,6 @@ Dm
 Wake you up in the middle of the night 
 E
 Just to hear them say...
-
 [Chorus]
 F                         C
 Welcome to the Hotel California.
@@ -1484,7 +1287,6 @@ F                             C
 They\'re livin\' it up at the Hotel California
 Dm                                               E
 What a nice surprise, (what a nice surprise) Bring your alibis
-
 [Verse]
 Am                        E7
 Mirrors on the ceiling; the pink champagne on ice (and she said)
@@ -1496,7 +1298,6 @@ Dm
 They stab it with their steely knives but they
 E
 just can\'t kill the beast
-
 Am                             E7
 Last thing I remember, I was running for the door
 G                                       D
@@ -1525,7 +1326,6 @@ E                                A/E           E
 So we took turns a starin\' out the window at the darkness
                   B7              E
 \'til boredom overtook us, and he began to speak.
-
 [Verse 2]
 (Bass in)
  E                             A/E              E
@@ -1536,7 +1336,6 @@ E                               A/E               E
 And if you don\'t mind my sayin\', I can see you\'re out of aces.
 A/E           E            B7            E
 For a taste of your whiskey I\'ll give you some advice."
-
 Verse 3: (strumming starts)
 E                           A                  E
 So I handed him my bottle and he drank down my last swallow.
@@ -1546,7 +1345,6 @@ E                                A                 E
 And the night got deathly quiet, and his face lost all expression.
          A               E                  B7               E
 Said, "If you\'re gonna play the game, boy, ya gotta learn to play it right.
-
 [Chorus]
    E                     A             E
 You got to know when to hold \'em, know when to fold \'em,
@@ -1556,7 +1354,6 @@ know when to walk away and know when to run.
 You never count your money when you\'re sittin\' at the table.
     E    A          E        B7                E
 There\'ll be time enough for countin\' when the dealin\'s done.
-
 [Verse 4]
 (Key change)
 F                            Bb             F
@@ -1567,7 +1364,6 @@ F                         Bb              F
 \'Cause ev\'ry hand\'s a winner and ev\'ry hand\'s a loser,
 Bb                 F              C           F
 and the best that you can hope for is to die in your sleep."
-
 [Verse 5]
 F                               Bb                       F
 And when he\'d finished speakin\', he turned back towards the window,
@@ -1577,7 +1373,6 @@ F                             Bb                 F
 And somewhere in the darkness the gambler, he broke even.
 Bb            F                C7               F
 But in his final words I found an ace that I could keep.
-
 [Chorus]
    F                     Bb             F
 You got to know when to hold \'em, know when to fold \'em,
@@ -1587,13 +1382,11 @@ know when to walk away and know when to run.
 You never count your money when you\'re sittin\' at the table.
      F    Bb          F        C7                F
 There\'ll be time enough for countin\' when the dealin\'s done.
-
 N.C.
 You got to know when to hold \'em, know when to fold \'em,
 know when to walk away and know when to run.
 You never count your money when you\'re sittin\' at the table.
 There\'ll be time enough for countin\' when the dealin\'s done.
-
    F                     Bb             F
 You got to know when to hold \'em, know when to fold \'em,
 Bb            F                          C7
@@ -1619,7 +1412,6 @@ G|--------0---0---0---0---0---0-|-2-------2---0-----------------|
 D|--------2---2---2---2---2---2-|-0-------0---2-----------0-2---| x4 
 A|--------2---2---2---2---2---2-|-------------2-------0h2-------|
 E|-----0--0---0---0---0---0---0-|-------------0-----------------|
-
 [Harmonica intro]
 Em  C  D  G
 Em  C  D  G
@@ -1632,7 +1424,6 @@ G|--------0---0---0---0---0---0-|-2-------2---0-----------------|
 D|--------2---2---2---2---2---2-|-0-------0---2-----------0-2---|
 A|--------2---2---2---2---2---2-|-------------2-------0h2-------|
 E|-----0--0---0---0---0---0---0-|-------------0-----------------|
-
 [Verse 1]
 Em          C     D            G
 I want to live,    I want to give
@@ -1648,7 +1439,6 @@ Em                        G
 Keep me searching for a heart of gold
 C                       G
 And I\'m getting old
-
 [Riff]
 e|-----------3------------------|
 B|-----------0------------------|
@@ -1656,13 +1446,11 @@ G|-----------0------------------|
 D|-----------0------------------|
 A|--3--2--0--2------------------|
 E|-----------3------------------|
-
 [Harmonica solo]
 Em C D G
 Em C D G 
 Em C D G
 Em D Em
-
 [Verse 2]
 Em             C          D              G
 I\'ve been to Hollywood,   I\'ve been to Redwood
@@ -1670,7 +1458,6 @@ Em                 C           D        G
 I\'ve crossed the ocean for a heart of gold
 Em             C        D             G
 I\'ve been in my mind,   it\'s such a fine line
-
 Em                              G        
 That keeps me searching for a heart of gold
 C                      G
@@ -1679,12 +1466,10 @@ Em                              G
 That keeps me searching for a heart of gold
 C                      G
 And I\'m getting old
-
 [Harmonica solo]
 Em C D G 
 Em C D G
 Em C D G
-
 [Outro]
 Em                        D        Em
 Keep me searching for a heart of gold
@@ -1704,14 +1489,9 @@ I\'ve been a miner for a heart of gold      ahhhhhh`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro]
-
 Bm 
-
-
 [Verse 1] 
-
 (Willie Nelson)
-
 Bm       A                     G                Bm 
 I was a highwayman, along the coach roads I did ride
 A          G      D     A
@@ -1724,12 +1504,8 @@ Bm            A                G        A     D
 The bastards hung me in the spring of twenty five
 Bm         G     A
 But I am still alive
-
-
 [Verse 2]
-
 (Kris Kristofferson)
-
 Bm       A             G            Bm 
 I was a sailor, I was born upon the tide
 A         G     D    A
@@ -1742,12 +1518,8 @@ Bm            A                    G       A      D
 And when the yards broke off they say that I got killed
 Bm        G       A
 But I am living still
-
-
 [Verse 3]
-
 (Waylon Jennings)
-
 Bm       A                     G             Bm
 I was a dam builder, across a river deep and wide
 A                G     D      A
@@ -1760,21 +1532,13 @@ Bm           A               G          A       D
 They buried me in that gray tomb that knows no sound
 Bm         G     A
 But I am still around
-
-
 [Bridge]
-
 (All)
-
          D           D/C#        Bm          A           G      D/F#
 I\'ll always be around, and around, and around, and around, and around...
 Em G A D
-
-
 [Verse 4]
-
 (Johnny Cash)
-
 Bm           A                 G          Bm 
 I\'ll fly a starship across the universe divide
 A           G        D      A
@@ -1787,10 +1551,7 @@ Bm        A           G       A      D
 Or I may simply be a single drop of rain
 Bm     G      A
 But I will remain
-
-
 [Outro]
-
 (All)
            D         D/C#        Bm         A          G     D/F#
 And I\'ll be back again, and again, and again, and again, and again...
@@ -1805,7 +1566,6 @@ Em G A D `		})
 			instrument: Guitar(guitarTunings.half_step_down),
 			content: 
 `[Verse 1]
-
 C            G            Am
 Well, Mama told me,  when I was young.
 C                 G         Am
@@ -1814,12 +1574,8 @@ C            G           Am
 And listen closely,   to what I say.
 C                 G             Am
 And if you do this, it\'ll help you, some sunny day.
-
 Oh yeah!
-
-
 [Verse 2]
-
       C    G            Am
 Oh, take your time,  don\'t live too fast.
       C    G              Am
@@ -1828,10 +1584,7 @@ Troubles will come,  and they will pass.
 Go find a woman, and you\'ll find love.
      C                 G          Am
 And don\'t forget son, there is someone up above.
-
-
 [Chorus]
-
  C     G        Am
 And be a simple  kind of man.
 C         G                    Am
@@ -1840,10 +1593,7 @@ Oh, be something,  you love and understand.
 Baby, be a simple  kind of man.
       C              G            Am
 Oh, won\'t you do this for me son, if you can?
-
-
 [Verse 3]
-
 C          G                Am
 Forget your lust,  for rich man\'s gold,
 C            G             Am
@@ -1852,10 +1602,7 @@ C               G               Am
 And you can do this, oh baby,  if you try.
 C                   G                    Am
 All that I want for you my son, is to be satisfied.
-
-
 [Chorus]
-
  C     G        Am
 And be a simple  kind of man.
 C         G                    Am
@@ -1864,12 +1611,8 @@ Oh, be something,  you love and understand.
 Baby, be a simple  kind of man.
       C              G            Am
 Oh, won\'t you do this for me son, if you can?
-
 Oh yes, I will.
-
-
 [Verse 4]
-
   C           G                 Am
 Boy, don\'t you worry,  you\'ll find yourself.
 C           G             Am
@@ -1878,10 +1621,7 @@ C               G           Am
 You can do this,  oh baby,  if you try.
 C                    G                 Am
 All that I want for you my son, is to be satisfied.
-
-
 [Chorus]
-
  C     G        Am
 And be a simple  kind of man.
 C         G                    Am
@@ -1890,7 +1630,6 @@ Oh, be something,  you love and understand.
 Baby, be a simple  kind of man.
       C              G            Am
 Oh, won\'t you do this for me son, if you can?
-
 Baby, be a simple, be a simple man`		})
 		//#endregion
 	//#endregion
@@ -1903,8 +1642,6 @@ Baby, be a simple, be a simple man`		})
 			content: 
 `[Intro]
 Am    C  D  Am    C  D
-
-
 [Verse 1]
 Am   C       D     Am       C      D       Am
 I hurt myself today   to see if I still feel
@@ -1914,8 +1651,6 @@ C      D       Am         C      D       Am
 The needle tears a hole   the old familiar sting
 C      D      Am           C      D      G          
 Try to kill it all away   but I remember everything
-
-
 [Chorus 1]
 Am              F     C               G
 What have I become?     My sweetest friend
@@ -1925,12 +1660,8 @@ Am                 F    G               G
 And you could have it all   My empire of dirt
 Am              F      G                Am
 I will let you down    I will make you hurt
-
-
 [Transition]
 (Am)   C  D  Am    C  D
-
-
 [Verse 2]
 Am   C         D        Am        C      D       Am
 I wear this crown of thorns   upon my liar\'s chair
@@ -1940,8 +1671,6 @@ C          D        Am         C       D       Am
 Beneath the stains of time   the feelings disappear
 C         D      Am    C     D           G
 You are someone else   I am still right here
-
-
 [Chorus 2]
 Am              F     C               G
 What have I become?     My sweetest friend
@@ -1970,69 +1699,57 @@ I would keep myself  I would find a way
 C# C# B B A G# 
 F# F# E E D# C# 
 D# D# C# C# C C C# D# E
-
 REPEAT
 [C#m] [F#m7] [G#]  [C#m]
 [C#m] [F#m7] [G#]  [C#m]
-
 [Chorus]
 N.C. I\'m a [C#m]melancholy man, [F#m7]that\'s what I am,
 All [G#]the world surrounds me and my [C#m]feet, are on the ground.
 N.C.I\'m a [C#m]very lonely man, [F#m7]doing what I can,
 [G#]All the world astounds me and I [C#m]think, I understand
 That we\'re [G#7]going, to keep growing, wait and [C#m]see.[C#m]
-
 #
 [Verse 1]
 [C#m]When all the stars are falling down,
 [F#m7]Into the sea and on the ground,
 [G#]And angry voices carry on the [C#m]wind.
 #
-
 [Verse 2]
 [C#m]A beam of light will fill your head,
 [F#m7]And you\'ll remember what\'s been said
 [G#]By all the good men this world\'s ever [C#m]known.
 #
-
 [Verse 3]
 [C#m]Another man is what you\'ll see,
 [F#m7]Who looks like you, and looks like me,
 [G#]And yet somehow, he will not feel the [C#m]same.
 #
-
 [Verse 4]
 [C#m]His life caught up in misery, [F#m7]he doesn\'t think like you and me,
 [G#]\'Cause he can\'t see, what you and I can [C#m]see.
 #
-
 [Solo]
 C#m F#m7 G# C#m  repeat 4 times
 #
 REPEAT ALL  VERSES AND THEN CHORUS
-
 [Verse 1]
 [C#m]When all the stars are falling down,
 [F#m7]Into the sea and on the ground,
 [G#]And angry voices carry on the [C#m]wind.
 #
-
 [Verse 2]
 [C#m]A beam of light will fill your head,
 [F#m7]And you\'ll remember what\'s been said
 [G#]By all the good men this world\'s ever [C#m]known.
 #
-
 [Verse 3]
 [C#m]Another man is what you\'ll see,
 [F#m7]Who looks like you, and looks like me,
 [G#]And yet somehow, he will not feel the [C#m]same.
 #
-
 [Verse 4]
 [C#m]His life caught up in misery, [F#m7]he doesn\'t think like you and me,
 [G#]\'Cause he can\'t see what you and I can [C#m]see.
-
 #
 [Chorus]
 (with verse 1 &amp; 2 sung underneath)
@@ -2043,7 +1760,6 @@ N.C.I\'m a [C#m]very lonely man, [F#m7]doing what I can,
 That we\'re [G#7]going, to keep growing, wait and [C#m]see.
 #
 (Repeat all verses with the chorus sung underneath.)
-
 END`		})
 		//#endregion
 	//#endregion
@@ -2057,8 +1773,6 @@ END`		})
 `[Intro]
 Em A
 Em A
-
-
 [Verse 1]
 Em                     G
 All around me are familiar faces
@@ -2076,8 +1790,6 @@ Em                         G
 Hide my head, I want to drown my sorrow
 D            A
 No tomorrow, no tomorrow
-
-
 [Chorus]
 Em                     A                      Em
 And I find it kinda funny, I find it kinda sad
@@ -2091,8 +1803,6 @@ Em     A
 Mad world
 Em     A
 Mad world
-
-
 [Verse 2]
 Em                          G
 Children waiting for the day they feel good
@@ -2110,8 +1820,6 @@ Em                         G
 Hello, teacher, tell me what\'s my lesson
 D                      A
 Look right through me, look right through me
-
-
 [Chorus]
 Em                     A                      Em
 And I find it kinda funny, I find it kinda sad
@@ -2141,8 +1849,6 @@ Mad world`		})
 `[Intro]
 | Am | C | D | F |
 | Am | E | Am | E |
-
-
 [Verse 1] 
 Am   C        D          F
 There is a house in New Orleans,
@@ -2152,8 +1858,6 @@ Am       C       D           F
 It\'s been the ruin of many a poor boy,
 Am     E         | Am | C | D | F | Am | E | Am | E | 
 And God, I know, I\'m one                (organ plays E7)
-
-
 [Verse 2]
 Am     C     D        F
 My mother was a tailor (organ: F7) 
@@ -2163,8 +1867,6 @@ Am    C     D        F
 My father was a gambling man,
 Am      E     | Am | C | D | F | Am | E | Am | E | 
 Down in New Orleans.             (organ plays E7)
-
-
 [Verse 3]
 Am   C       D       F
 Now the only thing a gambler needs (organ: F7) 
@@ -2174,8 +1876,6 @@ Am   C     D         F
 And the only time, he\'s satisfied, 
 Am        E    | Am | C | D | F | Am | E | Am | E | 
 Is when he\'s on a drunk              (organ plays E7)
-
-
 [Solo]
 | Am | C | D | F |
 | Am | C | E | % |
@@ -2183,8 +1883,6 @@ Is when he\'s on a drunk              (organ plays E7)
 | Am | E |
 | Am | C | D | F |
 | Am | E | Am | E |
-
-
 [Verse 4]
 Am     C          D           F
 O, mother, tell your children (organ: F7) 
@@ -2194,8 +1892,6 @@ Am         C        D           F
 Spend your lives in sin and misery
 Am       E     | Am | C | D | F | Am | E | Am | E | 
 In the House of Rising Sun              (organ plays E7)
-
-
 [Verse 5]
         Am       C      D            F
 Well, I\'ve  got one foot on the platform (organ plays F7)
@@ -2205,8 +1901,6 @@ Am    C       D     F
 I\'m going back to New Orleans (organ: F7) 
 Am        E         | Am | C | D | F | Am | E | Am | E | 
 To wear that ball and chain              (organ plays E7#9)
-
-
 [Verse 6]
     Am   C        D             F
 Well, there is a house in New Orleans (organ: F7) 
@@ -2226,19 +1920,12 @@ And God, I know, I\'m one`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Chords]
-
 Em  022000      Dsus4  x00233     Cadd9  x32030     E  022100
 G   320033      Asus2  002200     Bm     x24432     C  x32010
 D   x00232      A      002220     Bsus2  x24422
-
-
 [Intro]
-
 Em / G / D / Dsus / Cadd9 / Aadd9 /
-
-
 [Verse]
-
 Em                       G
 No one knows what it\'s like
     D  Dsus4
@@ -2247,7 +1934,6 @@ to be the bad man
 to be the sad man
 Asus2 
 behind blue eyes
-
 Em                       G
 No one knows what it\'s like
     D  Dsus4
@@ -2256,10 +1942,7 @@ to be hated
 to be fated
 Asus2
 to telling only lies
-
-
 [Chorus]
-
    C     D
 But my dreams
       G
@@ -2272,10 +1955,7 @@ I have hours, only lonely
 my love is vengeance
       Asus2
 thats never free
-
-
 [Verse]
-
 Em                       G
 No one knows what it\'s like
     D  Dsus4
@@ -2284,7 +1964,6 @@ to feel these feelings
 like I do
 Asus2
 and I blame you
-
 Em                       G
 No one bites back as hard
     D  Dsus4
@@ -2293,10 +1972,7 @@ on their anger
 none of my pain and woe
 Asus2
 can show through
-
-
 [Chorus]
-
    C     D
 But my dreams
       G
@@ -2309,12 +1985,8 @@ I have hours, only lonely
 my love is vengeance
        Asus2
 that\'s never free
-
-
 [Bridge]
-
 E   Bsus2   A
-
 E           Bsus2     A           E
 When my fist clenches, crack it open
 E        Bm         G        D
@@ -2331,18 +2003,12 @@ Put your finger down my throat
 And if I shiver, please give me a blanket
 Bm           A         E Bsus2 A
 Keep me warm, let me wear your coat
-
-
 [Instrumental]
-
 Bsus2   Bsus2   A   D
 Bsus2   Bsus2   A   D
 Bsus2   Bsus2   A   D
 Bsus2
-
-
 [Verse]
-
 Em                       G
 No one knows what it\'s like
     D  Dsus4
@@ -2362,11 +2028,7 @@ behind blue eyes`		})
 			duration: 3 * 60 + 30,
 			content: 
 `
-
-
-
 [Verse 1]
-
 C           D             G        Em
 He is five feet two, and he\'s six feet four,
 C          D                G     
@@ -2375,10 +2037,7 @@ C            D              G       Em
 He is all of thirty-one, and he\'s only seventeen.
    C                    Am       D
 \'s been a soldier for thousand years.
-
-
 [Verse 2]
-
 C           D         G         Em
 He\'s a Catholic, a Hindu, an atheist,a Chein, 
 C               D             G
@@ -2387,10 +2046,7 @@ C                  D            G                Em
 And he knows,he shouldn\'t kill, and he knows he always will,
      C                    Am        D
 kill you for me my friend and and me for you.
-
-
 [Verse 3]
-
   C            D            G             Em
 And he\'s fighting for Canada, he\'s fighting for France.
 C               D   G
@@ -2399,10 +2055,7 @@ He\'s fighting for the U.S.A.,
 and he\'s fighting for the Russians, and he\'s fighting for Japan,
 C               Am               D
 and he thinks we put an end to war this way.
-
-
 [Verse 4]
-
  C               D            G                Em
 And he\'s fighting for democracy, he\'s fighting for the Reds.
 C                  D         G
@@ -2411,10 +2064,7 @@ He says it\'s for the peace of all.
 He\'s the one who must decide, who\'s to live and who\'s to die,
 C             Am              D
 and he never sees the writing on the wall.
-
-
 [Verse 5]
-
 C                  D                 G           Em
 But without him, how would Hitler have condemned him at Dachau,
 C           D                 G
@@ -2423,10 +2073,7 @@ without him Caesar would have stood alone.
 He\'s the one who gives his body as a weapon of the war,
 C                Am                D        
 and without him all this killing can\'t go on. 
-
-
 [Verse 6]   
-
   C             D            G            Em
 He\'s the universal soldier and he really is to blame,
 C              D            G
@@ -2448,7 +2095,6 @@ this is not the way we put an end to war.`		})
 			content: 
 `[Intro]
 Dm
-
 [Verse 1]
 Dm
 My lover comes to me with a rose on her bosom
@@ -2460,7 +2106,6 @@ F             C/E         Am            Dm
 And the sun will rise soon on the false and the fair
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
-
 [Verse 2]
 Dm
 She tells me she comes from my mother the mountain
@@ -2472,7 +2117,6 @@ F          C/E          Am          Dm
 Slowly she twirls it in front of my eyes
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
-
 [Verse 3]
 Dm
 I watch her, I love her, I long for to touch her
@@ -2484,7 +2128,6 @@ F            C/E          Am         Dm
 My dog\'s a-gone hunting, the howling is through
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
-
 [Verse 4]
 Dm
 So I reach for her hand and her eyes turn to poison
@@ -2496,7 +2139,6 @@ F               C/E             Am        Dm
 And screams that my first-born will surely be blind
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
-
 [Verse 5]
  Dm
 Then she throws herself out to the black of the nightfall
@@ -2508,7 +2150,6 @@ F           C/E          Am          Dm
 No trace of my true love is there to be found
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
-
 [Verse 6]
 Dm
 So walk these hills lightly and watch who you\'re lovin\'
@@ -2520,7 +2161,6 @@ F             C/E       Am         Dm
 And a dress made of satin all shimmering blue
 C     Am         Dm
 Sing a-too a-loor-a-lie-o
-
 [Verse 7]
 Dm
 Oh my lover comes to me with a rose on her bosom
@@ -2540,7 +2180,6 @@ And the sun will rise soon on the false and the fair`		})
 			instrument: Guitar(guitarTunings.half_step_down),
 			content: 
 `[Verse 1]
-
 Am        F          C         E7
 Such a lonely day, and it\'s mine
 Am          F                   C    E7
@@ -2549,18 +2188,12 @@ Am        F          C          E7
 Such a lonely day, should be banned
 Am        F                C     E7
 It\'s a day that I can\'t stand
-
-
 [Chorus]
-
 Am          F                   C   E7
 The most loneliest day of my life
 Am          F                   C   E7
 The most loneliest day of my life
-
-
 [Verse 2]
-
 Am        F          C           E7
 Such a lonely day, shouldn\'t exist
 Am        F                   C   E7
@@ -2569,33 +2202,23 @@ Am        F          C         E7
 Such a lonely day, and it\'s mine
 Am          F                   C    E7
 The most loneliest day of my life 
-
-
 [Bridge]
-
 F            E7 G        Am
 And if you go, I wanna go with you
 F            E7  G        Am
 And if you die, I wanna die with you
 F           E7            Am
 Take your hand and walk away
-
-
 [Solo]
 Am F C E7 x4
-
 [Chorus]
-
 Am          F                   C   E7
 The most loneliest day of my life
 Am          F                   C   E7
 The most loneliest day of my life
 Am          F                   C   E7
 The most loneliest day of my life
-
-
 [Outro]
-
 Am        F          C         E7
 Such a lonely day, and it\'s mine
 Am        F                      C  E7
@@ -2611,12 +2234,6 @@ It\'s a day that I\'m glad I survived`		})
 			duration: 3 * 60 + 0,
 			content: 
 `[Intro]
-
-
-
-
-
-
 [Verse 1]
          G               G             Em                            Em
 When the night        has come                         and the land is da-   rk
@@ -2626,13 +2243,11 @@ And the mo-    on is the on-   ly light we\'ll   see
 No I wo-       n\'t be af-       raid, no I      won\'t be af-    raid           
        C                 D               G               G
 Just as        long as you st-   and, stand by   me       .      So darlin\', darlin\'
-
 [Chorus 1]
 G             G             Em         Em                              
 stand by me,       oh now   stand by   me,      
 C             D             G          G
 stand by me,     stand by        me.            
-
 [Verse 2]
          G                  G                 Em                        Em
 If the sky       that we look up-   on                      should tumble and   fall
@@ -2642,19 +2257,16 @@ And the mount-   ain      should    crumble to the    sea
 I won\'t cry,         I won\'t cry,       no I          won\'t shed a   tear
          C                  D                 G        G
 Just as long        as you stand,       stand by me   me. So   darling, darling
-
 [Chorus 2]
 G             G             Em         Em                              
 stand by me,       oh now   stand by   me,        
 C             D             G          G
 stand by me,     stand by        me.              
-
 [Solo]
 G        G       Em      Em
 C        D       G       G
 G        G       Em      Em
 C        D       G       G
-
 [Chorus 3]
 G             G             Em          Em                              
 stand by me,       oh now   stand by    me,      
@@ -2670,18 +2282,15 @@ stand by me,     stand by        me.
 `When the night has come
 And the land is dark
 And the moon is the only light we\'ll see
-
 No I won\'t be afraid, no I won\'t be afraid
 Just as long as you stand, stand by me
 So darlin\', darlin\', stand by me, oh stand by me
 Oh stand by me, stand by me
-
 If the sky that we look upon
 Should tumble and fall
 Or the mountains should crumble to the sea
 I won\'t cry, I won\'t cry, no I won\'t shed a tear
 Just as long as you stand, stand by me
-
 And darlin\', darlin\', stand by me, oh stand by me
 Oh stand now, stand by me, stand by me
 And darlin\', darlin\', stand by me, oh stand by me
@@ -2700,10 +2309,6 @@ Oh stand by me, won\'t you stand by`		})
 			content: 
 `[Intro]
 | Dm     | Dm  C  | x4
-
-
-
-
 [Verse 1]
   Dm                       C              Bb       A
 You get a shiver in the dark, it\'s raining in the park but meantime
@@ -2713,7 +2318,6 @@ F                                 C
 A band is blowing Dixie double four time
 Bb                                            Dm    Bb - C
 You feel alright when you hear that music ring
-
 [Verse 2]
       Dm                  C         Bb        A
 Well now, you step inside but you don\'t see too many faces
@@ -2729,11 +2333,9 @@ Bb - C
 way on down south
 Dm
 London Town
-
 [Instrumental]
 Dm - C - Bb - C
 Dm - C - Bb - C
-
 [Verse 3]
      Dm             C  Bb        A
 You check out Guitar George,     he knows all the chords
@@ -2743,7 +2345,6 @@ F                           C
 They say an old guitar is all he can afford
 Bb                                                 Dm    Bb - C
 When he gets up under the lights to play his thing
-
 [Verse 4]
 Dm                   C    Bb           A
 And Harry doesn\'t mind if he doesn\'t make the scene
@@ -2757,11 +2358,9 @@ Saving it up for Friday night
 with the Sultans
             Dm
 with the Sultans of Swing
-
 [Instrumental]
 Dm - C - Bb - C
 Dm - C - Bb - C
-
 [Verse 5]
 Dm                           C        Bb           A
 Then a crowd of young boys, they\'re foolin\' around in the corner
@@ -2775,23 +2374,19 @@ It ain\'t what they call rock and roll
 and the Sultans
                      Dm
 Yeah, the Sultans, they play Creole
-
 [Instrumental]
 Dm - C - Bb - C
 ...             Creole
 Dm - C - Bb - C
-
 [Lead]
 | Dm     | C  Bb  | A      | A       |
 | Dm     | C  Bb  | A      | A       |
 | F      | F      | C      | C       |
 | Bb     | Bb     | Dm     | Dm  Bb  |
 | C      | C  Bb  | C      | C       |
-
 [Instrumental]
 Dm - C - Bb - C
 Dm - C - Bb - C
-
 [Verse 6]
 Dm                       C         Bb         A
 And then the man he steps right up to the microphone
@@ -2805,11 +2400,9 @@ Then he makes it fast with one more thing
 We are the Sultans
               Dm
 We are the Sultans of Swing
-
 [Instrumental]
 Dm - C - Bb - C
 Dm - C - Bb - C
-
 [Outro Solo]
 Dm - C - Bb - C
 (repeat and fade, approx x7`		})
@@ -2823,39 +2416,32 @@ Dm - C - Bb - C
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro] 
-
 Am / F / G / Am
 Am / [ch]G[/ch] /[ch]Dm[/ch]-[ch]F[/ch]/ [ch]Am[/ch]
-
 e|------------------------------|----------------------|
 B|--5----3h5p3--1---3--1--2-----|--10--8---------------|
 G|------------------------------|---------9--7---------|
 D|------------------------------|---------------10--7--|
 A|------------------------------|----------------------|
 E|------------------------------|----------------------|
-
 e|------------------------------|----------------------|
 B|--3----1h3p1--0---1--0--------|------------0--1--3---|
 G|------------------------2-----|--2--4---5------------|
 D|------------------------------|----------------------|
 A|------------------------------|----------------------|
 E|------------------------------|----------------------|
-
 e|------------------------------|----------------------|
 B|--5----3h5p3--1---3--1--0-----|--?????????????????---|
 G|------------------------------|----------------------|
 D|------------------------------|----------------------|
 A|------------------------------|----------------------|
 E|------------------------------|----------------------|
-
 e|------------------------------|-------------------------|
 B|--3----3h5p3--1---3--1--------|------------5--3---------|
 G|------------------------2-----|--2--4---5--------4--(5)-|
 D|------------------------------|-------------------------|
 A|------------------------------|-------------------------|
 E|------------------------------|-------------------------|
-
-
 [ch]C[/ch]                [ch]G[/ch]  
 One day in the year of the fox
 [ch]Dm[/ch]              [ch]Am[/ch]
@@ -2866,7 +2452,6 @@ When the strong young man
 Of the rising sun heard the
 [ch]Am[/ch]
 Tolling of the great black bell
-
 (bass)
 [ch]C[/ch]                [ch]G[/ch]
 One day in the year of the fox when the
@@ -2876,8 +2461,6 @@ Bell began to ring, it meant the
 Time had come for the one to go to the
 [ch]Am[/ch]
 Temple of the King
-
-
 [ch]Dm[/ch]
 There in the middle of the circle, he stands
 [ch]Am[/ch]
@@ -2886,8 +2469,6 @@ Searching, Seeking,
 With just one touch of his trembling hand
 [ch]Am[/ch] 
 The answer will be found
-
-
 [ch]Dm[/ch]
 Daylight waits for the oldman\'s screams
 [ch]Am[/ch]      
@@ -2898,14 +2479,9 @@ Just like a rush of thousand wings
 It shines upon the One
 [ch]F[/ch]       [ch]G[/ch]       [ch]Am[/ch]     
 And the day has just begun
-
-
 [Instrumental] 
-
 [ch]Am[/ch] / [ch]F[/ch] / [ch]G[/ch] / [ch]Am[/ch]
 [ch]Am[/ch] / [ch]G[/ch] /[ch]Dm[/ch]-[ch]F[/ch]/ [ch]Am[/ch]
-
-
 (bass)
 [ch]C[/ch]                 [ch]G[/ch]
 One day in the year of the fox
@@ -2917,7 +2493,6 @@ When the strong young man
 Of the rising sun heard the
 [ch]Am[/ch]
 Tolling of the great black bell
-
 (bass)
 [ch]C[/ch]                [ch]G[/ch]
 One day in the year of the fox when the
@@ -2927,7 +2502,6 @@ Bell began to sing, it meant the
 Time had come for the one to go to the
 [ch]Am[/ch]
 Temple of the King
-
 [ch]Dm[/ch]
 There in the middle of people he stands
 [ch]Am[/ch]
@@ -2938,23 +2512,14 @@ Just a wave of the strong right hand
 He\'s gone, to the 
 [ch]F[/ch]      [ch]G[/ch]      [ch]Am[/ch]
 Temple of the King
-
-
 [Instrumental] 
-
 [ch]Am[/ch] / [ch]F[/ch] / [ch]G[/ch] / [ch]Am[/ch]
 [ch]Am[/ch] / [ch]G[/ch] /[ch]Dm[/ch]-[ch]F[/ch]/ [ch]E[/ch]
-
-
 [Solo]
-
 [ch]Am[/ch] / [ch]F[/ch] / [ch]Am[/ch] / [ch]F[/ch] / [ch]Am[/ch]
 [ch]G[/ch] / [ch]Dm[/ch] / [ch]E[/ch] / [ch]Am[/ch] / [ch]F[/ch] / [ch]Am[/ch] / [ch]F[/ch]
 [ch]Am[/ch] / [ch]G[/ch] / [ch]Dm[/ch] / [ch]E[/ch]
-
-
 [Solo]
-
 [ch]Am[/ch]      [ch]F[/ch]                [ch]Am[/ch]      [ch]F[/ch]                [ch]Am[/ch]            [ch]G[/ch]         [ch]Dm[/ch]
 e|-----------------------------------------------------------------------------|
 B|------8-----8-10--/13/------10------------13--15--17---17p15-13-15--13-15-15-|
@@ -2962,7 +2527,6 @@ G|---------10--------------9----------12-14------------------------------------|
 D|--7--------------------------------------------------------------------------|
 A|-----------------------------------------------------------------------------|
 E|-----------------------------------------------------------------------------|
-
    [ch]E[/ch]          [ch]Am[/ch]           [ch]F[/ch]            [ch]Am[/ch]                [ch]F[/ch]
 e|-----------------------------------------------------------------------|
 B|-b17r15--12------12-13~---12-13---------------13--17--15-b17r15-13-----|
@@ -2970,7 +2534,6 @@ G|----------------------------------------12-14--------------------------|
 D|---------------------------------15------------------------------------|
 A|-----------------------------------------------------------------------|
 E|-----------------------------------------------------------------------|
-
      [ch]Am[/ch]                  [ch]G[/ch]       [ch]Dm[/ch]             [ch]E[/ch]
 e|-----------------------------------------------------------------------------|
 B|----------------------12-13-15-15~-----13-15-17b18----17b18--r17b18r17b18r17-|
@@ -2978,9 +2541,6 @@ G|------12-----------14--------------------------------------------------------|
 D|--15-------14----------------------------------------------------------------|
 A|-----------------------------------------------------------------------------|
 E|-----------------------------------------------------------------------------|
-
-
-
 [ch]Dm[/ch]                                                                
 Far from the circle of the edge of the world
 [ch]Am[/ch]        
@@ -2997,7 +2557,6 @@ Heaven, help me
 All could see by the shine in his eyes
 [ch]E[/ch]  
 The answer has been found
-
 [ch]Dm[/ch]
 Back with the people in the circle he stands
 [ch]Am[/ch]
@@ -3016,17 +2575,13 @@ Of the Temple and the King `		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro]
-
 e|-------------------------3-|
 B|-----3---------3---------3-|
 G|-------2----------0------0-|  x4
 D|-0-0---------------------0-|     
 A|----------3-3------------2-|
 E|---------------------3-3-3-|
-
-
 [Verse]
-
 D    Cadd9         G
 Big wheels keep on turning
 D        Cadd9          G
@@ -3035,10 +2590,8 @@ D       Cadd9           G
 Singing songs about the south land
 D        Cadd9          G                            
 I miss \'ole\' \'bamy once again and I think it\'s a sin
-
 D Cadd9 G 
 D Cadd9 G 
-
 D                Cadd9            G
 Well I heard Mr. Young sing about her
 D                Cadd9        G
@@ -3047,21 +2600,16 @@ D                Cadd9      G
 Well I hope Neil Young will remember
 D          Cadd9              G                
 A southern man don’t need him around, anyhow
-
 [Chorus]
-
 D     Cadd9   G     D         Cadd9        G         
 Sweet home Alabama, where the skies are so blue
 D     Cadd9   G     D         Cadd9         G      
 Sweet home Alabama, lord I’m coming home to you.
-
 [Solo]
 F C
 D Cadd9 G 
 D Cadd9 G 
-
 [Verse]
-
 D         Cadd9             G        F   C   D
 In Birmingham they love the Gov\'nor, boo-hoo-hoo
 D          Cadd9             G
@@ -3070,21 +2618,15 @@ D         Cadd9       G
 Now watergate doesn\'t bother me
 D         Cadd9            G
 Does you conscience bother you, (now tell the truth!)
-
 [Chorus]
-
 D     Cadd9   G     D         Cadd9        G         
 Sweet home Alabama, where the skies are so blue
 D     Cadd9   G     D         Cadd9         G      
 Sweet home Alabama, lord I’m coming home to you. Here I come
-
 [Solo]
-
 D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G  D Cadd9 G   
 D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G  D Cadd9 G 
-
 [Verse]
-
 D   Cadd9                     G
 Now Muscle Shoals has got the Swappers
 D                Cadd9                   G
@@ -3093,16 +2635,12 @@ D         Cadd9         G
 Lord they get me off so much
 D            Cadd9              G    
 They pick me up when I\'m feeling blue, Now how about you?
-
 [Chorus]
-
 D     Cadd9   G     D         Cadd9        G         
 Sweet home Alabama, where the skies are so blue
 D     Cadd9   G     D         Cadd9         G      
 Sweet home Alabama, lord I’m coming home to you
-
 [Outro]
-
 D     Cadd9   G      
 Sweet home Alabama (Oh sweet home baby)
 D         Cadd9        G    
@@ -3111,9 +2649,7 @@ D     Cadd9   G
 Sweet Home Alabama, (Lord, yeah)
 D         Cadd9          G
 Lord, I\'m coming home to you
-
 [Outro]
-
 D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G`		})
 		//#endregion
 	//#endregion
@@ -3125,7 +2661,6 @@ D Cadd9 G   D Cadd9 G   D Cadd9 G   D Cadd9 G`		})
 			instrument: Guitar(guitarTunings.half_step_down),
 			content: 
 `[Verse 1]
-
 Am           Dm
 Talk to me softly 
 G                  C
@@ -3142,10 +2677,7 @@ Am            Dm
 Somethin\'s changin\' inside you
 G              C 
 And Don\'t you know
-
-
 [Chorus]
-
 F         G    Am
 Don\'t you cry tonight.
 
@@ -3158,10 +2690,7 @@ Don\'t you cry tonight.
 There\'s a heaven above you baby. 
 F             G     Am
 And don\'t you cry tonight.
-
-
 [Verse 2]
-
 Am           Dm
 Give me a whisper.
 G                  C 
@@ -3178,10 +2707,7 @@ Am            Dm
 I\'ll still be thinkin\' of you.
 G              C 
 And the times we had...baby.
-
-
 [Chorus]
-
 F         G    Am
 Don\'t you cry tonight.
 
@@ -3193,10 +2719,7 @@ Don\'t you cry tonight.
 There\'s a heaven above you baby. 
 F             G     Am
 And don\'t you cry tonight.
-
-
 [Verse 3]
-
 Am           Dm
 And please remember 
 G                  C 
@@ -3213,10 +2736,7 @@ Am            Dm
 You\'ll feel better tomorrow. 
 G              C 
 Come the morning light now baby.
-
-
 [Chorus]
-
 F         G    Am
 Don\'t you cry tonight.
 
@@ -3240,13 +2760,6 @@ And don\'t you cry tonight.`		})
 			content: 
 `[Intro]
 Bm  A  E
-
-
-
-
-
-
-
 [Verse 1]
 Bm                         A                       E
 The world was on fire and no one could save me but you.
@@ -3256,14 +2769,12 @@ Bm                     A                     E
 I never dreamed that I\'d meet somebody like you.
 Bm                     A                     E
 I never dreamed that I\'d love somebody like you.
-
 [Chorus]
 Bm A                   E
 I don\'t want to fall in love. (This world is only gonna break your heart)
 Bm A                   E
 I don\'t want to fall in love. (This world is only gonna break your heart)
 With you.         With you.        (This world is only gonna break your heart)
-
 [Verse 2]
 Bm             A           E
 What a wicked game to play, to make me feel this way.
@@ -3273,14 +2784,12 @@ Bm              A          E
 What a wicked thing to say, you never felt this way.
 Bm              A         E
 What a wicked thing to do, to make me dream of you, and
-
 [Chorus]
 Bm A                   E
 I don\'t want to fall in love. (This world is only gonna break your heart)
 Bm A                   E
 I don\'t want to fall in love. (This world is only gonna break your heart)
 With you.
-
 [Verse 3]
 Bm                         A                       E
 The world was on fire and no one could save me but you.
@@ -3290,7 +2799,6 @@ Bm                     A                     E
 I never dreamed that I\'d love somebody like you.
 Bm                     A                     E
 I never dreamed that I\'d lose somebody like you, no
-
 [Chorus]
 Bm A                   E
 I don\'t want to fall in love. (This world is only gonna break your heart)
@@ -3310,7 +2818,6 @@ Nobody loves no one.
 			instrument: Guitar(guitarTunings.Unknown),
 			content: 
 `[Verse 1]
-
 Em                 D
 If the stars, fall down on me,
 Am             Em
@@ -3327,10 +2834,7 @@ Em                      D
 For there is no heaven, in the sky,
 Am                   
 Hell does not wait, for our downfall
-
-
 [Pre-Chorus]
-
 C                  G
 Let the voice of reason shine,
 Am                   Em
@@ -3339,10 +2843,7 @@ C                     G
 God\'s face is hidden, all unseen,
 Am                    Em
 You can\'t ask him what it all means
-
-
 [Chorus]
-
 C                G
 He was never on your side,
 Am               Em
@@ -3351,10 +2852,7 @@ C                    G
 Let right or wrong alone decide
 Am                                    
 God was never on your side.
-
-
 [Verse 2]
-
 Em                D
 See ten thousand ministries,
 Am               Em
@@ -3371,10 +2869,7 @@ Em                D
 Why is he silent, is he blind?
 Am
 Are we abandoned, in the end?
-
-
 [Pre-Chorus]
-
 C                 G
 Let the sword of reason shine,
 Am                Em
@@ -3383,10 +2878,7 @@ C                     G
 God\'s face is hidden, turned away,
 Am             Em
 He never has a word to say
-
-
 [Chorus]
-
 C               G
 He was never on your side,
 Am               Em
@@ -3395,17 +2887,10 @@ C                   G
 Let right or wrong, alone decide,
 Am               Em
 God was never on your side
-
 Em
 No, No, No.
-
-
 [Solo]
-
-
-
 [Chorus]
-
 C               G
 He was never on your side,
 Am               Em
@@ -3431,28 +2916,22 @@ Never on your side… `		})
 I\'m winding down, I\'m growing tired
 Seconds drift into the night
 The clock just ticks \'til my time expires
-
 You were once my friend
 Now I know I can\'t tie your hands
-
 The days I saved I couldn\'t spend
 They fell like sand through the hourglass
 No time to lose, no time to choose
-
 Time taking time, it\'s taken mine
 Scenes of my life seem so unkind
 Time chasing time creeps up behind
 I can\'t run forever and time waits for no one
 Not even me
-
 An enemy I can\'t defend
 My final place, a deadly end
 Life is just a speck in space
 Dreams of an eternal resting place
-
 I can\'t get any younger
 Time has brutal hunger
-
 Time taking time, it\'s taken mine
 Scenes of my life seem so unkind
 Time chasing time creeps up behind
@@ -3470,8 +2949,6 @@ Not even me...`		})
 `[Intro]
 Am
 This is the greatest and best song in the world...   Tribute.
-
-
 [Verse]
 Am
 Long time ago me and my brother Kyle here,
@@ -3483,22 +2960,18 @@ Am
 In the middle of the road.
 Am
 And he said:
-
 Play the A string but palm mute it.
 "Play the best song in the world, or I\'ll eat your souls."
 Am
 Well me and Kyle, we looked at each other,
 Am
 And we each said...   "Okay"
-
 Am                                 G
 And we played the first thing that came to our heads,
 F
 Just so happened to be,
 Am                   G             F
 The Best Song in the World, it was The Best Song in the World.
-
-
 [Chorus]
 D                          F
 Look into my eyes and it\'s easy to see
@@ -3512,8 +2985,6 @@ Once every hundred-thousand years or so,
 When the sun doth shine and the moon doth glow
  F
 And the grass don\'t grow...
-
-
 [Verse]
 Am
 Needless to say, the beast was stunned.
@@ -3525,15 +2996,11 @@ Am
 He asked us: "Be you angels?"
 Am
 And we said, "Nay. We are but men!"
-
 ROCK!
-
 D     F     C       G
 Ahhh, ahhh, ahhh-ah-ah,
 F
 Ohhh, whoah, ah-whoah-oh!
-
-
 [Chorus]
 Am               G                   F
 This is not The Greatest Song in the World.
@@ -3543,7 +3010,6 @@ Am                    G                    F
 Couldn\'t remember The Greatest Song in the World.
 Am            G        F
 No, this is a tribute, oh.
-
 Am G               D           F
 To The Greatest Song in the World, All right!
 Am G                   D           F
@@ -3552,19 +3018,13 @@ Am         G
 It was the best muthafuckin\' song
 D                        F
 The greatest song in the world.
-
-
 [Solo:] Am - G - D - F   (x2)
-
-
 Am               G
 And the peculiar thing is this my friends:
 D                        F
 The song we sang on that fateful night,
 Am                       G                  D      F
 It didn\'t actually sound anything like this song.
-
-
 [Verse]
        Am           G           D      F
 This is just a tribute! You gotta\' believe me!
@@ -3575,8 +3035,6 @@ Ah, fuck! Good God, God lovin\',
 D                    F
 So surprised to find you can\'t stop it.
 Am   G   D   F
-
-
 [Outro]
 E     F     G         E     F             
 F
@@ -3591,7 +3049,6 @@ F
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Verse 1]
-
    Am                             G
 Casey joins the hollow sound of silent people walking down
       F                              E
@@ -3600,10 +3057,7 @@ The stairway to the subway in the shadows down below
 Following their footsteps through the neon darkened corridors
     F                         E
 Of silent desperation,never speaking to a soul
-
-
 [Verse 2]
-
      F                                C
 The poison air he\'s breathing has a dirty smell of dying
             Dm                                E
@@ -3612,10 +3066,7 @@ Cause it\'s never seen the sunshine and it\'s never felt the rain
 But Casey minds the arrows and ignores the fatal echoes
          F                                 E              Am
 Of the clicking of the turnstile and the rattle of his chains
-
-
 [Bridge 1]
-
   C                                                    G
 "Oh",she said "Casey it\'s been so long since i\'ve seen you"
                                               C
@@ -3624,10 +3075,7 @@ Of the clicking of the turnstile and the rattle of his chains
 "See",she said "I\'ve put on new stockings just to please you"
                                            C
 "Lord" she said "Casey can you only stay awhile"
-
-
 [Verse 3]
-
   Am                              G
 Casey leaves the underground and stops inside the golden crown
       F                              E
@@ -3636,10 +3084,7 @@ For something wet to wipe away the chill that\'s on his bones
 Seeing his reflection in the lives of all the lonely men
       F                             E
 Who reach for anything they can to keep from going home
-
-
 [Verse 4]
-
   F                            C
 Standing in the corner,Casey drinks his pint of bitter
        Dm                             E
@@ -3648,10 +3093,7 @@ Never glancing in the mirror at the people passing by
 Then he stumbles as he\'s leaving and he wonders if the reason
         F                               E                 Am
 Is the beer that\'s in his belly or the tear that\'s in his eye
-
-
 [Bridge 2]
-
   C                                                  G
 "Oh",she said "I suppose that you seldom think about me"
                                                   C
@@ -3672,7 +3114,6 @@ Is the beer that\'s in his belly or the tear that\'s in his eye
 			content: 
 `[Intro]
 | Am | % |
-
 [Verse 1]
 Am                          Am
 She came to me one morning, one lonely Sunday morning
@@ -3682,15 +3123,12 @@ Am                               Am
 I know not how she found me for in darkness I was walking
 G                             Am
 And destruction lay around me from a fight I could not win
-
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 | Am | % | % |
-
 [Verse 2]
 Am                           Am
 She asked me name my foe then, I said the need within some men
@@ -3700,13 +3138,11 @@ Am                           Am
 And I begged her give me horses to trample down my enemies
 G                         Am
 So eager was my passion to devour this waste of life
-
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 [Verse 3]
 Am                               Am
 But she would not think of battle that reduces men to animals
@@ -3716,13 +3152,11 @@ Am                              Am
 For she\'s the mother of our men who counselled me so wisely then
 G                                Am
 I feared to walk alone again and asked if she would stay
-
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G   |      Am |
 Ah...  ahahah...  ahahah
-
 [Verse 4]
 Am                               Am
 Oh, lady lend your hand outright and let me rest here at your side
@@ -3732,13 +3166,11 @@ Am                              Am
 There is no strength in numbers, have no such misconception
 G                             Am
 But when you need me be assured I won\'t be far away
-
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 [Verse 5]
 Am                               Am
 Thus having spoke she turned away and though I found no words to say
@@ -3752,44 +3184,36 @@ Am                                Am
 And if one day she comes to you drink deeply from her words so wise
 G                                  Am
 Take courage from her as your prize and say hello from me
-
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 [Bridge]
 N.C.
 Ah...  ahah.. ahahah...  ahahah
 Ah...  ahah.. ahahah...  ahahah
-
 [Chorus]
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 | Am             | G           Am |
 Ah...  ahah.. ahahah...  ahahah
 | Am          G  |       Am |
 Ah...  ahahah...  ahahah
-
 (fade out)`		})
 		//#endregion
 	//#endregion
@@ -3802,7 +3226,6 @@ Ah...  ahahah...  ahahah
 			duration: 2 * 60 + 20,
 			content: 
 `[Verse]
-
 Am                 G
 As I walk along, I wonder  what went wrong 
 F
@@ -3815,10 +3238,7 @@ And as I still walk on, I think of, the things
 Weve done together 
               E7
 while our hearts were young.
-
-
 [Chorus]
-
 A                       
 Im  walking in the rain   
 F#m
@@ -3836,16 +3256,10 @@ D                      E7
 And I wonder, where she will stay-yay 
   A        D                   A       E7
 My little runaway  run, run, run, run, runaway.
-
-
 [Interlude]
-
 Am  G  F  E E7
 Am  G  F  E E7
-
-
 [Chorus]
-
 A                       
 Im  walking in the rain   
 F#m
@@ -3863,10 +3277,7 @@ D                      E7
 And I wonder, where she will stay-yay 
   A        D                   A       E7
 My little runaway  run, run, run, run, runaway.
-
-
 [Outro]
-
 D                   A
 Run, run, run, run, runaway 
 D                   A
@@ -3882,7 +3293,6 @@ Run, run, run, run, runaway `		})
 			content: 
 `[Intro]
 Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G       x2
-
 [Verse 1]
 C                         D/F#
 So, so you think you can tell,
@@ -3892,7 +3302,6 @@ Heaven from Hell, blue skies from pain.
 Can you tell a green field from a cold steel rail, a smile from a veil,
               G
 Do you think you can tell?
-
 [Verse 2]
               C                   D/F#
 Did they get you to trade your heroes for ghosts,
@@ -3900,10 +3309,8 @@ Did they get you to trade your heroes for ghosts,
 Hot ashes for trees, hot air for a cool breeze, cold comfort for change,
           C                        Am                         G
 And did you exchange a walk on part in the war for a lead role in a cage?
-
 [Instrumental]
 Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G
-
 [Verse 3]
 C                               D/F#
 How I wish, how I wish you were here.
@@ -3913,7 +3320,6 @@ We\'re just two lost souls swimming in a fish bowl, year after year,
 Running over the same old ground. What have we found?
      Am                         G
 The same old fears. Wish you were here!
-
 [Instrumental]
 Em7  G  Em7  G  Em7  A7sus4  Em7  A7sus4  G       x2`		})
 		//#endregion
@@ -3933,7 +3339,6 @@ G|-----2-2---3-3-3--5-5-5--2----|
 D|-----0-0---3-3-3--5-5-5--0----|
 A|-0-3-----3-1-1-1--3-3-3-------|
 E|------------------------------|
-
 [Lead into Verses]
 C
 e|--------|
@@ -3942,9 +3347,7 @@ G|-5------|
 D|-5------|
 A|-3--0-3-|
 E|--------|
-
 [Intro]
-
 Dm     Bb      C   Dm
 Dm     Bb      C   Dm
 Dm     Bb      C   Dm
@@ -3953,7 +3356,6 @@ Dm     Bb      C   Dm
 Dm     Bb      C 
 
 [Verse 1]
-
 C#m7                              G#7
 What will you do when you get lonely
 C#m7            C       D       E    E7
@@ -3962,9 +3364,7 @@ F#m             B           E               A
 You\'ve been running and hiding much too long,
 F#m               B                 E      
 You know it\'s just your foolish pride.
-
 [Chorus]
-
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
@@ -3973,7 +3373,6 @@ Dm  Bb    C              Dm              Dm  Bb    C
 Lay-la,     darling won\'t you ease my worried mind
 
 [Verse 2]
-
 C#m7                        G#7       
 Tried to give you consolation,
 C#m7             C     D       E    E7              
@@ -3982,18 +3381,14 @@ F#m        B               E         A
 Like a fool, I fell in love with you,
 F#m            B                  E   
 Turned the whole world upside down
-
 [Chorus]
-
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
 Lay-la,      I\'m begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C
 Lay-la,     darling won\'t you ease my worried mind
-
 [Verse 3]
-
 C#m7                               G#7    
 Let\'s make the best of the situation
 C#m7         C       D    E    E7             
@@ -4002,9 +3397,7 @@ F#m        B               E            A
 Please don\'t say we\'ll never find a way
 F#m             B               E                
 And tell me all my loves in vain
-
 [Chorus]
-
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
@@ -4017,9 +3410,7 @@ Dm  Bb      C               Dm
 Lay-la,      I\'m begging darling please.
 Dm  Bb    C              Dm              Dm  Bb    C         Dm
 Lay-la,     darling won\'t you ease my worried mind
-
 [Break]
-
 Dm  Bb      C            Dm  
 Dm  Bb      C            Dm
 Dm  Bb      C            Dm
@@ -4028,9 +3419,7 @@ Dm  Bb      C            Dm
 Dm  Bb      C            Dm
 Dm  Bb      C            Dm
 Dm  Bb      C            Dm
-
 [Chorus]
-
 A    Dm  Bb      C            Dm
 Lay-la,      you got me on my knees.
 Dm  Bb      C               Dm
@@ -4043,7 +3432,6 @@ Dm  Bb      C               Dm
 Lay-la,      I\'m begging darling please.
 Dm  Bb    C              Dm              Dm  
 Lay-la,     darling won\'t you ease my worried mind
-
 `		})
 		//#endregion
 	//#endregion
@@ -4058,23 +3446,18 @@ Lay-la,     darling won\'t you ease my worried mind
 I close my eyes only for a moment and a moment´s gone.
 C   G/B   Am     G             Dm          Am
 All my dreams pass before my eyes a curiosity.
-
 D   G        Am    D            G           Am
 Dust in the wind, all we are is dust in the wind.
-
 C  G/B  Am    G             Dm              Am
 Same old song, just a drop of water in the endless sea.
 C   G/B  Am   G                 Dm                Am
 All we do, crumbles to the ground though we refuse to see.
-
 D   G        Am    D            G           Am
 Dust in the wind, all we are is dust in the wind.
-
 C      G/B   Am   G                Dm             Am
 Don\'t hang on, nothing last´s forever but the earth and sky.
 C  G5      Am  G                  Dm         Am
 It slips away all your money won´t another minute buy.
-
 D   G        Am    D            G           Am
 Dust in the wind, all we are is dust in the wind
 D   G        Am    D            G           Am
@@ -4091,10 +3474,6 @@ Dust in the wind, everything is dust in the wind.`		})
 			content: 
 `[Intro]
 Gm   Dm   C  Gm
-
-
-
-
 [Verse]
 Gm
 I have often told you stories
@@ -4112,7 +3491,6 @@ Gm
 Come lay with me and love me
 Dm                     
 And I would surely stay
-
 [Chorus]
 Bb       C                Gm   
 But I feel I\'m growing older
@@ -4132,7 +3510,6 @@ A soldier of fortune.
 [Solo]
 Gm   C   Gm   C  
 Gm   Bb   C   Gm
-
 [Verse]
 Gm 
 Many times I\'ve been a traveller
@@ -4150,7 +3527,6 @@ Gm
 Though blindness is confusing
 Dm  
 It shows that you\'re not here.
-
 [Chorus]
 Bb       C                Gm   
 But I feel I\'m growing older
@@ -4166,7 +3542,6 @@ Cm                Dm
 Guess I\'ll always be
       Gm
 A soldier of fortune.
-
 Gm             F
 Yes, I can hear the sound
 Bb           Eb  
@@ -4191,10 +3566,7 @@ a soldier of fortune.`		})
 `[Intro]
 A5 C5 G5 E5 A5 C5 G5 E5
 Am C G Em Am C G Em
-
-
 [Verse 1]
-
 Am           C  G  Em                      Am
 Lay beside me, tell me what they\'ve done
       C               G     Em               Am
@@ -4203,9 +3575,7 @@ Speak the words I want to hear, to make my demons run
 The door is locked now but it\'s opened if you\'re true
 Am              C              G            Em                Am
 If you can understand the me, then I can understand the you
-
 Cadd9 G Em Am Cadd9 G Em
-
 Am           C  G  E
 Lay beside me, under wicked skies
 Am                     C            G        E                Am
@@ -4214,23 +3584,17 @@ Through black of day, dark of night, we share this paralyze
 The door cracks open but there\'s no sun shining through
       C                  G              E                    Dm
 Black heart scarring darker still, but there\'s no sun shining through
-
     F                     G
 No, there\'s no sun shining through
     F             Asus2
 No, there\'s no sun shining
-
-
 [Chorus]
-
 Asus2 Am             Asus2   G/B
 What I\'ve felt, what I\'ve known
 G/C Csus2          C5         G/B
 Turn the pages, turn the stone
-
 Asus2 Am                 Asus2   G        G/C Csus2
 Behind the door, should I open it for you?
-
 Asus2 Am             Asus2     G/B
 What I\'ve felt, what I\'ve known
 G/C Csus2             C5
@@ -4238,12 +3602,8 @@ Sick and tired, I stand alone
 G/B   Asus2 Am                     Asus2        G       G/C Csus2
 Could you be there, \'cause I\'m the one who waits for you
 Or are you unforgiven, too?
-
 A5 C5 G5 E5 A5 C5 G5 E5
-
-
 [Verse 2]
-
 Am           C  G   E
 Come beside me, this won\'t hurt, I swear
 Am                 C                   G             E
@@ -4256,17 +3616,13 @@ Black heart scarring darker still, yes, she\'ll be there when I\'m gone
 Yes, she\'ll be there when I\'m gone
 G        F                 Asus2
 Dead sure she\'ll be there
-
-
 [Chorus]
-
 Asus2 Am             Asus2   G/B
 What I\'ve felt, what I\'ve known
 G/C  Csus2             C5    G/B
 Turn the pages, turn to stone
 Asus2 Am                Asus2   G        G/C Csus2
 Behind the door, should I open it for you?
-
 Asus2 Am             Asus2     G/B
 What I\'ve felt, what I\'ve known
 G/C Csus2             C5
@@ -4274,17 +3630,12 @@ Sick and tired, I stand alone
 G/B   Asus2 Am                     Asus2        G       G/C Csus2
 Could you be there, \'cause I\'m the one who waits for you
 Or are you unforgiven, too?
-
-
 G5 E A C G E Asus2 Am Asus2 Am G/B
 G/C Csus2 C5 G/B Asus2 Am Asus2 G/B
 G/C Csus2 A5 C5
 G5 E5 A5 C5 G5 E5
 Am C G Em
-
-
 [Verse 3]
-
 Am           C  G Em
 Lay beside me, tell me what I\'ve done
 Am                C                    G
@@ -4293,39 +3644,28 @@ Em               Dm F               G
 But now I see the sun, now I see the sun
 F
 Yes, now I see it
-
-
 [Chorus]
-
 Asus2     Am              Asus2    G
 What I\'ve felt, what I\'ve known
 G/C  Csus2          C5        G/B
 Turn the pages, turn the stone
-
 Asus2 Am                 Asus2 G/B
 Behind the door, should I open it for you?
-
 Asus2 Am             Asus2     G/B
 What I\'ve felt, what I\'ve known
 G/C Csus2             C5
 Sick and tired, I stand alone
 G/B   Asus2 Am                     Asus2        G       G/C Csus2
 Could you be there, \'cause I\'m the one who waits for you
-
-
 [Outro]
-
 Asus2     Am              Asus2    G
 What I\'ve felt, what I\'ve known
 G/C  Csus2          C5        G/B
 Turn the pages, turn the stone
-
 Asus2 Am                 Asus2 G/B
 Behind the door, should I open it for you?
-
 Asus2     Am              Asus2    G
 What I\'ve felt, what I\'ve known
-
 G/B  Asus2 Am
 I take this key
 Asus2 G
@@ -4347,7 +3687,6 @@ Asus2 Am               D5          A  Am   G
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Verse 1]
-
 F#m                                       A
 Ticking away the moments that make up a dull day
 E                                          F#m
@@ -4356,10 +3695,7 @@ F#m                                         A
 Kicking around on a piece of ground in your hometown
 E                                                 F#m
 Waiting for someone or something to show you the way
-
-
 [Chorus]
-
 Dmaj7                           Amaj7
 Tired of lying in the sunshine, staying home to watch the rain
 Dmaj7                               Amaj7
@@ -4368,17 +3704,10 @@ Dmaj7                          C#m7
 And then one day you find,   ten years have got behind you
 Bm7                           E
 No one told you when to run ... You missed the starting gun
-
-
 [Guitar Solo]
-
 F#m    A    E    F#m    x4
-
 Dmaj7  Amaj7  Dmaj7  Amaj7  Dmaj7  C#m7  Bm7  E
-
-
 [Verse 2]
-
  F#m                                                A
 And you run and you run to catch up with the Sun, but it\'s sinking;
 E                                     F#m
@@ -4387,7 +3716,6 @@ F#m                                            A
 The Sun is the same in a relative way, but you\'re older,
 E                                         F#m
 shorter of breath, and one day closer to death.
-
 Dmaj7                          Amaj7
 Every year is getting shorter, never seem to find the time.
 Dmaj7                                Amaj7
@@ -4407,10 +3735,7 @@ The time is gone, the song is over. Thought I\'d something more to say.
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro]
-
 Em7    G    Am7  C  Em  G  C    Am7    Em7  D  C
-
-
 [Verse]
 
 C            Em
@@ -4429,10 +3754,7 @@ She\'ll touch my face
 A bed of straw
 C           Em  D  Em         
 Against the lace
-
-
 [Chorus]
-
 Am                    Em
 We believed we\'d catch the rainbow
   D  A        Em
@@ -4447,15 +3769,9 @@ D    Em      Am
 So bless me come the dawn
 Em        C            Em           D  C  D
 Come the dawn come the dawn come the dawn
-
-
 [Solo]
-
 Em    G    Am  C  Em  D  Em    G    Am  C  Em    C    Am  Em  D  Em
-
-
 [Chorus]
-
 Am                    Em
 We believed we\'d catch the rainbow
   D  A        Em
@@ -4481,9 +3797,7 @@ Come the dawn come the dawn come the dawn`		})
 			content: 
 `D7#9  x-5-4-5-6-x
 D7b9  x-5-4-5-4-x
-
 ------------------------------------------------------------------------------------------
-
 [Intro]
 
 Em   A7 
@@ -4498,10 +3812,7 @@ Cmaj7
 Bm7
 Fmaj7
 G  D7#9 D7b9
-
-
 [Verse]
-
 Em                      A7
 Breathe, breathe in the air
 Em                 A7
@@ -4510,10 +3821,7 @@ Em                 A7
 Leave, don\'t leave me
 Em                          A7
 Look around and choose your own ground
-
-
 [Chorus]
-
 Cmaj7
 Long you live and high you fly
 Bm7
@@ -4522,10 +3830,7 @@ Fmaj7
 all you touch and all you see
 G                     D7#9 D7b9
 Is all your life will ever be
-
-
 [Verse]
-
 Em          A7
 Run, rabbit run
 Em                        A7
@@ -4534,10 +3839,7 @@ Em                           A7
 And when at last the work is done
 Em                               A7
 Don\'t sit down it\'s time to dig another one.
-
-
 [Chorus]
-
 Cmaj7
 For long you live and high you fly
 Bm7
@@ -4562,13 +3864,11 @@ D          G            A
 I can see all obstacles in my way
 D             G                D
 Gone are the dark clouds that had me blind
-
 [CHorus]
          C                 G                         D
 It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
          C                 G                         D
 It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
-
 [Verse 2]
 D          G               D
 Yes I can make it now the pain is gone,
@@ -4578,13 +3878,11 @@ D             G              D
 Here is the rainbow I\'ve been praying for.
 D                C                 G                         D
 It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
-
 [Bridge] 
 F                                    C         
 Look all around, there\'s nothing but blue skies
 F                                         A7         C#m  G  C#m G  C Bm A
 Look straight ahead, there\'s nothing but blue skies
-
 [Verse 3]
 D          G               D
 I can see clearly now the rain is gone
@@ -4592,7 +3890,6 @@ D          G            A
 I can see all obstacles in my way
 D             G                D
 Gone are the dark clouds that had me blind
-
 [Outro]
          C                 G                         D
 It\'s gonna be a bright, (bright) bright, (bright) sun shiny day
@@ -4612,7 +3909,6 @@ It\'s gonna be a bright, (bright) bright, (bright) sun shiny day`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `Bm
-
 Bm
 Hello,
          A
@@ -4621,8 +3917,6 @@ G              Em
 Just nod if you can hear me;
  Bm
 is there anyone home? 
-
-
 Come on, now,
       A
 I hear you\'re feeling down.
@@ -4630,7 +3924,6 @@ G               Em
 Well, I can ease your pain;
 Bm
 get you on your feet again.
-
 Relax,
          A
 I need some information first.
@@ -4638,7 +3931,6 @@ G              Em
 Just the basic facts:
 Bm
 can you show me where it hurts? 
-
 D                           A
 There is no pain, you are receding.
 D                              A
@@ -4659,12 +3951,9 @@ I can\'t explain, you would not understand.
 This is not how I am.
 A C       G                 D
 I  have become, comfortably numb.
-
 D A D A C G C G
-
 A C       G                 D
 I  have become, comfortably numb.
-
 Bm
 Ok, (ok)
       A
@@ -4673,8 +3962,6 @@ just a little pinprick.
 There\'ll be no more --aaaaaahhhhh!
     Bm
 But you may feel a little sick.
-
-
 Can you stand up? 
           A
 I do believe it\'s working good.
@@ -4682,7 +3969,6 @@ I do believe it\'s working good.
 That\'ll keep you going for the show.
      Bm
 Come on it\'s time to go.
-
 D                           A
 There is no pain, you are receding.
 D                               A
@@ -4713,13 +3999,10 @@ I  have become, comfortably numb.`		})
 			instrument: Guitar(guitarTunings.half_step_down),
 			content: 
 `[Intro]
-
 D C G D
 D C G D
 D C G D
-
 [Verse]
-
 D
 She\'s got a smile that it seems to me
 C
@@ -4736,23 +4019,14 @@ She takes me away to that special place
 And if I stared to long
                       D
 I\'d probably break down and cry
-
-
 [Chorus]
-
 A               C              D
 Whoa Oh, Sweet child o\' mine
 A               C              D
 Whoa, Oh, Oh, Oh Sweet love o\' mine
-
-
 [Instrumental]
-
 D C G D
-
-
 [Verse]
-
 D
 She\'s got eyes of the bluest skies
 C
@@ -4769,24 +4043,15 @@ G
 And pray for the thunder and rain
 D
 To quietly pass me by
-
-
 [Chorus]
-
 A        C              D
 Whoa Oh, oh, Sweet child o\' mine
 A              C                D
 Whoa, Oh, Oh, Oh Sweet love o\' mine
-
-
 [Instrumental]
-
 D C G D
 D C G D
-
-
 [Chorus]
-
 A               C              D
 Whoa Oh, Sweet child o\' mine
 A               C              D
@@ -4795,24 +4060,17 @@ A               C              D
 Whoa Oh, Oh, Oh Sweet child o\' mine
 A               C         D
 Ooooooooh Sweet love o\' mine
-
-
 [Instrumental]
-
 Em C B A
 Em C B A 
 Em C B A 
 Em C B A
-
 ((After "A" chord, you will count 8 beats before proceeding to "Em G A C D" part))
-
 Em G A C D
 Em G A C D 
 Em G A C D
 Em G A C D
-
 [Outro]
-
 Em              G               A                 C D
 Where do we go, Where do we go, Where do we go now----
 Em              G               A                 C D
@@ -4839,7 +4097,6 @@ Sweet child, sweet chi-. . ld of mine`		})
 			instrument: Guitar(guitarTunings.capo1),
 			content: 
 `[Verse]
-
 A
 I\'m sitting in the railway station.
 Amaj7                  A7    F#
@@ -4848,10 +4105,7 @@ Bm                               G
 On a tour of one-night stands my suitcase and guitar in hand.
 A                                  E7               A
 And ev\'ry stop is neatly planned for a poet and one-man band.
-
-
 [Chorus]
-
  D            A
 Homeward bound,  wish I was,
  D
@@ -4864,10 +4118,7 @@ A             Asus4
 Home where my love lays waiting
 E           A
 Silently for me.
-
-
 [Verse]
-
 A
 Ev\'ry day\'s an endless stream
 Amaj7               A7      F#
@@ -4876,10 +4127,7 @@ Bm                                  G
 And each town looks the same to me, the movies and the factories
 A                             E7                       A
 And ev\'ry stranger\'s face I see reminds me that I long to be,
-
-
 [Chorus]
-
  D            A
 Homeward bound,  wish I was,
  D
@@ -4892,10 +4140,7 @@ A             Asus4
 Home where my love lays waiting
 E           A
 Silently for me.
-
-
 [Verse]
-
 A
 Tonight I\'ll sing my songs again,
 Amaj7                 A7     F#
@@ -4904,11 +4149,7 @@ Bm                              G
 But all my words come back to me in shades of mediocrity
 A                      E7                      A
 Like emptiness in harmony I need someone to comfort me.
-
-
-
 [Chorus]
-
  D            A
 Homeward bound,  wish I was,
  D
@@ -4921,10 +4162,7 @@ A             Asus4
 Home where my love lays waiting
 E           A
 Silently for me.
-
-
 [Outro]
-
 Amaj7       A7       A
 Silently for me.`		})
 		//#endregion
@@ -4937,7 +4175,6 @@ Silently for me.`		})
 			instrument: Guitar(guitarTunings.half_step_down),
 			content: 
 `[Verse 1]
-
 Em
 Look at your young men fighting
 G
@@ -4946,7 +4183,6 @@ Em
 Look at your young men dying
 G                                 D/F#
 The way they\'ve always done before 
-
 Em
 Look at the hate we\'re breeding
 G
@@ -4955,9 +4191,7 @@ Em
 Look at the lives we\'re leading
 G                               D/F#
 The way we\'ve always done before
-
 A5  A#4  A7
-
             E5
 My hands are tied
 G                                  D/F#
@@ -4974,9 +4208,7 @@ By bloody hands time can\'t deny
 And are washed away by your genocide
 G                       D                   A
 And history hides the lies of our civil wars
-
 B/A  C/A  D/A
-
      G                      Bm
 D\'you wear a black armband when they shot the man
      Em
@@ -4991,10 +4223,7 @@ We got the wall of D.C. to remind us all that you can\'t trust freedom
 When it\'s not in your hands when everybody\'s fightin\'
   C        D
 For their promised land And
-
-
 [Chorus]
-
 G            Bm             Em
 I don\'t need your civil war
 G                Bm                       Em   C  D
@@ -5003,13 +4232,8 @@ G                 Bm                        Em
 You\'re power hungry sellin\' soldier In a      human grocery store Ain\'t that fresh
 G            Bm             Em    C  D
 I don\'t need your civil war
-
-
 [Solo]
-
-
 [Verse]
-
 Em
 Look at the shoes you\'re filling
 G
@@ -5018,7 +4242,6 @@ Em
 Look at the world we\'re killing
 G                               D/F#
 The way we\'ve always done before
-
 Em
 Look in the doubt we\'ve wallowed
 G
@@ -5027,9 +4250,7 @@ Em
 Look at the lies we\'ve swallowed
 G                           D/F# 
 And I don\'t want to hear no more
-
 A5  A#4  A7
-
             E5
 My hands are tied
 G                                        D/F#
@@ -5045,9 +4266,7 @@ Who carry the cross of homicide
 G                       D                      A
 And history bears the scars of our civil wars
 
-
 [Chorus]
-
 G            Bm                 Em
 I don\'t need your civil war
 G                   Bm                               Em
@@ -5056,7 +4275,6 @@ G                      Bm                                Em
 You\'re power hungry sellin\' soldier In a      human grocery store Ain\'t that fresh
 G            Bm                 Em          C  D
 I don\'t need your civil war
-
 G            Bm                 Em
 I don\'t need your civil war
 G                   Bm                               Em
@@ -5065,17 +4283,12 @@ G                      Bm                                Em
 You\'re power hungry sellin\' soldier In a      human grocery store Ain\'t that fresh
 G            Bm                 Em          C  D
 I don\'t need your civil war
-
 G            Bm                  A
 I don\'t need one more war
 G            Bm                  A
 I don\'t need one more war
-
 Whaz so civil \'bout war anyway?
-
-
 [Outro]
-
 B/A  C/A  D/A  (fade out)`		})
 		//#endregion
 	//#endregion
@@ -5093,8 +4306,6 @@ A
 Doo doo-doo-doo doo doo-doo doo doo doo
 D               G          C     G/B   Am    E    D
 Di-di-di-di di di di-di-di di di-di di
-
-
 [Chorus]
 D             G        Em
 And here\'s to you Mrs. Robinson
@@ -5106,7 +4317,6 @@ G              Em                  C     Am
 Heaven holds a place for those who pray, hey hey hey
 E
 Hey hey hey
-
 [Verse 1]
 E                                                E7
 We\'d like to know a little bit about you for our files
@@ -5116,7 +4326,6 @@ D               G               C     G/B   Am
 Look around you all you see are sympathetic eyes
 E                           D
 Stroll around the grounds until you feel at home
-
 [Chorus]
 D             G        Em
 And here\'s to you Mrs. Robinson
@@ -5128,7 +4337,6 @@ G              Em                  C     Am
 Heaven holds a place for those who pray, hey hey hey
 E
 Hey hey hey
-
 [Verse 2]
 E                                             E7
 Hide it in a hiding place where no one ever goes
@@ -5138,8 +4346,6 @@ D             G               C    G/B     Am
 It\'s a little secret just the Robinsons\' affair
 E                         D
 Most of all you\'ve got to hide it from the kids  
-
-
 [Chorus]
 D            G        Em
 Koo-koo-ka-choo, Mrs. Robinson
@@ -5151,7 +4357,6 @@ G              Em                  C     Am
 Heaven holds a place for those who pray, hey hey hey
 E
 Hey hey hey
-
 [Verse 3]
 E                                 E7
 Sitting on a sofa on a Sunday afternoon
@@ -5161,7 +4366,6 @@ D              G              C           G/B     Am
 Laugh about it shout about it when you\'ve got to choose
 E                          D
 Any way you look at it you lose
-
 [Chorus]
 D              G          Em
 Where have you gone Joe DiMaggio
@@ -5182,7 +4386,6 @@ Joltin\' Joe has left and gone away, hey hey hey, hey hey hey`		})
 			content: 
 `[Intro]
 D
-
 [Verse]
 D                           G7/D
 The lunatic is on the grass.
@@ -5192,7 +4395,6 @@ D                       E/D
 Remembering games and daisy chains and laughs.
 A7                                 D    Dsus2
 Got to keep the loonies on the path.
-
 D                          G7/D
 The lunatic is in the hall.
 D                        G7/D
@@ -5201,7 +4403,6 @@ D                              E/D
 The paper holds their folded faces to the floor
 A7                             D        Dsus2  D7  D9
 And every day the paper boy brings more.
-
 [Chorus]
 G                            A
 And if the dam breaks open many years too soon
@@ -5211,7 +4412,6 @@ G                                    A7
 And if your head explodes with dark forebodings too
 C                                   G     Bm7  Em7  A  A7
 I\'ll see you on the dark side of the moon.
-
 [Verse]
 D                          G7/D
 The lunatic is in my head.    (laughter)
@@ -5221,14 +4421,12 @@ D                     E/D
 You raise the blade, you make the change
 A7                                D     Dsus2
 You re-arrange me \'till I\'m sane.
-
 D
 You lock the door
 E/D
 And throw away the key
 A7                              D   Dsus2   D7  D9
 There\'s someone in my head but it\'s not me.
-
 [Chorus]
 G                          A
 And if the cloud bursts, thunder in your ear
@@ -5238,7 +4436,6 @@ You shout and no one seems to hear.
 And if the band you\'re in starts playing different tunes
 C                                   G  Bm7  Em  A7
 I\'ll see you on the dark side of the moon.
-
 [Outro]
 D  G7/D  D  G7/D  D  E/D  A7  D  Dsus2  D  E/D  A7  D  Dsus2`		})
 		//#endregion
@@ -5258,17 +4455,13 @@ C                         G
 And when your hand is on your heart
 A7
 You\'re nearly a good laugh, almost a joker
-
 With your head down the pigbin saying keep on digging
 Am7
 Pig stain on your fat chin
-
 What do you hope to find down in the pig mine
-
 You\'re nearly a laugh, you\'re nearly a laugh
         Em    C         Em  D  Em  D  Em  D  Em  D
 But you really a cry______
-
 Em                C                 G      Em
 Bus stop rat bag, ha ha charade you are
               C                 G    Em
@@ -5277,23 +4470,15 @@ C                                 G
 You radiate cold shafts of broken glass
 A7
 You\'re nearly a good laugh, almost worth a quick grin
-
 You like the feel of steel, you\'re hot stuff with a hat pin
 Am7
 And good fun with a hand gun
-
 You\'re nearly a laugh, you\'re nearly a laugh
            Em    C     Em  D  Em  D  Em  D  Em  D
 But you\'re really a cry______
-
-
 Em  D  Em  D  Em  D  Em  D  Em  D  Em  D  Em  D  Em  D
-
 C  Bb  C  Bb  C  Bb  C  Bb  C  Bb  C  Bb  Em  ....
-
 Em  C  Em  C  Em  C  Em  C  Em  C  Em  C  Em  C
-
-
 Em                   C                 G    Em
 Hey you, Whitehouse, ha ha charade you are
                    C                 G    Em
@@ -5302,21 +4487,14 @@ C                                  G
 You\'re trying to keep our feeling off the street
 Am
 You\'re nearly a real treat, all tight lips and cold feet
-
 And do you feel abused
-
 .......!  .......!  .......!  .......!
-
 You gotta stem the evil tide and keep it all on the inside
-
 Mary, you\'re nearly a treat, Mary, you\'re nearly a treat
            Em   C      Em  D  Em  D  Em  D  Em  D
 But you\'re really a cry_____
-
 Em  D  C  D
-
 [Repeat and fade]
-
 [Solo]  ~~~~~~~~~~`		})
 		//#endregion
 	//#endregion
@@ -5334,12 +4512,9 @@ F#m7b5 2x2210      E   022100      F#m 244222
 Fmaj7  1x2210      C   x32010      Bm  x24432
 Dsus4  xx0233    Dsus2 xx0230
 Esus4  022200
-
-
 [Intro]
 Am Am/G F#m7b5 Fmaj7
 Am G D E
-
 [Verse 1]
 Am          Am/G         F#m7b5            Fmaj7
 I look at you all, see the love there that\'s sleeping
@@ -5349,7 +4524,6 @@ Am          Am/G         F#m7b5       Fmaj7
 I look at the floor, and I see it needs sweeping
 Am            G          C     E
 Still my guitar gently weeps
-
 [Chorus 1]
 A              C#m  F#m        C#m
 I don\'t know why      nobody told you
@@ -5359,7 +4533,6 @@ A              C#m  F#m            C#m
 I don\'t know how      someone controlled you
 Bm                     E Esus4 E
 They bought and sold you
-
 [Verse 2]
 Am          Am/G         F#m7b5      Fmaj7
 I look at the world, and I notice it\'s turning
@@ -5369,13 +4542,11 @@ Am       Am/G         F#m7b5    Fmaj7
 With every mistake we must surely be learning
 Am            G          C     E
 Still my guitar gently weeps
-
 [Intrumental]
 Am Am/G F#m7b5 Fmaj7
 Am G D E
 Am Am/G F#m7b5 Fmaj7
 Am G C E
-
 [Chorus 2]
 A              C#m  F#m            C#m
 I don\'t know how      you were diverted
@@ -5385,7 +4556,6 @@ A              C#m  F#m            C#m
 I don\'t know how      you were inverted
 Bm               E Esus4 E
 No one alerted you
-
 [Verse 3]
 Am          Am/G         F#m7b5            Fmaj7
 I look at you all, see the love there that\'s sleeping
@@ -5395,7 +4565,6 @@ Am          Am/G       F#m7b5       Fmaj7
 Look at you all...
 Am            G          C     E
 Still my guitar gently weeps
-
 [Outro]
 Am Am/G F#m7b5 Fmaj7
 Am G D E
@@ -5411,7 +4580,6 @@ Am G C E`		})
 			instrument: Guitar(guitarTunings.full_step_down),
 			content: 
 `[Intro riff]
-
 Am         G           Fmaj7                 Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -5421,7 +4589,6 @@ G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0----
 D|--------------3---------3-----------------|--------------3------------------------------|
 
 [Verse]
-
 Am7 G       Fmaj7
 My  My, hey hey
 Am7       G              Fmaj7
@@ -5432,7 +4599,6 @@ Am             F
 Than to fade away
 Am7 G       Fmaj7
 My  My, hey hey
-
 Am        G             Fmaj7              Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -5440,10 +4606,7 @@ F|----2---------0-------------2-2-2--2-2-2--|----2---------0-----------------2-2
 C|----2-------0-0-------------3-3-3--3-3-3--|----2-------0-0-----0-2-0---0---3-3-3--3-3-3-|
 G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0--------------|
 D|--------------3---------3-----------------|--------------3------------------------------|
-
-
 [Verse]
-
 Am7              G                Fmaj7
 It\'s out of the blue and into the black
 Am7            G                   Fmaj7
@@ -5454,7 +4617,6 @@ Am7                     G
 When you\'re out of the blue
      Fmaj7
 And into the black
-
 Am          G            Fmaj7              Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -5462,10 +4624,7 @@ F|----2---------0-------------2-2-2--2-2-2--|----2---------0-----------------2-2
 C|----2-------0-0-------------3-3-3--3-3-3--|----2-------0-0-----0-2-0---0---3-3-3--3-3-3-|
 G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0--------------|
 D|--------------3---------3-----------------|--------------3------------------------------|
-
-
 [Verse]
-
 Am7          G                 Fmaj7
 The king is gone but he\'s not forgotten
 Am7           G                Fmaj7
@@ -5474,7 +4633,6 @@ C               Em Em7   Am            F
 It\'s better to burn out than it is to rust
 Am7          G                 Fmaj7
 The king is gone but he\'s not forgotten
-
 Am         G           Fmaj7               Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -5482,10 +4640,7 @@ F|----2---------0-------------2-2-2--2-2-2--|----2---------0-----------------2-2
 C|----2-------0-0-------------3-3-3--3-3-3--|----2-------0-0-----0-2-0---0---3-3-3--3-3-3-|
 G|--0---0-2-3---2-0-2-0-----0---------------|--0---0-2-3---2-----------3---0--------------|
 D|--------------3---------3-----------------|--------------3------------------------------|
-
-
 [Verse]
-
 Am7  G      Fmaj7
 Hey Hey, my my
 Am7       G             Fmaj7
@@ -5496,7 +4651,6 @@ Am              F
 Than meets the eye
 Am7  G      Fmaj7
 Hey Hey, my my
-
 Am         G             Fmaj7              Am       G              Fmaj7
 D|----0---------3-------------0-0-0--0-0-0--|----0---------3-----------------0-0-0--0-0-0-|
 A|----1---------0-------------1-1-1--1-1-1--|----1---------0-----------------1-1-1--1-1-1-|
@@ -5520,7 +4674,6 @@ G-----h---0--0-2--2-2--0---h--|------h---0--0-2--2-2--0---h--|
 D----0-2------------------0-2-|-----0-2------------------0-2-|
 A-3---------------------------|--3---------------------------|
 E-----------------------------|------------------------------|
-
      F            Am  G            F     
 e---------------------------|----------------|----------|
 B-------------h-------------|----------------|----------|
@@ -5528,16 +4681,10 @@ G-----h---0--0-2--2-2--0----|-----h----------|-----h--0-|
 D----0-2------------------2-|-0--0-2-0-------|----0-2---|
 A-3-------------------------|-----------3--0-|-3--------|
 E---------------------------|----------------|----------|
-
-
 Guitar 1 continues through solo
-
-
 -----------------------
 01:07
 ACOUSTIC SOLO 1 
-
-
 -----------------------
 VERSE 1
 ********
@@ -5549,9 +4696,7 @@ F                    Am
 I felt persecuted and paralyzed
        G                          F
 I thought that everything else would just wait
-
 C F
-
 -----------------------
 VERSE 2
 ********
@@ -5563,9 +4708,7 @@ F                       Am
 Beyond your tunnel vision reality fades
 G                F
 Like shadows into the night
-
 C F
-
 -----------------------
 VERSE 3
 ********
@@ -5577,14 +4720,11 @@ Is not going to help at all
 Because there\'ll be no safety in numbers
  G                          F
 When the right one walks out of the door
-
 C F
-
 -----------------------
 BREAK
 ******
 D  F  Bb  Am  Bb  Dm  F  D
-
 -----------------------
 KEY CHANGE
 VERSE 4
@@ -5597,7 +4737,6 @@ C                      Em
 Stuck in a world of isolation
   D                  C
 While the ivy grows over the door
-
 D C
 -----------------------
 VERSE 5
@@ -5610,7 +4749,6 @@ And I ask could we wipe the slate clean
 But they tell me please go fuck myself
 D                         C
 You know you just can\'t win
-
 D C`		})
 		//#endregion
 	//#endregion
@@ -5628,7 +4766,6 @@ G|----------------------|
 D|--------1-------------|   Followed by a [ch]Cm[/ch]
 A|----1-3---3-3-1-3-----|
 E|--3-------------------|
-
 Riff 2
 e|----------------------|
 B|----------------------|
@@ -5636,64 +4773,45 @@ G|----------------------|
 D|--------1-------------|   Followed by a [ch]Fm[/ch]
 A|----1-3---3-1---1-----|
 E|--3-----------3---3---|
-
-
 [Intro]
-
 Riff 1                           [ch]Cm[/ch]
 Hmmm hmmm hmmm hmmm hmmm hmmm hmhmmmmm
 Riff 2                           [ch]Fm[/ch]
 Hmmm hmmm hmmm hmmm hmmm hmmm hmhmmmmm
 [ch]Cm[/ch]             [ch]Gm[/ch]                [ch]Cm[/ch]
 Hmmm hmmm hmmm hmmm hmmm hmmm hmhmmmmm
-
-
 [Verse]
-
                     [ch]Cm[/ch]
 I dig my hole, you build a wall
                     [ch]Fm[/ch]
 I dig my hole, you build a wall
 [ch]Cm[/ch]             [ch]Gm[/ch]               [ch]Cm[/ch]
 One day that wall is gonna fall
-
-
                     [ch]Cm[/ch]
 Gonna build that city on a hill
                     [ch]Fm[/ch]
 Gonna build that city on a hill
 [ch]Cm[/ch]               [ch]Gm[/ch]                [ch]Cm[/ch]
 Someday those tears are gonna spill
-
-
 [Chorus]
-
 [ch]D#[/ch]                  [ch]D[/ch]
 So build that wall and build it strong
 [ch]D#[/ch]               [ch]D[/ch]
 \'Cause we\'ll be there before too long
-
-
 [Verse]
-
 Riff 1                           [ch]Cm[/ch]
 Gonna build that wall up to the sky
                          [ch]Fm[/ch]
 Gonna build that wall up to the sky
 [ch]Cm[/ch]              [ch]Gm[/ch]               [ch]Cm[/ch]
 Someday your bird is gonna fly
-
-
                            [ch]Cm[/ch]
 Gonna build that wall until it\'s done
                            [ch]Fm[/ch]
 Gonna build that wall until it\'s done
 [ch]Cm[/ch]                [ch]Gm[/ch]               [ch]Cm[/ch]
 But now you\'ve got nowhere to run
-
-
 [Chorus]
-
 [ch]D#[/ch]                  [ch]D[/ch]
 So build that wall and build it strong
 [ch]D#[/ch]               [ch]D[/ch]
@@ -5714,20 +4832,17 @@ Dm
 Fly the wind it will take me
 C          B
 Back to my home, sweet home
-
 Am
 Lie on my back
 Dm
 Clouds are making way for me
 C           B
 I\'m coming home, sweet home
-
 [Chorus]
 C          B
 I see your star, you left burning for me
 C           B
 Mother, I\'m here
-
 [Chorus]
 Am
 Eyes open wide
@@ -5735,14 +4850,12 @@ Dm
 Feel your heart and its glowing
 C           B
 I\'m welcome home, sweet home
-
 Am
 I take your hand
 Dm
 Now you\'ll never be lonely
 C            B
 Not when I\'m home, sweet home
-
 [Chorus]
 C          B
 I see your star, you left burning for me
@@ -5758,12 +4871,8 @@ Mother, I\'m here`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro] 
-
 F  Dm  F  Dm  Am   Dm*  Am*  G*  C
-
-
 [Verse]
-
 C                Dm
 I follow the Moskva
        C
@@ -5776,30 +4885,22 @@ An August summer night
 Soldiers passing by
           Dm*      Am*  G* C!
 Listening to the wind of change
-
 [Intro]
-
 F  Dm  F  Dm  Am   Dm*  Am*  G*  C
-
 [Verse]
-
 C                     Dm
 The world is closing in
       C
 Did you ever think
              Dm*          Am*    G*  C!
 That we could be so close, like brothers
-
 C                    Dm
 The future\'s in the air
             C
 I can feel it everywhere
           Dm*          Am*    G*
 Blowing with the wind of change
-
-
 [Chorus]
-
 C     G         Dm           G
 Take me to the magic of the moment
 C     G
@@ -5808,27 +4909,20 @@ On a glory night
 Where the children of tomorrow dream away
 F               G         C
 In the wind of change
-
-
 [Verse]
-
 C                 Dm
 Walking down the street
      C
 Distant memories
            Dm*          Am*    G*  C!
 Are buried in the past forever
-
 C                Dm
 I follow the Moskva
        C
 Down to Gorky Park
          Dm*          Am*    G* 
 Listening to the wind of change
-
-
 [Chorus]
-
 C     G         Dm           G
 Take me to the magic of the moment
 C     G
@@ -5837,7 +4931,6 @@ On a glory night
 Where the children of tomorrow dream away
 F!      G!
 With you and me
-
 C     G         Dm           G
 Take me to the magic of the moment
 C     G
@@ -5846,10 +4939,7 @@ On a glory night
 Where the children of tomorrow dream away
 F!      G!
 With you and me
-
-
 [Bridge]
-
 Am                        G
 The wind of change blows straight
            Am
@@ -5862,16 +4952,10 @@ The freedom bell for peace of mind
 Let your balalaika sing
                  E
 What my guitar wants to say
-
 [Solo]
-
 F  G  E  Am  F  G  Am  
-
 F  G  E  Am  G  E  
-
-
 [Chorus]
-
 C     G         Dm           G
 Take me to the magic of the moment
 C     G
@@ -5880,7 +4964,6 @@ On a glory night
 Where the children of tomorrow dream away
 F!      G!
 With you and me
-
 C     G         Dm           G
 Take me to the magic of the moment
 C     G
@@ -5889,10 +4972,7 @@ On a glory night
 Where the children of tomorrow dream away
 F!      G!
 In the wind of change
-
-
 [Outro] 
-
 F  Dm  F  Dm  Am  Dm`		})
 		//#endregion
 	//#endregion
@@ -5905,7 +4985,6 @@ F  Dm  F  Dm  Am  Dm`		})
 			content: 
 `[Intro]
 Bm
-
 [Verse]
 Bm                              Em
 Oh darlin\', darlin\' what have I done
@@ -5923,7 +5002,6 @@ Bm                       Em
 Well God don\'t listen to me no ways
 F#                       Bm
 And now I\'m left here all alone
-
 [Break]
 D                               F#
 Oh oh I hear what the neighbors say
@@ -5931,7 +5009,6 @@ Bm                    G
 That poor boy he\'s lost his way 
   F#
 I let the others pray
-
 [Verse]
 Bm                           Em
 Oh darlin\', darlin\' what have I done 
@@ -5941,13 +5018,11 @@ Bm                            Em
 And blood will spill into the gutters
 F#                            Bm
 And it will stain the morning sun
-
 [Break]
 D                            F#      Bm
 Oh oh tell me what the hell I\'ve done
       G              F#              G
 Can I stop at one, or have I just begun
-
 [Interlude]
 F#                       G             F#           G
 Take out the bodies that live, lord it gets me high
@@ -5957,7 +5032,6 @@ Bm                             G
 Lord I don\'t wanna let my baby down
 Bm                              G        F#
 Well I just wanna give her something one of a kind
-
 [Verse]
 Bm                           Em
 Oh darlin\', darlin\' what have I done
@@ -5967,13 +5041,11 @@ Bm                             Em
 And all my days have turned to darkness
 F#                        Bm
 Hell is leaving the light on
-
 [Break]
 D                             F#
 Oh well they\'ll hang me way up high
 Bm                            G               F#
 God himself will drop me from the sky, and let me swing awhile
-
 [Outro]
 Bm                         Em
 Oh darlin\', darlin\' what have I done   (x7)
@@ -5990,51 +5062,34 @@ What have I done`		})
 			content: 
 `
 Pink Floyd - Pigs On The Wing (Part One) (Waters)
-
 G  C  G
-
 [Verse 1]
 G              C   Csus4  C                   G  Gsus4  G
 If you didn\'t care           what happened to me
-
      C    Csus4  C        G   Gsus4  G
 And I didn\'t care           for you
-
  A                           A7
 We would zig-zag our way through the boredom and pain
-
 G          C        D              G
 Occasionally glancing up through the rain
-
 Am        F            Am                F  C  C/B Am
 Wondering which of the buggers to blame
-
 D        Dsus4   D                  G
 And watching             for pig on the wing
-
-
-
-
 Pink Floyd - Pigs On The Wing (Part Two) (Waters)
-
 G  C  G
-
 [Verse 2]
 G                C    Csus4  C                     G    Gsus4  G
 You know that I care             what happens to you
 
             C    Csus4  C           G     Gsus4  G
 And I know that you care           for me too
-
 A                        A7
 So I don\'t feel alone or the weight of the stone
-
 G                   C                 D      G
 Now that I\'ve found somewhere safe to bury my bone
-
 Am       F       Am              F      C C/B Am
 And any fool knows     a dog needs a home
-
 D       Dsus4  D                       G
 A shelter               from pigs on the wing`		})
 		//#endregion
@@ -6052,10 +5107,6 @@ A shelter               from pigs on the wing`		})
 ----2--2-2----2--2-2--------2-------|
 ----2--2-2----2--2-2--------2-------|
 -0--0-------0-0-------3b4-0-0-------|
-
-
-
-
 E
 Gods ain\'t gonna help you son
   G     A            E
@@ -6066,12 +5117,10 @@ them gods gonna hurt you son
 when you play with a loaded gun
  G         A        E
 when you play with a loaded gun
-
 C                E
 They ain\'t gonna catch you when you fall
 C                  B
 you\'ll be pleading while you\'re bleeding
-
 E
 They ain\'t gonna hear ya son
 G          A        E
@@ -6082,49 +5131,35 @@ they ain\'t gonna help you son
 you\'ll be sorry for what you done
 G     A            E
 be sorry for what you done
-
 This section is played like this:
-
 -----------------------------------------0---------------|
 -----------------------------------------0---------------|
 -----------------------------------------1---------------|
 --------------------------------5--5-----2---------------|
 --5--7--5-----5--7--5-----5--7-5---------2---------------|
 -----------7-----------7--------------0--0---------------|
-
-
 Old Pyth, cranky old bull
                     E
 make you sorry for what you done
-
-
 Hense, in a black veil
                      E
 gonna prick you for what you done
-
-
 Roathus got you empty
                      E
 got you weeping for what you done
-
-
 I say mother, lonely old gal
                      E
 tear your heart out for what you done
   G         A            E
 tear your heart out for what you done
-
-
 C                E
 They ain\'t gonna catch you when you fall
 C                  B
 you\'ll be pleading while you\'re bleeding
-
 E
 God ain\'t gonna help you son
   G     A            E
 You\'ll be sorry for what you\'ve done
-
 E
 Them gods gonna hurt you son
   G     A            E
@@ -6148,11 +5183,7 @@ Which we won\'t understand
 Is just a case of others\' suffering
 Or you\'ll find that you\'re joining in
 The turning away"                               Now the chords.
-
-
-
 [Verse 1]
-
 (Em)   (D)     G
 It\'s a sin that somehow
     C         Em
@@ -6169,10 +5200,7 @@ G                        C   Em
 We could find that we\'re all alone
 D            G
 In the dream of the proud
-
-
 [Verse 2]
-
 Em     D            G
 On the wings of the night
 C          Em
@@ -6189,10 +5217,7 @@ G                    C
 Feel the new wind of change
 Em      D           G
 On the wings of the night
-
-
 [Verse 3]
-
 Em      D       G
 No more turning away
  C           Em 
@@ -6224,7 +5249,6 @@ No more turning away?`		})
 | F | Am | Dm | C
 | F | Dm | C
 | F | Dm | C
-
 [Verse 1]
 F                     Dm
 When I look into your eyes
@@ -6242,7 +5266,6 @@ Dm                      G
 And it\'s hard to hold a candle
              C
 In the cold November rain
-
 [Verse 2]
 F                               Dm
 We\'ve been through this such a long, long time
@@ -6266,7 +5289,6 @@ Dm                  G
 Or I\'ll just end up walkin\'
              C
 In the cold November rain
-
 [Chorus]
 F                             G
 Do you need some time on your own?
@@ -6276,7 +5298,6 @@ Do you need some time all alone?
 Everybody needs some time on their own
            F                  G
 Don\'t you know you need some time all alone
-
 [Bridge]
 Em          F               C
 I know it\'s hard to keep an open heart
@@ -6286,7 +5307,6 @@ Em         F            C
 But if you could heal a broken heart
 Em       F              G
 Wouldn\'t time be out to charm you
-
 [Chorus]
 F                                G
 Sometimes I need some time on my own
@@ -6296,7 +5316,6 @@ Sometimes I need some time all alone
 Everybody needs some time on their own
            F                  G
 Don\'t you know you need some time all alone
-
 [Verse 3]
 F
 And when your fears subside
@@ -6325,7 +5344,6 @@ Even cold November rain`		})
 			duration: 3 * 60 + 50,
 			content: 
 `[Verse 1]
-
 Am               G           Am
 Are you going to Scarborough Fair
 C          Am        C D      Am
@@ -6334,10 +5352,7 @@ Parsley, sage, rosemary and thyme
 Remember me to one who lives there
 Am       G                  Am
 She once was a true love of mine
-
-
 [Verse 2]
-
 Am                    G       Am
 Tell her to make me a cambric shirt
                 (On the side of a hill in the deep forest green)
@@ -6349,10 +5364,7 @@ Without no seams nor nee-ee-dle work
                     (Blankets and bedclothes the child of the mountain)
 Am          G               Am
 Then she\'ll be a true love of mine
-
-
 [Verse 3]
-
 Am                     G       Am
 Tell her to find me an acre of land
                 (On the side of a hill, a sprinkling of leaves)
@@ -6364,10 +5376,7 @@ Between the salt water and the sea strands
                       (A soldier cleans - and polishes a gun)
 Am          G                 Am
 Then she\'ll be a true love of mine
-
-
 [Verse 4]
-
 Am                         G         Am
 Tell her to reap it with a sickle of leather
                           (War bellows blazing in scarlet battalions)
@@ -6379,10 +5388,7 @@ And gather it all in a bunch of heather
                (And to fight for a cause - they\'ve long-ago forgotten)
 Am          G                 Am
 Then she\'ll be a true love of mine
-
-
 [Verse 5]
-
 Am               G           Am
 Are you going to Scarborough Fair
 C          Am        C D      Am
@@ -6410,7 +5416,6 @@ I was lookin at all the life
 There were plants and birds and rocks and things
     Em                D6/9
 There were sand and hills and rings
-
 Em                  D6/9
 The first thing I met was a fly with a buzz
  Em           D6/9
@@ -6419,7 +5424,6 @@ Em                   D6/9
 the heat was hot and the ground was dry
  Em              D6/9
 but the air was full of sound
-
 [Chorus]
 Em9                         Dmaj9
 I\'ve been through the desert on a horse with no name
@@ -6433,7 +5437,6 @@ Em9    Dmaj9
 La la   la la lala la lala   
 Em9    Dmaj9         
 la la la 
-
 [Verse 2]
 Em                D6/9
 After two days in the desert sun
@@ -6447,7 +5450,6 @@ Em                D6/9
 And the story it told of a river that flowed
 Em                 D6/9
 made me sad to think it was dead
-
 [Chorus]
 Em9                         Dmaj9
 I\'ve been through the desert on a horse with no name
@@ -6461,7 +5463,6 @@ Em9    Dmaj9
 la la   la la lala la lala   
 Em9    Dmaj9         
 la la la 
-
 [Verse 3]
 Em                D6/9
 After nine days I let the horse run free
@@ -6479,7 +5480,6 @@ and the perfect disguise above
 Under the cities lies a heart made of ground
  Em                 D6/9
 but the humans will give no love
-
 [Chorus]
 Em9                         Dmaj9
 I\'ve been through the desert on a horse with no name
@@ -6509,7 +5509,6 @@ G|--2-|
 D|--2-|
 A|--2-|
 E|--0-|
-
 [Intro]
 e|----------------------0-1-0---------------------0-------|
 B|------0----3-1-0----1-------3-1------3-1-0------3-------|
@@ -6517,7 +5516,6 @@ G|----2-------------2----------------2-------2-0--1-------|
 D|--2-----2------------------------2--------------2-------|
 A|------------------------------------------------2-------|
 E|------------------------------------------------0-------|
-
 [Verse 1]
            Am  G  F          G     Esus4 E
 All the leaves are brown   and the sky is gray
@@ -6527,7 +5525,6 @@ I\'ve been for a walk       on a winter\'s day
 I\'d be safe and warm    if I was in L.A.
 Am   G     F          G              Esus4  E
 California dreamin\' on such a winter\'s day
-
 [Verse 2]
            Am  G  F          G        Esus4  E
 Stopped in to a church     I passed along the way
@@ -6539,7 +5536,6 @@ You know the preacher liked the cold
 He knows I\'m gonna stay
 Am    G   F            G               Esus4  E
 California dreamin\' on such a winter\'s day
-
 [Instrumental]
 play this while the flute plays:
 Am
@@ -6549,19 +5545,16 @@ G|-2-2-2-2-2-2---2--2--2--2--2--2->>>>|
 D|-2-2-2-2-2-2---2--2--2--2--2--2-----|
 A|-0-0-0-0-0-0---0--0--0--0--0--0-----|
 E|-0-0-0-0-0-0---0--0--0--0--0--0-----|
-
 then (still the flute playin)
 Am   G    E7    Am    F        E7sus4
 Am   G    Am    G     E7sus4   E7
 Am   G    F     G     E7sus4
-
            Am  G  F          G     Esus4 E
 All the leaves are brown and the sky is gray
 F               C  E  Am         F     Esus4  E
 I\'ve been for a walk on a winter\'s day
           Am  G  F     G     Esus4   E
 If I didn\'t tell her I could leave today
-
 [Outro]
 Am   G    F           G               Am
 California dreamin\' on such a winter\'s day
@@ -6580,12 +5573,8 @@ California dreamin\' on such a winter\'s day`		})
 			duration: 4 * 60 + 0,
 			content: 
 `[Intro]
-
 C G G C Am D7 D7  x2
-
-
 [Verse 1]
-
 G                   C
 All my bags are packed I\'m ready to go.
 G                 C
@@ -6598,10 +5587,7 @@ G                  C
 The taxi\'s waitin he\'s blownin his horn.
 G              Am               D7
 Already I\'m so lonesome I could die.
-
-
 [Chorus]
-
 G           C
 So kiss me and smile for me.
 G                  C
@@ -6614,10 +5600,7 @@ Cause I\'m leavin on a jet plane.
 Don\'t know when I\'ll be back again.
 Am              D7
 Oh, babe  I hate to go.
-
-
 [Verse 2]
-
    G               C
 There\'s is many times I\'ve let you down.
 G              C
@@ -6630,10 +5613,7 @@ G                C
 Ev\'ry song I sing I\'ll sing for you.
 G                C                  D7
 When I come back I\'ll bring your wedding ring.
-
-
 [Chorus]
-
 G           C
 So kiss me and smile for me.
 G                  C
@@ -6646,10 +5626,7 @@ Cause I\'m leavin on a jet plane.
 Don\'t know when I\'ll be back again.
 Am              D7
 Oh, babe  I hate to go.
-
-
 [Verse 3]
-
 G            C
 Now the time come to leave you.
 G             C    
@@ -6662,10 +5639,7 @@ G               C
 When I won\'t have to leave alone.
 G              C               D7
 About the times I won\'t have to say...
-
-
 [Chorus]
-
 G      C               G
 I\'m leavin on a jet plane.
         C                   G
@@ -6692,11 +5666,9 @@ You\'re so self satisfied I don\'t need you
 I\'ve got to break free 
 B         A                     E
 God knows God knows I want to break free 
-
 [Verse 2]
 N.C.           E
 I\'ve fallen in love 
-
 I\'ve fallen in love for the first time 
                       A
 And this time I know it\'s for real 
@@ -6718,13 +5690,10 @@ A     B          C#m   B
 Oh how I want to be free 
 A     B       E
 Oh how I want to break free 
-
 [Solo]
 E  E  A  E  B  A  E
-
 [Instrumental]
 E  E  A  E  B  A  E  E  B  A  E
-
 [Verse 3]
             E
 But life still goes on
@@ -6762,7 +5731,6 @@ I want I want I want I want to break free...
 |A    |E    |D     |     |
 |A    |E    |F#m   |D    |
 |A    |E    |D     |     |
-
 [Verse 1]
 A             E   F#m          D
 Train roll on, on down the line
@@ -6772,7 +5740,6 @@ A                        E    F#m             D
 Now, I feel the wind blow,     outside my door
 A              E       D
 I\'m   leaving my woman at home
-
 [Chorus]
 D          A
 My baby\'s gone
@@ -6780,11 +5747,9 @@ My baby\'s gone
 Tuesday\'s gone with the wind
 A             E             D
 My baby\'s gone with the wind
-
 [Instrumental]
 |A    |E    |F#m   |D    |
 |A    |E    |D     |     |
-
 [Verse 2]
 A               E   F#m             D
 And I don\'t know      where I\'m going
@@ -6794,7 +5759,6 @@ A                   E    F#m            D
 When this train ends,     I\'ll try again
 A                   E       D
 I\'m leaving my woman at home
-
 [Chorus]
 D          A
 My baby\'s gone
@@ -6806,13 +5770,11 @@ A             G             D
 Tuesday\'s gone with the wind
 A              G             D               A
 And My baby\'s gone with the wind. Train roll on,
-
 [Instrumental]
 |(A)  |E    |F#m   |D    |
 |A    |E    |F#m   |G    |
 |A    |E    |F#m   |D    |
 |A    |E    |F#m   |G    |
-
 [Chorus]
 A             G             D
 Tuesday\'s gone with the wind
@@ -6822,7 +5784,6 @@ A             G                        D
 Tuesday\'s gone, long gone with the wind
 A             E             D               A
 My baby\'s gone with the wind. Train roll on,
-
 [Verse 3]
       E  F#m                     D
 Train roll on,    many miles from my home
@@ -6832,7 +5793,6 @@ A                E   F#m               D
 Tuesday, you see,    she had to be free
 A                     E               D
 But somehow, I\'ve got you to carry on
-
 [Chorus]
 D          A
 My baby\'s gone
@@ -6844,7 +5804,6 @@ A             G             D
 Tuesday\'s gone with the wind
 A             E             D
 Tuesday\'s gone with the wind.
-
 [Outro]
       A           E
 Train roll on
@@ -6899,11 +5858,8 @@ Roll on train
 			instrument: Guitar(guitarTunings.capo1),
 			content: 
 `[Intro]
-
 G Em C D G
-
 [Verse]
-
 G                
 Every breath you take
        Em
@@ -6925,14 +5881,11 @@ Every game you play
 Every night you stay
          G
 I\'ll be watching you
-
 [Chorus]
-
      C                  G 
 Oh can\'t you see, you belong to me
           A7                         D
 How my poor heart aches, with every step you take
-
            G
 And every move you make
           Em
@@ -6943,9 +5896,7 @@ Every smile you fake
 Every claim you stake
          G
 I\'ll be watching you          
-
 [Bridge]
-
 Eb                                         F
 Since you\'ve gone I\'ve been lost without a trace
                               Eb
@@ -6956,18 +5907,13 @@ I look around but it\'s you I can\'t replace
 I feel so cold and I long for your embrace
                   G
 I keep crying baby, baby, please
-
 [Instrumental]
-
 Em  C  D  Em
-
 [Chorus]
-
      C                  G 
 Oh can\'t you see, you belong to me
           A7                         D
 How my poor heart aches, with every step you take
-
          G                
 Every breath you take
        Em
@@ -6978,7 +5924,6 @@ Every bond you break
 Every step you take
          G
 I\'ll be watching you
-
 G       Em       C
 I\'ll be watching you  
 G       Em       C
@@ -7011,15 +5956,9 @@ F(133211)
 F#dim(xx1212)
 G(320033)
 G7(320001)
-
-
 [Intro]
-
 Am Em Am Em Dm Em Am  [ Em ]  ( Am )
-
-
 [Verse]
-
 Am             Em
 I\'m sitting here in a boring room,
 Am                        Em
@@ -7041,8 +5980,6 @@ Am                 Em
 I feel so lonely, I\'m waiting for you
 Dm             Em           Am       [ Em ] ( Am )
 But nothing ever happens - and I wonder.
-
-
 [Chorus]
 
 C             G
@@ -7058,15 +5995,12 @@ I\'m turning turning turning turning turning around
 F              F#dim                     G       G7
 And all that I can see is just a yellow lemon tree.
 
-
 [Interlude]
 
 Am  Am  Em  Em  Am  Am  Em  Em  Dm  Dm  Em  Em  Am    [ Em ] ( Am )
 Dam     dadoudi....
 
-
 [Verse]
-
 Am             Em  
 I\'m sitting here, I miss the power.
 Am              Em
@@ -7077,18 +6011,13 @@ Am                 Em
 I feel so tired, put myself to bed,
 Dm             Em           Am       [ Em ] ( Am )
 Where nothing ever happens - and I wonder.
-
-
 [Bridge]
 
 E           Am
 Isolation - Is not good for me,
 G           C                       E
 Isolation - I don\'t want to sit on a lemon tree.
-
-
 [Verse]
-
 Am                   Em
 I\'m stepping around in a desert of joy
 Am                     Em
@@ -7131,39 +6060,25 @@ And all that I can see is just a yellow lemon tree.`		})
 			duration: 9 * 60 + 40,
 			content: 
 `[Verse 1]
-
 G     D/F#    Em7
 A long, long time ago,
-
 Am            C                  Em                  D
 I can still remember how that music used to make me smile
-
 G      D/F#   Em7
 And I knew if I had my chance,
-
 Am                 C                Em              C            D
 That I could make those people dance and maybe they\'d be happy for a while
-
 Em       Am              Em                 Am
 But February made me shiver, with every paper I\'d deliver
-
 C        G      Am             C                     D
 Bad news on the doorstep, I couldn\'t take one more step
-
 G          D/F#     Em           Am7            D
 I can\'t remember if I cried when I read about his widowed bride
-
 G         D          Em
 Something touched me deep inside
-
 C      D7      G
 The day the music died
-
-
-
-
 [Chorus]
-
 G    C        G        D
 So bye, bye Miss American Pie
  G            C            G        D
@@ -7172,10 +6087,7 @@ Drove my Chevy to the levy but the levy was dry
 And them good old boys were drinkin\' whiskey and rye
 Em*                         A7*   Em*                         D7
 Singin\' this will be the day that I die, this will be the day that I die
-
-
 [Verse 2]
-
 G                 Am
 Did you write the book of love
 C                 Am         Em           D
@@ -7192,10 +6104,7 @@ G      D/F#     Em                   Am                   C
 I was a lonely teenage broncin\' buck with a pink carnation and a pickup truck
 G     D/F#    Em              C       D7    G  C  G
 But I knew I was out of luck the day the music died, I started singin\'
-
-
 [Chorus]
-
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
@@ -7204,10 +6113,7 @@ Drove my Chevy to the levy but the levy was dry
 And them good old boys were drinkin\' whiskey and rye
 Em*                         A7*   Em*                         D7
 Singin\' this will be the day that I die, this will be the day that I die
-
-
 [Verse 3]
-
  G                   Am
 Now for ten years we\'ve been on our own,
 C                   Am          Em                     D
@@ -7224,10 +6130,7 @@ The courtroom was adjourned, no verdict was returned
 And while Lennon read a book on Marx, the quartet practiced in the park
 G        D/F#   Em             C         D7     G  C  G
 And we sang dirges in the dark the day the music died, we were singin\'
-
-
 [Chorus]
-
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
@@ -7236,10 +6139,7 @@ Drove my Chevy to the levy but the levy was dry
 And them good old boys were drinkin\' whiskey and rye
 Em*                         A7*   Em*                         D7
 Singin\' this will be the day that I die, this will be the day that I die
-
-
 [Verse 4]
-
 G                   Am
 Helter skelter in a summer swelter
 C                      Am                 Em                     D
@@ -7256,10 +6156,7 @@ We all got up to dance, but we never got the chance
 \'Cuz the players tried to take the field, the marching band refused to yield
 G    D/F#       Em              C        D7       G  C  G
 Do you recall what was revealed the day the music died,    we started singin\'
-
-
 [Chorus]
-
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
@@ -7268,10 +6165,7 @@ Drove my Chevy to the levy but the levy was dry
 And them good old boys were drinkin\' whiskey and rye
 Em*                         A7*   Em*                         D7
 Singin\' this will be the day that I die, this will be the day that I die
-
-
 [Verse 5]
-
 G                Am
 And there we were all in one place,
 C        Am            Em                   D
@@ -7288,10 +6182,7 @@ No angel born in Hell could break that Satan\'s spell
 And as the flames climbed high into the night to light the sacrificial rite
 G   D/F#           Em           C      D7      G  C  G
 I saw Satan laughing with delight the day the music died,     he was singin\'
-
-
 [Chorus]
-
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
@@ -7300,10 +6191,7 @@ Drove my Chevy to the levy but the levy was dry
 And them good old boys were drinkin\' whiskey and rye
 Em*                         A7*   Em*                         D7
 Singin\' this will be the day that I die, this will be the day that I die
-
-
 [Verse 6]
-
 G    D/F#       Em
 I met a girl who sang the blues
 Am                 C               Em                      D
@@ -7324,10 +6212,7 @@ G             D/F#          Em               Am7     D7    G
 They caught the last train for the coast the day the music died,
 N.C.
 And they were singin\'
-
-
 [Chorus]
-
 G    C        G        D
 Bye, bye Miss American Pie
  G            C            G        D
@@ -7355,7 +6240,6 @@ Singin\' this will be the day that I die.`		})
 			duration: 4 * 60 + 50,
 			content: 
 `Dm 2x
-
 Dm                                            A7               G
 Ooo, bet you\'re wondering how I knew, about you\'re plans to make me blue.
         Dm                                              A7
@@ -7364,69 +6248,52 @@ G                               Bm           G           Dm
 know I love you more. It took me by surprise I must say, when I found out
 G
 yesterday. 
-
 Dm                                       G
 Ooo, I heard it through the grapevine, not much longer would
             Dm                                      G
 you be mine. Ooo, I heard it through the grapevine, and I\'m just about to
                    Dm
 lose my mind, honey, honey yeah.
-
 Dm  4x
-
         Dm                                   A7
 You know that a man ain\'t supposed to cry, but these tears I can\'t hold
 G            Dm                                       A7        G
 inside. Losing you would end my life you see, cause you mean that much to me.
        Bm          G              Dm            G
 You could have told me yourself, that you found someone else.  
-
    Dm                                       G
 Instead, I heard it through the grapevine, not much longer would
             Dm                                      G
 you be mine. Ooo, I heard it through the grapevine, and I\'m just about to
                    Dm
 lose my mind, honey, honey yeah.
-
 Dm  4x
-
      Dm                                  A7                G
 People say believe half of what you see, nah nah nah from what you hear.
 Dm                           A7                G
 I can\'t help being confused, if it\'s true wouldn t you tell me, hear?
 Bm             G                 Dm                  G
 Do you plan to let me go, for the other guy that you knew before?
-
 Dm                                       G
 Ooo, I heard it through the grapevine, not much longer would
            Dm                                      G    
 you be mine. Ooo I heard it through the grapevine, and I\'m just about to
                    Dm
 lose my mind, honey, honey yeah.
-
 Dm  4x
-
 Solo
-
 Dm A7 G Dm A7 G Bm G Dm G Dm G Dm G
-
 Dm  4x
-
 Solo
-
 Dm A7 G Dm A7 G Bm G Dm G
-
 Dm                                       G
 Ooo, I heard it through the grapevine, not much longer would
            Dm                                      G    
 you be mine. Ooo I heard it through the grapevine, and I\'m just about to
                    Dm
 lose my mind, honey, honey yeah. 2x
-
 Solo
-
 Dm G 38x
-
 Dm  8x
 `		})
 		//#endregion
@@ -7440,9 +6307,7 @@ Dm  8x
 			content: 
 `
 Comfortable voicerange: capo2
-
 [Verse]
-
 Em
 On a long and lonesome highway, east of Omaha
 Dsus2
@@ -7455,10 +6320,7 @@ Dsus2
 When you\'re ridin\' sixteen hours and there\'s nothin\' much to do
 Asus4                                                               Em
 And you don\'t feel much like ridin\', you just wish the trip was through
-
-
 [Chorus]
-
 Dsus2
 Here I am
 Em
@@ -7475,10 +6337,7 @@ C             Dsus2
 There I go
 Em
 Turn the page
-
-
 [Verse]
-
 Em
 So you walk into this restaurant, strung out from the road
 Dsus2
@@ -7493,10 +6352,7 @@ Asus4                                                    Em
 And you always seem outnumbered, you don\'t dare make a stand
 Em
 Make your stand.
-
-
 [Chorus]
-
 Dsus2
 Here I am
 Em
@@ -7513,10 +6369,7 @@ C        Dsus2
 There I go
 Em
 Turn the page
-
-
 [Verse]
-
 Em
 Out there in the spotlight, you\'re a million miles away
 Dsus2
@@ -7529,22 +6382,15 @@ Dsus 2
 With the echoes of the amplifiers ringin\' in your head
 Asus4                                                    Em
 You smoke the day\'s last cigarette, rememberin\' what she said
-
-
 [Interlude]
-
 Dsus2 Em  Dsus2 Em Dsus2 Em C Dsus2 Em
-
-
 [Chorus]
-
 Dsus2
 Here I am
 Em
 On the road again
 Dsus2
 There I am
-
 Em
 Up on the stage
 Dsus2
@@ -7555,7 +6401,6 @@ C       Dsus2
 There I go
 Em
 Turn the page
-
 Dsus2
 Here I am
 Em
@@ -7572,10 +6417,7 @@ C       Dsus2
 There I go
 Em
 Turn the page.
-
-
 [Outro]
-
 C       Dsus2
 There I go
 Em
@@ -7584,7 +6426,6 @@ C             Dsus2
 There I go, yeah
 Em
 There I go, yeah
-
 C Dsus2 Em
 C       Dsus2   Em
 There I go
@@ -7606,7 +6447,6 @@ There I go`		})
 `INTRO:
 Em   D        Em       D        Em
 Whoa-oh..whoa-oh..whoa-oh..whoa-oh.
-
 #1.
     Em    
 Oh, there\'s never been a woman who could 
@@ -7614,9 +6454,7 @@ D
 treat me like you do.
   Am                           Em
 Who could trample on my pride and play around 
-
 as much as you.
-
 Well, you really shake my mind up with your 
 D
 cheating and your lies.
@@ -7624,7 +6462,6 @@ Am                           Em
 Til at last I make my mind up and I turn to 
              B7
 say goodbye..say goodbye.
-
 CHORUS:
 G                             D
 Suddenly you love me and your arms are open wide.
@@ -7638,7 +6475,6 @@ Suddenly you love me and I know I\'ve gotta stay.
 Zai, zai, zai, zai..Zai, zai, zai, zai..Zai, zai, zai, zai..
        Em
 Zai, zai, zai, zai..
-
 #2.
  Em                           D
 When you find your fascination in the arms of other guys.
@@ -7650,7 +6486,6 @@ Am                         Em
 And you only start to worry when I say I\'m leaving you,
 B7
 leaving you.
-
 CHORUS:
 G                             D
 Suddenly you love me and your arms are open wide.
@@ -7664,10 +6499,8 @@ Suddenly you love me and I know I\'ve gotta stay.
 Zai, zai, zai, zai..Zai, zai, zai, zai..Zai, zai, zai, zai..
        Em
 Zai, zai, zai, zai..
-
 Em   D        Em       D        Em
 Whoa-oh..whoa-oh..whoa-oh..whoa-oh.
-
 CHORUS:
 G                             D
 Suddenly you love me and your arms are open wide.
@@ -7681,12 +6514,9 @@ Suddenly you love me and I know I\'ve gotta stay.
 Zai, zai, zai, zai..Zai, zai, zai, zai..Zai, zai, zai, zai..
        Em
 Zai, zai, zai, zai..
-
 Em   D        Em       D        Em
 Whoa-oh..whoa-oh..whoa-oh..whoa-oh.
-
 OUTRO:
-
 Em   D        Em       D        Em
 Whoa-oh..whoa-oh..whoa-oh..whoa-oh.(Fade.)`		})
 		//#endregion
@@ -7726,15 +6556,11 @@ The end of all my hopes, the end of all my dreams,
 How could they know, a palace there had been,
 D                             E          A
 behind the door where my love reigned as queen.
-
 Am                C   
 No milk today, it wasn\'t always so,
 E           Am      E                 Am
 The company was gay, we turn\'d night into day.
-
-
 [Chorus]
-
 A                E         D              E 
 But all that\'s left is a place dark and lonely
 A            E          D
@@ -7743,26 +6569,18 @@ A           E             D            E
 Becomes a shrine when I think of you only
 D               E
 Just two up two down.
-
-
 [Verse]
-
 No milk today, it wasn\'t always so,
 The company was gay, we turn\'d night into day.
 As music played the faster did we dance
 We felt it both at once, the start of our romance.
-
 How could they know just what this message means,
 The end of all my hopes, the end of all my dreams,
 How could they know, a palace there had been,
 behind the door where my love reigned as queen.
-
 No milk today, my love is gone away.
 The bottle stands forlorn, a symbol of the dawn.
-
-
 [Chorus]
-
 A                E         D              E 
 But all that\'s left is a place dark and lonely
 A            E          D
@@ -7787,7 +6605,6 @@ Gb|-----x-----------2-2-0--0-0-4--4-4-4-4---x-x-x--| continue strumming E5,
 Db|-2---2-----------2-2-0--0-0-4--4-4-4-4---2-2-2--| then repeat
 Ab|-2---2--------0--0-0-2--2-2-2--2-2-2-x---2-2-2--|
 Eb|-0---0--0-2-3--------3--3-3----------3b--0-0-0--|
-
 [Verse]
 E                      A       G
 My girl, my girl, don\'t lie to me
@@ -7799,7 +6616,6 @@ In the pines, in the pines
 Where the sun don\'t ever shine
 B                  E
 I would shiver the whole night through
-
 [Chorus]
 E                       A        G
 My girl, my girl, where will you go
@@ -7811,7 +6627,6 @@ In the pines, in the pines
 Where the sun don\'t ever shine
 B                E
 I would shiver the whole night through
-
 [Verse]
 E                  A            G
 Her husband, was a hard working man
@@ -7821,7 +6636,6 @@ E                       A       G
 His head was found in a driving wheel
 B                      E
 But his body never was found
-
 [Verse]
 E                      A       G
 My girl, my girl, don\'t lie to me
@@ -7833,10 +6647,8 @@ In the pines, in the pines
 Where the sun don\'t ever shine
 B                  E
 I would shiver the whole night through
-
 [Interlude]
 E  A G B E
-
 [Chorus]
 E                       A        G
 My girl, my girl, where will you go
@@ -7848,7 +6660,6 @@ In the pines, in the pines
 Where the sun don\'t ever shine
 B                E
 I would shiver the whole night through
-
 [Verse]
 E                      A       G
 My girl, my girl, don\'t lie to me
@@ -7860,7 +6671,6 @@ In the pines, in the pines
 Where the sun don\'t ever shine
 B                  E
 I would shiver the whole night through
-
 E                       A       G
 My girl, my girl, where will ya go
 B                         E
@@ -7883,7 +6693,6 @@ I\'ll shiver the whole night through`		})
 `[Intro]
 Em    G        Em     G      Em    G       Em     G
 Em    G        Em     G      Em    G       Em     G
-
 [Verse]
 Em G            Em    G
 I   need   an   easy   friend
@@ -7893,7 +6702,6 @@ Em     G             Em          G
 I   do  think   you   fit   this   shoe
 Em     G                       Em         G
 I   do  want   you   to   have   a   clue
-
 [Chorus]
 C#      G#        F#
 Take   advantage   while
@@ -7905,7 +6713,6 @@ Em    G        Em    G
 Free
 Em    G        Em    G
 I   do
-
 [Verse]
 Em   G              Em          G
 I\'m  standin\'   in   your   lane
@@ -7915,7 +6722,6 @@ Em      G           Em          G
 I   do   pick   a   number   too
 Em     G             Em              G
 I   do   keep   a   date   with   you
-
 [Chorus]
 C#      G#     F#
 Take   advantage   while
@@ -7927,16 +6733,12 @@ Em    G        Em    G
 Free
 Em    G        Em    G
 I   do
-
-
 C#      G#     F#
 C#      G#     F#
 E               A     C
-
 [Interlude]
 Em    G        Em    G
 Em    G        Em    G
-
 [Verse]
 Em G            Em     G
 I   need   an   easy   friend
@@ -7946,7 +6748,6 @@ Em      G                 Em          G
 I   do   think   you   fit   this   shoe
 Em      G                      Em          G
 I   do   want   you   to   have   a   clue
-
 [Chorus]
 C#      G#     F#
 Take   advantage   while
@@ -7958,7 +6759,6 @@ Em          E           A5      C
 But   I   can\'t   see   you   every   night
 Em    G        Em    G
 Free
-
 [Outro]
 Em    G        Em    G
 I   do
@@ -7980,15 +6780,11 @@ I   do
 			content: 
 `[Intro]
 Am  G    Am  G
-
-
 [Verse]
 Am                    G
 I\'m on, my time, with everyone,
 Am                G
 I have, very, bad posture,
-
-
 [Chorus]
 C5                  D5           Bb
 Sit and drink pennyroyal tea
@@ -7998,15 +6794,11 @@ C5                  D5            Bb
 Sit and drink pennyroyal tea
 C5            D5        Bb5
 I\'m anemic royalty
-
-
 [Verse]
 Am                    G
 Give me Leonard Cohen afterward
 Am             G
 So I, can sigh eternally
-
-
 [Chorus]
 C5                 D5          Bb
 I\'m so tired I can\'t sleep
@@ -8016,15 +6808,11 @@ C5               D5        Bb
 I\'m a liar and a thief
 C5            D5        Bb
 I\'m anemic royalty
-
-
 [Verse]
 Am                   G
 Lemon, warm milk and laxatives
 Am                  G
 Cherry-flavored antacids
-
-
 [Chorus]
 C5                  D5           Bb
 Sit and drink pennyroyal tea
@@ -8034,8 +6822,6 @@ C5                  D5            Bb
 Sit and drink pennyroyal tea
 C5            D5        Bb
 I\'m anemic royalty
-
-
 [Outro]
 Asus2  Am`		})
 		//#endregion
@@ -8048,7 +6834,6 @@ Asus2  Am`		})
 			instrument: Guitar(guitarTunings.half_step_down),
 			content: 
 `[Verse 1]
-
 E    A         G
 I\'m not like them
 C              E
@@ -8065,16 +6850,10 @@ A             G
 I think I\'m dumb
 C                E
 Or maybe just happy
-
-
 [Chorus]
-
 G               E
 Think I\'m just happy (x3)
-
-
 [Verse 2]
-
 E A            G
 My heart is broke
 C              E
@@ -8091,19 +6870,12 @@ A              G
 Then we\'ll come down
 C               E
 And have a hangover
-
-
 [Chorus]
-
 G           E
 Have A hangover (x3)
-
-
 [Bridge]
-
 B7          C
 Skin the sun
-
 Fall asleep
 B7 
 Wish away
@@ -8117,10 +6889,7 @@ B7
 Soothe the burn
 C
 Wake me up
-
-
 [Verse 3]
-
 E    A         G
 I\'m not like them
 C              E
@@ -8137,10 +6906,7 @@ A             G
 I think I\'m dumb
 C                E
 Or maybe just happy
-
-
 [Chorus]
-
 G              E
 Think I\'m just happy (x3)
 G              E
@@ -8157,9 +6923,7 @@ I think I\'m dumb (x12)`		})
 `[Intro]
 Em  G  D  C 
 Em  G  D  C 
-
 (mild distortion)
-
 [Verse]        
 Em G       D          C
 Polly wants a cracker
@@ -8169,7 +6933,6 @@ Em G          D            C
 Think she wants some water
 Em G           D      C
 To put out the blow torch
-
 [Chorus]
 D    C
 Isn\'t me
@@ -8203,11 +6966,9 @@ D    C
 Want some my help
 G    Bb
 Please myself
-
 [Instrumental]
 Em  G  D  C
 Em  G  D  C
-
 [Verse] 
 Em G      D           C
 Polly wants a cracker
@@ -8217,7 +6978,6 @@ Em G          D         C
 She ask me to untie her
 Em G              D       C
 A chase would be nice for a few
-
 [Chorus]
 D    C
 Isn\'t me
@@ -8251,12 +7011,10 @@ D    C
 Want some my help
 G    Bb
 Please myself
-
 [Interlude]
 Em G             D     C
 Em G             D     C
 Polly said
-
 [Verse]
 Em G           D        C
 Polly says her back hurts
@@ -8266,7 +7024,6 @@ Em G          D      C
 She caught me off my guard
 Em G      D              C
 Amazes me, the will  of instinct
-
 [Chorus]
 D    C
 Isn\'t me
@@ -8300,7 +7057,6 @@ D    C
 Want some my help
 G    Bb
 Please myself
-
 [Outro]
 E`		})
 		//#endregion
@@ -8314,7 +7070,6 @@ E`		})
 			content: 
 `[Intro]
 Em C/G (4x)
-
 [Verse 1]
 Em              C/G
 Underneath the bridge 
@@ -8332,14 +7087,12 @@ Em               C/G
 It\'s okay to eat fish 
     Em             C/G
 \'Cause they don\'t have any feelings 
-
 [Chorus]
 Em                C/G    Em        C/G
 Something in the way, mmm 
 Em               C/G          Em       C/G
 Something in the way, yeah, mmm 
 (2x)
-
 [Verse 2]
 Em              C/G
 Underneath the bridge 
@@ -8357,7 +7110,6 @@ Em               C/G
 It\'s okay to eat fish 
     Em             C/G
 \'Cause they don\'t have any feelings 
-
 [Chorus]
 Em                C/G    Em        C/G
 Something in the way, mmm 
@@ -8375,43 +7127,28 @@ Something in the way, yeah, mmm
 			duration: 4 * 60 + 10,
 			content: 
 `[Intro]
-
 E A B A B
-
-
 [Verse 1]
-
 E
 Here comes Johnny singing oldies, goldies  Be-Bop-A-Lula, Baby What I Say
-
 Here comes Johnny singing I Gotta Woman  
-
 Down in the tunnels, trying to make it pay
 A                                       E
 He got the action, He got the motion    Yeah the boy can play
 A                      E
 Dedication, devotion   Turning all the night time into the day
-
-
 [Chorus]
-
 E                                     B
 He do the song about the sweet lovin\' woman
   E                     A
 He do the song about the knife
   E7   B                  A         B                   E    A  B  A B
 He do the walk, he do the walk of life. Yeah, he do the walk of life
-
-
 [Verse 2]
-
 E
 Here comes Johnny and he\'ll tell you the story
-
 Hand me down my walkin\' shoes
-
 Here come Johnny with the power and the glory
-
 Backbeat the talkin\' blues
 A
 He got the action, He got the motion
@@ -8421,25 +7158,17 @@ A
 Dedication, devotion
 E
 Turning all the night time into the day
-
-
 [Chorus]
-
 E                                     B
 He do the song about the sweet lovin\' woman
   E
 He do the song about the knife
   E7  B                   A      B                       E  A B A B
 He do the walk, he do the walk of life.  Yeah, he do the walk of life
-
-
 [Verse 1]
-
 E
 Here comes Johnny singing oldies, goldies  Be-Bop-A-Lula, Baby What I Say
-
 Here comes Johnny singing I Gotta Woman  
-
 Down in the tunnels, trying to make it pay
 A
 He got the action, He got the motion
@@ -8449,10 +7178,7 @@ A
 Dedication, devotion
 E
 Turning all the night time into the day
-
-
 [Outro]
-
 E                              B
 And after all the violence and double talk
        E                               A
@@ -8481,7 +7207,6 @@ F          G           C    C/B    Am
 mä osoitteesi siihen raaputin, hmm-mm-mm
 F          G           C
 Mä osoitteesi siihen raaputin
-
 [Verse 2]
 C             G            Am
 On mandoliinimiehen matka tää
@@ -8495,13 +7220,11 @@ F            G           C   C/B    Am
 kun mandoliiniin nimes kirjoitin hmm-mm-mm
 F            G           Am
 Kun mandoliiniin nimes kirjoitin
-
 [Bridge]
 Am             Em
 Aaa...  Maljan sulle jossain juon
 Fmaj7          Em
 Aaa...  Jotain jännää sulle tuon
-
 [Chorus]
 F           G               C    C/B   Am
 Minä vuori-ilmaa pulloon laittaa voin tietenkin,
@@ -8511,7 +7234,6 @@ F              G           C    C/B    Am
 Ne sulle tuon kun saavun takaisin, hmm-mm-mm
 F              G           C
 Ne sulle tuon kun saavun takaisin
-
 [Verse 3]
 C             G            Am
 Hei kuuntele vieras laulu tää,
@@ -8525,13 +7247,11 @@ F           G          C   C/B    Am
 tuon tytön jonka jätin jonnekin hmm-mm-mm
 F           G          Am
 Tuon tytön jonka jätin jonnekin
-
 [Bridge]
 Am             Em
 Aaa...  Maljan sulle jossain juon
 Fmaj7          Em
 Aaa...  Jotain jännää sulle tuon
-
 [Chorus]
 F           G               C    C/B   Am
 Minä vuori-ilmaa pulloon laittaa voin tietenkin,
@@ -8541,7 +7261,6 @@ F              G           C    C/B    Am
 Ne sulle tuon kun saavun takaisin, hmm-mm-mm
 F              G           C
 Ne sulle tuon kun saavun takaisin
-
 [Verse 4]
 C            G          Am
 Hei ystävä, pyyhi kyyneleet,
@@ -8567,7 +7286,6 @@ Mä osoitteesi siihen raaputin`		})
 `[Intro]
 C G A D    C G A D
 C G C Em   C G D D
-
 [Verse]
 C
 Shed a tear cause I\'m missing you
@@ -8581,7 +7299,6 @@ G
 But you set my mind at ease
 A                                  D       Dsus2 D  Dsus4 D  Dsus2 D
 There is no doubt, you\'re in my heart now
-
 [Chorus]
 C             G
 Said woman, take it slow
@@ -8601,8 +7318,6 @@ D  Dsus2 D  Dsus4  D  Dsus2  D
 uuuuuuuuuuuuuuuuuuuuuuuuh
 D  Dsus2 D  Dsus4  D  Dsus2  D
 yeaaaaaaaaaaaaaaaaah
-
-
 [Verse 2]
 C
 I sit here on the stairs
@@ -8620,7 +7335,6 @@ A
 But you know love, there\'s one more thing
 D   Dsus2 D  Dsus4  D  Dsus2  D
 To consider
-
 [Chorus]
 C             G
 Said woman, take it slow
@@ -8640,14 +7354,12 @@ Dsus2 D                  Dsus2 D  Dsus4  D
 Ahh,   I\'ll never break it
 Dsus2    D            Dsus2 D  Dsus4  D  Dsus2  D
 Cause I can\'t take it
-
 [Solo]
 C   G   C   Em   C   G   D  Dsus2 D  Dsus4  D  Dsus2  D
 C   G   C   Em   C   G   D  Dsus2 D  Dsus4  D  Dsus2  D
 D  Dsus2 D  Dsus4  D  Dsus2  D
 D  Dsus2 D  Dsus4  D  Dsus2  D
 D  Dsus2 D  Dsus4  D  Dsus2  D
-
 [Bridge]
 D  G  D  G  D            G
       A little patience
@@ -8655,7 +7367,6 @@ D
 Mmmmm yeah
 G
 Mmmmm yeah
-
        D
 Need a little patience
 G
@@ -8664,7 +7375,6 @@ Yeaaaaah
 Just a little patience
 G
 yeaaaaah
-
 [Verse]
 D
 I\'ve been walking the streets tonight
@@ -8730,7 +7440,6 @@ Bm
 Go ask the dust for any answers 
 C
 Come back strong with 50 belly dancers 
-
 [Chorus]
 G
 The world I love 
@@ -8752,7 +7461,6 @@ C
 The wave can\'t stop 
 G                 D         Bm C
 Come and tell me when it\'s time to 
-
 [Verse]
 Em
 Sweetheart is bleeding in the snowcone 
@@ -8786,7 +7494,6 @@ Bm
 Jay butterfly is in the treetop 
 C
 Birds that blow the meaning into bebop
-
 [Chorus]
 G
 The world I love 
@@ -8808,7 +7515,6 @@ C
 The wave can\'t stop 
 G                 D         Bm C
 Come and tell me when it\'s time to
-
 [Interlude]
 Em                 D                   Bm              C
 Wait a minute I\'m passing out, win or lose, just like you 
@@ -8818,7 +7524,6 @@ Em                D                  Bm             C
 Ten more reasons why I need somebody new, just like you 
 Em                       D              Bm             C
 Far more shockin\' than anything I ever knew, right on cue 
-
 [Verse]
 Em
 Can\'t stop addicted to the shindig 
@@ -8876,15 +7581,12 @@ G|------------------------------|    |--------------------------------|
 D|------------------------------| x4 |--------------------------------| x1
 A|-5h7---5h7---5h7---5h7---5h7--|    |-5h7---5h7---5h7---5----5h7-----|
 E|------------------------------|    |---------------------7----------|
-
 e|------------------------------|
 B|------------------------------|
 G|------------------------------|
 D|------------------------------| x3
 A|-5h7---5h7---5h7---5h7---5h7--|
 E|------------------------------|
-
-
 [Verse 1 & 2]
 Riff A
 e|-------------------------------------------------------------|
@@ -8893,14 +7595,12 @@ G|------7--9---------7--9------------7--9---------7--9---------|
 D|--------------------------------0--------0-0-0--------0-0-0--|
 A|-7-7--------7-7-7--------7-7-7-------------------------------|
 E|-------------------------------------------------------------|
-
 e|-------------------------------------------------------------|
 B|-------------------------------------------------------------|
 G|----7--9---------7--9------------7--9--------7--9------------|
 D|-------------------------------------------------------------| x4
 A|-------------------------------------------------------------|
 E|-7--------7-7-7--------7-7-7--8-------8-8-8--------8-8-8-----|
-
 Riff B
 e|-------------------------------------------------------------|
 B|-------------------------------------------------------------|
@@ -8908,32 +7608,25 @@ G|------7--9---------7--9------------7--9---------7--9---------|
 D|--------------------------------0--------0-0-0--------0-0-0--|
 A|-7-7--------7-7-7--------7-7-7-------------------------------|
 E|-------------------------------------------------------------|
-
 e|--------------------------------7--7--7--7---|
 B|--------------------------------8--8--8--8---|
 G|----7--9---------7--9-----------9--9--9--9---|
 D|---------------------------------------------|
 A|---------------------------------------------|
 E|-7--------7-7-7--------7-7-7-----------------|
-
-
 [Chorus]
-
 e|-7--7---7--7--7----2--2---5--5--5----3--3---7--7--7----2--2---5--5--5-------|
 B|-8--8---7--7--7----3--3---5--5--5----3--3---7--7--7----3--3---5--5--5-------|
 G|-9--9---7--7--7----4--4---5--5--5----4--4---7--7--7----4--4---5--5--5-------|
 D|-9--9---7--7--7----4--4---5--5--5----5--5---7--7--7----4--4---5--5--5-------|
 A|-7--7---5--5--5----2--2---3--3--3----5--5---5--5--5----2--2---3--3--3-------|
 E|-------------------------------------3--3-----------------------------------|
-
 e|-7--7---7--7--7----2--2---5--5--5----3--3---7--7--7----2--3---|
 B|-8--8---7--7--7----3--3---5--5--5----3--3---7--7--7----3--5---|
 G|-9--9---7--7--7----4--4---5--5--5----4--4---7--7--7----4--5---|
 D|-9--9---7--7--7----4--4---5--5--5----5--5---7--7--7----4--5---|
 A|-7--7---5--5--5----2--2---3--3--3----5--5---5--5--5----2--3---|
 E|-------------------------------------3--3---------------------|
-
-
 [Verse 3]
 Riff A
 e|-------------------------------------------------------------|
@@ -8942,14 +7635,12 @@ G|------7--9---------7--9------------7--9---------7--9---------|
 D|--------------------------------0--------0-0-0--------0-0-0--|
 A|-7-7--------7-7-7--------7-7-7-------------------------------|
 E|-------------------------------------------------------------|
-
 e|-------------------------------------------------------------|
 B|-------------------------------------------------------------|
 G|----7--9---------7--9------------7--9--------7--9------------|
 D|-------------------------------------------------------------| x4
 A|-------------------------------------------------------------|
 E|-7--------7-7-7--------7-7-7--8-------8-8-8--------8-8-8-----|
-
 Riff B
 e|-------------------------------------------------------------|
 B|-------------------------------------------------------------|
@@ -8957,51 +7648,39 @@ G|------7--9---------7--9------------7--9---------7--9---------|
 D|--------------------------------0--------0-0-0--------0-0-0--|
 A|-7-7--------7-7-7--------7-7-7-------------------------------|
 E|-------------------------------------------------------------|
-
 e|--------------------------------7--7--7--7---|
 B|--------------------------------8--8--8--8---|
 G|----7--9---------7--9-----------9--9--9--9---|
 D|---------------------------------------------|
 A|---------------------------------------------|
 E|-7--------7-7-7--------7-7-7-----------------|
-
-
 [Chorus]
-
 e|-7--7---7--7--7----2--2---5--5--5----3--3---7--7--7----2--2---5--5--5-------|
 B|-8--8---7--7--7----3--3---5--5--5----3--3---7--7--7----3--3---5--5--5-------|
 G|-9--9---7--7--7----4--4---5--5--5----4--4---7--7--7----4--4---5--5--5-------|
 D|-9--9---7--7--7----4--4---5--5--5----5--5---7--7--7----4--4---5--5--5-------|
 A|-7--7---5--5--5----2--2---3--3--3----5--5---5--5--5----2--2---3--3--3-------|
 E|-------------------------------------3--3-----------------------------------|
-
 e|-7--7---7--7--7----2--2---5--5--5----3--3---7--7--7----2--3---|
 B|-8--8---7--7--7----3--3---5--5--5----3--3---7--7--7----3--5---|
 G|-9--9---7--7--7----4--4---5--5--5----4--4---7--7--7----4--5---|
 D|-9--9---7--7--7----4--4---5--5--5----5--5---7--7--7----4--5---|
 A|-7--7---5--5--5----2--2---3--3--3----5--5---5--5--5----2--3---|
 E|-------------------------------------3--3---------------------|
-
-
 [Verse 4]
-
 e|--7--7--7---5--5--5---2--2--2---3--3--3-------------------------------------|
 B|--8--8--8---7--7--7---3--3--3---5--5--5-------------------------------------|
 G|--9--9--9---7--7--7---4--4--4---5--5--5-------------------------------------|
 D|----------------------------------------------------------------------------|
 A|----------------------------------------------------------------------------|
 E|----------------------------------------------------------------------------|
-
-
 [Solo]
-
 e|----------------------------------------------------------------------------|
 B|-15b17-----15b17---15---15---12---12----------------------------------------|
 G|--------------------------------------12---12-------------------------------|
 D|----------------------------------------------------------------------------|
 A|----------------------------------------------------------------------------|
 E|----------------------------------------------------------------------------|
-
 Little variations in the repeats, just solo in E minor or G major`		})
 		//#endregion
 		//#region
@@ -9026,7 +7705,6 @@ White heat is screamin\' in the jungle
 Complete the motion if you stumble
 Go ask the dust for any answers
 Come back strong with fifty belly dancers
-
 [Chorus]
 The world I love, the tears I drop
 To be part of the wave, can\'t stop
@@ -9034,7 +7712,6 @@ Ever wonder if it\'s all for you?
 The world I love, the trains I hop
 To be part of the wave, can\'t stop
 Come and tell me when it\'s time to
-
 [Verse 2]
 Sweetheart is bleeding in the snow cone
 So smart, she\'s leadin\' me to ozone
@@ -9052,7 +7729,6 @@ Can\'t stop the spirits when they need you
 Mop tops are happy when they feed you
 J. Butterfly is in the treetop
 Birds that blow the meaning into bebop
-
 [Chorus]
 The world I love, the tears I drop
 To be part of the wave, can\'t stop
@@ -9060,13 +7736,11 @@ Ever wonder if it\'s all for you?
 The world I love, the trains I hop
 To be part of the wave, can\'t stop
 Come and tell me when it\'s time to
-
 [Bridge]
 Wait a minute, I\'m passin\' out win or lose, just like you
 Far more shockin\' than anything I ever knew, how about you?
 Ten more reasons why I need somebody new, just like you
 Far more shockin\' than anything I ever knew, right on cue
-
 [Verse 3]
 Can\'t stop, addicted to the shindig
 Chop Top, he says I\'m gonna win big
@@ -9100,9 +7774,7 @@ This life is more than just a read-through`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro]
-
 (Bass notes only)
-
              E
 Uh-What you gonna do?
 B         C           D
@@ -9111,9 +7783,7 @@ A     B              E
 Uh-What you gonna do?
 B         C           D     D  D
 Do you wanna get down?
-
 [Chorus]
-
 Em7             Bm7 Bm7 Am7
 Get down on it!
 Am7             Am7 Bm7
@@ -9130,7 +7800,6 @@ Em7             Bm7 Bm7 D
 Get down on it!
 D               D   D
 Get down on it!
-
 [Verse 1]
 Em7                        Bm7      Bm7  Am7
 Uh, how you gonna do it if you really don\'t wanna dance
@@ -9148,10 +7817,7 @@ By standing on the wall?!
 Get your back up off the wall!
 D               D        D
 Cause I heard all the people sayin\'
-
-
 [Chorus]
-
 Em7             Bm7 Bm7 Am7
 Get down on it!  Come on and,
 Am7             Am7 Bm7
@@ -9168,10 +7834,7 @@ Em7             Bm7 Bm7 D
 Get down on it!  Get on it
 D               D   D
 Get down on it!
-
-
 [Verse 2]
-
 Em7    Bm7 Bm7 Am7
 I say people
 Am7       Bm7       Em7 Bm7 Bm7 D
@@ -9182,7 +7845,6 @@ Am7              Bm7       Em7
 If you want your body to move
 Bm7 Bm7     D          D D
 Tell me, baby
-
 Em7                        Bm7      Bm7  Am7
 Uh, how you gonna do it if you really don\'t wanna dance
 Am7      Bm7    Em7
@@ -9199,9 +7861,7 @@ By standing on the wall?!
 Get your back up off the wall!
 D               D        D
 Cause I heard all the people sayin\'
-
 [Chorus]
-
 Em7             Bm7 Bm7 Am7
 Get down on it!
 Am7             Am7 Bm7
@@ -9226,11 +7886,8 @@ Em7             Bm7 Bm7 D
 Get down on it!  Get on it
 D          D           Em7
 Shaa-da-ba-da-ba-da-ba-daa
-
 [Bridge]
-
 (Bass notes only)
-
 B     C              D
 Uh-What you gonna do?
 A         B           E
@@ -9245,9 +7902,7 @@ Dance! Come on!
 Get your back up off the wall!
 D                D  D
 Dance! Come on!
-
 [Chorus]
-
 Em7             Bm7 Bm7 Am7
 Get down on it!  Come on and,
 Am7             Am7 Bm7
@@ -9275,29 +7930,7 @@ Get down on it!`		})
 			duration: 5 * 60 + 30,
 			content: 
 `[Intro]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [Verse]
-
 Em                            C     Am
 Have you got colour in your cheeks?
 Am                                        Em  
@@ -9320,10 +7953,7 @@ C         Am
 Until I fall asleep
                B
 Spilling drinks on my settee
-
-
 [Pre-Chorus]
-
 C
 Do I wanna know
  Am
@@ -9338,10 +7968,7 @@ Baby we both know
 That the nights were mainly made
      Em                               Em
 for saying things that you can\'t say tomorrow day
-
-
 [Chorus]
-
           Em
 Crawlin\' back to you
         C       Am
@@ -9354,10 +7981,7 @@ Maybe I\'m too busy being yours to fall for somebody new
 Now I\'ve thought it through
           Em
 Crawlin\' back to you
-
-
 [Verse]
-
             C    Am
 So have you got the guts?
                             Em
@@ -9366,7 +7990,6 @@ Been wondering if your hearts still open
 And if so I wanna know what time it shuts
 C              Am
 Simmer down and pucker up
-
 I\'m sorry to interrupt
 Em
 It\'s just I\'m constantly on the cusp
@@ -9378,10 +8001,7 @@ I don\'t know if you feel the same as I do
 But we could be together
       B
 if you wanted to
-
-
 [Pre-Chorus]
-
 C
 Do I wanna know
  Am
@@ -9396,10 +8016,7 @@ Baby we both know
 That the nights were mainly made
      Em                               Em
 for saying things that you can\'t say tomorrow day
-
-
 [Chorus]
-
           Em
 Crawlin\' back to you
         C       Am
@@ -9412,10 +8029,7 @@ Maybe I\'m too busy being yours to fall for somebody new
 Now I\'ve thought it through
           Em
 Crawlin\' back to you
-
-
 [Pre-Chorus]
-
 C
 Do I wanna know
  Am
@@ -9430,7 +8044,6 @@ Baby we both know
 That the nights were mainly made
      Em                               Em
 for saying things that you can\'t say tomorrow day
-
 C
 Do I wanna know
         Am      
@@ -9453,44 +8066,35 @@ Do you want me crawling back to you?`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Verse Riff]
-
 G|----------------------------------------------------------------------|
 D|------5-----------------5-----------------5-----------------5---------|(x10)
 A|-7--7---7-5-3-2--/-7--7---7-5-3-2--/-7--7---7-5-3-2--/-7--7---7-5-3-2-|
 E|-0-----------------0-----------------0-----------------0--------------|
-
 [Pre/Post - Chorus Riff:]
-
 e|------------------0-0-0-0-0-0-0-0-|
 B|------------------2-2-2-2-2-2-2-2-|
 G|-4-4-4-4-4-4-4-4--2-2-2-2-2-2-2-2-|
 D|-5-5-5-5-5-5-5-5--2-2-2-2-2-2-2-2-|
 A|-5-5-5-5-5-5-5-5--0-0-0-0-0-0-0-0-|
 E|-3-3-3-3-3-3-3-3------------------|
-
 (Bass)
 G|----------------------------------|
 D|----------------------------------|
 A|------------------0-0-0-0-0-0-0-0-|
 E|-3-3-3-3-3-3-3-3------------------|
-
-
 [Chorus Riff]
 (Gtr w/Distortion + 3 string slide)
-
 e|-0----------------------|
 B|-8--8/-12-/-8-/7-/5--/4-|
 G|-9--9/-12-/-9-/7-/5--/4-|
 D|-9--9/-12-/-9-/7-/5--/4-|
 A|-7--7/-10-/-7-/5-/3--/2-|
 E|-0----------------------|
-
 (Bass)
 G|----------------|
 D|------5---------|
 A|-7--7---7-5-3-2-|
 E|-0--------------|
-
 (Gtr)
 e|-0----------------------------|
 B|-8--8/-12-/-8-/7-/5-/7-/-5-/4-|
@@ -9498,14 +8102,11 @@ G|-9--9/-12-/-9-/7-/5-/7-/-5-/4-|
 D|-9--9/-12-/-9-/7-/5-/7-/-5-/4-|
 A|-7--7/-10-/-7-/5-/3-/5-/-3-/2-|
 E|-0----------------------------|
-
 (Bass)
 G|--------------------|
 D|------5-------------|
 A|-7--7---7-5-3-5-3-2-|
 E|-0------------------|
-
-
 [Verse 1]
   Em            G C B          
 I\'m gonna fight \'em off
@@ -9525,11 +8126,9 @@ Back and forth through my mind
 Behind a cigarette
 Am (actually G)        B (actually A)
 And a message coming from my eyes says leave it alone 
-
 [Instrumental]
 Em G C B 4x
 Am B E
-
 [Verse 2]
   Em            G C B      
 Don\'t want to hear about it
@@ -9549,7 +8148,6 @@ And that ain\'t what you want to hear
 But that\'s what I\'ll do
 Am (actually G)        B (actually A)
 And a feeling coming from my bones says find a home 
-
 [Verse 3]
   Em            G C B      
 I\'m going to Wichita
@@ -9580,7 +8178,6 @@ And the stains coming from my blood tell me go back home`		})
 			content: 
 `
 [Intro]
-
 F#m
 e|----------------------------------|---------------------------------|
 B|----------------------------------|---------------------------------|
@@ -9588,81 +8185,56 @@ G|----------------------------------|---------------------------------|
 D|----------4---------------4-------|---------4---------------4-------|
 A|----------------------------------|---------------------------------|
 E|--2---2-2---2---2-2---2-2---2---2-|-2---2-2---2---2-2---2-2---2---2-|
-
-
 F#m
 A-ah-ahh-ah, 
-
 F#m
 ah-ah-ahh-ah
-
-
 [Verse]
-
 A       
 Weeeeeee 
 E
 come from the land of the ice and snow
 E 
 from the midnight sun where the hot springs blow
-
-
 F#m
 The hammer of the gods will drive our ships to new lands
 F#m                                       A       
 To fight the horde and singing and crying, 
 E                    A    F#m
 Valhalla, I am coming
-
-
 [Chorus]
-
 A
 On we sweep with, 
 B
 with threshing oar
 C
 Our only goal will be the western shore
-
-
 [Interlude]
-
 F#m
 A-ah-ahh-ah, 
-
 F#m
 ah-ah-ahh-ah
-
-
 [Verse]
-
 A       
 Weeeeeee 
 E
 come from the land of the ice and snow
 E 
 from the midnite sun where  the hot springs blow
-
 F#m
 How soft your fields, so green
 F#m                                                         A
 can whisper tales of gore, of how we calmed the tides of war
 E                    A    F#m
 We are your overlords
-
-
 [Chorus]
-
 A
 On we sweep with, 
 B
 with threshing oar
 C
 Our only goal will be the western shore
-
-
 [Outro]
-
 F#m
 S-so now you better stop and rebuild all your ruins
 F#m                                                      C7    F#m
@@ -9677,14 +8249,11 @@ for peace and trust can winthe day despite of all you\'re losing`		})
 			instrument: Guitar(guitarTunings.capo2),
 			content: 
 `[Intro]
-
 Em   G   D   A7sus4
 Em   G   D   A7sus4
 Em   G   D   A7sus4
 Em   G   D   A7sus4
-
 [Verse 1]
-
 Em       G 
 Today is gonna be the day 
       D                  A7sus4
@@ -9693,14 +8262,11 @@ Em          G
 By now you should\'ve somehow   
 D                A7sus4
 Realised what you gotta do
-
 Em                   G
 I don\'t believe that anybody
 D           A7sus4            C  D  A7sus4
 Feels the way I do about you now
-
 [Verse 2]
-
 Em           G
 Backbeat the word is on the street
   D                 A7sus4
@@ -9713,10 +8279,7 @@ Em                   G       D
 I don\'t believe that anybody feels
    A7sus4            Em  G  D  A7sus4
 The way I do about you now
-
-
 [Bridge]
-
 C                D            Em
 And all the roads we have to walk are winding
 C                D                Em
@@ -9727,10 +8290,7 @@ Em      D  G
 Like to say to you
 D      A7sus4
 But I don\'t know how
-
-
 [Chorus]
-
  C    Em  G
 Because maybe
 Em                   C        Em  G
@@ -9739,10 +8299,7 @@ Em   C  Em  G  Em
 And after all
          C  Em  G  Em      G
 You\'re my wonderwall
-
-
 [Verse 3] 
-
 Em        G 
 Today was gonna be the day
      D                  A7sus4
@@ -9757,10 +8314,7 @@ D            A7sus4
 Feels the way I do
    Em  G  D  A7sus4
 About you now
-
-
 [Bridge]
-
 C                  D              Em
 And all the roads that lead you there are winding
 C                   D             Em
@@ -9769,10 +8323,7 @@ C              D               Em     D  G
 There are many things that I would like to say to you
 D      A7sus4
 But I don\'t know how
-
-
 [Chorus]
-
 C    Em  G
 I said maybe
 Em                   C        Em  G
@@ -9797,10 +8348,7 @@ Em                   C               Em      G
 You\'re gonna be the one that saves me? (that saves me)
 Em                   C               Em      G  Em
 You\'re gonna be the one that saves me? (that saves me)
-
-
 [Solo]
-
 e|---------------|
 B|---------------|
 G|---------0-----|
@@ -9818,7 +8366,6 @@ F#m7 A  Esus4  B7sus4
 F#m7 A  Esus4  B7sus4
 F#m7 A  Esus4  B7sus4
 F#m7 A  Esus4  B7sus4
-
 [Verse 1]
 F#m7          A 
 Today is gonna be the day 
@@ -9832,7 +8379,6 @@ F#m7                  A
 I don\'t believe that anybody
 Esus4           B7sus4       D   Esus4   B7sus4
 Feels the way I do about you now
-
 [Verse 2]
 F#m7              A
 Backbeat the word is on the street
@@ -9846,7 +8392,6 @@ F#m7                      A       Esus4
 I don\'t believe that anybody feels
    B7sus4       F#m7 A  Esus4  B7sus4
 The way I do about you now
-
 [Bridge]
 D                Esus4            F#m
 And all the roads we have to walk are winding
@@ -9858,7 +8403,6 @@ F#m7     Esus4  A
 Like to say to you
 Esus4      B7sus4
 But I don\'t know how
-
 [Chorus]
  D    F#m7 A
 Because maybe
@@ -9868,7 +8412,6 @@ F#m7  D  F#m7 A
 And after all
    F#m7   D  F#m7 A  F#m7     A
 You\'re my wonderwall
-
 [Verse 3] 
 F#m7           A 
 Today was gonna be the day
@@ -9884,7 +8427,6 @@ Esus4            B7sus4
 Feels the way I do
    F#m7 A  Esus4  B7sus4
 About you now
-
 [Bridge]
 D                  Esus4              F#m
 And all the roads that lead you there are winding
@@ -9894,7 +8436,6 @@ D              Esus4               F#m7    Esus4  A
 There are many things that I would like to say to you
 Esus4      B7sus4
 But I don\'t know how
-
 [Chorus]
 D    F#m7 A
 I said maybe
@@ -9920,7 +8461,6 @@ F#m7                  D               F#m7     A
 You\'re gonna be the one that saves me? (that saves me)
 F#m7                  D               F#m7     A  F#m
 You\'re gonna be the one that saves me? (that saves me)
-
 [Outro]
 e|---|-----5-2-|-----|
 B|-3-|-2-3-----|-----|
@@ -9928,7 +8468,6 @@ G|---|---------|-----| x8
 D|---|---------|-----|
 A|---|---------|-----|
 E|---|---------|-----|
-
 D  F#m7 A  F#m7
 D  F#m7 A  F#m7
 D  F#m7 A  F#m7
@@ -9951,7 +8490,6 @@ C   G             Am         F
 you act as if you just don´t care,
 C   G                 Am        F
 you look as if you´re going somewhere.
-
 C   G               Am      F
 But I just can´t convince myself,
 C G                  Am    F
@@ -9960,13 +8498,11 @@ C   G          Am        F
 and I can only play that part
 C   G                Am     F
 and sit and nurse my broken heart. So lonely!
-
 [Refrain]
 C          G          Am         F C          G          Am         F
 So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!
 C          G          Am         F C          G          Am         F
 So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!
-
 [Verse]
 C   G                 Am    F
 Now noone´s knocked upon my door
@@ -9984,7 +8520,6 @@ C       G              Am      F
 In this theatre that I call my soul
 C G               Am       F
 I always play the starring role. So lonely!
-
 [Refrain]
 C          G          Am         F C          G          Am         F
 So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!
@@ -10002,8 +8537,6 @@ So lonely, so lonely, so lonely!   So lonely, so lonely, so lonely!`		})
 `[Intro]
 Em Em D C
 Bm A D Em
-
-
 [Verse 1]
 Em 
 Roxanne 
@@ -10013,8 +8546,6 @@ A
 Those days are over 
 D                  Em
 You don\'t have to sell your body to the night 
-
-
 [Verse 2]
 Em
 Roxanne 
@@ -10024,8 +8555,6 @@ A                       D
 Walk the streets for money 
    Em
 You don\'t care if it\'s wrong or if it\'s right 
-
-
 [Verse 3]
 Am
 Roxanne 
@@ -10036,18 +8565,12 @@ A
 Roxanne 
 D                  Em
 You don\'t have to put on the red light 
-
-
 [Chorus]
 G       D       Em      G       D       Em
 Roxanne Roxanne Roxanne Roxanne Roxanne Roxanne   
-
-
 [Instrumental]
 Em D C B Am D Em 
 Em D C B A D Em
-
-
 [Bridge]
 Em                        D
 I loved you since I knew you 
@@ -10057,7 +8580,6 @@ D
 I have to tell you just how I feel 
  Em
 I won\'t share you with another boy 
-
 Em                     D
 I know my mind is made up 
 C                 B
@@ -10066,8 +8588,6 @@ A                      D
 Told you once I won\'t tell you again 
 Em
 It\'s a bad way 
-
-
 [Verse 4]
 Am
 Roxanne 
@@ -10077,18 +8597,12 @@ A
 Roxanne 
 D                  Em
 You don\'t have to put on the red light 
-
-
 [Chorus]
 G       D       Em      G       D       Em
 Roxanne Roxanne Roxanne Roxanne Roxanne Roxanne   
-
-
 [Instrumental]
 Em D C B A D
 Em
-
-
 Put on the red light x12`		})
 		//#endregion
 	//#endregion
@@ -10102,7 +8616,6 @@ Put on the red light x12`		})
 `[Intro]
 Ooh - Stop
 E   C#m   G#   A   x2
-
 E                 C#m               G#                A
 e|-----4-------4---|-----4-------4---|-----4-------4---|-0---0---0---0---|
 B|-5-------5-------|-5-------5-------|-4-------4-------|-5---5p4-5---5-0-|
@@ -10110,7 +8623,6 @@ G|-----------------|-----------------|-----------------|-----------------|  x2
 D|-----------------|-----------------|-----------------|-----------------|
 A|-----------------|-----------------|-----------------|-----------------|
 E|-----------------|-----------------|-----------------|-----------------|
-
 [Verse]
    E                        C#m               G#  A
 With your feet in the air and your head on the ground
@@ -10122,7 +8634,6 @@ Your head will collapse
 But there\'s nothing in it
    A
 And you\'ll ask yourself
-
 [Chorus]
 E            C#m
 Where is my mind?
@@ -10132,7 +8643,6 @@ E       C#m   G#  A    E  C#m  G#  A
 Where is my mind?
 E   G#         A             Am        C#m   B
 Way out in the water, see it swimming.
-
 [Verse]
 E                        C#m    G#  A
 I was swimmin\' in the Carribean
@@ -10144,7 +8654,6 @@ Except the little fish
 But they told me, he swears
    A
 Tryin\' to talk to me, to me, to me
-
 [Chorus]
 E            C#m
 Where is my mind?
@@ -10154,7 +8663,6 @@ E       C#m   G#  A    E  C#m  G#  A
 Where is my mind?
 E   G#         A             Am        C#m   B
 Way out in the water, see it swimming.
-
 [Solo]
 e|-------------------------------|-------------------------10--12--14b-|
 B|--7---7---7--7-----------------|--------7--7/10--10--12--------------|
@@ -10162,7 +8670,6 @@ G|--9b--9b--------9--7--7--7-----|--7--9-------------------------------|
 D|----------------------------9--|-------------------------------------|
 A|-------------------------------|-------------------------------------|
 E|-------------------------------|-------------------------------------|
-
 [Verse]
    E                        C#m               G#  A
 With your feet in the air and your head on the ground
@@ -10174,7 +8681,6 @@ Your head will collapse
 But there\'s nothing in it
    A
 And you\'ll ask yourself
-
 [Chorus]
 E            C#m
 Where is my mind?
@@ -10184,7 +8690,6 @@ E       C#m   G#  A    E  C#m  G#  A
 Where is my mind?
 E   G#         A             Am        C#m   B
 Way out in the water, see it swimming.
-
 [Outro]
 E  C#m  G#  A
 E  C#m  G#  A`		})
@@ -10199,7 +8704,6 @@ E  C#m  G#  A`		})
 			content: 
 `[Intro] 
 Em C G D/F#  4x
-
 [Verse 1]
 Em       C                G                D/F# 
 Another head hangs lowly, child is slowly taken
@@ -10213,15 +8717,12 @@ In your head, in your head, they are fighting
 With their tanks and their bombs and their bombs and their guns 
  G                             D/F#
 in your head, in your head, they are crying
-
 [Chorus 1]
 Em            C            G             D/F# 
 In your head, in your head, zombie, zombie, zombie 
        Em            C            G             D/F# 
 What\'s in your head, in your head, zombie, zombie, zombie 
-
 Em C G D/F# x2
-
 [Verse 2]
 Em        C                  G              D/F# 
 Another mother\'s breaking heart is taking over
@@ -10235,13 +8736,11 @@ In your head, in your head, they\'re still fighting
 With their tanks and their bombs and their bombs and their guns
 G                            D/F# 
 In your head, in your head, they\'re dying
-
 [Chorus 2]
 Em            C            G             D/F# 
 In your head, in your head, zombie, zombie, zombie 
        Em            C            G             D/F# 
 What\'s in your head, in your head, zombie, zombie, zombie 
-
 [Outro]
 Em C G D/F# 
 (repeat to fade)`		})
@@ -10256,7 +8755,6 @@ Em C G D/F#
 			duration: 5 * 60 + 40,
 			content: 
 `[Chorus 1]
-
 Gm
 I shot the sheriff,
 Cm                     Gm
@@ -10265,10 +8763,7 @@ Gm
 I shot the sheriff,
 Cm                     Gm
 But I didn\'t shoot no deputy. Ooh, ooh, oo-ooh.
-
-
 [Verse 1]
-
 Eb     Dm7      Gm
 All a-round in my home town,
 Eb        Dm7      Gm
@@ -10279,20 +8774,14 @@ Eb           Dm7  Gm
 For the killing of a depu-ty,
 Eb        Dm7 Gm
 For the life of a dep-uty. But I say...
-
-
 *(Riff):
-
 e|-------------------------|
 B|-------------------------|
 G|-------------------------|
 D|--5-3--------------------|
 A|-------5-3-----5-3-------|
 E|------------6-------6-3--|
-
-
 [Chorus 2]
-
 Gm
 I shot the sheriff,
 Cm                     Gm
@@ -10301,10 +8790,7 @@ Gm                     Cm
 I say; I shot the sheriff, oh Lord!
              Gm
 And they say it is a capital offence. Yeah!
-
-
 [Verse 2]
-
 Eb       Dm7               Gm
 Sheriff John Brown always hated me,
 Eb     Dm7      Gm
@@ -10315,21 +8801,15 @@ Eb         Dm7     Gm
 He said kill it be-fore it grow,
 Eb           Dm7       Gm
 He said kill them be-fore they grow. And so, and so...
-
 *(Riff):
-
 e|-------------------------|
 B|-------------------------|
 G|-------------------------|
 D|--5-3--------------------|
 A|-------5-3-----5-3-------|
 E|------------6-------6-3--|
-
 (Read it in the news!)
-
-
 [Chorus 3]
-
 Gm
 I shot the sheriff,
 Cm                     Gm
@@ -10338,10 +8818,7 @@ Gm
 I shot the sheriff,
 Cm                     Gm
 But I swear it was in self-defence. (Yeah!)
-
-
 [Verse 3]
-
 Eb               Dm7     Gm
 Freedom came my way one day,
 Eb      Dm7     Gm
@@ -10352,21 +8829,15 @@ Eb         Dm7      Gm
 Aiming to shoot me down,
 Eb      Dm7              Gm
 So I shot, I shot, I shot him down. And I say...
-
 *(Riff):
-
 e|-------------------------|
 B|-------------------------|
 G|-------------------------|
 D|--5-3--------------------|
 A|-------5-3-----5-3-------|
 E|------------6-------6-3--|
-
 (If I am guilty, I will pay)...
-
-
 [Chorus 4]
-
 Gm
 I shot the sheriff,
 Cm                     Gm
@@ -10375,10 +8846,7 @@ Gm
 I shot the sheriff,
 Cm                     Gm
 But I didn\'t shoot no deputy. Ooh, ooh, oo-ooh.
-
-
 [Verse 4]
-
 Eb             Dm7       Gm
 Re-flexes had the better of me,
 Eb         Dm7     Gm
@@ -10389,21 +8857,15 @@ Eb           Dm7         Gm
 One day the bottom a-go drop out,
 Eb           Dm7         Gm
 One day the bottom a-go drop out.
-
 *(Riff):
-
 e|-------------------------|
 B|-------------------------|
 G|-------------------------|
 D|--5-3--------------------|
 A|-------5-3-----5-3-------|
 E|------------6-------6-3--|
-
 (I say)...
-
-
 [Chorus 5]
-
 Gm
 I-I-I, I shot the sheriff,
 Cm                            Gm
@@ -10412,13 +8874,9 @@ Gm
 I-I...(shot the sheriff),
 Cm                     Gm
 But I didn\'t shoot no deputy. Yeah! So, yeah!
-
-
 [Coda]
-
 Gm  Cm
 Gm
-
 (Repeat to Fade)`		})
 		//#endregion
 	//#endregion
@@ -10430,7 +8888,6 @@ Gm
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[INTRO]
-
 G#m    F#  E       B       D#7
 e|-------------------------------------|
 B|------4-2-2-0-0-0-0-7-7-7-7-4-4-4-4--|
@@ -10438,10 +8895,7 @@ G|----4-4-3-3-1-1-1-1-8-8-8-8-6-6-6-6--|
 D|------6-4-4-2-2-2-2-9-9-9-9-5-5-5-5--|
 A|---6------------------------6-6-6-6--|
 E|--4---4-2-2-0-0-0-0-7-7-9-9----------|
-
-
 [VERSE]
-
 G#m        F#      E
 I want you by my side
 B                    D#7
@@ -10458,10 +8912,7 @@ G#m        F#             E
 We need to fetch back the time
 B                     D#7
 They have stolen from us
-
-
 [CHORUS]
-
 E 
 And I want you
 B
@@ -10476,7 +8927,6 @@ D#7          G#m
 Stoned in paradise
 F#
 Shouldn\'t talk about it
-
 E 
 And I want you
 B
@@ -10491,17 +8941,11 @@ D#7          G#m
 Stoned in paradise
 Shouldn\'t talk about it
 Shouldn\'t talk about it
-
-
 [BRIDGE]
-
 G#m F#
 G#m F# E B D#7
 G#m F# E B D#7
-
-
 [VERSE]
-
 G#m        F#      E
 Coldest winter for me
 B                 D#7
@@ -10518,10 +8962,7 @@ G#m        F#      E
 I want you by my side
 B                    D#7
 So that I never feel alone again
-
-
 [CHORUS]
-
 E
 And I want you
 B
@@ -10536,7 +8977,6 @@ D#7          G#m
 Stoned in paradise
 F#
 Shouldn\'t talk about it
-
 E
 And I want you
 B
@@ -10551,17 +8991,11 @@ D#7          G#m
 Stoned in paradise
 Shouldn\'t talk about it
 Shouldn\'t talk about it
-
-
 [BRIDGE]
-
 G#m F#
 G#m F# E B D#7
 G#m F# E B D#7
-
-
 [CHORUS]
-
 E
 And I want you
 B
@@ -10576,7 +9010,6 @@ D#7          G#m
 Stoned in paradise
 F#
 Shouldn\'t talk about it
-
 E
 And I want you
 B
@@ -10590,10 +9023,7 @@ Dancin on doin the boogie all night long
 D#7          G#m
 Stoned in paradise
 Shouldn\'t talk about it
-
-
 [OUTRO]
-
 G#m F#
 G#m F# E B D#7
 G#m F# E B D#7
@@ -10613,7 +9043,6 @@ G#m F# E B D#7`		})
 			duration: 6 * 60 + 0,
 			content: 
 `Am E+* C D F G Am
-
   Am         E+ *
 There’s a lady who’s sure
  C           D
@@ -10628,7 +9057,6 @@ F                         G    Am
 With a word she can get what she came for.
 C    D    F    Am            C        G              D
 Ooh, ooh, Ooh, ooh and she’s buying a stairway to heaven.
-
   Am          E+ *
 There’s a sign on the wall
 C           D
@@ -10641,14 +9069,11 @@ In a tree by the brook
 There’s a songbird who sings,
   F                       G  Am
 Sometimes all of our thoughts are misgiven.
-
 Am E+ C D F G Am
-
 D                Am    Em D C D
 Ooh, it makes me wonder,
 D  Dsus4 D                Am   Em D C D
 Ooh,      and it makes me wonder.
-
   C         G
 There’s a feeling I get
 Am
@@ -10661,14 +9086,11 @@ In my thoughts I have seen
 Rings of smoke through the trees,
 C         G               F   Am 
 And the voices of those who stand looking.
-
 C G Am
-
 D                Am    Em D C D
 Ooh, it makes me wonder,
 D  Dsus4 D                Am   Em D C D
 Ooh,      and it makes me wonder.
-
 C              G
 And its whispered that soon
 Am          
@@ -10681,17 +9103,12 @@ Am
 For those who stand long
 C            G         F    Am
 And the forests will echo with laughter.
-
 C G Am
-
 Am D   Am  Em D C D
-
 Am
 Ooooh
-
 D        Am   Em D C D
 Oooooooh
-
 C            G              Am
 If there’s a bustle in your hedgerow
  G
@@ -10706,7 +9123,6 @@ C             G                  Am
 There’s still time to change the road you’re on.
 D                Am    Em D C D
 Ooh, it makes me wonder
-
 C            G              Am
 Your head is humming and it won’t go
 G
@@ -10719,9 +9135,7 @@ G
 And did you know
 C             G           Am              C G Am
 Your stairway lies on the whispering wind.
-
 D Dsus2 D Dsus4 D Dsus2 D Dsus4  C Cadd9 C Cadd9 C  2x
-
 Am        G                F   GAm
 And as we wind on down the road
     G               F   GAm
@@ -10740,7 +9154,6 @@ The tune will come to you at last.
 When all are one and one is all
 G               F
 To be a rock and not to roll.
-
   F        G              Am
 And she’s buying a stairway to heaven.`		})
 		//#endregion
@@ -10755,12 +9168,6 @@ And she’s buying a stairway to heaven.`		})
 			content: 
 `
 [Intro]
-
-
-
-
-
-
 C
 1:Here is a little song I wrote
 Dm   
@@ -10773,9 +9180,6 @@ Dm
 when you worry you make it double
 F        C   
 Dont worry be happy
-
-
-
 C
 2:Aint got no place to lay your head,
 Dm
@@ -10791,9 +9195,6 @@ Dont worry be happy
                            C Dm F C F C F
 Ref.:(Spoken:Look at me Im happy) Uh,...,(dont worry,uh,...(be happy)
 Here, I give you my phone number.When you worry,call me,I make you happy)Uh...
-
-
-
 C
 3:Aint got no cash,ain´t got no stle.
 Dm
@@ -10806,7 +9207,6 @@ Dm
 and that will bring evrybody down.
 C        F      F C F    
 Dont worry be happy.
-
 C Dm F C F C F
 Ref.:Uh,...(dont worry),uh,...(be happy),uh...
 `		})
@@ -10822,7 +9222,6 @@ Ref.:Uh,...(dont worry),uh,...(be happy),uh...
 `[Intro]
 | Em | Am | C | D |
 | Em | Am | C | D |
-
 [Verse 1]
 Em             Am
 The club isn\'t the best place to find a lover
@@ -10840,7 +9239,6 @@ Em                 Am
 Take my hand, stop, put Van the Man on the jukebox
 C                D
 And then we start to dance, and now I\'m singing like
-
 [Pre-Chorus]
 Em                Am
 Girl, you know I want your love
@@ -10858,7 +9256,6 @@ Grab on my waist and put that body on me
 Come on now, follow my lead
 C                           D
 Come—come on now, follow my lead
-
 [Chorus]
 Em         Am                   C
 I\'m in love with the shape of you
@@ -10876,7 +9273,6 @@ And now my bedsheets smell like you
 Every day discovering something brand new
     D
 Well I\'m in love with your body
-
 Em         Am         C  D
 Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
 Em         Am         C  D
@@ -10887,7 +9283,6 @@ Em            Am                 C
 Every day discovering something brand new
 D
 I\'m in love with the shape of you
-
 [Verse 2]
 Em                       Am
 One week in we let the story begin
@@ -10905,7 +9300,6 @@ And how your family is doin\' okay
 And leave and get in a taxi, we kiss in the backseat
  C                     D
 Tell the driver make the radio play, and I\'m singing like
-
 [Pre-Chorus]
 Em                Am
 Girl, you know I want your love
@@ -10923,7 +9317,6 @@ Grab on my waist and put that body on me
 Come on now, follow my lead
 C                           D
 Come—come on now, follow my lead
-
 [Chorus]
 Em        Am                   C
 I\'m in love with the shape of you
@@ -10941,7 +9334,6 @@ And now my bedsheets smell like you
 Every day discovering something brand new
     D
 Well I\'m in love with your body
-
 Em         Am         C   D
 Oh, Oh I, Oh I, Oh I,   I\'m in love with your body
 Em         Am         C   D
@@ -10952,7 +9344,6 @@ Em             Am                     C
 Every day discovering something brand new
 D
 I\'m in love with the shape of you
-
 [Bridge]
 Em               Am
 Come on, be my baby, come on
@@ -10970,7 +9361,6 @@ Em               Am
 Come on, be my baby, come on
 C               D
 Come on, be my baby, come on
-
 [Chorus]
 Em         Am                   C
 I\'m in love with the shape of you
@@ -10988,7 +9378,6 @@ And now my bedsheets smell like you
 Every day discovering something brand new
     D
 Well I\'m in love with your body
-
 Em              Am
 Come on, be my baby, come on
 C                D               Em
@@ -11025,7 +9414,6 @@ And the vision that was planted in my brain
 Still remains
 C           G        Am
 Within the sound of silence.
-
 [Verse 2]
                 G
 In restless dreams I walked alone
@@ -11041,7 +9429,6 @@ When my eyes were stabbed by the flash of a neon light
 That split the night
 C              G        Am
 And touched the sound of silence.
-
 [Verse 3]
                  G
 And in the naked light I saw
@@ -11057,7 +9444,6 @@ People writing songs that voices never share
 And no one dare
 C           G        Am
 Disturb the sound of silence.
-
 [Verse 4]
                  G
 Fools said I, you do not know
@@ -11073,7 +9459,6 @@ C
 And echoed
 G        Am
 In the wells of silence
-
 [Verse 5]
                  G
 And the people bowed and prayed
@@ -11112,7 +9497,6 @@ E|---0-3--------| from capo
 Sitting on a park bench 
 C                        D          Bb C
 Eyeing little girls with bad intent. 
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11125,7 +9509,6 @@ C                       D              Bb C
 Greasy fingers smearing shabby clothes. 
 Bb   C
 hey, Aqualung  
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11138,7 +9521,6 @@ C                      D           Bb C
 Watching as the frilly panties run. 
 Bb  C
 hey Aqualung 
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11151,27 +9533,22 @@ C                          D           Bb C
 Spitting out pieces of his broken luck. 
 Bb  C
 ooh Aqualung 
-
 Em            D                          A
 Sun streaking cold, an old man wondering lonely
 Am              Em          D  Dsus2 D
 Taking time the only way he knows
-
 Em          D                          A
 Leg hurting bad, as he bends to pick a dog end
 Am                  Em                D  Dsus2 D
 He goes down to the bog and warms his feet
-
 Em       D                       A
 Feeling alone, the armies up the road
 Am              Em               D  Dsus2 D
 Salvation al-a-mode and a cup of tea
-
 Em          D                              A
 Aqualung my friend, don\'t you start away uneasy
 Am               Em            D  Dsus2 D
 You poor old sod you see it\'s only me
-
 Em             D                       Em   
 Do you still remember, Decembers foggy freeze?
 Em                          D                               Em 
@@ -11180,27 +9557,22 @@ Em                   D                                 A
 And you snatch your rattling last breathes with deep-sea-diver-sounds
 Am                   Em             D   Dsus2 D
 And the flowers bloomed like madness in the spring
-
 Em            D                          A 
 Sun streaking cold, an old man wondering lonely
 Am              Em          D   Dsus2 D
 Taking time the only way he knows
-
 Em          D                          A
 Leg hurting bad, as he bends to pick a dog end
 Am               Em                D  Dsus2 D
 He goes down to the bog and warms his feet
-
 Em       D                       A
 Feeling alone, the armies up the road
 Am             Em                D  Dsus2 D
 Salvation al-a-mode and a cup of tea
-
 Em          D                              A
 Aqualung my friend, don\'t you start away uneasy
 Am               Em            D
 You poor old sod you see it\'s only me
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11211,7 +9583,6 @@ E|---0-3--------| from capo
 Sitting on a park bench 
 C                        D          Bb C
 Eyeing little girls with bad intent. 
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11224,7 +9595,6 @@ C                       D              Bb C
 Greasy fingers smearing shabby clothes. 
 Bb   C
 hey, Aqualung  
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11237,7 +9607,6 @@ C                      D           Bb C
 Watching as the frilly panties run. 
 Bb  C
 hey Aqualung 
-
 e|--------------|
 B|--------------|
 G|--------------|
@@ -11260,11 +9629,8 @@ E|---0-3--------| 4x from capo`		})
 #-----------------------------------------------------------------------------#
             "Don\'t Let Me Be Misunderstood"
              (Benjamin / Marcus / Caldwell)
-
 [Intro]
-
 organ doubled w/guitar, 2X:
-
 Bm                     Em
 e---------------------|-------------------|
 B---------------------|---------2-3-2-----|
@@ -11272,10 +9638,7 @@ G-4-4-2-4-4-2-4-------|---4-2-4-----------|
 D---------------------|-------------------|
 A---------------------|-------------------|
 E---------------------|-------------------|
-
-
 [Verse 1]
-
  Bm                 A
 Baby, do you understand me now
 G                           F#
@@ -11284,20 +9647,13 @@ G                           F#
 Well don\'t you know that no-one alive can always be an angel
 G                                   F#
   When things go wrong I seem to be bad
-
-
 [Chorus]
-
 D                      Bm                  A
 I\'m just a soul who\'s intentions are good
 G           [N.C.]                     Bm
 Oh Lord   please don\'t let me be misunderstood
-
 Bm                     Em
-
-
 [Verse 2]
-
  Bm                 A
 Baby, sometimes I\'m so carefree
 G                           F#
@@ -11306,23 +9662,15 @@ With a joy that\'s hard to hide
 And sometimes it seems that all I have to do is worry
 G                                   F#
 And then you\'re bound to see my other side
-
-
 [Chorus]
-
 D                      Bm                  A
 I\'m just a soul who\'s intentions are good
 G           [N.C.]                     Bm
 Oh Lord   please don\'t let me be misunderstood
-
 Bm                     Em
-
-
 [Bridge]
-
 Bm    A  [first 3 beats as per intro]
 / / / /
-
 G            A       G           A
   If I seem edgy, I want you to know
  G            A               D     Bm/F#
@@ -11331,9 +9679,7 @@ G                 A             G       A
   Life has it\'s problems and I get my share
      G                        F#
 And that\'s one thing I never mean to do, \'cause I love you
-
 Verse 3:
-
  Bm                 A
 Oh, oh, oh, baby, don\'t you know I\'m human
 G                           F#
@@ -11342,14 +9688,11 @@ Bm                                   A
 Sometimes I find myself long regretting
 G                                   F#
 Some foolish thing, some little simple thing I\'ve done
-
 [Chorus]
-
 D                      Bm                  A
 I\'m just a soul who\'s intentions are good
 G           [N.C.]                     Bm
 Oh Lord   please don\'t let me be misunderstood
-
 Bm                     Em            (fade)
 `		})
 		//#endregion
@@ -11367,7 +9710,6 @@ Bm                     Em            (fade)
 When the truth is found  ...to be---- lies,
 Em                   A         D      Em
 And all the joy  ...with - in you----  dies...
-
 [Chorus]
    G           D       Em
 Don\'t you want some - body to love?
@@ -11377,16 +9719,13 @@ A           G           D       Em
 Wouldn\'t you love some - body to love?
 A          G          Asus2    Em   Dsus4
 You better find some - body to love,     ...love!
-
 Em          Dsus4         Em Em7 Em Em7   Em
 | /  /  /  / |  /  /  /  / | /  /  /  /  |  /  /  /  /  |
-
 [Verse 2]
    Em             A   D         Em      Em7 Em Em7 
 When the garden flowers,     baby, are---- dead,
   Em              A   D         Em      
 Yes, and your mind, your mind ...is so full of dread...
-
 [Chorus]
    G           D       Em
 Don\'t you want some - body to love?
@@ -11396,7 +9735,6 @@ A           G           D       Em
 Wouldn\'t you love some - body to love?
 A          G         Asus2    Em
 You better find some - body to love!
-
 [Verse 3]
 N.C.
 Your eyes, I say,
@@ -11406,7 +9744,6 @@ Your eyes may look like his,
 Yeah, but in your head, baby,
 A                  A7         Em           A
 I\'m afraid you don\'t know where it is!
-
 [Chorus]
 A7        G           D       Em
 Don\'t you want some - body to love?
@@ -11416,10 +9753,8 @@ A           G           D       Em
 Wouldn\'t you love some - body to love?
 A          G          Asus2    Em    Dsus4
 You better find some - body to love----------!
-
 Em          Dsus4         Em Em7 Em Em7   Em
 | /  /  /  / |  /  /  /  / | /  /  /  /  |  /  /  /  /  |
-
 [Verse 4]
 Em               A        D 
 Tears are running---  all down,
@@ -11427,7 +9762,6 @@ Tears are running---  all down,
 \'Round and down your breast,
 Em                 A          D        Em
 And your friends, baby,  ...they treat you like a guest!
-
 [Chorus]
 A        G           D       Em
 Don\'t you want some - body to love?
@@ -11439,14 +9773,11 @@ A          G          Asus2
 You better find some - body to...
 Em  Dsus4  Em  Dsus4   Em  Em7 Em Em7 
 ...Love----------------------! 
-
 [Coda]
 Em           G     A      Em           G     A
 ||: /  /  /  / | /  /  /  / | /  /  /  / | /  /  /  / :||[x2]
-
 G     D       Em    A      G     D       Em     A
 | /  /  /  / |  /  /  /  / | /  /  /  /  |  /  /  /  /  |
-
 G     D       Em    A       G    Asus2
 | /  /  /  / |  /  /  /  / |  /  /__/  /  /  ||
 `		})
@@ -11460,15 +9791,12 @@ G     D       Em    A       G    Asus2
 			instrument: Guitar(guitarTunings.capo4),
 			content: 
 `
-
-
 Dm                     C
 When you speak, I hear silence
 Dm            F   C
 every word a defiance
 A
 I can hear, oh, I can hear
-
 Dm                     F      C
 Think I\'ll go where it suits me
 Dm                F     C
@@ -11477,14 +9805,12 @@ A
 with everyone, oh, everyone
              Dm                
 Before we all become one
-
 Dm                     C
 Tell yourself that you?re lucky
 Dm            F   C
 Lying down never struck me
 A
 As something fun, oh, any fun
-
 Dm                   F    C
 Stabbing pain for the feeling
 Dm                    F    C
@@ -11493,7 +9819,6 @@ A
 \'Til you\'re numb, oh, it\'s begun.
              Dm                
 Before we all become one
-
 Dm    A      F       C   A
 Oh we all, we all become one
 Dm    A      F       C   A
@@ -11502,11 +9827,8 @@ Dm    A      F       C   A
 Oh we all, we all become one
 Dm    A      F       C   A
 Oh we all, we all become one
-
-
 Start breathing
 Start leaving
-
              Dm   A   F   C   A
 before we all become one
 Dm   A   F   C   A
@@ -11524,8 +9846,6 @@ Oh yeah, we all become`		})
 			content: 
 `[Intro/Main progression:]
 Dm | F(5) | C | A |
-
-
 [Verse] (same progression)-
 Dm               F(5)
 Seconds march into the past
@@ -11535,48 +9855,34 @@ Dm                F(5)
 The river always finds the sea
 C          A
 So helplessly, like you find me... (we are)
-
-
 [Pre-chorus] (same progression)-
-
 (A)     Dm                     F(5)
 (We are) Paper boats floating on a stream
 C                    A
 and it would seem, we\'ll never be apart...
-
-
 [Chorus]
 Bb         A           F
 I will al-ways find you.... like its written in the stars...
 Bb          E                Am        A(major)
 You can run but you can\'t hide... try....
-
-
 [Verse] (main progression)
 Like the moon that makes the tides
 That silent guide, it\'s calling from inside
 Pull me here and push me there
 It\'s everywhere, hanging in the air...
-
 [Pre-chorus] (main progression)
 (We are) Magnets pulling from different poles
 With no control, we\'ll never be apart...
-
 [Chorus] (Chorus progression)
 I will al-ways find you.... like its written in the stars...
 You can run but you can\'t hide... try....
-
 [Bridge]
 (By my ear this is mostly just inversions on a DM7, but I found playing these chords 
 replicated the effect
 well enough.)
-
 D  DM7 | DM7add9 |
-
 D     DM7        DM7add9
 I will always.... always find you
-
-
 [Chorus] (Chorus Progression)
 I will al-ways find you.... like its written in the stars...
 We can run but we can\'t hide... try....`		})
@@ -11590,38 +9896,32 @@ We can run but we can\'t hide... try....`		})
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `Em Em7* A  Em Em7* A 
-
 Em    Em7*          A                      Em          Em7*       A
 Be on my side, I\'ll be on your side, baby, there is no reason for you to hide    
 Em      Em7*     A                          Em                Em7*   A        Cmaj7 Bm
 It\'s so hard for me stay\'in here all alone, when you could be takin\' me for a ride 
 Cmaj7             Bm                C            Bm   D
 She could drag me over the rainbow, and send me away 
-
 G      D         A   G   D         A
 Down by the river,   I shot my baby
 G      D         A   Em Em7*    A        Em Em7* A
 Down by the river, dead, ooh, shot her dead
-
 Em       Em7      A                    Em       Em7         A
 You take my hand, I\'ll take your hand, together we may get away  
 Em        Em7        A                Em   Em7           A         Cmaj7 Bm
 This much madness is too much sorrow, it\'s impossible to make it today 
 Cmaj7             Bm                C            Bm  D
 She could drag me over the rainbow, and send me away   
-
 G       D         A   G   D         A
 Down by the river,   I shot my baby
 G      D         A   Em Em7     A        Em Em7 A
 Down by the river, dead, ooh, shot her dead
-
 Em    Em7           A                      Em          Em7        A
 Be on my side, I\'ll be on your side, baby, there is no reason for you to hide    
 Em      Em7      A                          Em                Em7    A        Cmaj7 Bm
 It\'s so hard for me stay\'in here all alone, when you could be takin\' me for a ride 
 Cmaj7             Bm                C            Bm   D
 She could drag me over the rainbow, and send me away 
-
 G      D         A   G   D         A
 Down by the river,   I shot my baby
 G      D         A      
@@ -11649,12 +9949,7 @@ Down by the river,   I shot my baby . . . .
 `Intro 
 Em
 [humming]
-
-
-
-
 Verse
-
 Em
 Let\'s go back to the roadshow,
         C                    G    H7
@@ -11665,7 +9960,6 @@ Blind him, force-feed and remind him,
 there\'s nothing quite strong as
 H7                   Em     E
 the suns of the railroad light.
-
 Ref
   Am
 Tell me, why did you go into the cold,
@@ -11679,13 +9973,8 @@ Em
 deep in the mines of Jericho,
 Hm                              G - Em
 where no diamond can tell you where to go?
-
 [heavy]
 G - Em    G - Em     G - Em 
-
-
-
-
 Vers
 Em 
 I grant you, lonesome new stories,
@@ -11697,7 +9986,6 @@ C
 I chase the white collars.
 H7                 Em  E
 The suns of the other side.
-
 Ref
   Am
 Tell me, why did you go into the cold,
@@ -11711,13 +9999,7 @@ Em
 deep in the mines of Jericho,
 Hm                              G - Em
 where no diamond can tell you where to go?
-
-
 G - Em    G - Em     G - Em 
-
-
-
-
 Vers
 [silently]
 Em
@@ -11728,7 +10010,6 @@ Em
 I walk now, the road to redemption,
          C   H7            Em   E            
 the pathway to enter my peace with God.
-
 Ref
   Am
 Tell me, why did you go into the cold,
@@ -11742,7 +10023,6 @@ Em
 deep in the mines of Jericho,
 Hm                                Em
 where no diamond can tell you where to go?
-
 [key changes higher]
   C            
 Tell me, why did you hide deep in the mines,
@@ -11756,9 +10036,7 @@ G
 deep in the mines of Jericho,
 Hm                                G - Em
 where no diamond can show you where to go?
-
 G -Em   G -Em  G -Em
-
 `		})
 		//#endregion
 	//#endregion
@@ -11777,12 +10055,9 @@ F                          Am
 mun veli puree rautanaulan poikki hampaillaan
 Em                   Am
 mina kusen kiljukattilaan
-
 G          Em            Am          F               Am
 Chorus: Miksei mun viestiani sun radio kuule ei? Mayday, Mayday
-
 Intro
-
 Am                               Em
 Afrikassa taistellaan ja tehdaan uutta maailmaa
 Am                                  Em
@@ -11791,12 +10066,9 @@ F                        Am
 pelastakaa lapset saivat peltisetelin
 Em                         Am
 ma nelja kertaa verta luovutin
-
 G          Em            Am          F               Am
 Chorus: Miksei mun viestiani sun radio kuule ei? Mayday, Mayday
-
 Intro
-
   G                  D
 Bridge:   ma haen sut vaikka Ruandasta
   G                D
@@ -11809,19 +10081,14 @@ Bridge:   ma haen sut vaikka Ruandasta
   osoitettasi sanomatta
   F              G           Am
   ja jatit minut yksin kaipaamaan
-
 Intro
-
 Kay ruusut ikkunalla kohti kuolemaa
 koukut vei Veikan eilen laaniin kuivumaan
 ja kunma hinaan polkupyoraa koivuun roikkumaan
 lintulapset huutaa emoaan
-
 G          Em            Am          F               Am
 Chorus: Miksei mun viestiani sun radio kuule ei? Mayday, Mayday
-
 Intro
-
 `		})
 		//#endregion
 	//#endregion
@@ -11834,7 +10101,6 @@ Intro
 			duration: 2 * 60 + 0,
 			content: 
 `
-
 G               C
 I said, Hello Mary Lou, goodbye heart.
 G                            D  D7  
@@ -11843,10 +10109,7 @@ G              B7         Em
 I knew Mary Lou..we\'d never part,
   A      D            G    C G
 So, Hell..o Mary Lou, goodbye heart.
-
-
 [Verse 1]
-
 G
 You passed me by one sunny day,
 C
@@ -11859,10 +10122,7 @@ C
 I swear my feet stuck to the ground,
 G              D              G  C G
 and though I never did meet you before.
-
-
 [Chorus] 
-
 G               C
 I said, Hello Mary Lou, goodbye heart.
 G                            D  D7  
@@ -11871,10 +10131,7 @@ G              B7         Em
 I knew Mary Lou..we\'d never part,
   A      D            G    C G
 So, Hell..o Mary Lou, goodbye heart.
-
-
 [Verse 2]
-
 G
 I saw your lips I heard your voice,
 C
@@ -11887,10 +10144,7 @@ C
 my arms around you good and tight,
 G            D              G  C G
 that\'s all I had to see, for me to say...
-
-
 [Chorus] 
-
 G               C
 I said, Hello Mary Lou, goodbye heart.
 G                            D  D7  
@@ -11913,42 +10167,32 @@ So, hello, Mary Lou, goodbye heart.
 			duration: 5 * 60 + 0,
 			content: 
 `
-
-
-
-
 Like a ring gone down the drain
 Our love in sunlight, at evening, pain
 Like vermin Roman sewers bring
 Pain and love, oh yeah, are The Same Thing
 Are The Same Thing ...
-
 In my opinion, we are the red birth mark
 From the old storybook, "Equal Light, Equal Dark"
 Now lets flip a coin to see now who\'s yin and who is yang
 It defies opinion whether they\'re The Same Thing
-
 Nothing in common; our blood, thicker than broth
 We\'re cut from different sides of the same cloth
 Our love in sunlight, our pain at evening
 Have nothing in common, yet they\'re both The Same Thing
-
 The same street, the same address
 The same white hair, the same black dress
 The sameness from opposites cling
 Pain and Love, oh yeah, are The Same Thing
 Are The Same Thing ...
-
 In my opinion, a line is never crossed
 Until now, I was my inner feelings were always lost
 Through spirit or season, does the human voice does sing?
 Death and opinion they are The Same Thing
-
 Nothing in common; our blood, thicker than broth
 We\'re cut from different sides of the same cloth
 Our love in sunlight, our pain at evening
 Have nothing in common, yet they\'re both The Same Thing
-
 lalalalalalala`		})
 		//#endregion
 		//#region
@@ -11958,9 +10202,7 @@ lalalalalalala`		})
 			duration: 5 * 60 + 0,
 			content: 
 `Intro:
-
 A Aadd9 C G6
-
 Verse 1:
 G6        A   Aadd9 C
 Like the rain
@@ -11998,7 +10240,6 @@ A                    Aadd9
 It defi(n)es opinion
 C                 G6
 Whether they’re the same thing.
-
 Chorus:
 Em                                Bm
 Nothing in common, ("not blood, thicker than broth"?)
@@ -12010,9 +10251,7 @@ F                               C
 Nothing in common, yet they’re both the same thing
      A   Aadd9 C G6 
 (The same thing)
-
 Verse 2: (Identical to the first)
-
 The same street
 The same address
 The same white hand
@@ -12029,14 +10268,12 @@ Until now my inner feelings were always lost
 Through spirit or season, does the human (Unintelligible)
 (The same thing)
 Different opinion, they are the same thing
-
 Chorus:
 Nothing in common (same as before)
 We\'re cut from different sides of the same cloth
 I love the sunlight up in the evening
 Nothing in common, yet they’re both the same thing
 La, la, la, la, la, la, la, la
-
 (Chorus progression to fade)
 `		})
 		//#endregion
@@ -12053,151 +10290,83 @@ La, la, la, la, la, la, la, la
                                         No intro
                                         
                                         [[Verse i]]
-
 Bm               A
 On my way to you old county
-
 D                  F#
 Hoping nothing\'s changed
-
  Em              A
 That your pain is never ending
-
 Em                   A
 That is it still the same
-
 F#     D
 County line
-
 F#     D 
 County line
-
 Em
 County line
-
 G             A
 I left so far behind
-
-
-
-
-
 [[Chorus]]
-
 D             G                D
 And you never even tried to love me
-
       G
 Whoa oh oh oh oh
-
 D                  G                   D
 what did I have to do to make you want me
-
       G
 Whoa oh oh oh oh
-
 D                 G                               D
 I feel so blind I can\'t make out the passing road signs
-
       G
 Whoa oh oh oh oh
-
 D                    G                             D
 All that you would have me do is cross that county line
-
       G
 Whoa oh oh oh oh
-
 F#
 County line
-
-
-
-
 [[Bridge to nowhere]]
-
-
-
 Bm,  A,  D,  F#
-
-
-
-
 Em,  A,  Em, A
-
-
-
-
-
 [[Verse ii]]
-
 Bm                      A
 Now you know I\'m comin\' old county
-
 D                  F#
 To see construction signs
-
  Em              A
 And your new homes never ending
-
 Em                       A
 I think I can see the lights
-
-
 F#     D
 County line
-
 F#     D 
 County line
-
 Em
 County line
-
 G             A
 I can smell the columbine
-
-
-
-
-
 [[Chorus]]
-
 D             G                D
 And you never even tried to love me
-
       G
 Whoa oh oh oh oh
-
 D                  G                   D
 what did I have to do to make you want me
-
       G
 Whoa oh oh oh oh
-
 D                 G                               D
 I feel so blind I can\'t make out the passing road signs
-
       G
 Whoa oh oh oh oh
-
 D                    G                             D
 All that you would have me do is cross that county line
-
       G
 Whoa oh oh oh oh
-
-
 [[Fade a repeting D and G to end]]
-
 County Line
-
 Whoa oh oh oh oh
-
 County Line
-
 Whoa oh oh oh oh
-
-
 `		})
 		//#endregion
 	//#endregion
@@ -12210,12 +10379,8 @@ Whoa oh oh oh oh
 			duration: 4 * 60 + 0,
 			content: 
 `[Intro]
-
 C#m    |G# C#m
-
-
 [Verse]
-
 E                         C#m
 To the town of Agua Fria rode a stranger one fine day
 E                                                 C#m
@@ -12226,7 +10391,6 @@ No one dared to ask his business, no one dared to make a slip
 For the stranger there amongst them had a big iron on his hip
 A               E
 Big iron on his hip
-
 E                         C#m
 It was early in the morning when he rode into the town
  E                                             C#m
@@ -12237,7 +10401,6 @@ He\'s an outlaw loose and running came the whisper from each lip
 And he\'s here to do some business with the big iron on his hip
 A               E
 big iron on his hip
-
  E                                C#m
 In this town there lived an outlaw by the name of Texas Red
 E                                                C#m
@@ -12248,7 +10411,6 @@ He was vicious and a killer though a youth of twenty-four
 And the notches on his pistol numbered one an nineteen more
 A                E
 One and nineteen more
-
  E                            C#m
 Now the stranger started talking, made it plain to folks around
 E                                      C#m
@@ -12259,7 +10421,6 @@ He came here to take an outlaw back alive or maybe dead
 And he said it didn\'t matter, he was after Texas Red
 A           E
 After Texas Red
-
  E                          C#m
 Wasn\'t long before the story was relayed to Texas Red
  E                                              C#m
@@ -12270,7 +10431,6 @@ Twenty men had tried to take him, twenty men had made a slip
 Twenty-one would be the ranger with the big iron on his hip
 A               E
 Big iron on his hip
-
 E                                C#m
 The morning passed so quickly, it was time for them to meet
 E                                              C#m
@@ -12281,7 +10441,6 @@ Folks were watching from their windows, every body held their breath
 They knew this handsome ranger was about to meet his death
 A                 E
 About to meet his death
-
    E                                 C#m
 There was forty feet between them when they stopped to make their play
  E                                                C#m
@@ -12292,7 +10451,6 @@ Texas Red had not cleared leather for a bullet fairly ripped
 And the rangers aim was deadly with the big iron on his hip
 A               E
 Big iron on his hip
-
 E                         C#m
 It was over in a moment and the folks had gathered round
 E                                             C#m
@@ -12325,8 +10483,6 @@ Play with capo4 for comfortable voice range
                                         
 [Intro]
 Bm
-
-
 [Verse 1]
 D                               Bm
 When I was but a young man I was wild and full of fire
@@ -12336,8 +10492,6 @@ D                               Bm
 I ran away from home and left my mother and my dad
 G                    A               Bm
 I know it grieved them so to think their only boy was bad.
-
-
 [Verse 2]
 D                                  Bm
 I fell in with an outlaw band, their names were known quite well
@@ -12347,8 +10501,6 @@ D                    Bm
 This kind of sinful living leads only to a fall
 G                   A               Bm
 I learned that much and more the night I heard my Master call.
-
-
 [Pre-chorus]
 G                   D           G             D
 One night we rustled cattle, a thousand head or so
@@ -12358,8 +10510,6 @@ G                  A       D                  G
 But a norther started blowing and lightning flashed about
 D            G            A                  D
 I thought someone was calling me, I thought I heard a shout.
-
-
 [Chorus]
 D                              F#m                      
 Then at that moment lightning struck not twenty yards from me
@@ -12369,8 +10519,6 @@ And left there was a giant cross where once there was a tree
 And this time I knew I heard a voice, a voice so sweet and strange
       F#m                    Bm
 A voice that came from everywhere, a voice that called my name.
-
-
 [Verse 3]
 D                               Bm
 So frightened I was thinking of sinful deeds I\'d done
@@ -12381,7 +10529,6 @@ The cattle they stampeded, were running all around
 G              A               Bm
 My pony ran but stumbled and it threw me to the ground.
 
-
 [Pre-chorus]
 G                 D          G                D         
 I felt the end was near, that death would be the price
@@ -12391,8 +10538,6 @@ G                   A               D            G
 And I cried oh Lord forgive me, don\'t let it happen now
 D                     G          A                D
 I want to live for you alone, Oh God these words I vow.
-
-
 [Chorus]
 D                          F#m                
 My wicked past unfolded, I thought of wasted years
@@ -12402,8 +10547,6 @@ When another bolt of lightning killed a hundred head of steers
 And the others rushed on by me and I was left to live
 F#m                        Bm
 The Master had a reason, life is his to take or give.
-
-
 [Verse 4]
 D                                    Bm
 A miracle performed that night, I wasn\'t meant to die
@@ -12413,8 +10556,6 @@ D                           Bm
 And right behind it there was I, afraid but safe and sound
 G                  A              Bm   
 I cried and begged for mercy kneeling there upon the ground.
-
-
 [Verse 5]
 D                       Bm
 A pardon I was granted, my sinful soul set free
@@ -12434,43 +10575,35 @@ I gave my life and soul the night the Saviour called my name..`		})
 			instrument: Guitar(guitarTunings.capo4),
 			content: 
 `Intro: G C
-
 C                            Bm
 Friend of mine let me show you
 C                              G 
 how the days in-between have become so few
-
 C                        Bm   Em
 Friend of mine united by dream
 C                                       G 
 Make me a part of you and I will you of me
-
 C                                     Bm
 Friend of mine, forever let us travel high
 C                              G 
 to understand not only the how but the why
-
 C                       Bm   Em
 Friend of mine fades to black
 C                                                G  
 does this belong to you? I pull the knife from my back
-
 Solo: C – Bm – C – G – C – Bm – Em – C – G  (x2)
-
 C                             Bm
 I lept from the cliff into a pool 
 C
 of Jersey river water (Jersey river water)
 G  
 The Psilocybin(silly sideburn)began its effects
-
 C                                      Bm      Em
 I smashed my arm and my leg on the rock going down
 C
 but when I rose from the depths, and nearly death 
                G  
 what a friendly world I found!
-
 D7                                          G 
 A friend friend friend friend is the end - friend of mine (x3)
 `		})
@@ -12488,8 +10621,6 @@ G   Em
 Am    D
 G   Em   
 Am    D
-
-
 G                  Em
 Brighter Venus, brighter star
 Am                    D
@@ -12498,7 +10629,6 @@ G                  Em
 Brighter candle, brighter flame
 Am                           D
 Brighter scandal, brighter in fame
-
 G                           Em
 I stepped in for a little while,
 Am             D
@@ -12507,7 +10637,6 @@ G                      Em
 I wonder off a little while
 Am                D
 expecting to be caught
-
 G                     Em
 Brighter goddess, brighter hate
 Am                            D                              
@@ -12516,7 +10645,6 @@ G                   Em
 Brighter criminal, I hope you escape
 Am                 D
 Brighter mineral, illuminate
-
 G               Em
 I stepped in for a little while,
 Am               D 
@@ -12525,8 +10653,6 @@ G              Em
 I wonder off a little while
 Am              D
 \'cause you can never win
-
-
 B       A
 Her eyes moved to Thee
 B                A
@@ -12534,17 +10660,11 @@ All Eyes aren\'t born free
 B                Am
 All eyes want to see
 B       Am       D   G   D
-
 Incinerate me, angel  
-
-
 G   Em   
 Am   D    
 G   Em   
 Am   D
-
-
-
 B       A
 Her eyes moved to Thee
 B                A
@@ -12553,8 +10673,6 @@ B                Am
 All eyes want to see
 B       Am       D   G   D
 Incinerate me, angel  
-
-
 G                 Em
 Brighter Amber, brighter Mark
   Am        D
@@ -12563,7 +10681,6 @@ G                    Em
 Brighter Katie, brighter Joel
 Am                 D     
 Brighter Gaby, fire aglow 
-
 G                  Em
 I stopped in for a little while
 Am         D
@@ -12572,9 +10689,6 @@ G                   Em
 I wondered there for a little while
 Am                      D
 There\'s secrets in the wind
-
-
-
 Bm
 `		})
 		//#endregion
@@ -12590,59 +10704,47 @@ Bm
 `
 Chords:
 C C C F F F
-
 C C C F F F
-
 In tribute to all things petite
 Pretty and sweet
 This verse I offer and greet
 In desire to replete
-
 A portrait painted from truth
 But imagined to soothe
 For Beauty, eternal in youth
 Loves pity, compassion, and ruth
-
 I stumbled out of the saloon
 An evening last June
 And heard a distant, mournful tune
 Under the dyad moon
-
 My Soul, though with wine I did douse
 The song did arouse
 I followed, a drunken louse
 Unto a cardboard house
-
 And through the window to see
 A doll before me
 Singing to the mirror was she-
 Was it a plea?
-
 Her room was all dresses and bows
 For a doll needs her clothes
 She leaned in to breathe from a rose
 And stood on her tippy-toes
-
 With a brush made of jade and pearl
 She straightened her blonde curl
 I saw the sad eyes of a girl
 Under teardrops, aswirl
-
 She went to her canopied bed
 And laid down her head
 She picked up her sheep-doll and said
 Something with dread
-
 Though I was too drunk to make sense
 I felt her Essence
 And turned to leave this pretense
 For night, black and immense
-
 I remember that singing doll
 And her grievous call
 As a little reminder to us all
 Whose sadness wasn’t so small
-
                                         `		})
 		//#endregion
 	//#endregion
@@ -12654,37 +10756,30 @@ Whose sadness wasn’t so small
 			instrument: Guitar(guitarTunings.standard),
 			content: 
 `[Intro]
-
 e|---------13-------------------12------------------10-------|
 B|-----------------------------------------------------------|
 G|----14-------14---------12-------12--------10---------10---|
 D|--0-------------------0-----------------0------------------|
 A|-----------------------------------------------------------|
 E|-----------------------------------------------------------|
-
 e|---------8----------------5-----------------------3--------|
 B|-----------------------------------------------------------|
 G|----9------9--------5--------5------------4----------4-----|
 D|-0-------------0--------------------0----------------------|
 A|-----------------------------------------------------------|
 E|-----------------------------------------------------------|
-
 e|----3/1---|
 B|----------|
 G|----4/2---|
 D|----------|   x2
 A|----------|
 E|----------|
-
-
 e|--------------------------------0----------0-------------------|
 B|-----------------------------------3---------3-----------------|
 G|--------------------------------------2--------2---------------|
 D|-----------------0---3---0-------------------------------------|   x3
 A|---0---0---3---------------------------------------------------|
 E|---------------------------------------------------------------|
-
-
             
 e|----------------------------------------------------------------|
 B|-----------1---1----3-------------------------------------------|
@@ -12692,9 +10787,7 @@ G|-----------2---0----2-------------------------------------------| X1
 D|-----------3---2----0-------------------------------------------|
 A|----3----------3------------------------------------------------|
 E|----------------------------------------------------------------|
-
 [Verse]
-
 D                   C                 G   
 It\'s all the same , only the names will change
 C         G       F                  D  
@@ -12703,20 +10796,14 @@ D               C                      G
 Another place , where the faces are so cold
 C             G            F           D
 I\'d drive all night , just to get back home
-
-
 [Chorus]
-
 C        G        F               D                    
 I\'m a cowboy , on a steel horse I ride
 C         G  F       D 
 I\'m wanted , dead or alive
 C     G  F       D
 Wanted , dead or alive
-
-
 [Verse]
-
 D                   C                   G 
 Sometimes I sleep , sometimes is not for days
 C             G           F                  D
@@ -12725,37 +10812,19 @@ D                            C                     G
 Sometimes you tell the day , by the bottle that you drink
 C                    G           F             D
 And times when you´r alone , and all you do is think
-
-
 [Chorus]
-
 C        G        F               D                    
 I\'m a cowboy , on a steel horse I ride
 C         G  F       D 
 I\'m wanted , dead or alive
 C     G  F       D
 Wanted , dead or alive
-
-
 [Solo]
-
-
-
-
-
-
-
-
-
-
 C                    G        F              D 
 Ooooh and I\'m a cowboy , on a street horse I ride
 C                     F       D  
 I\'m wanted (wanted) , dead or alive
-
-
 [Verse]
-
 D                          C                        G  
 And I walk these streets , a loaded six string on my back
 C             G          F                   D
@@ -12764,8 +10833,6 @@ D                    C                 G
 I been ev\'ry where , still I\'m standig tall
 C                  G           F              D  
 I\'ve seen a milion faces , and I\'ve rock them all
-
-
 [Chorus]
 
 C                 G        F             D
@@ -12797,19 +10864,12 @@ Dead or alive , Dead or alive ...`		})
 			duration: 5 * 60 + 0,
 			content: 
 `[Introduction]
-
 F G Am C
-
 F G Am C
-
 F G Am C
-
 F G Am C
-
 F G Am C
-
 F G Am C
-
 [Verse 1]
 F     G                Am
 The white dog of the farm still breeds
@@ -12819,7 +10879,6 @@ F
 To tear flesh and teach
 G        Am    C  F 
 Bum bum bum
-
 [Verse 2]
 G                     Am
 You think you\'ve heard it all before
@@ -12829,7 +10888,6 @@ F
 We\'re all at war
 G         Am    C  F
 Bum bum bum
-
 [Verse 3]
 G                   Am
 Blood in the streets, our eternal river
@@ -12839,7 +10897,6 @@ F
 He counts my silver
 G         Am   C  F 
 Bum bum bum
-
 [Verse 4]
 G               Am
 They ambushed them behind the reeds
@@ -12849,11 +10906,8 @@ F
 White dog still breeds
 G         Am   C  F
 Bum bum bum
-
 [Bridge 1]
-
 G Am C  F  G  Am  C
-
 G7
 They say, “Buy when there\'s blood in the streets
 G7
@@ -12866,7 +10920,6 @@ Bb
 Centuries in the distant mist
 Am              D    Dsus2 Dm D F
 But it\'s not a dream
-
 [Verse 5]
 G                    Am
 No, it ain\'t no dream, it\'s all too real
@@ -12876,7 +10929,6 @@ How long until
 This river of blood congeals?
 G        Am   C  F
 Bum bum bum
-
 [Verse 6]
 G               Am
 And eulogies poured from the stage
@@ -12886,7 +10938,6 @@ F
 The dog was caged
 G        Am      C  F
 Bum bum bum
-
 [Verse 7]                      
 G                              Am
 And white bread artists won\'t even look at you
@@ -12896,7 +10947,6 @@ When they know it\'s true
 What you gonna do?
 G         Am   C F 
 Bum bum bum
-
 [Bridge 2]
 G7
 Thought I heard some woman screaming
@@ -12910,7 +10960,6 @@ Bb
 Oh, please tell me, you academics
 Am                           D         Dsus2   Dm Dsus4 F
 How do you wake up from a non-dream?
-
 [Verse 8]
 G                    Am
 No, it ain\'t no dream, it’s all too real
@@ -12920,7 +10969,6 @@ How long until
 This river of blood congeals?
 G         Am    C F 
 Bum bum bum
-
 [Verse 9]
 G            Am
 Sent a letter to my congressman
@@ -12930,7 +10978,6 @@ F
 From my pierced hands
 G         Am     C  F
 Bum bum bum
-
 [Verse 10]
 G               Am
 They sent me back an Apple phone
@@ -12940,7 +10987,6 @@ F
 And a bell tolled
 G         Am   C  F
 Bum bum bum
-
 [Verse 11]
 G                       Am
 The phone rang once and the line went dead
@@ -12950,11 +10996,8 @@ F
 White pups still bred
 G         Am    C   F   G
 Bum bum bum
-
 [Outro]
-
 Am  C   F  G X5
-
 Am7`		})
 		//#endregion
 	//#endregion
@@ -12964,34 +11007,12 @@ Am7`		})
 		.version({
 			name: 'Chords + lyrics',
 			instrument: Guitar(guitarTunings.capo2),
-			duration: 4 * 60 + 15,
+			duration: 4 * 60 + 0,
 			content: 
 `[intro]
-
 D E F#  ( x6 )
-
-
-
-
-
-
-
-
-
-
 D A G F# E  ( x2 )
-
-
-
-
-
-
-
-
-
-
 [verse]
-
 D                        G
 Sleeping volcanoes under
 F#            E
@@ -13000,32 +11021,26 @@ D                    G      F#
 Ready to blow molten shell
  E
 Any minute
-
 [pre chorus]
-
 D             A
 help me armageddon
 G
 Help me armageddon
 F#            E
 Help me to be calm
-
 D             A
 help me armageddon
 G
 Help me armageddon
  F#                 E
 And i\'ll help you with your song
-
 A               Bm
 we\'re the refugees
 D            E        Bm
 Drifting through your trees
 D      E     A
 A shadow never sleeps
-
 [chorus]
-
            E
 We\'re all over the world
            Bm
@@ -13040,9 +11055,7 @@ Don\'t forget the old ones too
 Someday that might be you
      D
 All over the world
-
 [verse]
-
                         G
 Thank you to the authentic fake
               E
@@ -13051,9 +11064,7 @@ D            A            G
 welcome to coo-coo land
 F#          E
 Home of the fake
-
 [pre chorus]
-
 D             A
 help us armageddon
 G
@@ -13066,16 +11077,13 @@ G
 Help us armageddon
 F#                E
 We\'ll help you in every way
-
 A          Bm  F#
 in babylon
    D           E       F#
 Though you wake up and find us gone
 D         E        A
 Our beat goes on and on
-
 [chorus]
-
            E
 We\'re all over the world
 Bm
@@ -13090,7 +11098,6 @@ Bm
 All over the world
      D
 All over the world
-
   A
 Until the next world
                E
@@ -13099,7 +11106,6 @@ The third world or the next world war
 Class war all over this world
            D
 We\'re all over the world
-
             A
 All over the world, all over the world
             E
@@ -13108,10 +11114,647 @@ Bm
 All over the world
            D
 We\'re all over the world
-
 [outro]
-
 A  E  Bm  D  A  E  Bm`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('Nancy Sinatra', 'Ladybird')
+		//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.standard),
+			content: 
+`F#m                 E
+I\'ve been where the eagle flies,
+F#m                  E
+rode his wings cross southern skies.
+F#m             E 
+Kissed the sun, touched the moon,
+F#m            E
+but he left me much too soon,
+F#m        E F#m    E        F#m      E F#m
+his lady bird........he left his lady bird.
+CHORUS:
+F#m       E             F#m 
+Lady bird come on down, I\'m here waiting 
+E
+on the ground.
+F#m            E
+Lady bird I\'ll treat you good,
+F#m             E
+Ah, lady bird I wish you would.
+F#m      E F#m  E      F#m      E F#m
+You lady bird.......pretty lady bird.
+#2.
+F#m               E 
+Lightning flashed across the sky,
+F#m                E
+the night he taught me how to fly.
+F#m             E
+The sun came up and then I found,
+F#m                 E
+too soon he let his lady down.
+F#m       E F#m    E       F#m      E F#m
+His lady bird..........I\'m his lady bird.
+CHORUS:
+#3.
+F#m          E            F#m
+Winter lives in my heart, in the times 
+E
+that we\'re apart.
+F#m            E            F#m
+Summer sings a song or two, when he says: 
+E
+I love you true.
+F#m       E F#m        E       F#m      E F#m
+My lady bird........yeah, I\'m his lady bird.
+F#m       E             F#m 
+Lady bird come on down, I\'m here waiting 
+E
+on the ground.
+F#m            E
+Lady bird I\'ll treat you good,
+F#m             E
+Ah, lady bird I wish you would.
+F#m      E F#m  E      F#m      E F#m
+You lady bird.......pretty lady bird.
+`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('The Doors', 'People Are Strange')
+		//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.standard),
+			content: 
+`[Verse 1]
+Em                 Am            Em
+People are strange when you\'re a stranger
+Am         Em    B7          Em
+Faces look ugly when you\'re alone
+           Am           Em
+Women seem wicked when you\'re unwanted
+Am         Em         B7               Em
+Streets are uneven          when you\'re down
+[Chorus 1]
+       B7
+When you\'re strange
+G                         B7
+Faces come out of the rain
+When you\'re strange
+G                           B7
+No one remembers your name
+B7
+When you\'re strange
+B7
+When you\'re strange
+B7
+When you\'re strange
+[Verse 2]
+Em                 Am            Em
+People are strange when you\'re a stranger
+Am         Em    B7           Em
+Faces look ugly when you\'re alone
+           Am           Em
+Women seem wicked when you\'re unwanted
+Am         Em         B7               Em
+Streets are uneven          when you\'re down
+[Guitar Solo]
+B7 Em B7 Em
+[Chorus 2]
+       B7
+When you\'re strange
+G                         B7
+Faces come out of the rain
+When you\'re strange
+G                          B7
+No one remembers your name
+B7
+When you\'re strange
+B7
+When you\'re strange
+B7
+When you\'re strange
+Alright, Yeah.
+[Keyboard solo]
+Em Am Em Am Em B7 Em
+Em Am Em Am Em B7 Em
+[Chorus 3]
+    B7
+When you\'re strange
+G                          B7
+Faces come out of the rain
+       B7
+When you\'re strange
+G                         B7
+No one remembers your name
+B
+When you\'re strange
+B
+When you\'re strange
+B          B7
+When you\'re  strange`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('Eruption', 'One Way Ticket')
+		//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.capo4),
+			content: 
+`[Chorus]
+Am
+One way ticket, one way ticket
+Dm
+One way ticket, one way ticket
+E                                     Am
+One way ticket, one way ticket to the blues.
+[Verse]
+Am
+Choo choo train tuckin\' down the track
+Dm
+Gotta travel on it never comin\' back
+E                               Am
+Ooh, ooh got a one way ticket to the blues.
+Am
+Bye my love, my babe is leavin\' me
+Dm
+Now, only tear drops are all that I could see.
+E                               Am
+Ooh, ooh got a one way ticket to the blues
+G                    C
+Gotta take a trip to lonesome town
+E                           Am
+Gonna stay at heartbreak hotel.
+Dm                     E
+A fool such as I such as I
+Am            B7            E
+Will never, I cry my tears away.
+[Chorus]
+Am
+One way ticket, one way ticket
+Dm
+One way ticket, one way ticket
+E                                     Am
+One way ticket, one way ticket to the blues.
+[Verse]
+Am
+Choo choo train tuckin\' down the track
+Dm
+Gotta travel on it never comin\' back
+E                               Am
+Ooh, ooh got a one way ticket to the blues.
+   Am     Dm                    E
+Gotta go on,         gotta truck on
+                    Am
+Got a one way ticket to the blues.
+G                    C
+Gotta take a trip to lonesome town
+E                           Am
+Gonna stay at heartbreak hotel.
+Dm                     E
+A fool such as I such as I
+Am            B7            E
+Will never, I cry my tears away.
+[Chorus]
+Am
+One way ticket, one way ticket
+Dm
+One way ticket, one way ticket
+E                                     Am
+One way ticket, one way ticket to the blues.
+Am
+Choo choo train tuckin\' down the track
+Dm
+Gotta travel on it never comin\' back
+E                               Am
+Ooh, ooh got a one way ticket to the blues.
+E                               Am
+Ooh, ooh got a one way ticket to the blues.
+E                               Am
+Got my ticket...
+(One way, one way, one way ticket)`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('The Rolling Stones', 'Angie')
+		//#region
+		.version({
+			name: 'Lyrics',
+			instrument: Guitar(guitarTunings.undefined),
+			content: 
+`Angie, Angie, when will those clouds all disappear?
+Angie, Angie, where will it lead us from here?
+With no loving in our souls and no money in our coats
+You can\'t say we\'re satisfied
+But Angie, Angie, you can\'t say we never tried
+Angie, you\'re beautiful, but ain\'t it time we said good-bye?
+Angie, I still love you, remember all those nights we cried?
+All the dreams we held so close seemed to all go up in smoke
+Let me whisper in your ear:
+Angie, Angie, where will it lead us from here?
+Oh, Angie, don\'t you weep, all your kisses still taste sweet
+I hate that sadness in your eyes
+But Angie, Angie, ain\'t it time we said good-bye?
+With no loving in our souls and no money in our coats
+You can\'t say we\'re satisfied
+But Angie, I still love you, baby
+Ev\'rywhere I look I see your eyes
+There ain\'t a woman that comes close to you
+Come on Baby, dry your eyes
+But Angie, Angie, ain\'t it good to be alive?
+Angie, Angie, they can\'t say we never tried
+`		})
+		//#endregion
+		//#region
+		.version({
+			name: 'Tab',
+			instrument: Guitar(guitarTunings.standard),
+			content: 
+`                         Am/E
+e|--------------------|--0--0--0-----3-0-----------|
+B|--------------------|--1-----1-----1-------1-----|
+G|--------------------|--2-----2----------2--------|
+D|--------------------|--2---------2-----------2-2-|
+A|----------12--------|----------------------------|
+E|--------------------|----------------------------|
+E7           E7/G#           Gsus4         Fsus4 F
+e|---------0-------0----0------|---------3---------------1---|
+B|-------3---3-----3-----------|-------3---3-----1--1------1-|
+G|-----4-------4---4-------4-0-|-----5-------5---3--2--------|
+D|---------------------------x-|--5------------5-3--3--------|
+A|-----------------------------|-----------------------------|
+E|--0------------4-------------|-----------------------------|
+F      Fsus2 C/E
+e|------1------------0----------||--------0---0----5-5-5-3----|
+B|------------1------1------1---||--------1---1-1--5-5-5-3-5--|
+G|----2-------0-0-------------0-||*--2----2---2-2----------5--|
+D|--3-------3---2---------0-----||*--2--------2-2-------------|
+A|--------3-------------2-------||---0----------0-------------|
+E|------------------------------||----------------------------|
+e|-----------0--------0-----|-----3--3----------------|
+B|---------3---3-3----3-----|-----3--3--3--1--1-------|
+G|-------4-------4-------4--|-----5--5--4--3--2-------|
+D|--------------------------|--5-----------3--3-------|
+A|--------------------------|----------------------3--|
+E|--0-----------------------|-------------------------|
+Cadd11   C
+e|------0-----------------------|-----------0----5-5-5-3----|
+B|--1---1----1------------------|-----------1----5-5-5-3-5--|
+G|--0-----0--0------0-------0---|-------2-----2----------5--|
+D|--3-----3--2----2-------0-----|-------2-----2-------------|
+A|--3-----3--3--3-----3-2-----2-|--0----------0-------------|
+E|------------------------------|---------------------------|
+E7
+e|-------0---0----0-------0---|-----3--3----------------|
+B|-------3-----3----3---3-----|-----3--3--3--1--1-------|
+G|-------4-----4------4-----4-|-----5--5--4--3--2-------|
+D|----------------------------|--5-----------3--3-------|
+A|----------------------------|----------------------3--|
+E|--0-------------------------|-------------------------|
+                      Gadd9    Gsus4/D G/D
+e|-----0----------0--------|--5--5-5-5----8-7-7--7h7-x--|
+B|-----1----------1--1--0--|--3--3-3-3----8-8-8--8h8-x--|
+G|--0--------0----0--0-----|--4--4-4-4----7-7-7--7h7-x--|
+D|--3-----3--2-------------|--5--5-5-5----0-0-0--0h0-x--|
+A|--3-----3--3-------------|----------------------------|
+E|-------------------------|----------------------------|
+Dm           Am          C/A  C             F
+e|--1--1-1-x--1--0--0-0--0-0-0-|--0--0-0--0-x-x-1---1--1-x-x-|
+B|--3--3-3-x--3--1--1-1--1-1-1-|--1--1-1--1-x-x-1---1--1-x-x-|
+G|--2--2-2-x--2--2--2-2--2-2-0-|--0--0-0--0-x-x-2---2--2-x-x-|
+D|--0--0-0-x--0--2--2-2--2-2-2-|--2--2-2--2-x-x-3---3--3-x-x-|
+A|---------------0--0-0--0-0-0-|--3--3------x---3---3--3-x-x-|
+E|-----------------------------|----------------1---1--1-----|
+G                     Gadd9
+e|-------3-3-3-x-x-3--x-x-3-5-3--|-------5-5-5-5-5-3----------|
+B|-------3-3-3-x-x-3--x-x-3-3-3--|--1----5-5-5-5-5-3-5--3--5--|
+G|--4h-4-4-4-4-x-x-4--x-x-4-4-4--|--2----------------5--4--5--|
+D|--5h-5-------x-x----x-x--------|--2-------------------------|
+A|--5h-5-5-5-5-x-x-5--x-x-5-5-5--|--0-------------------------|
+E|--3h-3---3-3-x-x-3--x-x-3-3-3--|----------------------------|
+E7
+e|-------0-0-0-0-0-----------|-----3--3-----1--1--------|
+B|-------3-3-3-3-3--2/-3-----|-----3--3-----1--1--------|
+G|-------4-4-4-4-4--3/-4-----|-----5--5-----3--2--0-----|
+D|------------------------5--|--5--5--5--5--3--3-----3--|
+A|---------------------------|--------------------------|
+E|--0------------------------|--------------------------|
+Cadd11 C                                                   
+e|--0--0------0----0----------||--------0---0----0/0-0-0-0--|
+B|--1--1-1-1--1----1----------||--------1---1-1--1/5-5-5-5--|
+G|--0--0-0-0--0----0------0--*||*--2----2---2-2-------------|
+D|--3--3p2-0--2---------0----*||*--2--------2-2-------------|
+A|--3--3-3-3--3-------2-------||---0----------0-------------|
+E|----------------------------||----------------------------|
+e|--0----0-0-0-0-0----x----|----3-3-3--3-------------|-------------------------|
+B|--0----1/2-2-2-3----x----|----3-3-3--3--1--1-------|------------1------------|
+G|--1----2/3-3-3-4----x----|----4-4-5--4--3--2-------|--0-0-0--0--0------------|
+D|--0----2/3-3-3-4---------|----5-5-5--5--3--3-------|--3/5-3--0--2------------|
+A|--2----------------------|----------------------3--|--3/5-3--3--3------------|
+E|--0----------------------|-------------------------|---------------3----4----|
+                                   E7
+e|--0----------12------------------|-------0---0---4h7-0--x--|
+B|--0h1--------12h13---------------|-------3-------5------x--|
+G|------2------------14------------|-------4--------------x--|
+D|-----------------------14-12-10--|--9----------------------|
+A|---------------------------------|-------------------------|
+E|---------------------------------|-------------------------|
+                      Cadd11   C
+e|----3-3-3--3-------------|------0---------0--------|
+B|----3-3-3--3--1--1-------|--1---1----1----1--1--0--|
+G|----4-4-5--4--3--2-------|--0-----0--0----0--0-----|
+D|----5-5-5--5--3--3-------|--3-----3--2-------------|
+A|----------------------3--|--3-----3--3-------------|
+E|-------------------------|-------------------------|
+Gadd9     Gsus4/D G/D         Dm           Am          C/A
+e|--5--5-5-5----8-7-x--7h7-x-x-|--1--1-1-x--1--0--0-0--0-0-0-|
+B|--3--3-3-3----8-8-x--8h8-x-x-|--3--3-3-x--3--1--1-1--1-1-1-|
+G|--4--4-4-4----7-7-x--7h7-x-x-|--2--2-2-x--2--2--2-2--2-2-0-|
+D|--5--5-5-5----0-0-x--0h0-x-x-|--0--0-0-x--0--2--2-2--2-2-2-|
+A|-----------------------------|---------------0--0-0--0-0-0-|
+E|-----------------------------|-----------------------------|
+C             F                 G   G     Gadd9
+e|--0--0-0--0-x-x-1---1-1-1-1-1/-|------3-3-3-5-3-3-3-3-5-3--5-3--3-|
+B|--1--1-1--1-x-x-1---1-1-1-1-1/-|------3-3-3-3-3-3-3-3-3-3--3-3--3-|
+G|--0--0-0--0-x-x-2---2-2-2-2-2/-|--4---4-4-4-4-4-4-4-4-4-4--4-4--4-|
+D|--2--2-2--2-x-x-3---3-3-3-3-3/-|--5-------------------------------|
+A|--3--3------x---3---3-3-3-3-3/-|--5---5-5-5-5-5-5-5-5-5-5--5-5--5-|
+E|----------------1---1-1-1-1-1/-|--3-------3---3-----3---3--3----3-|
+                         E7
+e|-------5-5-5-5-5-3----------|-------0-0-0-0-0-----------|
+B|--1----5-5-5-5-5-3-5--3--5--|-------3-3-3-3-3--2/-3-----|
+G|--2----------------5--4--5--|-------4-4-4-4-4--3/-4-----|
+D|--2-------------------------|------------------------5--|
+A|--0-------------------------|---------------------------|
+E|----------------------------|--0------------------------|
+                     Cadd11 C
+e|-----3--3-----1--1--------|--0--0------0----0----------||
+B|-----3--3-----1--1--------|--1--1-1-1--1----1----------||
+G|-----5--5-----3--2--0-----|--0--0-0-0--0----0------0--*||
+D|--5--5--5--5--3--3-----3--|--3--3p2-0--2---------0----*||
+A|--------------------------|--3--3-3-3--3-------2-------||
+E|--------------------------|----------------------------||
+e|-------0-----0-0-0-0-0-----|-------0---------0---0-----|
+B|-------1-----1-1-1-3-1-0-1-|-------3-----0/3-3---3-x-x-|
+G|-------2-----2-2-2-2-2-2-2-|-------4---------4---4-x-x-|
+D|-------2-----2-2-2-2-2-2-2-|-------4---4-----4---4-x-x-|
+A|--0----------0-0-0-0-0-0-0-|---------------------------|
+E|---------------------------|--0------------------------|
+e|-----3--3----------------|------0------------------|--0----0---0-------------|
+B|-----3--3--3--1--1-------|--1---1----1----1--------|--1----1---1-1-----1--0--|
+G|-----5--5--4--3--2-------|--0-----0--0----0-----0--|--2----2---2-2--2--------|
+D|--5-----------3--3-------|--3-----3--2-------------|--2--------2-2-----------|
+A|----------------------3--|--3-----3--3-------2-----|--0----------0-----------|
+E|-------------------------|-------------------------|-------------------------|
+e|--0----------0-----0-----|--3----3---------------|---------------0--------|
+B|--0-------3-----------3--|--3----3--3--1--1------|---------------1--------|
+G|--1----4-----------------|--5----5--4--3--2------|---------------0--------|
+D|--0----------------------|--5----------3--3------|--3/5---3-2-0--2--------|
+A|--2----------------------|--3--------------------|--3/5---3-3-3--3--------|
+E|--0-------------4--------|--3--------------------|------------------------|`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('Bobby Vinton', 'Mr. Lonely')
+		//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.capo4),
+			content: 
+`Capo 4
+C               Em
+Lonely, I\'m Mr. Lonely
+ F          G
+I have nobody for my own
+C               Em
+I am so lonely, I\'m Mr. Lonely
+   F                     G
+Wish I had someone to call on the phone
+  C                 C+
+Now I\'m a soldier, a lonely soldier
+  F                         Fm  G7
+Away from home through no wish of my own
+       C                 Em
+That\'s why I\'m lonely, I\'m Mr. Lonely
+    F      G7        C
+I wish that I could go back home
+Capo 5 and same chords
+Letters, never a letter
+I get no letters in the mail
+I\'ve been forgotten, yes, forgotten
+Oh how I wonder, how is it I failed
+  C                 C+
+Now I\'m a soldier, a lonely soldier
+  F                         Fm  G7
+Away from home through no wish of my own
+       C                 Em
+That\'s why I\'m lonely, I\'m Mr. Lonely
+    F      G7        C
+I wish that I could go back home`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('Cass McCombs', 'I\'m A Shoe')
+		//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.standard),
+			duration: 5 * 60 + 0,
+			content: 
+`
+Am    G         D
+A         Am
+G     D      Em F
+C      E
+A#          Am
+Em G G#
+Am              G             D    A
+Well, goodbye God, going to Bodie am I 
+Am                G                D         Em
+Going to Bodie, looking for a good time
+F                              C             B7     A#
+Goodbye good people, you can\'t help me anymore
+         Am        
+I\'m going down for sure
+A#     Am
+I\'m a shoe
+A#     Am
+I\'m a shoe
+Bm     A#
+   Am
+And so are you
+Em G G#  
+Am             G             D       A
+Well, goodbye God, going to Bodie am I
+Am            G                      D          Em
+Going to Bodie, looking for a good time
+F                       C            B7         A#
+I\'d follow you until the end of this Earth
+        Am
+But Bodie comes first
+A#     Am
+I\'m a shoe
+A#     Am      B7      A#
+I\'m a shoe
+   Am
+And so are you
+A     Em G G#
+A     G        D
+A         Am   G    D
+Em  F          C
+B7      A#     Am
+Em G G# 
+Am            G             D        A
+Well, goodbye God, going to Bodie am I
+Am              G                     D    Em
+Going to Bodie, looking for a good time
+F                         C                 B7    A#
+Lower down than the roots of a pine tree
+                    Am
+Don\'t waste your prayers on me
+A#    Am
+I\'m a shoe
+A#    Am
+I\'m a shoe
+B7     A#    
+   Am
+And so are you
+
+A#    Am
+I\'m a shoe
+A#    Am
+I\'m a shoe
+B7     A#  
+    Am
+And so are you 
+`		})
+		//#endregion
+	//#endregion
+	//#region
+	song('Electric Light Orchestra', 'Sweet Talking Woman')
+		//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.standard),
+			duration: 5 * 60 + 0,
+			content: 
+`[Intro]
+F    G    Am
+[Verse 1]
+F     G       C     C
+Where did you go
+C                           C       
+I was searching (searching)  on a one-way street,               
+Am                     F
+I was hoping (hoping)  for a chance to meet.
+Em                   A           Dm
+I was waiting  for the operator on the line. 
+Dm             Em     Em         Dm
+(She’s gone so long)  What can I do?
+Dm              Em  Em
+(Where could she be) No no no,
+F                   G     Am
+don\'t know what I\'m gonna do,
+F     G         C
+I gotta get back to you
+G   G   G   G  G   G
+[Chorus]
+
+  C                       Am            Em
+You gotta slow down (slow down)   sweet talking woman (slow down)
+F          Em                 F          G
+You got me running (run run)  you got me searching.
+C                  Am             Em
+Hold on (hold on)  sweet talking  lover (hold on)
+F        Em     F                  G
+It\'s so sad if that\'s the way it\'s over.
+F G Am
+
+[Instrumental]
+G G   G G   G 
+[Post-Chorus 1]
+C              C
+I was (working)  many days go by,
+Am                           F
+I was thinking (thinking) bout the lonely nights.
+Em         A              Dm
+Communication breakdown all around.
+Dm             Em     Em         Dm
+(She’s gone so long)  What can I do?
+Dm               Em       
+(Where could she be)  No no no,
+F                   G     Am
+don\'t know what I\'m gonna do,
+F     G         C
+I gotta get back to you
+G   G    G    G   G 
+[Chorus]
+
+  C                       Am            Em
+You gotta slow down (slow down)   sweet talking woman (slow down)
+F          Em                 F          G
+You got me running (run run)  you got me searching.
+C                  Am             Em
+Hold on (hold on)  sweet talking  lover (hold on)
+F        Em     F                  G
+It\'s so sad if that\'s the way it\'s over.
+[Instrumental]
+F G Am
+[Post-Chorus 2]
+  C                     C
+I\'ve been living (living)  on a dead-end street,
+  Am                           F
+I\'ve been asking (asking kindly)  everybody I meet.
+Em           A           Dm
+Insufficient data coming through.
+Dm             Em     Em         Dm
+(She’s gone so long)  What can I do?
+Dm               Em    Em
+(Where could she be)   No no no,
+                          
+F                   G     Am
+don\'t know what I\'m gonna do,
+F     G         C
+I gotta get back to you
+G   G    G    G   G 
+[Chorus]
+C                      Am             Em
+Oh, slow down (slow down)  sweet talking  woman (slow down)
+F          Em                F           G
+You got me running (run run)  you got me searching
+C                  Am             Em
+Hold on (hold on)  sweet talking  lover (hold on)
+F        Em     F                  G
+It\'s so sad if that\'s the way it\'s over.
+[Instrumental]
+F       G          Am
+G   G    G    G    G
+[Chorus]
+C                      Am             Em
+Slow down (slow down)  sweet talking  woman (slow down)
+F          Em                F           G
+You got me running (run run)  you got me searching
+C                  Am             Em
+Hold on (hold on)  sweet talking  lover (hold on)
+F            Em        F           G
+It\'s so sad if that\'s the way it\'s over.
+C                      Am             Em
+Slow down (slow down)  sweet talking  woman (slow down)
+F          Em       F           G
+You got me running   you got me searching
+C                 Am            Em
+Hold on (hold on) sweet talking lover (hold on)
+[Outro]
+F        Em     F                  G
+It\'s so sad if that\'s the way it\'s over.
+{Repeating and fade out)`		})
+		//#endregion
+	//#endregion
+
 		//#endregion
 	//#endregion
 
