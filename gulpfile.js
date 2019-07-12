@@ -108,12 +108,10 @@ gulp.task('default', buildContent)
 const tsProject = ts.createProject("./test/tsconfig-tests.json");
 const testsRunUnit = () =>
     gulp.src('test/**/*.test.ts')
-        .pipe(mocha({
-            reporter: 'nyan',
-            require: ['ts-node/register']
-        }))
         .pipe(tsProject())
-        .pipe(mocha())
+        .pipe(mocha({
+            reporter: 'nyan'
+        }))
 gulp.task('tests-run-unit', testsRunUnit)
 
 const testsRunLint = () =>

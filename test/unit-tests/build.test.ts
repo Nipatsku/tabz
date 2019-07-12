@@ -1,5 +1,5 @@
 // Tests for build process.
-const { expect } = require('chai')
+import { expect } from 'chai'
 const fs = require('fs')
 
 describe('build', function() {

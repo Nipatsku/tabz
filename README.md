@@ -10,12 +10,27 @@ Afterwards, site can be found in:
 
 ## Automated tests
 
-Unit tests are compiled from *TypeScript* files (test/), ran with *Mocha*, using *chai* as assertion library.
-
-*tslint* is used for syntax and code safety testing.
-
 Run tests with
 **npm run test**
+
+### Unit tests
+
+Unit test source files are located in **test/\*.test.ts**
+
+Used tools:
+
+- *Mocha*
+    - Testing framework
+- *chai*
+    - Assertion library
+- *sinon*
+    - Mainly used for spying on method calls
+- *typemoq*
+    - Type-safe mocking
+
+### Syntax and code-convention tests
+
+*tslint*
 
 ## Absolute imports
 

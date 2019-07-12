@@ -31,7 +31,9 @@ const _SongAutoScrollSpeedID = (song: SongVersion): string => `ass-${song.id}`
  * - SongVersion.duration
  * - default AutoScrollSpeed
  */
-export const getSongAutoScrollSpeed = (song: SongVersion): AutoScrollSpeed => {
+export const getSongAutoScrollSpeed = (
+    song: SongVersion
+): AutoScrollSpeed => {
     // Check for saved value in localStorage.
     if (localStorage !== undefined) {
         const savedPreference = localStorage.getItem(_SongAutoScrollSpeedID(song))
@@ -41,10 +43,24 @@ export const getSongAutoScrollSpeed = (song: SongVersion): AutoScrollSpeed => {
     return song.duration !== undefined ?
         song.duration : AutoScrollValues.default
 }
-export const saveSongAutoScrollSpeed = (song: SongVersion, autoScrollSpeed: AutoScrollSpeed) => {
-    if (localStorage === undefined)
+/**
+ * Save AutoScrollSpeed for a Version of a Song.
+ * @param   song                SongVersion
+ * @param   autoScrollSpeed     AutoScrollSpeed
+ * @param   mStorage            Mock interface for *localStorage*
+ */
+export const saveSongAutoScrollSpeed = (
+    song: SongVersion,
+    autoScrollSpeed: AutoScrollSpeed,
+    mStorage?: Storage | null
+) => {
+    const storage = (mStorage === undefined) ?
+        localStorage :
+        mStorage
+
+    if (! storage)
         // localStorage is not available.
         return
 
-    localStorage.setItem(_SongAutoScrollSpeedID(song), String(autoScrollSpeed))
+    storage.setItem(_SongAutoScrollSpeedID(song), String(autoScrollSpeed))
 }

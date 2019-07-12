@@ -3,7 +3,7 @@ import { SongInfo, Song, SongVersion } from "../../datastructures/song"
 import { Button, Layout, Typography, Icon, Input, Tooltip, Slider } from "antd/lib"
 import { AutoScrollValues, AutoScrollSpeed, saveSongAutoScrollSpeed } from "../../datastructures/autoScroll"
 import { SliderValue } from "antd/lib/slider";
-import { lerp } from "../common/utils"
+import { lerp } from "../../utils"
 const { Title, Text } = Typography
 
 interface Props {

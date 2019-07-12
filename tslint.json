@@ -5,6 +5,11 @@
     "extends": [
         "tslint:recommended"
     ],
+    "linterOptions": {
+        "exclude": [
+            "test/**/*"
+        ]
+    },
     "rules": {
         "no-duplicate-imports": true,
         "no-relative-imports": false,
