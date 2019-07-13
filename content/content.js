@@ -13,8 +13,144 @@ const _ = () => {
         })
     //#endregion
     /////////////////////////////////////////////////////////
-    // @@@@@ SONG LIST @@@@@
+	// @@@@@ SONG LIST @@@@@
+	
 //#region
+	song('Bobby Vinton', 'Sealed With A Kiss')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.standard),
+            duration: 3 * 60 + 0,
+            content: `
+
+			#1.
+			                        Bb  Bbm     Fm
+			Though we gotta say goodbye for the summer..
+			Bbm     Eb          Ab         F               Bbm
+			baby, I promise you this..I'll send you all my love,
+			Eb    C        Fm     Bbm C             Fm
+			every day in a letter.....sealed with a kiss.
+			
+			#2.
+			Fm                   Bb           Fm
+			Yes, it's gonna be a cold, lonely summer..
+				 Bbm           Eb   Ab
+			but, I'll fill the emptiness..
+				 F               Bbm   Eb        C        Fm     Bbm
+			I'll send you all my dreams....every day in a letter..
+			C             Fm
+			sealed with a kiss.
+			
+			CHORUS:
+				 Bb             Fm             Bb
+			I'll see you in the sunlight, I'll hear your voice 
+				 Fm
+			everywhere.
+				 Bb              Fm            G7
+			I'll run to tenderly hold you..but baby, you won't 
+			   C
+			be there.
+			
+			#3.
+			C                     Bb            Fm
+			I don't wanna say goodbye,  for the summer..
+			Bbm         Eb         Ab
+			knowing the love we'll miss.
+				F             Bbm        Eb            Fm
+			So, let us make a pledge..to meet in Septem..ber..
+			Bbm C              Fm
+			and seal it with a kiss.
+			
+			
+			(INTERLUDE:) Fm Bb Fm..Bbm Eb Ab..F Bbm Eb C Fm..Bbm C Fm
+			
+			#4.
+			Fm        F#m        B            F#m
+			Yes, it's gonna be a cold, lonely summer..
+				 Bm            E    A
+			but, I'll fill the emptiness..
+				 F#              Bm      E     C#       F#m   Bm
+			I'll send you all my love....every day in a letter..
+			E            F#m       Bm
+			sealed with a kiss.
+			
+			OUTRO:
+			E            F#m       Bm
+			sealed with a kiss..(x3)(Fade.)
+			
+`
+        })
+    //#endregion
+
+	song('Bobby Vinton', 'Rain, Rain, Go Away')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.capo3),
+            duration: 3 * 60 + 0,
+            content: `
+			[Intro]
+			G          C      D7 G
+			Rain, rain go away...
+			
+			[Verse 1]
+			G     D7    G7  C                             G
+			I can still re..member when you moved in next door,
+			G         D7  G7   C                   A7           D7
+			I brought you some chocholate from the corner candy store.
+			B7              Em          B7              Em 
+			When it started raining you started crying, too,
+			C            G            C         D7      G   Am7 D7
+			That was the first time I sang this song to you. 
+			
+			[Chorus]
+			G          C        D7              G
+			Rain, rain go away. Come again some other day. 
+			E7         A7       D7              G
+			Rain, rain go away, bring my love a sunny day.
+			
+			
+			[Verse 2] ***(Chords are same for other verses)***
+			G       D7 G7  C                            G
+			We grew up to..gether and as the years went by,
+			G    D7   G7 C                 A7                   D7
+			Everybo...dy knew that we were sweethearts, you and I.
+					B7         Em        B7                Em
+			Through many april showers I held your hand in mine,
+			C           G            C          D7    G    Am7 D7
+			Between the raindrops we sang, time after time.
+			
+			[Chorus 2]
+			G          C        D7              G
+			Rain, rain go away. Come again some other day. 
+			E7         A7       D7              G
+			Rain, rain go away, bring my love a sunny day.
+			
+			
+			[Verse 3]
+			  G     D7  G7  C                               G
+			I went away to college, you said you'd wait for me.
+			G      D7  G7   C             A7            D7 
+			Then I got your letter asking me to set you free.
+			  B7               Em               B7            Em
+			Tomorrow you'll be married, there's nothing I can do,
+			C            G         C             D7         G       Am7 D7
+			But wish you sunshine, now, and your whole life through.
+			
+			[Chorus 3] 
+			G          C          D7            G
+			Rain, rain go away. Tomorrow is her wedding day 
+			E7         A7       D7              G    D7  G
+			Rain, rain go away, bring my love a su...nny day.
+			
+			[Outro]
+			C        G
+			Rain go away... 
+			
+`
+        })
+    //#endregion
 
 	song('Rauli Badding Somerjoki', 'Paratiisi')
 	//#region
