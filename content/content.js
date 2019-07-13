@@ -16,6 +16,71 @@ const _ = () => {
     // @@@@@ SONG LIST @@@@@
 //#region
 
+	song('Rauli Badding Somerjoki', 'Paratiisi')
+	//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.standard),
+			duration: 3 * 60 + 0,
+			content: `[Intro] |Am   |C   |E7  |Am   |
+
+
+			[Verse 1]
+				   Am                 
+			Kun mä sinut kohtasin, oli ilta ihanin, 
+				   C                  E7
+			linnut lauloi ja kimmelsi taivaan kuu
+				 Am                       C
+			Sinä sanoit menkäämme, maalle meidän landelle,
+				   E7                  Am
+			mietin nyt, juttu tää onnistuu
+			
+			[Verse 2]
+				 Am
+			Perille kun saavuttiin, kukat kukki, tuoksui niin,
+				 C                       E7
+			meri vaahtosi niin kuin olut kuohuaa
+				 Am                        C
+			Heti rantaan kuljettiin, liiat kuteet riisuttiin,
+				E7                  Am
+			oli tunnelma niin huumaavaa
+			
+			[Chorus]
+				   G7                          C
+			Oi jos sulle voisin antaa kaikkein kauneimman,
+				  B7               E7
+			tämän maailmani pallon valtavan
+				  Am                    C
+			Mutta enhän sitä tee, pieni hetki riittänee,
+					E7                   Am
+			kun sun vierelläsi näin olla saan
+			
+			[Solo]
+			G7  C  B7  E7  		Am  C  E7  Am  (2x)
+			
+			[Verse 3]
+				   Am
+			Varret yhteen kiedottiin, hiekka tarttui varpaisiin,
+				  C                     E7
+			meren kiihkeään rytmiin kun vaivuttiin
+				   Am                         C
+			Pientä huulta heitit kai, suoraan suusta suuhun vain,
+				   E7                    Am
+			näistä aikuiset puhuu kuiskuttain
+			
+			[Chorus]
+				   G7                          C
+			Oi jos sulle voisin antaa kaikkein kauneimman,
+				  B7               E7
+			tämän maailmani pallon valtavan
+				  Am                    C
+			Mutta enhän sitä tee, pieni hetki riittänee,
+					E7                   Am     Am E7 Am
+			kun sun vierelläsi näin olla saan
+
+	`
+		})
+	//#endregion
 
 	//#region
 	song('Nirvana', 'Oh Me')
