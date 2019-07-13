@@ -15,6 +15,120 @@ const _ = () => {
     /////////////////////////////////////////////////////////
 	// @@@@@ SONG LIST @@@@@
 	
+    song('Metallica', 'Low Mans Lyric')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.half_step_down),
+            duration: 5 * 60 + 0,
+            content: `
+			[Intro/Verse]
+
+			Riff 1
+				 A               G6               D2              E       G
+			D#|-------0-----------------0--------------0------------0-------0--------|
+			A#|---------2----------------2-----------3---3------------0-------0------|
+			F#|------------2----------------0------2---------2-----------------------|
+			C#|---2------------------0-----------0-----------------------------------|
+			G#|-0------------------2-------------------------------------------------|
+			D#|-----------------3--------------------------------0-------3-----------|
+
+			  My eyes       seek reality
+			  
+			  My fingers feel for faith
+
+			  Touch clean with a dirty hand
+
+			  I touched the clean through the waste
+			
+			[Pre-Chorus]
+			(Riff 2)
+			Am                Em
+			The trash fire is warm
+			Am                        Em
+			But nowhere safe from the storm
+			Am                  G
+			And I can't bear to see
+							 C
+			What I've let me be
+						  B
+			So wicked and worn
+			
+			[Chorus]
+			Am               Em
+			So as I write to you
+			Am                     Em
+			Of what is done and to do
+			Am                G
+			Maybe you'll understand
+								   C
+			And won't cry for this man
+							 B                B
+			cause low man is due              please forgive me!!!!
+			
+			
+			A  	G6 	D2 	E G
+
+			My eyes seek reality
+			My fingers feel for faith
+			Touch clean with a dirty hand
+			I touched the clean to the waste
+
+
+			The trash fire is warm
+			But nowhere safe from the storm
+			And I can't bare to see
+			What I've let me be
+			So wicked and worn
+
+			So as I write to you, yeah
+			Of what is done and to do
+			Maybe you'll understand
+			And won't cry for this man
+			'Cause low man is due
+			Please forgive me
+			Please forgive me
+			Please forgive me
+			
+			Riff 3
+			Am    Am-    F
+
+			So low the sky is all I see
+			All I want from you is forgive me
+			So you bring this poor dog in from the rain
+			Though he just wants right back out again
+			
+			And I cry, to the alley way
+			Confess all to the rain
+			But I lie, lie straight to the mirror
+			The one I've broken, to match my face
+			
+			The trash fire is warm
+			But nowhere safe from the storm
+			And I can't bare to see
+			What I've let me be
+			So wicked and worn
+			So as I write to you
+			Of what is done and to do
+			Maybe you'll understand
+			And won't cry for this man
+			'Cause low man is due
+			Please forgive me
+			Please forgive me
+
+			Am  Am-  F
+			So low the sky is all I see
+			All I want from you is forgive me
+			So you bring this poor dog in from the rain
+			Though he just wants right back out again
+
+			[finger-picking, same as intro]
+			A	G6	D2	E 	G
+			My eyes seek reality
+			My fingers seek my veins
+`
+        })
+    //#endregion
 //#region
 	song('Bobby Vinton', 'Sealed With A Kiss')
     //#region
