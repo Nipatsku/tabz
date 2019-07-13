@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/tabz/static/css/1.9af1858e.chunk.css"
   },
   {
-    "revision": "fb09349ea13ad2344e160913ea898cf2",
+    "revision": "2c0bd09e153171516c8d56fa3064b6c4",
     "url": "/tabz/index.html"
   }
 ];
