@@ -489,19 +489,23 @@ Outro Solo  Em    D Em||x8`		})
 I thought I was the chosen one
 But time went by and I found out a thing or two
 My shine wore off as time wore on
+
 I thought that I was living out the perfect life
 But in the lonely hours when the truth begins to bite
 I thought about the times when I turned my back & stalled
 I ain\'t no nice guy after all
+
 When I was young I was the only game in town
 I thought I had it down for sure,
 But time went by and I was lost in what I found
 The reasons blurred, the way unsure
+
 I thought that I was living life the only way
 But as I saw that life was more than day to day
 I turned around, I read the writing on the wall
 I ain\'t no nice guy after all
 I ain\'t no nice guy after all
+
 In all the years you spend between your birth and death
 You find there\'s lots of times you should have saved your breath
 It comes as quite a shock when that trip leads to fall`		})
