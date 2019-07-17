@@ -83,7 +83,6 @@ export class DisplaySong extends React.Component<Props, State> {
             const scrollAmountInteger = Math.floor(scrollAmount)
             const scrollAmountFraction = scrollAmount - scrollAmountInteger
             this.scrollingFractions = scrollAmountFraction
-            console.log(tDelta, autoScrollSpeed, scrollAmountInteger, "     ", divHeight, viewPortHeight)
 
             window.scrollBy(0, scrollAmountInteger)
             window.requestAnimationFrame(this.updateAutoScroll)
