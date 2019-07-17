@@ -35,7 +35,7 @@ class App extends React.Component<Props, State> {
                 <Switch>
                     <Route exact path="/" component={SelectSong}/>
                     <Route path="/error/:errorMsg" component={SelectSong}/>
-                    <Route path="/song/:uri" component={DisplaySong}/>
+                    <Route path="/song/:uri/:selectedVersionIndex?" component={DisplaySong}/>
                     <Route component={NotFound}/>
                 </Switch>
             </BrowserRouter >

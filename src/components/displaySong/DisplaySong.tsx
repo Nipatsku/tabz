@@ -15,6 +15,10 @@ interface Props extends Navigatable<{
      * Selected song uri.
      */
     uri: string
+    /**
+     * Selected version index.
+     */
+    selectedVersionIndex?: number
 }> {}
 type State = {} | {
     song: Song
@@ -31,23 +35,17 @@ export class DisplaySong extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props)
-        fetch(`/content/${props.match.params.uri}`)
+        const { uri } = props.match.params
+        fetch(`/content/${uri}`)
             .then((r) => r.json())
             .catch(() => {
                 // Navigate to start menu, and display error message.
+                // TODO: Can we clear navigation history somehow?
                 this.props.history.replace("/error/" + `Song not found :(`)
             })
             .then((song: Song | undefined) => {
-                if (song === undefined)
-                    return
-
-                const selectedVersion = song.versions[0]
-                this.setState({
-                    song,
-                    selectedVersion,
-                    autoScrollActive: false,
-                    autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion)
-                })
+                if (song !== undefined)
+                    this.selectVersionFromProps(song, props)
             })
         this.state = {}
     }
@@ -63,11 +61,28 @@ export class DisplaySong extends React.Component<Props, State> {
     componentWillUnmount() {
         this.isCurrentlyMounted = false
     }
-    onSelectVersion = (selectedVersion: SongVersion) => {
+    componentWillReceiveProps(props: Props) {
+        if ("song" in this.state)
+            this.selectVersionFromProps(this.state.song, props)
+    }
+    selectVersionFromProps(song: Song, props: Props) {
+        const { selectedVersionIndex } = props.match.params
+        const selectedVersion = song.versions[
+            (selectedVersionIndex !== undefined && selectedVersionIndex < song.versions.length) ?
+                selectedVersionIndex :
+                0
+        ]
         this.setState({
+            song,
             selectedVersion,
-            autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion)
+            autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion),
+            autoScrollActive: false
         })
+    }
+    onSelectVersion = (selectedVersionIndex: number) => {
+        this.props.history.push(
+            `/song/${this.props.match.params.uri}/${selectedVersionIndex}`
+        )
     }
     goToBeginning = () => {
         animateScroll.scrollToTop()
@@ -96,7 +111,7 @@ export class DisplaySong extends React.Component<Props, State> {
             this.scrollDivRef &&
             this.lastAutoScrollUpdate !== undefined
         ) {
-            const { autoScrollSpeed } = this.state
+            const autoScrollSpeed = this.state.autoScrollSpeed
             const div = this.scrollDivRef
             const divBounds = div.getBoundingClientRect()
             const divHeight = divBounds.bottom - divBounds.top
