@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SongInfo, Song, SongVersion } from "../../datastructures/song"
-import { Button, Layout, Typography, Icon, Input, Affix } from "antd/lib"
+import { Button, Layout, Typography, Icon, Input, Affix, Tag } from "antd/lib"
 import { VersionSelector } from "./VersionSelector"
 import { SongContent } from "./SongContent"
 import { AutoScrollConfig } from "./AutoScrollConfig"
@@ -116,6 +116,9 @@ export class DisplaySong extends React.Component<Props, State> {
                     />
                 </Affix>
             </div>
+            <br/>
+            <Tag color="blue">{selectedVersion.instrument}</Tag>
+            <Tag color="volcano">{selectedVersion.tuning}</Tag>
             <SongContent
                 ref={(ref) => this.songContentRef = ref}
                 song={song}
