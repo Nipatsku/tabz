@@ -19,7 +19,7 @@ interface State {
 }
 export class DisplaySong extends React.Component<Props, State> {
 
-    songContentRef?: SongContent | null
+    scrollDivRef?: HTMLDivElement | null
     isCurrentlyMounted: boolean = false
     lastAutoScrollUpdate?: number
     scrollingFractions: number = 0
@@ -35,7 +35,9 @@ export class DisplaySong extends React.Component<Props, State> {
     }
     componentDidMount() {
         this.isCurrentlyMounted = true
-        setTimeout(this.updateAutoScroll)
+        window.requestAnimationFrame = window.requestAnimationFrame ||
+            ((clbk: () => void) => window.setTimeout(clbk, 50))
+        window.requestAnimationFrame(this.updateAutoScroll)
     }
     componentWillUnmount() {
         this.isCurrentlyMounted = false
@@ -66,26 +68,27 @@ export class DisplaySong extends React.Component<Props, State> {
         const tNow = window.performance.now()
         if (
             this.state.autoScrollActive &&
-            this.songContentRef &&
+            this.scrollDivRef &&
             this.lastAutoScrollUpdate !== undefined
         ) {
             const { autoScrollSpeed } = this.state
-            const div = this.songContentRef.getDIV() as HTMLDivElement
+            const div = this.scrollDivRef
             const divBounds = div.getBoundingClientRect()
             const divHeight = divBounds.bottom - divBounds.top
             const viewPortHeight = window.innerHeight
             const tDelta = (tNow - this.lastAutoScrollUpdate)
-            const scrollAmount = (divHeight - viewPortHeight * 0.20) * tDelta / (autoScrollSpeed * 1000)
+            const scrollAmount = (divHeight - viewPortHeight) * tDelta / (autoScrollSpeed * 1000)
                 + this.scrollingFractions
 
             const scrollAmountInteger = Math.floor(scrollAmount)
             const scrollAmountFraction = scrollAmount - scrollAmountInteger
             this.scrollingFractions = scrollAmountFraction
+            console.log(tDelta, autoScrollSpeed, scrollAmountInteger, "     ", divHeight, viewPortHeight)
 
             window.scrollBy(0, scrollAmountInteger)
-            setTimeout(this.updateAutoScroll, 50)
+            window.requestAnimationFrame(this.updateAutoScroll)
         } else {
-            setTimeout(this.updateAutoScroll, 100)
+            window.requestAnimationFrame(this.updateAutoScroll)
             this.scrollingFractions = 0
         }
 
@@ -94,7 +97,9 @@ export class DisplaySong extends React.Component<Props, State> {
     render() {
         const { song, returnToPrevious } = this.props
         const { selectedVersion, autoScrollActive, autoScrollSpeed } = this.state
-        return <div>
+        return <div
+            ref={(ref) => this.scrollDivRef = ref}
+        >
             <Title>{song.artist}</Title>
             <Title level={2}>{song.name}</Title>
             <div>
@@ -122,7 +127,6 @@ export class DisplaySong extends React.Component<Props, State> {
                 <Tag color="volcano">{selectedVersion.tuning}</Tag>
             }
             <SongContent
-                ref={(ref) => this.songContentRef = ref}
                 song={song}
                 version={selectedVersion}
                 onClick={this.onToggleAutoScroll}
