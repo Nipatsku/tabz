@@ -24,7 +24,7 @@ export interface SongInfo {
 /**
  *
  */
-export interface GuitarSong {
+interface GuitarSong {
     /**
      *
      */
@@ -37,7 +37,16 @@ export interface GuitarSong {
 /**
  *
  */
-export type PossibleSongVersions = GuitarSong
+interface OnlyLyrics {
+    /**
+     *
+     */
+    readonly instrument: "lyrics"
+}
+/**
+ *
+ */
+type PossibleSongVersions = GuitarSong | OnlyLyrics
 /**
  *
  */
@@ -58,7 +67,7 @@ export type SongVersion = {
      *
      */
     readonly duration?: AutoScrollSpeed
-} & (PossibleSongVersions)
+} & PossibleSongVersions
 /**
  *
  */

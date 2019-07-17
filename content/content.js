@@ -483,7 +483,7 @@ Outro Solo  Em    D Em||x8`		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `When I was young I was the nicest guy I knew
 I thought I was the chosen one
@@ -566,7 +566,7 @@ I ain\'t no nice guy after all
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			duration: 7 * 60 + 50,
 			content: 
 `
@@ -769,7 +769,7 @@ It’s a hard rai---n’s a-gonna fall`		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			duration: 5 * 60 + 0,
 			content: 
 `Hey, Mr Tambourine Man, play a song for me
@@ -2592,7 +2592,7 @@ stand by me,     stand by        me.
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `When the night has come
 And the land is dark
@@ -3225,7 +3225,7 @@ Never on your side… `		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `Father time, I\'m running late
 I\'m winding down, I\'m growing tired
@@ -8001,7 +8001,7 @@ Little variations in the repeats, just solo in E minor or G major`		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.standard),
+			instrument: Lyrics(),
 			content: 
 `[Verse 1]
 Can\'t stop, addicted to the shindig
@@ -10478,7 +10478,7 @@ So, hello, Mary Lou, goodbye heart.
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			duration: 5 * 60 + 0,
 			content: 
 `
@@ -11659,7 +11659,7 @@ Got my ticket...
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `Angie, Angie, when will those clouds all disappear?
 Angie, Angie, where will it lead us from here?
@@ -12103,7 +12103,8 @@ const song = (artist, songName) => {
 	return entry
 }
 const instruments = {
-    guitar: 'guitar'
+	guitar: 'guitar',
+	lyrics: 'lyrics'
 }
 const guitarTunings = {
     unknown: 'Unknown',
@@ -12125,6 +12126,9 @@ const guitarTunings = {
 const Guitar = (tuning = guitarTunings.standard) => ({
     instrument: instruments.guitar,
     tuning
+})
+const Lyrics = () => ({
+	instrument: instruments.lyrics
 })
 _()
 module.exports = { songs, instruments }
