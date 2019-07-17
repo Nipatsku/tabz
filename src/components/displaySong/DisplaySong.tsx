@@ -118,7 +118,9 @@ export class DisplaySong extends React.Component<Props, State> {
             </div>
             <br/>
             <Tag color="blue">{selectedVersion.instrument}</Tag>
-            <Tag color="volcano">{selectedVersion.tuning}</Tag>
+            {selectedVersion.instrument === "guitar" &&
+                <Tag color="volcano">{selectedVersion.tuning}</Tag>
+            }
             <SongContent
                 ref={(ref) => this.songContentRef = ref}
                 song={song}
