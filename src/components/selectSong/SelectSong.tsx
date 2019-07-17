@@ -6,19 +6,12 @@ import { Button, Layout, Typography, Icon, Input, message } from "antd/lib"
 import { LoadingIndicator } from "../common/LoadingIndicator";
 import { Navigatable } from "../common/navigation"
 
-interface Props extends Navigatable {
+interface Props extends Navigatable<{
     /**
-     * URL parameters.
+     * Optional error message, in case user was automatically redirected to this view, because of an error.
      */
-    match: {
-        params: {
-            /**
-             * Optional error message, in case user was automatically redirected to this view, because of an error.
-             */
-            errorMsg?: string
-        }
-    }
-}
+    errorMsg?: string
+}> {}
 interface State {
     songList?: SongInfo[]
     searchString?: string

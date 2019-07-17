@@ -10,19 +10,12 @@ import { LoadingIndicator } from "../common/LoadingIndicator";
 import { Navigatable } from "../common/navigation"
 const { Title, Text } = Typography
 
-interface Props extends Navigatable {
+interface Props extends Navigatable<{
     /**
-     * URL parameters.
+     * Selected song uri.
      */
-    match: {
-        params: {
-            /**
-             * Selected song uri.
-             */
-            uri: string
-        }
-    }
-}
+    uri: string
+}> {}
 type State = {} | {
     song: Song
     selectedVersion: SongVersion
@@ -56,9 +49,7 @@ export class DisplaySong extends React.Component<Props, State> {
                     autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion)
                 })
             })
-        this.state = {
-            error: false
-        }
+        this.state = {}
     }
     componentDidMount() {
         this.isCurrentlyMounted = true
