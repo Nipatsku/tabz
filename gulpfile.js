@@ -69,7 +69,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
             .replace(/,|\'|\.|\(|\)|\:|\&/g, '')
             .toLowerCase()
             + '.json'
-        const url = `content/${fileName}`
+        const url = `${fileName}`
         list.push({
             id,
             name,

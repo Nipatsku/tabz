@@ -6,13 +6,25 @@ import { SongContent } from "./SongContent"
 import { AutoScrollConfig } from "./AutoScrollConfig"
 import { Link, animateScroll } from "react-scroll"
 import { AutoScrollSpeed, AutoScrollValues, getSongAutoScrollSpeed } from "../../datastructures/autoScroll";
+import { LoadingIndicator } from "../common/LoadingIndicator";
+import { Navigatable } from "../common/navigation"
 const { Title, Text } = Typography
 
-interface Props {
-    song: Song
-    returnToPrevious: () => void
+interface Props extends Navigatable {
+    /**
+     * URL parameters.
+     */
+    match: {
+        params: {
+            /**
+             * Selected song uri.
+             */
+            uri: string
+        }
+    }
 }
-interface State {
+type State = {} | {
+    song: Song
     selectedVersion: SongVersion
     autoScrollActive: boolean
     autoScrollSpeed: AutoScrollSpeed
@@ -26,11 +38,26 @@ export class DisplaySong extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props)
-        const selectedVersion = this.props.song.versions[0]
+        fetch(`/content/${props.match.params.uri}`)
+            .then((r) => r.json())
+            .catch(() => {
+                // Navigate to start menu, and display error message.
+                this.props.history.replace("/error/" + `Song not found :(`)
+            })
+            .then((song: Song | undefined) => {
+                if (song === undefined)
+                    return
+
+                const selectedVersion = song.versions[0]
+                this.setState({
+                    song,
+                    selectedVersion,
+                    autoScrollActive: false,
+                    autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion)
+                })
+            })
         this.state = {
-            selectedVersion,
-            autoScrollActive: false,
-            autoScrollSpeed: getSongAutoScrollSpeed(selectedVersion)
+            error: false
         }
     }
     componentDidMount() {
@@ -52,17 +79,21 @@ export class DisplaySong extends React.Component<Props, State> {
         animateScroll.scrollToTop()
     }
     onToggleAutoScroll = () => {
-        this.setState({
-            autoScrollActive: !this.state.autoScrollActive
-        })
+        if ("autoScrollActive" in this.state)
+            this.setState({
+                autoScrollActive: !this.state.autoScrollActive
+            })
     }
     onSetAutoScrollSpeed = (autoScrollSpeed: AutoScrollSpeed) => {
         this.setState({
             autoScrollSpeed
         })
     }
+    returnToPreviousMenu = () => {
+        this.props.history.push("/")
+    }
     updateAutoScroll = () => {
-        if (!this.isCurrentlyMounted)
+        if (!this.isCurrentlyMounted || !("autoScrollActive" in this.state))
             return
 
         const tNow = window.performance.now()
@@ -94,55 +125,58 @@ export class DisplaySong extends React.Component<Props, State> {
         this.lastAutoScrollUpdate = tNow
     }
     render() {
-        const { song, returnToPrevious } = this.props
-        const { selectedVersion, autoScrollActive, autoScrollSpeed } = this.state
-        return <div
-            ref={(ref) => this.scrollDivRef = ref}
-        >
-            <Title>{song.artist}</Title>
-            <Title level={2}>{song.name}</Title>
-            <div>
-                <VersionSelector
-                    song={song}
-                    defaultSelectedVersion={selectedVersion}
-                    onSelectVersion={this.onSelectVersion}
-                />
-                <Affix
-                    className="autoScrollConfigBox"
-                    offsetTop={0}
-                >
-                    <AutoScrollConfig
-                        songVersion={selectedVersion}
-                        enabled={autoScrollActive}
-                        autoScrollSpeed={autoScrollSpeed}
-                        onToggle={this.onToggleAutoScroll}
-                        onSetSpeed={this.onSetAutoScrollSpeed}
+        if (! ("song" in this.state)) {
+            return <LoadingIndicator/>
+        } else {
+            const { song, selectedVersion, autoScrollActive, autoScrollSpeed } = this.state
+            return <div
+                ref={(ref) => this.scrollDivRef = ref}
+            >
+                <Title>{song.artist}</Title>
+                <Title level={2}>{song.name}</Title>
+                <div>
+                    <VersionSelector
+                        song={song}
+                        defaultSelectedVersion={selectedVersion}
+                        onSelectVersion={this.onSelectVersion}
                     />
-                </Affix>
+                    <Affix
+                        className="autoScrollConfigBox"
+                        offsetTop={0}
+                    >
+                        <AutoScrollConfig
+                            songVersion={selectedVersion}
+                            enabled={autoScrollActive}
+                            autoScrollSpeed={autoScrollSpeed}
+                            onToggle={this.onToggleAutoScroll}
+                            onSetSpeed={this.onSetAutoScrollSpeed}
+                        />
+                    </Affix>
+                </div>
+                <br/>
+                <Tag color="blue">{selectedVersion.instrument}</Tag>
+                {selectedVersion.instrument === "guitar" &&
+                    <Tag color="volcano">{selectedVersion.tuning}</Tag>
+                }
+                <SongContent
+                    song={song}
+                    version={selectedVersion}
+                    onClick={this.onToggleAutoScroll}
+                />
+                <br/>
+                <div>
+                    <Button
+                        onClick={this.goToBeginning}
+                    >
+                        To beginning
+                    </Button>
+                    <Button
+                        onClick={this.returnToPreviousMenu}
+                    >
+                        To song selection
+                    </Button>
+                </div>
             </div>
-            <br/>
-            <Tag color="blue">{selectedVersion.instrument}</Tag>
-            {selectedVersion.instrument === "guitar" &&
-                <Tag color="volcano">{selectedVersion.tuning}</Tag>
-            }
-            <SongContent
-                song={song}
-                version={selectedVersion}
-                onClick={this.onToggleAutoScroll}
-            />
-            <br/>
-            <div>
-                <Button
-                    onClick={this.goToBeginning}
-                >
-                    To beginning
-                </Button>
-                <Button
-                    onClick={returnToPrevious}
-                >
-                    To song selection
-                </Button>
-            </div>
-        </div>
+        }
     }
 }

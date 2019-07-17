@@ -37,7 +37,6 @@ export class SongList extends React.Component<Props, State> {
                     return <TreeNode
                         key={key}
                         title={`${artistSongs[0].artist} (${artistSongs.length})`}
-                        // icon= TODO
                     >
                         {artistSongs.map((song) =>
                             <TreeNode

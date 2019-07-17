@@ -33,7 +33,7 @@ describe('build', function() {
                 const len = list.length
                 for (let i = 0; i < len; i ++) {
                     const { url } = list[i]
-                    const fileExists = fs.existsSync(`public/${url}`)
+                    const fileExists = fs.existsSync(`public/content/${url}`)
                     expect(fileExists).to.equal(true)
                 }
             })

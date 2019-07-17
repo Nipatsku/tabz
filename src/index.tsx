@@ -1,9 +1,10 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { StartMenu } from "./components/startMenu/StartMenu"
-
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { SelectSong } from "./components/selectSong/SelectSong"
 import "./styles.css";
-import { url } from "inspector";
+import { DisplaySong } from "./components/displaySong/DisplaySong";
+import { NotFound } from "./components/notFound/NotFound"
 
 interface Props {}
 interface State {
@@ -12,12 +13,12 @@ interface State {
 class App extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
-        fetch("bg.png")
-            .then((data) => {
-                this.setState({
-                    // bgUrl: data.url
-                })
-            })
+        // fetch("bg.png")
+        //     .then((data) => {
+        //         this.setState({
+        //             bgUrl: data.url
+        //         })
+        //     })
         this.state = {}
     }
     render() {
@@ -30,7 +31,14 @@ class App extends React.Component<Props, State> {
                 backgroundRepeat: "no-repeat"
             }}
         >
-            <StartMenu />
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={SelectSong}/>
+                    <Route path="/error/:errorMsg" component={SelectSong}/>
+                    <Route path="/song/:uri" component={DisplaySong}/>
+                    <Route component={NotFound}/>
+                </Switch>
+            </BrowserRouter >
         </div>
     }
 }
