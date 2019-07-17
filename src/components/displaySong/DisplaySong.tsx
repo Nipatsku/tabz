@@ -52,7 +52,7 @@ export class DisplaySong extends React.Component<Props, State> {
     componentDidMount() {
         this.isCurrentlyMounted = true
         window.requestAnimationFrame = window.requestAnimationFrame ||
-            ((clbk: () => void) => window.setTimeout(clbk, 50))
+            ((clbk: () => void) => setTimeout(clbk, 50))
         window.requestAnimationFrame(this.updateAutoScroll)
 
         // Scroll to top of page always. TODO: Use decorator?
@@ -102,11 +102,10 @@ export class DisplaySong extends React.Component<Props, State> {
         this.props.history.push("/")
     }
     updateAutoScroll = () => {
-        if (!this.isCurrentlyMounted || !("autoScrollActive" in this.state))
-            return
-
         const tNow = window.performance.now()
         if (
+            this.isCurrentlyMounted &&
+            'autoScrollActive' in this.state &&
             this.state.autoScrollActive &&
             this.scrollDivRef &&
             this.lastAutoScrollUpdate !== undefined

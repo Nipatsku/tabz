@@ -14,6 +14,237 @@ const _ = () => {
     //#endregion
     /////////////////////////////////////////////////////////
 	// @@@@@ SONG LIST @@@@@
+    song('Shocking Blue', 'Never Marry A Railroad Man')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.standard),
+            duration: 4 * 60 + 0,
+            content: `
+[Intro]
+Dm    C       Dm    C     Dm      Bb        F
+e|-------------------------------------------------------------------|
+B|-6h8p6-5-------6h8p6-5h6p5-----------3-3-3-3-1---------------------|
+G|-7-----5-------7-----5-----7---------3-3-3-3-2---0-2---------------|
+D|---------------------------7---------------------2-3---------------|
+A|-----------------------------------1-------------------------------|
+E|-------------------------------------------------------------------|
+
+F Em Dm
+
+[Verse]
+Dm                                C
+Have you ever been a broken heart once or twice
+						Dm
+If it´s yes, how did you feel at his first lies
+						Bb      F   F Em Dm 
+If it´s no, you need this good advice
+
+[Chorus]
+Dm            C
+Never marry a railroad man
+				Dm
+He loves you every now and then
+					Bb   F
+His heart is at his mule train 
+F   Em  Dm
+No! No! No!
+Dm                        C
+Don´t fall in love with a railroad man
+					Dm
+If you do, forget of me if you can
+				Bb    F
+You´re better of without him
+
+A+ A A+ A
+Aaah!
+
+[Solo]
+Dm Bb D#m B Em C G
+Dm C Dm Bb F Em Dm x2
+
+[Solo]
+			Dm Bb         D#m B         Em C         G
+e|---------------------------------------------------------------|
+B|---------------------------------------------------------------|
+G|---------------------------------------------------------------|
+D|---------------------------------------------------------------|
+A|----4-7-5-4-5-----5-8-6-5-6-----6-9-7-6-7-----7-8/10-10--------|
+E|--5-------------6-------------7-------------8------------------|
+
+Dm            C                                Dm              Bb           F F Em Dm
+e|------------------------------------3-5-3---------------------------------------|
+B|--5/6-6-6-6-6--5h6p5p3h5------3-5-6-------6-5---6p5p3---3---3-3-6-6-6-3bend-----|
+G|----------------------------5-------------------------5----------------------5--|
+D|--------------------------------------------------------------------------------|
+A|--------------------------------------------------------------------------------|
+E|--------------------------------------------------------------------------------|
+
+Dm            C                                Dm                     Bb     F F Em Dm
+e|--------------3--------------------3-5-3-----------------------------------------|
+B|-5/6-6-6-6-6----6-5-3-5------3-5-6-------6-5---6p5p3---3---3-3-3-3-3--3-3-1------|
+G|---------------------------5-------------------------5----------------3-3-2-0-2--|
+D|----------------------------------------------------------------------------2-3--|
+A|---------------------------------------------------------------------------------|
+E|---------------------------------------------------------------------------------|
+
+(in this part play chords without rhythm pattern)
+
+		Dm  A5    C
+Have you ever been restless in your bed
+	C      Am        Dm
+and so lonely that your eyes become wet
+	Dm   F6       Bb  F      F Em Dm
+Let me tell you that one thing
+
+Dm A5 C    C Am Dm   Dm F6 Bb F
+Mmm mmm ....
+F   Em  Dm
+No! No! No!
+
+[Chorus]
+Dm            C
+Never marry a railroad man
+Dm
+He loves you every now and then
+Bb   F
+His heart is at his mule train
+F   Em  Dm
+No! No! No!
+Dm                        C
+Don't fall in love with a railroad man
+					Dm
+If you do, forget of me if you can
+				Bb      F
+You´re better of without him
+
+F   Em  Dm
+No! No! No!
+Dm C
+No! No! No!
+Dm
+No! No! No!
+		 
+`
+        })
+    //#endregion
+    song('Eagles', 'The New Kid In Town')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.standard),
+            duration: 4 * 60 + 0,
+            content: `
+[Intro]
+
+E   E   F#m B   F#m B   A   B   E   E
+
+
+[Verse 1]
+
+E                      E                  F#m B   F#m B
+There's talk on the street, it sounds so familiar;
+A          B                      E         E
+great expectations, ev'rybody's watchin' you.
+E            E                   F#m  B    F#m7 B
+People you meet they all seem to know you,
+A           B                               E              G#sus4 G#7
+even your old friends treat you like you're somethin' new.
+
+
+[Chorus]
+
+C#m           F#
+Johnny come lately,
+C#m             F#
+the new kid in town.
+C#m        F#
+Ev'rybody loves you,
+F#m                B7
+so don't let them down.
+
+
+[Verse 2]
+
+E                E                F#m     B     F#m B
+You look in her eyes, the music begins to play,
+A          B                    E     E
+hopeless romantics, here we go again.
+E             E                             F#m   B    F#m7 B
+But after a while you're lookin' the other way,
+			A        B                E     G#sus4 G#7
+it's those restless hearts that never mend.
+
+
+[Chorus]
+
+C#m           F#
+Johnny come lately,
+C#m             F#
+the new kid in town.
+C#m             F#
+Will she still love you
+F#m7             B7
+when you're not around?
+
+
+[Bridge]
+
+E   E   B   B   A   B   E   A E F#m E
+
+B7                B7                   E         E
+There's so many things you should have told her,
+B7               B7                    C#m
+but night after night you're willing to hold her,
+		F#7       Am7           Am7/D   D
+just hold her, tears on your shoul - der.
+
+
+[Verse 3]
+
+G                   G                       Am7  D    Am7 D
+There's talk on the street, it's there to remind you.
+C              D             G          G
+Doesn't really matter which side you're on.
+G               G                        Am7  D    D7
+You're walkin' away and they're talkin' behind you,
+			C                     D                   G     B7
+they will never forget you 'til somebody new comes along.
+
+
+[Chorus]
+
+Em7                A
+Where've you been lately?
+Em7                   A
+There's a new kid in town.
+Em7        A
+Ev'rybody loves him (don't they?)
+Am7              B7                   E      G#m7   A
+Now he's holdin' her and you're still around.
+
+
+[Outro]
+
+B7                   E     G#m7   A
+There's a new kid in town,
+B7                      E     G#m7   A   Am7   E
+just another new kid in town.
+E                             C#m             C#m   E
+Ev'rybody's talkin' 'bout the new kid in town.
+E                             C#m             C#m
+Ev'rybody's talkin' 'bout the new kid in town.
+
+
+[Outro]
+
+			E                 E
+There's a new kid in town, (I don't want to hear it)
+			C#m               C#m
+There's a new kid in town, (I don't want to hear it)
+`
+        })
+    //#endregion
 	
     song('Metallica', 'Low Mans Lyric')
     //#region
