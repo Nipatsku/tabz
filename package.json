@@ -35,14 +35,14 @@
     "typescript": "^3.5.2"
   },
   "scripts": {
-    "start": "gulp && react-scripts start",
+    "start": "gulp && gulp build-log && react-scripts start",
     "watch": "gulp build-watch",
-    "build": "gulp && react-scripts build",
+    "build": "gulp && react-scripts build && gulp build-log",
     "test": "gulp tests-run",
     "test-unit": "gulp tests-run-unit",
     "test-lint": "gulp tests-run-lint",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d build && gulp build-log"
   },
   "browserslist": [
     ">0.2%",
