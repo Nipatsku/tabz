@@ -73,31 +73,34 @@ describe('build', function() {
                 }
             })
             it('.versions only has SongVersion members', function() {
+                // Check for no additional properties.
                 for (let i = 0; i < songsLen; i ++) {
                     const song = songs[i]
                     for (const version of song.versions) {
-                        expect(version).to.have.property('id')
-                        expect(version.id).to.be.a('string')
-
-                        expect(version).to.have.property('name')
-                        expect(version.name).to.be.a('string')
-
-                        expect(version).to.have.property('content')
-                        expect(version.content).to.be.a('string')
-                    }
-                }
-            })
-            // GuitarSong implements Song.
-            // In future there might be more SongVersion types added, then this test will have to be modified.
-            it('.versions only has GuitarSong members', function() {
-                for (let i = 0; i < songsLen; i ++) {
-                    const song = songs[i]
-                    for (const version of song.versions) {
-                        expect(version).to.have.property('instrument')
-                        expect(version.instrument).to.be.a('string')
-    
-                        expect(version).to.have.property('tuning')
-                        expect(version.tuning).to.be.a('string')
+                        let type: 'guitar' | 'lyrics' | undefined
+                        // Loop through object properties.
+                        for (const property in version) {
+                            // SongVersion must-have properties.
+                            if (property === 'id')
+                                expect(version[property]).to.be.a('string')
+                            else if (property === 'name')
+                                expect(version[property]).to.be.a('string')
+                            else if (property === 'content')
+                                expect(version[property]).to.be.a('string')
+                            
+                            // GuitarSong | OnlyLyrics.
+                            else if (property === 'instrument') {
+                                const value = version[property]
+                                expect(type).to.be.oneOf([undefined, value])
+                                expect(value).to.be.a('string')
+                                type = value
+                            }
+                            else if (property === 'tuning') {
+                                expect(type).to.be.oneOf([undefined, 'guitar'])
+                                expect(version[property]).to.be.a('string')
+                                type = 'guitar'
+                            }
+                        }
                     }
                 }
             })
