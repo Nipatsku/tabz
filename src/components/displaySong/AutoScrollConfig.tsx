@@ -54,14 +54,18 @@ export class AutoScrollConfig extends React.Component<Props, State> {
                 onChange={this.onSliderChange}
                 onAfterChange={this.afterSliderChange}
             />
-            <Text
-                className="autoScrollValueLabel"
+            <div
+                className="autoScrollValueDiv"
             >
-                {
-                // tslint:disable-next-line: max-line-length
-                `${Math.floor(autoScrollSpeed / 60)} min ${Math.floor(autoScrollSpeed) % 60 > 0 ? Math.floor(autoScrollSpeed) % 60 + " sec" : ""}`
-                }
-            </Text>
+                <Text
+                    className="autoScrollValueLabel"
+                >
+                    {
+                    // tslint:disable-next-line: max-line-length
+                    `${Math.floor(autoScrollSpeed / 60)} min ${Math.floor(autoScrollSpeed) % 60 > 0 ? Math.floor(autoScrollSpeed) % 60 + " sec" : ""}`
+                    }
+                </Text>
+            </div>
         </div>
     }
 }
