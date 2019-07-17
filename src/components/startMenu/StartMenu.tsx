@@ -44,20 +44,20 @@ export class StartMenu extends React.Component<Props, State> {
             .then((r) => r.json())
             .then((songList) => this.setState({ songList }))
             // For development, auto traversal of GUI.
-            .then(() => {
-                const songList = this.state.songList as SongInfo[]
-                const partialSongInfo = songList.find((songInfo) => songInfo.name.includes("Nice Guy")) as SongInfo
-                this.getFullSongInfo(partialSongInfo)
-                    .then((song) => {
-                        this.setState({
-                            subState: {
-                                id: "display-song",
-                                partialSongInfo,
-                                song
-                            }
-                        })
-                    })
-            })
+            // .then(() => {
+            //     const songList = this.state.songList as SongInfo[]
+            //     const partialSongInfo = songList.find((songInfo) => songInfo.name.includes("Nice Guy")) as SongInfo
+            //     this.getFullSongInfo(partialSongInfo)
+            //         .then((song) => {
+            //             this.setState({
+            //                 subState: {
+            //                     id: "display-song",
+            //                     partialSongInfo,
+            //                     song
+            //                 }
+            //             })
+            //         })
+            // })
         this.state = {
             subState: {
                 id: "select-song"
