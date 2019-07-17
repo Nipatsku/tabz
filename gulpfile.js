@@ -9,7 +9,7 @@ const replace = require('gulp-replace')
 
 // ********** Build **********
 const content = require('./content/content.js')
-const buildPath = './public/'
+const buildPath = './public'
 const buildContentPath = `${buildPath}/content`
 const getBuildName = () => {
     const buildNamesJson = './.buildnames.json'
@@ -36,7 +36,7 @@ const buildClean = () => new Promise(function(resolve, reject) {
     fs.readdir(buildPath, (err, files) => {
         if (err) throw err
         for (const file of files) {
-            fs.unlinkSync(`${buildPath}${file}`)
+            fs.unlinkSync(`${buildPath}/${file}`)
         }
     })
     resolve()
@@ -45,6 +45,11 @@ gulp.task('build-clean', buildClean)
 const buildContent = () => new Promise(function(resolve, reject) {
     const buildName = getBuildName()
     console.log('Build name: ',buildName)
+
+    if (!fs.existsSync(buildPath))
+        fs.mkdirSync(buildPath)
+    if (!fs.existsSync(buildContentPath))
+        fs.mkdirSync(buildContentPath)
     
     // Copy content/index.html to public/index.html
     gulp.src('content/index.html')

@@ -13,9 +13,324 @@ const _ = () => {
         })
     //#endregion
     /////////////////////////////////////////////////////////
-    // @@@@@ SONG LIST @@@@@
-//#region
+	// @@@@@ SONG LIST @@@@@
+	
+    song('Metallica', 'Low Mans Lyric')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.half_step_down),
+            duration: 5 * 60 + 0,
+            content: `
+			[Intro/Verse]
 
+			Riff 1
+				 A               G6               D2              E       G
+			D#|-------0-----------------0--------------0------------0-------0--------|
+			A#|---------2----------------2-----------3---3------------0-------0------|
+			F#|------------2----------------0------2---------2-----------------------|
+			C#|---2------------------0-----------0-----------------------------------|
+			G#|-0------------------2-------------------------------------------------|
+			D#|-----------------3--------------------------------0-------3-----------|
+
+			  My eyes       seek reality
+			  
+			  My fingers feel for faith
+
+			  Touch clean with a dirty hand
+
+			  I touched the clean through the waste
+			
+			[Pre-Chorus]
+			(Riff 2)
+			Am                Em
+			The trash fire is warm
+			Am                        Em
+			But nowhere safe from the storm
+			Am                  G
+			And I can't bear to see
+							 C
+			What I've let me be
+						  B
+			So wicked and worn
+			
+			[Chorus]
+			Am               Em
+			So as I write to you
+			Am                     Em
+			Of what is done and to do
+			Am                G
+			Maybe you'll understand
+								   C
+			And won't cry for this man
+							 B                B
+			cause low man is due              please forgive me!!!!
+			
+			
+			A  	G6 	D2 	E G
+
+			My eyes seek reality
+			My fingers feel for faith
+			Touch clean with a dirty hand
+			I touched the clean to the waste
+
+
+			The trash fire is warm
+			But nowhere safe from the storm
+			And I can't bare to see
+			What I've let me be
+			So wicked and worn
+
+			So as I write to you, yeah
+			Of what is done and to do
+			Maybe you'll understand
+			And won't cry for this man
+			'Cause low man is due
+			Please forgive me
+			Please forgive me
+			Please forgive me
+			
+			Riff 3
+			Am    Am-    F
+
+			So low the sky is all I see
+			All I want from you is forgive me
+			So you bring this poor dog in from the rain
+			Though he just wants right back out again
+			
+			And I cry, to the alley way
+			Confess all to the rain
+			But I lie, lie straight to the mirror
+			The one I've broken, to match my face
+			
+			The trash fire is warm
+			But nowhere safe from the storm
+			And I can't bare to see
+			What I've let me be
+			So wicked and worn
+			So as I write to you
+			Of what is done and to do
+			Maybe you'll understand
+			And won't cry for this man
+			'Cause low man is due
+			Please forgive me
+			Please forgive me
+
+			Am  Am-  F
+			So low the sky is all I see
+			All I want from you is forgive me
+			So you bring this poor dog in from the rain
+			Though he just wants right back out again
+
+			[finger-picking, same as intro]
+			A	G6	D2	E 	G
+			My eyes seek reality
+			My fingers seek my veins
+`
+        })
+    //#endregion
+//#region
+	song('Bobby Vinton', 'Sealed With A Kiss')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.standard),
+            duration: 3 * 60 + 0,
+            content: `
+
+			#1.
+			                        Bb  Bbm     Fm
+			Though we gotta say goodbye for the summer..
+			Bbm     Eb          Ab         F               Bbm
+			baby, I promise you this..I'll send you all my love,
+			Eb    C        Fm     Bbm C             Fm
+			every day in a letter.....sealed with a kiss.
+			
+			#2.
+			Fm                   Bb           Fm
+			Yes, it's gonna be a cold, lonely summer..
+				 Bbm           Eb   Ab
+			but, I'll fill the emptiness..
+				 F               Bbm   Eb        C        Fm     Bbm
+			I'll send you all my dreams....every day in a letter..
+			C             Fm
+			sealed with a kiss.
+			
+			CHORUS:
+				 Bb             Fm             Bb
+			I'll see you in the sunlight, I'll hear your voice 
+				 Fm
+			everywhere.
+				 Bb              Fm            G7
+			I'll run to tenderly hold you..but baby, you won't 
+			   C
+			be there.
+			
+			#3.
+			C                     Bb            Fm
+			I don't wanna say goodbye,  for the summer..
+			Bbm         Eb         Ab
+			knowing the love we'll miss.
+				F             Bbm        Eb            Fm
+			So, let us make a pledge..to meet in Septem..ber..
+			Bbm C              Fm
+			and seal it with a kiss.
+			
+			
+			(INTERLUDE:) Fm Bb Fm..Bbm Eb Ab..F Bbm Eb C Fm..Bbm C Fm
+			
+			#4.
+			Fm        F#m        B            F#m
+			Yes, it's gonna be a cold, lonely summer..
+				 Bm            E    A
+			but, I'll fill the emptiness..
+				 F#              Bm      E     C#       F#m   Bm
+			I'll send you all my love....every day in a letter..
+			E            F#m       Bm
+			sealed with a kiss.
+			
+			OUTRO:
+			E            F#m       Bm
+			sealed with a kiss..(x3)(Fade.)
+			
+`
+        })
+    //#endregion
+
+	song('Bobby Vinton', 'Rain, Rain, Go Away')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.capo3),
+            duration: 3 * 60 + 0,
+            content: `
+			[Intro]
+			G          C      D7 G
+			Rain, rain go away...
+			
+			[Verse 1]
+			G     D7    G7  C                             G
+			I can still re..member when you moved in next door,
+			G         D7  G7   C                   A7           D7
+			I brought you some chocholate from the corner candy store.
+			B7              Em          B7              Em 
+			When it started raining you started crying, too,
+			C            G            C         D7      G   Am7 D7
+			That was the first time I sang this song to you. 
+			
+			[Chorus]
+			G          C        D7              G
+			Rain, rain go away. Come again some other day. 
+			E7         A7       D7              G
+			Rain, rain go away, bring my love a sunny day.
+			
+			
+			[Verse 2] ***(Chords are same for other verses)***
+			G       D7 G7  C                            G
+			We grew up to..gether and as the years went by,
+			G    D7   G7 C                 A7                   D7
+			Everybo...dy knew that we were sweethearts, you and I.
+					B7         Em        B7                Em
+			Through many april showers I held your hand in mine,
+			C           G            C          D7    G    Am7 D7
+			Between the raindrops we sang, time after time.
+			
+			[Chorus 2]
+			G          C        D7              G
+			Rain, rain go away. Come again some other day. 
+			E7         A7       D7              G
+			Rain, rain go away, bring my love a sunny day.
+			
+			
+			[Verse 3]
+			  G     D7  G7  C                               G
+			I went away to college, you said you'd wait for me.
+			G      D7  G7   C             A7            D7 
+			Then I got your letter asking me to set you free.
+			  B7               Em               B7            Em
+			Tomorrow you'll be married, there's nothing I can do,
+			C            G         C             D7         G       Am7 D7
+			But wish you sunshine, now, and your whole life through.
+			
+			[Chorus 3] 
+			G          C          D7            G
+			Rain, rain go away. Tomorrow is her wedding day 
+			E7         A7       D7              G    D7  G
+			Rain, rain go away, bring my love a su...nny day.
+			
+			[Outro]
+			C        G
+			Rain go away... 
+			
+`
+        })
+    //#endregion
+
+	song('Rauli Badding Somerjoki', 'Paratiisi')
+	//#region
+		.version({
+			name: 'Chords + lyrics',
+			instrument: Guitar(guitarTunings.standard),
+			duration: 3 * 60 + 0,
+			content: `[Intro] |Am   |C   |E7  |Am   |
+
+
+			[Verse 1]
+				   Am                 
+			Kun mä sinut kohtasin, oli ilta ihanin, 
+				   C                  E7
+			linnut lauloi ja kimmelsi taivaan kuu
+				 Am                       C
+			Sinä sanoit menkäämme, maalle meidän landelle,
+				   E7                  Am
+			mietin nyt, juttu tää onnistuu
+			
+			[Verse 2]
+				 Am
+			Perille kun saavuttiin, kukat kukki, tuoksui niin,
+				 C                       E7
+			meri vaahtosi niin kuin olut kuohuaa
+				 Am                        C
+			Heti rantaan kuljettiin, liiat kuteet riisuttiin,
+				E7                  Am
+			oli tunnelma niin huumaavaa
+			
+			[Chorus]
+				   G7                          C
+			Oi jos sulle voisin antaa kaikkein kauneimman,
+				  B7               E7
+			tämän maailmani pallon valtavan
+				  Am                    C
+			Mutta enhän sitä tee, pieni hetki riittänee,
+					E7                   Am
+			kun sun vierelläsi näin olla saan
+			
+			[Solo]
+			G7  C  B7  E7  		Am  C  E7  Am  (2x)
+			
+			[Verse 3]
+				   Am
+			Varret yhteen kiedottiin, hiekka tarttui varpaisiin,
+				  C                     E7
+			meren kiihkeään rytmiin kun vaivuttiin
+				   Am                         C
+			Pientä huulta heitit kai, suoraan suusta suuhun vain,
+				   E7                    Am
+			näistä aikuiset puhuu kuiskuttain
+			
+			[Chorus]
+				   G7                          C
+			Oi jos sulle voisin antaa kaikkein kauneimman,
+				  B7               E7
+			tämän maailmani pallon valtavan
+				  Am                    C
+			Mutta enhän sitä tee, pieni hetki riittänee,
+					E7                   Am     Am E7 Am
+			kun sun vierelläsi näin olla saan
+
+	`
+		})
+	//#endregion
 
 	//#region
 	song('Nirvana', 'Oh Me')
