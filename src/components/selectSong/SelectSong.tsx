@@ -45,6 +45,10 @@ export class SelectSong extends React.Component<Props, State> {
         }
         this.state = {}
     }
+    componentDidMount() {
+        // Scroll to top of page always. TODO: Use decorator?
+        window.scrollTo(0, 0)
+    }
     onSearchSong = (value: string) => {
         this.setState({
             searchString: value.length > 0 ?

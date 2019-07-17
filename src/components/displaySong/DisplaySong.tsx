@@ -56,6 +56,9 @@ export class DisplaySong extends React.Component<Props, State> {
         window.requestAnimationFrame = window.requestAnimationFrame ||
             ((clbk: () => void) => window.setTimeout(clbk, 50))
         window.requestAnimationFrame(this.updateAutoScroll)
+
+        // Scroll to top of page always. TODO: Use decorator?
+        window.scrollTo(0, 0)
     }
     componentWillUnmount() {
         this.isCurrentlyMounted = false
