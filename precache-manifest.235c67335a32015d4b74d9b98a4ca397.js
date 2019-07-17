@@ -4,23 +4,23 @@ self.__precacheManifest = [
     "url": "/tabz/static/js/runtime~main.72ca2b90.js"
   },
   {
-    "revision": "2fdab60891f03f275fc0",
-    "url": "/tabz/static/js/main.2fdab608.chunk.js"
+    "revision": "3635ace3b44b2cd15ed9",
+    "url": "/tabz/static/js/main.3635ace3.chunk.js"
   },
   {
     "revision": "00dfa3b921e9c9922852",
     "url": "/tabz/static/js/1.00dfa3b9.chunk.js"
   },
   {
-    "revision": "2fdab60891f03f275fc0",
-    "url": "/tabz/static/css/main.4e93e00c.chunk.css"
+    "revision": "3635ace3b44b2cd15ed9",
+    "url": "/tabz/static/css/main.475952d9.chunk.css"
   },
   {
     "revision": "00dfa3b921e9c9922852",
     "url": "/tabz/static/css/1.9cea3f0a.chunk.css"
   },
   {
-    "revision": "c8fb22e0047d2e326b1547f57027a895",
+    "revision": "17babd7366792a5a3408ab8f6900c360",
     "url": "/tabz/index.html"
   }
 ];
