@@ -1,7 +1,7 @@
 {
   "main.css": "/tabz/static/css/main.475952d9.chunk.css",
-  "main.js": "/tabz/static/js/main.3635ace3.chunk.js",
-  "main.js.map": "/tabz/static/js/main.3635ace3.chunk.js.map",
+  "main.js": "/tabz/static/js/main.431b668f.chunk.js",
+  "main.js.map": "/tabz/static/js/main.431b668f.chunk.js.map",
   "static/css/1.9cea3f0a.chunk.css": "/tabz/static/css/1.9cea3f0a.chunk.css",
   "static/js/1.00dfa3b9.chunk.js": "/tabz/static/js/1.00dfa3b9.chunk.js",
   "static/js/1.00dfa3b9.chunk.js.map": "/tabz/static/js/1.00dfa3b9.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/main.475952d9.chunk.css.map": "/tabz/static/css/main.475952d9.chunk.css.map",
   "static/css/1.9cea3f0a.chunk.css.map": "/tabz/static/css/1.9cea3f0a.chunk.css.map",
   "index.html": "/tabz/index.html",
-  "precache-manifest.235c67335a32015d4b74d9b98a4ca397.js": "/tabz/precache-manifest.235c67335a32015d4b74d9b98a4ca397.js",
+  "precache-manifest.dca8850c06e8d64d42a43f5282a191e6.js": "/tabz/precache-manifest.dca8850c06e8d64d42a43f5282a191e6.js",
   "service-worker.js": "/tabz/service-worker.js"
 }
