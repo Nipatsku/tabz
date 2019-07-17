@@ -15,18 +15,12 @@ interface Point {
 }
 export class SongContent extends React.Component<Props, State> {
 
-    divRef?: HTMLDivElement | null
     touchStartTime?: number
     touchStartLocation?: Point
 
     constructor(props: Props) {
         super(props)
         this.state = {}
-    }
-    getDIV(): HTMLDivElement | undefined {
-        return (this.divRef === null || this.divRef === undefined) ?
-            undefined :
-            this.divRef as HTMLDivElement
     }
     onDoubleClick = () => {
         this.props.onClick()
@@ -55,7 +49,6 @@ export class SongContent extends React.Component<Props, State> {
         const { version } = this.props
         const contentRows = version.content.split("\n")
         return <div
-            ref={(ref) => this.divRef = ref}
             onDoubleClick={this.onDoubleClick}
             onTouchStart={this.onTouchStart}
             onTouchEnd={this.onTouchEnd}

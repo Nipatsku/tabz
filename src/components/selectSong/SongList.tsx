@@ -9,7 +9,6 @@ interface Props {
     onSelectSong: (songInfo: SongInfo) => void
 }
 interface State {}
-type SongSorter = (a: SongInfo, b: SongInfo) => 1 | -1 | 0
 export class SongList extends React.Component<Props, State> {
     onSelectTreeNode = (selectedKeys: string[]) => {
         const { songList, onSelectSong } = this.props
@@ -26,6 +25,7 @@ export class SongList extends React.Component<Props, State> {
         const { songList, searchString, onSelectSong } = this.props
         if (! searchString) {
             const songsByArtist = mapSongsByArtist(songList)
+                .sort(sortArtistsByName)
                 .map((artistSongs) => artistSongs.sort(sortSongsByName))
             return <Tree
                 showIcon
@@ -36,8 +36,7 @@ export class SongList extends React.Component<Props, State> {
                     const key = `${iArtist}`
                     return <TreeNode
                         key={key}
-                        title={artistSongs[0].artist}
-                        // icon= TODO
+                        title={`${artistSongs[0].artist} (${artistSongs.length})`}
                     >
                         {artistSongs.map((song) =>
                             <TreeNode
@@ -79,9 +78,9 @@ const _songSimilarity = (songInfo: SongInfo, searchString: string): number => {
                 0
             )
 }
-const SearchStringSorter = (_searchString: string): SongSorter => {
+const SearchStringSorter = (_searchString: string) => {
     const searchString = _searchString.toLowerCase()
-    return (a, b) => {
+    return (a: SongInfo, b: SongInfo) => {
         const aScore = _songSimilarity(a, searchString)
         const bScore = _songSimilarity(b, searchString)
         return (aScore < bScore) ? 1 : (aScore > bScore) ? -1 : 0
@@ -101,9 +100,21 @@ const mapSongsByArtist = (songs: SongInfo[]): SongInfo[][] => {
             songsByArtist.push([song])
     }
     return songsByArtist
+        .sort((a, b) => {
+            const textA = a[0].artist.toUpperCase()
+            const textB = b[0].artist.toUpperCase()
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0
+        })
 }
-const sortSongsByName = (a: SongInfo, b: SongInfo): -1 | 1 | 0 => {
-    const textA = a.name.toUpperCase()
-    const textB = b.name.toUpperCase()
-    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0
+/**
+ * Sorter factory for objects with names.
+ */
+const SortByName = function<T>(name: (o: T) => string) {
+    return (a: T, b: T): -1 | 1 | 0 => {
+        const textA = name(a).toUpperCase()
+        const textB = name(b).toUpperCase()
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0
+    }
 }
+const sortSongsByName = SortByName<SongInfo>((songInfo) => songInfo.name)
+const sortArtistsByName = SortByName<SongInfo[]>((artistSongs) => artistSongs[0].artist)

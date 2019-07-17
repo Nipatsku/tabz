@@ -23,10 +23,6 @@ Used tools:
     - Testing framework
 - *chai*
     - Assertion library
-- *sinon*
-    - Mainly used for spying on method calls
-- *typemoq*
-    - Type-safe mocking
 
 ### Syntax and code-convention tests
 

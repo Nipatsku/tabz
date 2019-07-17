@@ -11,8 +11,8 @@ const replace = require('gulp-replace')
 const content = require('./content/content.js')
 const buildPath = './public'
 const buildContentPath = `${buildPath}/content`
-const getBuildName = () => {
-    const buildNamesJson = './.buildnames.json'
+const buildNamesJson = './.buildnames.json'
+const getNextBuildName = () => {
     let buildNames = require(buildNamesJson)
     // Pick random name from 'buildNames.names', that is not equal to 'buildNames.previous'.
     const previous = buildNames.previous
@@ -32,6 +32,10 @@ const getBuildName = () => {
     )
     return buildName
 }
+const getBuildName = () => {
+    const buildNames = require(buildNamesJson)
+    return buildNames.previous
+}
 const buildClean = () => new Promise(function(resolve, reject) {
     fs.readdir(buildPath, (err, files) => {
         if (err) throw err
@@ -43,9 +47,7 @@ const buildClean = () => new Promise(function(resolve, reject) {
 })
 gulp.task('build-clean', buildClean)
 const buildContent = () => new Promise(function(resolve, reject) {
-    const buildName = getBuildName()
-    console.log('Build name: ',buildName)
-
+    const buildName = getNextBuildName()
     if (!fs.existsSync(buildPath))
         fs.mkdirSync(buildPath)
     if (!fs.existsSync(buildContentPath))
@@ -69,7 +71,7 @@ const buildContent = () => new Promise(function(resolve, reject) {
             .replace(/,|\'|\.|\(|\)|\:|\&/g, '')
             .toLowerCase()
             + '.json'
-        const url = `content/${fileName}`
+        const url = `${fileName}`
         list.push({
             id,
             name,
@@ -105,6 +107,13 @@ const buildWatch = () => new Promise(function(resolve, reject) {
     })
 })
 gulp.task('build-watch', gulp.series('build-content', buildWatch))
+const buildLog = () => new Promise(function(resolve, reject) {
+    console.log(`
+Build name: ${getBuildName()}
+`)
+    resolve()
+})
+gulp.task('build-log', buildLog)
 gulp.task('default', buildContent)
 
 

@@ -484,25 +484,29 @@ Outro Solo  Em    D Em||x8`		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `When I was young I was the nicest guy I knew
 I thought I was the chosen one
 But time went by and I found out a thing or two
 My shine wore off as time wore on
+
 I thought that I was living out the perfect life
 But in the lonely hours when the truth begins to bite
 I thought about the times when I turned my back & stalled
 I ain\'t no nice guy after all
+
 When I was young I was the only game in town
 I thought I had it down for sure,
 But time went by and I was lost in what I found
 The reasons blurred, the way unsure
+
 I thought that I was living life the only way
 But as I saw that life was more than day to day
 I turned around, I read the writing on the wall
 I ain\'t no nice guy after all
 I ain\'t no nice guy after all
+
 In all the years you spend between your birth and death
 You find there\'s lots of times you should have saved your breath
 It comes as quite a shock when that trip leads to fall`		})
@@ -567,7 +571,7 @@ I ain\'t no nice guy after all
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			duration: 7 * 60 + 50,
 			content: 
 `
@@ -770,7 +774,7 @@ It’s a hard rai---n’s a-gonna fall`		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			duration: 5 * 60 + 0,
 			content: 
 `Hey, Mr Tambourine Man, play a song for me
@@ -2593,7 +2597,7 @@ stand by me,     stand by        me.
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `When the night has come
 And the land is dark
@@ -3226,7 +3230,7 @@ Never on your side… `		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `Father time, I\'m running late
 I\'m winding down, I\'m growing tired
@@ -8002,7 +8006,7 @@ Little variations in the repeats, just solo in E minor or G major`		})
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.standard),
+			instrument: Lyrics(),
 			content: 
 `[Verse 1]
 Can\'t stop, addicted to the shindig
@@ -10479,7 +10483,7 @@ So, hello, Mary Lou, goodbye heart.
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			duration: 5 * 60 + 0,
 			content: 
 `
@@ -11660,7 +11664,7 @@ Got my ticket...
 		//#region
 		.version({
 			name: 'Lyrics',
-			instrument: Guitar(guitarTunings.undefined),
+			instrument: Lyrics(),
 			content: 
 `Angie, Angie, when will those clouds all disappear?
 Angie, Angie, where will it lead us from here?
@@ -12104,7 +12108,8 @@ const song = (artist, songName) => {
 	return entry
 }
 const instruments = {
-    guitar: 'guitar'
+	guitar: 'guitar',
+	lyrics: 'lyrics'
 }
 const guitarTunings = {
     unknown: 'Unknown',
@@ -12126,6 +12131,9 @@ const guitarTunings = {
 const Guitar = (tuning = guitarTunings.standard) => ({
     instrument: instruments.guitar,
     tuning
+})
+const Lyrics = () => ({
+	instrument: instruments.lyrics
 })
 _()
 module.exports = { songs, instruments }

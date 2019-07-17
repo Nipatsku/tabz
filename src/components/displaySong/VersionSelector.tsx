@@ -6,7 +6,7 @@ const { Title, Text } = Typography
 interface Props {
     song: Song
     defaultSelectedVersion: SongVersion
-    onSelectVersion: (version: SongVersion) => void
+    onSelectVersion: (selectedVersionIndex: number) => void
 }
 interface State {}
 export class VersionSelector extends React.Component<Props, State> {
@@ -25,7 +25,7 @@ export class VersionSelector extends React.Component<Props, State> {
                     {versions.map((version, i) =>
                         <Button
                             key={`${i}`}
-                            onClick={() => onSelectVersion(version)}
+                            onClick={() => onSelectVersion(i)}
                             type={version === defaultSelectedVersion ?
                                 "primary" : "default"
                             }

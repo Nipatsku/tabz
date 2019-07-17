@@ -24,6 +24,7 @@
         "curly": false,
         "variable-name": false,
         "one-variable-per-declaration": false,
-        "object-literal-sort-keys": false
+        "object-literal-sort-keys": false,
+        "only-arrow-functions": false
     }
 }
