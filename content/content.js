@@ -33,16 +33,17 @@ const _ = () => {
 			G#|-0------------------2-------------------------------------------------|
 			D#|-----------------3--------------------------------0-------3-----------|
 
-			  My eyes       seek reality
-			  
-			  My fingers feel for faith
+			My eyes seek reality
+			My fingers seek my veins
+			There's a dog at your back step
+			He must come in from the rain
 
-			  Touch clean with a dirty hand
-
-			  I touched the clean through the waste
+			I fall 'cause I let go
+			The net below has rot away
+			So my eyes seek reality
+			And my fingers seek my veins
 			
 			[Pre-Chorus]
-			(Riff 2)
 			Am                Em
 			The trash fire is warm
 			Am                        Em
@@ -64,7 +65,7 @@ const _ = () => {
 								   C
 			And won't cry for this man
 							 B                B
-			cause low man is due              please forgive me!!!!
+			cause low man is due      [lower] please forgive me!!!!
 			
 			
 			A  	G6 	D2 	E G
@@ -91,7 +92,7 @@ const _ = () => {
 			Please forgive me
 			
 			Riff 3
-			Am    Am-    F
+			Am    G5    F
 
 			So low the sky is all I see
 			All I want from you is forgive me
@@ -116,7 +117,7 @@ const _ = () => {
 			Please forgive me
 			Please forgive me
 
-			Am  Am-  F
+			Am  G5  F
 			So low the sky is all I see
 			All I want from you is forgive me
 			So you bring this poor dog in from the rain
