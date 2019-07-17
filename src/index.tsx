@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { SelectSong } from "./components/selectSong/SelectSong"
 import "./styles.css";
 import { DisplaySong } from "./components/displaySong/DisplaySong";
-import { NotFound } from "./components/notFound/NotFound"
+import { NotFound } from "./components/NotFound"
 
 interface Props {}
 interface State {
