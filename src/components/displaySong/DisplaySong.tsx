@@ -36,7 +36,7 @@ export class DisplaySong extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
         const { uri } = props.match.params
-        fetch(`/content/${uri}`)
+        fetch(`${process.env.PUBLIC_URL}/content/${uri}`)
             .then((r) => r.json())
             .catch(() => {
                 // Navigate to start menu, and display error message.

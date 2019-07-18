@@ -20,7 +20,7 @@ export class SelectSong extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
         // Read song list.
-        fetch("/content/list.json")
+        fetch(`${process.env.PUBLIC_URL}/content/list.json`)
             .then((r) => r.json())
             .then((songList) => this.setState({ songList }))
             // For development, auto traversal of GUI. OUTDATED, should use history to navigate.
