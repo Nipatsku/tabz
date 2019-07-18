@@ -16,9 +16,15 @@ interface State {
 export class SongList extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
+        // Read 'groupByArtist' preference from localStorage.
+        let groupByArtist = true
+        if (localStorage) {
+            const savedValue = localStorage.getItem(localStorageKey_groupByArtist)
+            if (savedValue !== undefined)
+                groupByArtist = savedValue === "true" ? true : false
+        }
         this.state = {
-            // TODO: localStorage
-            groupByArtist: true
+            groupByArtist
         }
     }
     onSelectTreeNode = (selectedKeys: string[]) => {
@@ -32,11 +38,15 @@ export class SongList extends React.Component<Props, State> {
         if (selectedSong)
             onSelectSong(selectedSong)
     }
-    onSetGroupByArtist = (event: CheckboxChangeEvent) => {
-        const { groupByArtist } = this.state
+    toggleGroupByArtist = () => {
+        const groupByArtist = !this.state.groupByArtist
         this.setState({
-            groupByArtist: !groupByArtist
+            groupByArtist
         })
+        // Save preference to localStorage.
+        if (localStorage) {
+            localStorage.setItem(localStorageKey_groupByArtist, String(groupByArtist))
+        }
     }
     renderSongTree(songsByArtist: SongInfo[][]): JSX.Element {
         return <Tree
@@ -80,7 +90,7 @@ export class SongList extends React.Component<Props, State> {
             >
                 <Checkbox
                     defaultChecked={groupByArtist}
-                    onChange={this.onSetGroupByArtist}
+                    onChange={this.toggleGroupByArtist}
                 >
                     Group by artist
                 </Checkbox>
@@ -110,6 +120,7 @@ export class SongList extends React.Component<Props, State> {
         </div>
     }
 }
+const localStorageKey_groupByArtist = "groupByArtist"
 const _songSimilarity = (songInfo: SongInfo, searchString: string): number => {
     const name = songInfo.name.toLowerCase()
     const artist = songInfo.artist.toLowerCase()
