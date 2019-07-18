@@ -86,9 +86,10 @@ export class SongList extends React.Component<Props, State> {
         const { groupByArtist } = this.state
         return <div>
             <div
-                className="groupByArtistDiv"
+                className="groupByArtistDiv transparentBackground"
             >
                 <Checkbox
+                    className="groupByArtistCheckbox transparentText"
                     defaultChecked={groupByArtist}
                     onChange={this.toggleGroupByArtist}
                 >
