@@ -67,8 +67,7 @@ export class SelectSong extends React.Component<Props, State> {
             <div>
                 <Typography.Title>Select song ({songList.length})</Typography.Title>
                 <Input.Search
-                    placeholder="Search text"
-                    enterButton="Search"
+                    placeholder="Search by artist / song name"
                     size="default"
                     onChange={(e) => this.onSearchSong(e.target.value)}
                     allowClear={true}
