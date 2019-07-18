@@ -42,6 +42,8 @@ export class SelectSong extends React.Component<Props, State> {
         if (errorMsg !== undefined) {
             // Display error message as a popup, that disappears automatically.
             message.error(errorMsg)
+            // Replace URL, so that reloading won't show the error again.
+            this.props.history.replace("/")
         }
         this.state = {}
     }

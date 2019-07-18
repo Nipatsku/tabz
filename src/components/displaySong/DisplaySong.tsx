@@ -40,7 +40,6 @@ export class DisplaySong extends React.Component<Props, State> {
             .then((r) => r.json())
             .catch(() => {
                 // Navigate to start menu, and display error message.
-                // TODO: Can we clear navigation history somehow?
                 this.props.history.replace("/error/" + `Song not found :(`)
             })
             .then((song: Song | undefined) => {
