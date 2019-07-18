@@ -31,7 +31,9 @@ class App extends React.Component<Props, State> {
                 backgroundRepeat: "no-repeat"
             }}
         >
-            <BrowserRouter>
+            <BrowserRouter
+                basename={process.env.PUBLIC_URL}
+            >
                 <Switch>
                     <Route exact path="/" component={SelectSong}/>
                     <Route path="/error/:errorMsg" component={SelectSong}/>
