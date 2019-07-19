@@ -20,7 +20,7 @@ export class SongList extends React.Component<Props, State> {
         let groupByArtist = true
         if (localStorage) {
             const savedValue = localStorage.getItem(localStorageKey_groupByArtist)
-            if (savedValue !== undefined)
+            if (savedValue !== undefined && savedValue !== null)
                 groupByArtist = savedValue === "true" ? true : false
         }
         this.state = {
@@ -86,9 +86,10 @@ export class SongList extends React.Component<Props, State> {
         const { groupByArtist } = this.state
         return <div>
             <div
-                className="groupByArtistDiv"
+                className="groupByArtistDiv transparentBackground"
             >
                 <Checkbox
+                    className="groupByArtistCheckbox transparentText"
                     defaultChecked={groupByArtist}
                     onChange={this.toggleGroupByArtist}
                 >

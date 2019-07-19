@@ -55,10 +55,10 @@ export class AutoScrollConfig extends React.Component<Props, State> {
                 onAfterChange={this.afterSliderChange}
             />
             <div
-                className="autoScrollValueDiv"
+                className="autoScrollValueDiv transparentBackground"
             >
                 <Text
-                    className="autoScrollValueLabel"
+                    className="autoScrollValueLabel transparentText"
                 >
                     {
                     // tslint:disable-next-line: max-line-length
