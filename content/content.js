@@ -14,6 +14,109 @@ const _ = () => {
     //#endregion
     /////////////////////////////////////////////////////////
 	// @@@@@ SONG LIST @@@@@
+    song('Dr. Hook', 'Sylvia\'s Mother')
+    //#region
+        .version({
+			name: 'Chords + lyrics',
+            instrument: Guitar(guitarTunings.standard),
+            duration: 3 * 60 + 0,
+            content: `
+[Verse]
+
+A
+Sylvia’s mother says, “Sylvia's busy, 
+							E
+Too busy to come to the phone. 
+																				
+Sylvia's mother says, “Sylvia's trying, 
+				E7         A   A7
+To start a new life of her own.”
+D                       A
+Sylvia's mother says, “Sylvia's happy, 
+	E                           A
+So why don't you leave her a - lone?”
+		E
+And the operator says:" Forty cents more, 
+
+For the next three minutes."
+
+
+[Chorus]
+
+	D                     A
+Pl -ease Mrs. Avery, I've just got to talk to her, 
+E                     A       A7
+I'll only keep her a while.
+D                     A                           E
+Please Mrs. Avery, I just want to tell her good - bye.
+
+
+[Verse]
+
+	A
+Sylvia's mother says, “Sylvia's packing, 
+							E
+She’s goin' to be leaving today.”
+																			
+Sylvia's mother says, “Sylvia's marrying, 
+	E7                  A    A7
+A fellow down Galveston way.”
+D                      A
+Sylvia's mother says, “Please don't say nothing,
+	E                          A
+To make her start crying and stay
+
+		E
+And the operator says:" Forty cents more, 
+
+For the next three minutes."       
+
+
+[Chorus]
+
+	D                     A
+Pl -ease Mrs. Avery, I've just got to talk to her, 
+E                     A       A7
+I'll only keep her a while.
+D                     A                            E
+Please Mrs. Avery, I just want to tell her good - bye.
+
+
+[Verse]
+
+	A
+Sylvia's mother says, “Sylvia's hurrying, 
+									E
+She’s catching the nine o'clock train.”
+
+Sylvia's mother says, "Take your umbrella, 
+			E7                      A       A7
+‘cause, Sylvia, it's starting to rain."
+		D                      A
+And Sylvia's mother says, "Thank you for calling,
+		E                            A
+And, sir, won't you call back a - gain."
+			E
+And the operator says:" Forty cents more, 
+
+For the next three minutes."
+
+
+[Chorus]
+
+		D                      A
+Pl - ease Mrs. Avery, I've just got to talk to her, 
+E                     A    A7
+I'll only keep her a while.
+	D                 A                           E
+Please Mrs. Avery, I just want to tell her good - bye.
+
+							E
+Tell her goodbye, please, tell her goodbye   AND FADE
+			
+`
+        })
+    //#endregion
     song('Shocking Blue', 'Never Marry A Railroad Man')
     //#region
         .version({
