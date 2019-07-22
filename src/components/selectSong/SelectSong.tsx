@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { SongInfo } from "../../datastructures/song"
-import { SongList } from "./SongList"
+import SongList from "./SongList"
 import { Button, Layout, Typography, Icon, Input, message } from "antd/lib"
 import { LoadingIndicator } from "../common/LoadingIndicator";
 import { Navigatable } from "../common/navigation"
