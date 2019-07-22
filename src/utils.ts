@@ -18,3 +18,16 @@ export const flatten = <T> (arrayOfArrays: T[][]): T[] => {
     }
     return arr
 }
+/**
+ *
+ */
+export type Injectable<T> = undefined | { inject: T }
+/**
+ *
+ */
+export const inject = <T>(injectable: Injectable<T>, normalValue: T | (() => T)): T => {
+    if (injectable === undefined)
+        return typeof normalValue === "function" ? (normalValue as () => T)() : normalValue
+    else
+        return injectable.inject
+}

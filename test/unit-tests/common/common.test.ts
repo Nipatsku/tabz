@@ -1,6 +1,7 @@
 import { expect } from 'chai'
 import { useLocalStorageItem, ParseString } from '../../../src/components/common/common'
 import { LocalStorage } from '../mocks'
+import { renderHook } from '@testing-library/react-hooks'
 
 describe('ParseString', function() {
     describe('Boolean', function() {
@@ -34,17 +35,30 @@ describe('useLocalStorageItem', function() {
     })
 
     describe('localStorage is undefined', function() {
-        it.skip('value is equal to defaultValue', function() {
-            // TODO: Use react-testing-library for testing Hooks.
-            useLocalStorageItem(
-                'test-key',
-                true,
-                ParseString.Boolean,
-                // Inject mock localStorage.
-                localStorage
+        it('value is equal to defaultValue', function() {
+            const { result } = renderHook(() =>
+                useLocalStorageItem(
+                    'test-key',
+                    true,
+                    ParseString.Boolean,
+                    { inject: undefined }
+                )
             )
+            expect(result.current.value).to.equal(true)
         })
-        it.skip('handleChange changes value', function() {})
+        it('handleChange changes value', function() {
+            const { result } = renderHook(() =>
+                useLocalStorageItem(
+                    'test-key',
+                    true,
+                    ParseString.Boolean,
+                    { inject: undefined }
+                )
+            )
+            expect(result.current.value).to.equal(true)
+            result.current.handleChange(false)
+            expect(result.current.value).to.equal(false)
+        })
     })
     describe('localStorage is defined', function() {
         it.skip('if value is not stored yet, defaultValue is used', function() {})

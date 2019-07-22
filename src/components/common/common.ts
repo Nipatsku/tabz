@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Injectable, inject } from "../../utils";
 
 interface StringParser<T> {
     toString: (value: T) => string
@@ -15,14 +16,17 @@ const stringParser = <T>(
  * @param key               Key in localStorage
  * @param defaultValue      Default value when a) localStorage is not available or b) localStorage is not initialized
  * @param parser            StringParser for the primitive type in question
- * @param iLocalStorage     localStorage injection interface for testing
+ * @param iLocalStorage     localStorage injection interface for testing.
  */
 export const useLocalStorageItem = <T>(
     key: string,
     defaultValue: T,
     parser: StringParser<T>,
-    iLocalStorage = localStorage
+    _iLocalStorage?: Injectable<Storage>
 ) => {
+    // localStorage is not defined in test environment, so callback must be used.
+    const iLocalStorage = inject(_iLocalStorage, () => localStorage)
+
     let initialValue: T
     if (iLocalStorage !== undefined) {
         // localStorage is available.
