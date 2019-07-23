@@ -1,7 +1,7 @@
 import * as React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import { SelectSong } from "./selectSong/SelectSong"
-import { DisplaySong } from "./displaySong/DisplaySong";
+import { DisplaySong } from "./displaySong/DisplaySong"
 import { NotFound } from "./NotFound"
 
 interface Props {}
@@ -29,16 +29,12 @@ export default class App extends React.Component<Props, State> {
                 backgroundRepeat: "no-repeat"
             }}
         >
-            <BrowserRouter
-                basename={process.env.PUBLIC_URL}
-            >
-                <Switch>
-                    <Route exact path="/" component={SelectSong}/>
-                    <Route path="/error/:errorMsg" component={SelectSong}/>
-                    <Route path="/song/:uri/:selectedVersionIndex?" component={DisplaySong}/>
-                    <Route component={NotFound}/>
-                </Switch>
-            </BrowserRouter >
+            <Switch>
+                <Route exact path="/" component={SelectSong}/>
+                <Route path="/error/:errorMsg" component={SelectSong}/>
+                <Route path="/song/:uri/:selectedVersionIndex?" component={DisplaySong}/>
+                <Route component={NotFound}/>
+            </Switch>
         </div>
     }
 }
