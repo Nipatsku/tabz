@@ -6,7 +6,6 @@
   "main": "src/index.tsx",
   "homepage": "https://nipatsku.github.io/tabz/",
   "dependencies": {
-    "@types/react-router-dom": "^4.3.4",
     "antd": "^3.20.0",
     "gh-pages": "^2.0.1",
     "react": "16.8.4",
@@ -16,12 +15,15 @@
     "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^1.1.0",
+    "@types/react-router-dom": "^4.3.4",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.12",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
     "@types/react-scroll": "^1.5.4",
+    "@types/sinon": "^7.0.13",
     "chai": "^4.2.0",
     "gulp": "^4.0.2",
     "gulp-mocha": "^6.0.0",
@@ -29,6 +31,9 @@
     "gulp-tslint": "^8.1.4",
     "gulp-typescript": "^5.0.1",
     "mocha": "^6.1.4",
+    "react-router-dom": "^5.0.1",
+    "react-test-renderer": "16.8.4",
+    "sinon": "^7.3.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "tslint-microsoft-contrib": "^6.2.0",

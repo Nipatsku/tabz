@@ -1,34 +1,27 @@
-import * as React from "react";
+import React, { useState } from "react"
 import { SongInfo } from "../../datastructures/song"
 import { Tree, Icon, List, Typography, Checkbox } from "antd/lib"
-import { CheckboxChangeEvent } from "antd/lib/checkbox";
+import { useLocalStorageItem, ParseString } from "../common/common"
 const { TreeNode } = Tree
-const { Text } = Typography
 
 interface Props {
     songList: SongInfo[]
     searchString?: string
     onSelectSong: (songInfo: SongInfo) => void
 }
-interface State {
-    groupByArtist: boolean
-}
-export class SongList extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        // Read 'groupByArtist' preference from localStorage.
-        let groupByArtist = true
-        if (localStorage) {
-            const savedValue = localStorage.getItem(localStorageKey_groupByArtist)
-            if (savedValue !== undefined && savedValue !== null)
-                groupByArtist = savedValue === "true" ? true : false
-        }
-        this.state = {
-            groupByArtist
-        }
+export default function SongList(props: Props) {
+    const { songList, searchString, onSelectSong } = props
+
+    const groupByArtist = useLocalStorageItem(
+        localStorageKey_groupByArtist,
+        false,
+        ParseString.Boolean
+    )
+    function handleGroupByArtistChange() {
+        groupByArtist.handleChange(!groupByArtist.value)
     }
-    onSelectTreeNode = (selectedKeys: string[]) => {
-        const { songList, onSelectSong } = this.props
+
+    function handleSelectTreeNode(selectedKeys: string[]) {
         const selectedTreeNodeKey = selectedKeys[0]
 
         // Check if selected Node was a song.
@@ -38,21 +31,12 @@ export class SongList extends React.Component<Props, State> {
         if (selectedSong)
             onSelectSong(selectedSong)
     }
-    toggleGroupByArtist = () => {
-        const groupByArtist = !this.state.groupByArtist
-        this.setState({
-            groupByArtist
-        })
-        // Save preference to localStorage.
-        if (localStorage) {
-            localStorage.setItem(localStorageKey_groupByArtist, String(groupByArtist))
-        }
-    }
-    renderSongTree(songsByArtist: SongInfo[][]): JSX.Element {
+
+    function renderSongTree(songsByArtist: SongInfo[][]): JSX.Element {
         return <Tree
             showIcon
             switcherIcon={<Icon type="down" />}
-            onSelect={this.onSelectTreeNode}
+            onSelect={handleSelectTreeNode}
         >
             {songsByArtist.map((artistSongs, iArtist) => {
                 const key = `${iArtist}`
@@ -70,10 +54,10 @@ export class SongList extends React.Component<Props, State> {
             })}
         </Tree>
     }
-    renderSongList(songs: SongInfo[]): JSX.Element {
+    function renderSongList(songs: SongInfo[]): JSX.Element {
         return <Tree
             showIcon
-            onSelect={this.onSelectTreeNode}
+            onSelect={handleSelectTreeNode}
         >
             {songs.map((song) => <TreeNode
                     key={song.id}
@@ -81,46 +65,43 @@ export class SongList extends React.Component<Props, State> {
             />)}
         </Tree>
     }
-    render() {
-        const { songList, searchString } = this.props
-        const { groupByArtist } = this.state
-        return <div>
-            <div
-                className="groupByArtistDiv transparentBackground"
+    return (<div>
+        <div
+            className="groupByArtistDiv transparentBackground"
+        >
+            <Checkbox
+                className="groupByArtistCheckbox transparentText"
+                defaultChecked={groupByArtist.value}
+                onChange={handleGroupByArtistChange}
             >
-                <Checkbox
-                    className="groupByArtistCheckbox transparentText"
-                    defaultChecked={groupByArtist}
-                    onChange={this.toggleGroupByArtist}
-                >
-                    Group by artist
-                </Checkbox>
-            </div>
-            {
-                ((searchString === undefined) ? (
-                    ((groupByArtist) ? (
-                        this.renderSongTree(
-                            mapSongsByArtist(songList)
-                                .sort(sortArtistsByName)
-                                .map((artistSongs) => artistSongs.sort(sortSongsByName))
-                        )
-                    ) : (
-                        this.renderSongList(
-                            songList.sort(sortSongsByName)
-                        )
-                    ))
+                Group by artist
+            </Checkbox>
+        </div>
+        {
+            ((searchString === undefined) ? (
+                ((groupByArtist.value) ? (
+                    renderSongTree(
+                        mapSongsByArtist(songList)
+                            .sort(sortArtistsByName)
+                            .map((artistSongs) => artistSongs.sort(sortSongsByName))
+                    )
                 ) : (
-                    this.renderSongList(
-                        songList
-                            // Copy Array.
-                            .map((item) => item)
-                            .sort(SearchStringSorter(searchString))
+                    renderSongList(
+                        songList.sort(sortSongsByName)
                     )
                 ))
-            }
-        </div>
-    }
+            ) : (
+                renderSongList(
+                    songList
+                        // Copy Array.
+                        .map((item) => item)
+                        .sort(SearchStringSorter(searchString))
+                )
+            ))
+        }
+    </div>)
 }
+
 const localStorageKey_groupByArtist = "groupByArtist"
 const _songSimilarity = (songInfo: SongInfo, searchString: string): number => {
     const name = songInfo.name.toLowerCase()
