@@ -4,13 +4,13 @@ import { configure, shallow } from 'enzyme'
 import { expect } from 'chai'
 import Adapter from 'enzyme-adapter-react-16'
 
-import App from '../../../src/components/App'
+import Test from '../../../src/components/Test'
 
 configure({ adapter: new Adapter() });
 
-describe.only('test', function() {
+describe('test', function() {
     it('test', function() {
-        const wrapper = shallow(<App/>);
-        expect(wrapper.find('div').html()).to.equal('<p>Title</p>');
+        const wrapper = shallow(<Test/>);
+        expect(wrapper.contains(<p>Hello world !</p>)).to.be.ok
     })
 })
