@@ -7,13 +7,63 @@ const _ = () => {
 			name: 'Chords + lyrics',
             instrument: Guitar(guitarTunings.standard),
             duration: 3 * 60 + 0,
-            content: `
+			content: 
+`
 
 `
         })
     //#endregion
     /////////////////////////////////////////////////////////
 	// @@@@@ SONG LIST @@@@@
+    song('Kotiteollisuus', 'Vapaus Johtaa Kansaa')
+    //#region
+        .version({
+			name: 'Chords',
+            instrument: Guitar(guitarTunings.half_step_down),
+            duration: 3 * 60 + 0,
+            content: `
+[intro riff]
+Am Em F G F 
+
+[second intro]
+-palm muted-
+Em F G
+Em C F# F
+
+[verse]
+Em F Am Em F G
+Em F Am Em C F#m F
+Em F Am Em F G
+Em F Am F# G F#m G
+
+[chorus]
+Am Em F C C- x4
+A5 A#5 F#5
+
+[second intro]
+-palm muted-
+Em F G
+Em C F# F
+
+[verse]
+Em F Am Em F G
+Em F Am Em C F#m F
+Em F Am Em F G
+Em F Am F# G F#m G
+
+[chorus]
+Am Em F C C- x4
+A5 A#5 F#5
+
+[solo / bridge]
+G#m E C#m A
+
+[chorus]
+Am Em F C C- x4
+A5 A#5 F#5
+`
+        })
+    //#endregion
     song('Dr. Hook', 'Sylvia\'s Mother')
     //#region
         .version({
