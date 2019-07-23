@@ -1,7 +1,7 @@
 import { spy } from 'sinon'
-import chai, { expect } from 'chai'
-import { useLocalStorageItem, ParseString } from '../../../src/components/common/common'
-import { LocalStorage } from '../mocks'
+import { expect } from 'chai'
+import { useLocalStorageItem, ParseString } from '../../../../../src/components/common/common'
+import { LocalStorage } from '../../../mocks'
 import { renderHook } from '@testing-library/react-hooks'
 
 describe('ParseString', function() {
