@@ -53,13 +53,10 @@ describe('useLocalStorageItem', function() {
         })
     })
     describe('localStorage is defined', function() {
-        let localStorage: LocalStorage
+        let localStorage!: LocalStorage
         
         beforeEach(function() {
             localStorage = LocalStorage()
-        })
-        afterEach(function() {
-            localStorage = undefined
         })
 
         it('if value is not stored yet, defaultValue is used', function() {

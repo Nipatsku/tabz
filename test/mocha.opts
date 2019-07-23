@@ -1,2 +1,3 @@
 --require test/conf.js
 test/**/*.test.ts
+test/**/*.test.tsx

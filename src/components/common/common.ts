@@ -22,7 +22,7 @@ export const useLocalStorageItem = <T>(
     key: string,
     defaultValue: T,
     parser: StringParser<T>,
-    _iLocalStorage?: Injectable<Storage>
+    _iLocalStorage?: Injectable<Storage | undefined>
 ) => {
     // localStorage is not defined in test environment, so callback must be used.
     const iLocalStorage = inject(_iLocalStorage, () => localStorage)

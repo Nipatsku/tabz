@@ -121,7 +121,7 @@ gulp.task('default', buildContent)
 // ********** Tests **********
 const tsProject = ts.createProject("./test/tsconfig-tests.json");
 const testsRunUnit = () =>
-    gulp.src('test/**/*.test.ts')
+    gulp.src('test/**/*.test.ts', 'test/**/*.test.tsx')
         .pipe(tsProject())
         .pipe(mocha({
             reporter: 'nyan'
@@ -129,7 +129,7 @@ const testsRunUnit = () =>
 gulp.task('tests-run-unit', testsRunUnit)
 
 const testsRunLint = () =>
-    gulp.src(['src/**/*.tsx', 'src/**/*.ts'])
+    gulp.src(['src/**/*.ts', 'src/**/*.tsx'])
         .pipe(tslint({
             formatter: 'prose'
         }))
